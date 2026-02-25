@@ -18,21 +18,22 @@
 <link rel="stylesheet" href="{{url ('assets/js/rev-slider/css/navigation.css')}}"  type='text/css' media='all' />
 
 <!--Rev Slider End-->
-<title>Cricket Site</title>
+<title>@yield('title')</title>
 </head>
 <body>
 <!--Wrapper Start-->
 <div class="wrapper"> 
  
+
 {{-- header --}}
-@include('frontend.components.navbar')
+@include('frontend.components.common.navbar')
 
 {{-- content --}}
 @yield('content')
 
 
 {{-- footer --}}
-@include('frontend.components.footer')
+@include('frontend.components.common.footer')
 
 
 

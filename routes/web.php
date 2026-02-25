@@ -45,3 +45,6 @@ Route::get('/fixtures', function () {
 Route::get('/contact-us', function () {
     return view('frontend.pages.contact-us');
 })->name('contact-us');
+Route::get('/videos', function () {
+    return view('frontend.pages.videos');
+})->name('videos');
