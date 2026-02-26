@@ -1,5 +1,5 @@
 @extends('frontend.layout.master')
-@section('title','Teams')
+@section('title','Fixtures')
 @section('content')
  <!--Main Slider Start-->
          <div class="inner-banner-header wf100">

@@ -2,23 +2,35 @@
     <div class="container">
         <div class="row">
             <ul>
-                <li class="col-lg-4">
-                    <div class="slidetab-box"> <span>01</span>
-                        <h6><a href="#">Success is not Accident it’s a Result of Hard Work</a></h6>
-                        <strong>NFL League</strong>
+                <li class="col-lg-3 col-md-6">
+                    <div class="slidetab-box">
+                        <span>01</span>
+                        <h6><a href="#">Fixtures & Results</a></h6>
+                        <strong>Match Schedule & Scores</strong>
                     </div>
                 </li>
-                <li class="col-lg-4">
-                    <div class="slidetab-box"> <span>02</span>
-                        <h6><a href="#">Marit Lion: Player of the Month in December 2018</a></h6>
-                        <strong>MBL Premiere League</strong>
+
+                <li class="col-lg-3 col-md-6">
+                    <div class="slidetab-box">
+                        <span>02</span>
+                        <h6><a href="#">Points Table</a></h6>
+                        <strong>Team Rankings</strong>
                     </div>
                 </li>
-                <li class="col-lg-4">
-                    <div class="slidetab-box"> <span>03</span>
-                        <h6><a href="#">The will to prepare to win
-                                that makes the difference</a> </h6>
-                        <strong>Carolina Baltimore</strong>
+
+                <li class="col-lg-3 col-md-6">
+                    <div class="slidetab-box">
+                        <span>03</span>
+                        <h6><a href="#">Overall Stats</a></h6>
+                        <strong>Player & Match Statistics</strong>
+                    </div>
+                </li>
+
+                <li class="col-lg-3 col-md-6">
+                    <div class="slidetab-box">
+                        <span>04</span>
+                        <h6><a href="{{ route('teams') }}">All Teams</a></h6>
+                        <strong>Teams & Squads</strong>
                     </div>
                 </li>
             </ul>

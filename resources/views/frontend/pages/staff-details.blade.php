@@ -1,5 +1,5 @@
 @extends('frontend.layout.master')
-@section('title','Teams')
+@section('title','Staff Details')
 @section('content')
 
  <!--Main Slider Start-->

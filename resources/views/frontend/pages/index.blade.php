@@ -1,5 +1,5 @@
 @extends('frontend.layout.master')
-@section('title', 'Home Page')
+@section('title', 'Welcome to Cricket Club')
 @section('content')
   {{-- top --}}
   @include('frontend.components.common.top-header')

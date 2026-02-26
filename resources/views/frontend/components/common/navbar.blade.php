@@ -56,7 +56,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-2 col-sm-5">
-          <div class="logo"><a href="{{ route('index') }}"><img src="{{url('assets/images/logo-dark.png')}}" alt=""></a>
+          <div class="logo"><a href="{{ route('index') }}"><img src="{{url('assets/images/logo/main.png')}}" alt=""></a>
           </div>
         </div>
         <div class="col-md-10 col-sm-7">
@@ -75,11 +75,18 @@
                   <li><a href="{{ route('staff-details') }}">Staff Details</a></li>
                 </ul>
               </li> --}}
+              <li class="nav-item drop-down"> <a href="">News</a>
+                <ul>
+                  <li><a href="{{ route('news') }}">News</a></li>
+                  <li><a href="{{ route('news') }}">Announcements</a></li>
+                  <li><a href="{{ route('news') }}">Match Reports</a></li>
+                </ul>
+              </li>
               <li class="nav-item drop-down"> <a href="">Matches</a>
                 <ul>
                   <li><a href="{{ route('upcoming-match') }}">Upcoming Match</a></li>
                   <li><a href="{{ route('match-result') }}">Match Result</a></li>
-                  <li><a href="{{ route('match-details') }}">Match Details</a></li>
+                  {{-- <li><a href="{{ route('match-details') }}">Match Details</a></li> --}}
                 </ul>
               </li>
 
@@ -109,12 +116,7 @@
                 </ul>
               </li> --}}
 
-              <li class="nav-item drop-down"> <a href="">News</a>
-                <ul>
-                  <li><a href="{{ route('news') }}">News</a></li>
-                  <li><a href="{{ route('news-details') }}">News Details</a></li>
-                </ul>
-              </li>
+
               <li class="nav-item drop-down"> <a href="{{ route('fixtures') }}">Fixtures</a>
 
               </li>

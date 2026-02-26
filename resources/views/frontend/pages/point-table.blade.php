@@ -1,5 +1,5 @@
 @extends('frontend.layout.master')
-@section('title', 'Teams')
+@section('title', 'Point Table')
 @section('content')
 
 
