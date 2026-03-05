@@ -1,5 +1,5 @@
 @extends('frontend.layout.master')
-@section('title', 'Welcome to Cricket Club')
+@section('title', 'Welcome to Jharkhand Super League')
 @section('content')
   {{-- top --}}
   @include('frontend.components.common.top-header')
@@ -9,12 +9,19 @@
     @include('frontend.components.home.breadcrumb')
     {{-- slider tabs --}}
     @include('frontend.components.home.tabs')
+
+    {{-- about section --}}
+    @include('frontend.components.home.about-section')
+
+     {{-- banner --}}
+     {{-- <div class="banner-wrap text-center wf100 mb-80"> <img src="{{url('assets/images/placeyourbanner.png')}}" alt=""> --}}
     {{-- widgets --}}
     @include('frontend.components.home.widgets')
-
+    {{-- work flow --}}
+    @include('frontend.components.home.work-flow')
     <!--Banner Size 920 x 100 Start-->
-    <div class="banner-wrap text-center wf100 mb-80"> <img src="{{url('assets/images/placeyourbanner.png')}}" alt="">
-    </div>
+    {{-- <div class="banner-wrap text-center wf100 mb-80"> <img src="{{url('assets/images/placeyourbanner.png')}}" alt="">
+    </div> --}}
     <!--Banner Size 920 x 100 End-->
     {{-- news --}}
     @include('frontend.components.home.news')
@@ -23,7 +30,7 @@
     @include('frontend.components.home.team')
 
     {{-- products --}}
-    @include('frontend.components.home.product')
+    {{-- @include('frontend.components.home.product') --}}
 
     {{-- gallery --}}
     @include('frontend.components.home.gallery')

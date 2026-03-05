@@ -48,3 +48,9 @@ Route::get('/contact-us', function () {
 Route::get('/videos', function () {
     return view('frontend.pages.videos');
 })->name('videos');
+Route::get('/photos', function () {
+    return view('frontend.pages.photos');
+})->name('photos');
+Route::get('/about-us', function () {
+    return view('frontend.pages.about-us');
+})->name('about-us');

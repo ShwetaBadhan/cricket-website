@@ -6,7 +6,7 @@
                     <div class="slidetab-box">
                         <span>01</span>
                         <h6><a href="#">Fixtures & Results</a></h6>
-                        <strong>Match Schedule & Scores</strong>
+                        <strong>Match Schedule </strong>
                     </div>
                 </li>
 
@@ -22,7 +22,7 @@
                     <div class="slidetab-box">
                         <span>03</span>
                         <h6><a href="#">Overall Stats</a></h6>
-                        <strong>Player & Match Statistics</strong>
+                        <strong>Player & Match</strong>
                     </div>
                 </li>
 

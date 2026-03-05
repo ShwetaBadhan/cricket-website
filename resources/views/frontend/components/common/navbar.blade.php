@@ -56,7 +56,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-2 col-sm-5">
-          <div class="logo"><a href="{{ route('index') }}"><img src="{{url('assets/images/logo/main.png')}}" alt=""></a>
+          <div class="logo"><a href="{{ route('index') }}"><img src="{{url('assets/images/logo/jss.png')}}" alt=""></a>
           </div>
         </div>
         <div class="col-md-10 col-sm-7">
@@ -65,9 +65,7 @@
               <li class="nav-item"> <a href="">Home</a>
 
               </li>
-              <li class="nav-item"> <a href="{{ route('point-table')}}">Point Table</a> </li>
-              <li class="nav-item"> <a href="{{ route('videos') }}">Videos</a> </li>
-              <li class="nav-item"> <a href="{{ route('teams') }}">Our Team</a> </li>
+              <li class="nav-item"> <a href="{{ route('about-us')}}">About Us</a> </li>
               {{-- <li class="nav-item drop-down"> <a href="">Team</a>
                 <ul>
                   <li><a href="{{ route('teams') }}">Teams</a></li>
@@ -75,14 +73,8 @@
                   <li><a href="{{ route('staff-details') }}">Staff Details</a></li>
                 </ul>
               </li> --}}
-              <li class="nav-item drop-down"> <a href="">News</a>
-                <ul>
-                  <li><a href="{{ route('news') }}">News</a></li>
-                  <li><a href="{{ route('news') }}">Announcements</a></li>
-                  <li><a href="{{ route('news') }}">Match Reports</a></li>
-                </ul>
-              </li>
-              <li class="nav-item drop-down"> <a href="">Matches</a>
+
+              <li class="nav-item drop-down"> <a href="">Events</a>
                 <ul>
                   <li><a href="{{ route('upcoming-match') }}">Upcoming Match</a></li>
                   <li><a href="{{ route('match-result') }}">Match Result</a></li>
@@ -90,40 +82,42 @@
                 </ul>
               </li>
 
-              {{-- <li class="nav-item drop-down"> <a href="">Features</a>
+              {{-- <li class="nav-item drop-down"> <a href="">More</a>
                 <ul>
-                  <li class="drop-down"> <a href="#">Shop</a>
+                  <li><a href="#">About us</a></li>
+                  <li><a href="{{ route('photos') }}">Photos</a></li>
+                  <li><a href="#">Auction</a></li>
+
+                  <li class="drop-down"> <a href="#">Stats</a>
                     <ul>
-                      <li><a href="#">Product Grid</a></li>
-                      <li><a href="#">Product Grid Two</a></li>
-                      <li><a href="#">Product Grid Three</a></li>
-                      <li><a href="#">Product List</a></li>
-                      <li><a href="#">Shop Details</a></li>
+                      <li><a href="#">Overall Stats</a></li>
+                      <li><a href="#">Head to Head</a></li>
+
                     </ul>
                   </li>
-                  <li class="drop-down"> <a href="#">Gallery</a>
-                    <ul>
-                      <li><a href="#">Gallery Two Col</a></li>
-                      <li><a href="#">Gallery Three Col</a></li>
-                      <li><a href="#">Gallery Classic</a></li>
-                      <li><a href="#">Gallery Massonry</a></li>
-                      <li><a href="#">Galery Modern</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">Groups</a></li>
-                  <li><a href="#">Page 404</a></li>
-                  <li><a href="#">Page 404 Two</a></li>
+
+
                 </ul>
               </li> --}}
+              <li class="nav-item drop-down"> <a href="">Updates</a>
+                <ul>
+                  <li><a href="{{ route('news') }}">Our Blogs</a></li>
+                  <li><a href="{{ route('news') }}">Announcements</a></li>
+                  <li><a href="{{ route('news') }}">Match Reports</a></li>
 
+                  <li> <a href="{{ route('videos') }}">Videos</a> </li>
+                </ul>
+              </li>
 
-              <li class="nav-item drop-down"> <a href="{{ route('fixtures') }}">Fixtures</a>
+              <li class="nav-item"> <a href="{{ route('contact-us') }}">Contact Us</a>
 
               </li>
 
-              <li class="nav-item drop-down"> <a href="{{ route('contact-us') }}">Contact</a>
+              {{-- <li class="nav-item drop-down"> <a href="{{ route('fixtures') }}">Fixtures</a> --}}
 
               </li>
+
+
               <li class="nav-item buy-ticket"> <a href="#">Buy Tickets</a> </li>
             </ul>
           </nav>

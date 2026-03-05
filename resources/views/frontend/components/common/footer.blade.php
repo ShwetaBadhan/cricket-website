@@ -4,7 +4,7 @@
     <div class="row"> 
       <!--Footer Widget Start-->
       <div class="col-lg-3 col-md-6">
-        <div class="footer-widget about-widget"> <img src="images/logo.png" alt="">
+        <div class="footer-widget about-widget"> <img src="{{ asset('images/logo.png') }}" alt="">
           <p> Fusce ac pharetra urna. Duis non lacus sit amet lacus interdum facilisis sed non est ut mi metus semper. </p>
           <address>
           <ul>
@@ -44,12 +44,12 @@
         <div class="footer-widget">
           <h4>Recent Instagram</h4>
           <ul class="instagram">
-            <li><img src="images/insta1.jpg" alt=""></li>
-            <li><img src="images/insta2.jpg" alt=""></li>
-            <li><img src="images/insta3.jpg" alt=""></li>
-            <li><img src="images/insta4.jpg" alt=""></li>
-            <li><img src="images/insta5.jpg" alt=""></li>
-            <li><img src="images/insta6.jpg" alt=""></li>
+            <li><img src="{{ asset('assets/images/insta1.jpg') }}" alt=""></li>
+            <li><img src="{{ asset('assets/images/insta2.jpg') }}" alt=""></li>
+            <li><img src="{{ asset('assets/images/insta3.jpg') }}" alt=""></li>
+            <li><img src="{{ asset('assets/images/insta4.jpg') }}" alt=""></li>
+            <li><img src="{{ asset('assets/images/insta5.jpg') }}" alt=""></li>
+            <li><img src="{{ asset('assets/images/insta6.jpg') }}" alt=""></li>
           </ul>
         </div>
       </div>
