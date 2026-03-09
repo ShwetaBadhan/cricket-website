@@ -1,5 +1,5 @@
 @extends('frontend.layout.master')
-@section('title', 'Our Blogs - Jharkhand Super League')
+@section('title', 'Our Blogs | Jharkhand Super League')
 @section('content')
 
   <!--Main Slider Start-->

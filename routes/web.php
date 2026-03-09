@@ -54,3 +54,16 @@ Route::get('/photos', function () {
 Route::get('/about-us', function () {
     return view('frontend.pages.about-us');
 })->name('about-us');
+
+Route::get('/announcement', function () {
+    return view('frontend.pages.announcement');
+})->name('announcement');
+Route::get('/gallery', function () {
+    return view('frontend.pages.gallery');
+})->name('gallery');
+Route::get('/privacy-policy', function () {
+    return view('frontend.pages.privacy-policy');
+})->name('privacy-policy');
+Route::get('/terms-condition', function () {
+    return view('frontend.pages.terms-condition');
+})->name('terms-condition');

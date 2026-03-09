@@ -56,7 +56,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-2 col-sm-5">
-          <div class="logo"><a href="{{ route('index') }}"><img src="{{url('assets/images/logo/jss.png')}}" alt=""></a>
+          <div class="logo"><a href="{{ route('index') }}"><img src="{{url('assets/images/logo/white-jss.png')}}" alt=""></a>
           </div>
         </div>
         <div class="col-md-10 col-sm-7">
@@ -66,13 +66,7 @@
 
               </li>
               <li class="nav-item"> <a href="{{ route('about-us')}}">About Us</a> </li>
-              {{-- <li class="nav-item drop-down"> <a href="">Team</a>
-                <ul>
-                  <li><a href="{{ route('teams') }}">Teams</a></li>
-                  <li><a href="{{ route('team-details') }}">Team Details</a></li>
-                  <li><a href="{{ route('staff-details') }}">Staff Details</a></li>
-                </ul>
-              </li> --}}
+             
 
               <li class="nav-item drop-down"> <a href="">Events</a>
                 <ul>
@@ -102,9 +96,8 @@
               <li class="nav-item drop-down"> <a href="">Updates</a>
                 <ul>
                   <li><a href="{{ route('news') }}">Our Blogs</a></li>
-                  <li><a href="{{ route('news') }}">Announcements</a></li>
-                  <li><a href="{{ route('news') }}">Match Reports</a></li>
-
+                  <li><a href="{{ route('announcement') }}">Announcements</a></li>
+                  <li><a href="{{ route('gallery') }}">Gallery</a></li>
                   <li> <a href="{{ route('videos') }}">Videos</a> </li>
                 </ul>
               </li>
@@ -127,4 +120,3 @@
   </div>
   <!--Logo + Navbar End-->
 </header>
-<!--Header End--

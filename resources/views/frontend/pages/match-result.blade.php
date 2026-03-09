@@ -1,5 +1,5 @@
 @extends('frontend.layout.master')
-@section('title', 'Match Results')
+@section('title', 'Match Results | Jharkhand Super League')
 @section('content')
 
 

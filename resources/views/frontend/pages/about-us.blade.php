@@ -17,4 +17,12 @@
     {{-- mission visison --}}
 
     @include('frontend.components.about-us.mission-vission')
+    {{-- gallery --}}
+    @include('frontend.components.home.gallery')
+
+    {{-- sponsors --}}
+    @include('frontend.components.home.sponsors')
+
+    {{-- tweets --}}
+    @include('frontend.components.home.tweets')
 @endsection

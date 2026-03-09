@@ -1,5 +1,5 @@
 @extends('frontend.layout.master')
-@section('title', 'Videos')
+@section('title', 'Videos | Jharkhand Super League')
 @section('content')
 
 

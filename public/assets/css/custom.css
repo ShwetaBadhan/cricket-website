@@ -208,7 +208,7 @@ html body {
 	padding: 5px 0;
 }
 .main-header .logo-navbar {
-	background: #fff;
+	background: #3b0d46;
 	width: 100%;
 	float: left;
 }
@@ -488,7 +488,7 @@ li.acctount-btn {
 	font-size: 16px;
 	font-weight: 700;
 	text-transform: uppercase;
-	color: #7c859a;
+	color: #fff;
 	position: relative;
 }
 .logo-navbar .nav-item>a:after {
@@ -496,7 +496,7 @@ li.acctount-btn {
 	top: 0;
 	left: 0;
 	height: 4px;
-	background: #7c859a;
+	background: #fff;
 	width: 0;
 	content: "";
 	opacity: 0;
@@ -9679,7 +9679,6 @@ font-size:30px;
 }
 /* mission vision */
 .jssl-purpose-zone{
-padding:100px 20px;
 background:#f3f4f6;
 }
 
@@ -9778,4 +9777,53 @@ flex-direction:column;
 font-size:28px;
 }
 
+}
+.cric-mvv-section{
+    padding:80px 20px;
+    background:linear-gradient(60deg, #f00080 , #4d1463);
+}
+
+.cric-mvv-container{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    gap:30px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.cric-mvv-card{
+    background:#fff;
+    border-radius:25px;
+    padding:35px 25px;
+    width:320px;
+    text-align:center;
+    position:relative;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:0.3s;
+	 border:3px solid #3b0d46;
+}
+
+.cric-mvv-card:hover{
+    transform:translateY(-8px);
+}
+
+
+
+.cric-mvv-icon{
+    font-size:38px;
+    margin-bottom:15px;
+}
+
+.cric-mvv-title{
+    font-size:22px;
+    font-weight:700;
+    margin-bottom:12px;
+    color:#222;
+}
+
+.cric-mvv-text{
+    font-size:15px;
+    line-height:1.7;
+    color:#666;
 }

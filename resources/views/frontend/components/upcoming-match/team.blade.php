@@ -1,4 +1,4 @@
-<div class="match-teams  p80">
+<div class="match-teams wf100 p80">
       <div class="container">
         <div class="row">
           <!--Team 1 Players List Start-->

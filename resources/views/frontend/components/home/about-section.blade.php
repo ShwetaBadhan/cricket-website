@@ -7,8 +7,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-title">
-                        <h2> ABOUT VIDYA GLOBAL <br>
-                            NATIONAL PROGRAMME FOR <br>
+                        <h2> ABOUT JHARKHAND SUPER  <br>
+                            LEAGUE PROGRAMME FOR <br>
                             DEVELOPMENT OF SPORTS</h2>
                     </div>
                 </div>

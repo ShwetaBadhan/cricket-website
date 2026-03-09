@@ -7,7 +7,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="ng-box">
                         <div class="thumb">
-                            <a href="#"><i class="fas fa-link"></i></a>
+                            <a href="news-details"><i class="fas fa-link"></i></a>
                             <img src="{{url('assets/images/ng-img1.jpg')}}" alt="">
                         </div>
                         <div class="ng-txt">
@@ -16,7 +16,7 @@
                                 </li>
                                 <li class="likes"><i class="far fa-heart"></i> 52 Likes</li>
                             </ul>
-                            <h4><a href="#">Every Success is a Result of Hard Working</a>
+                            <h4><a href="news-details">Every Success is a Result of Hard Working</a>
                             </h4>
                             <ul class="post-meta">
                                 <li><i class="fas fa-calendar-alt"></i> 27 June, 2020</li>
@@ -25,7 +25,7 @@
                             <p> Deserunt Sunt in culpa qui officia mollit anim id est laborn Neque porro quisquam est,
                                 qui dolorem
                                 ipsum. </p>
-                            <a href="#" class="rm">Read More</a>
+                            <a href="news-details" class="rm">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="ng-box">
                         <div class="thumb">
-                            <a href="#"><i class="fas fa-link"></i></a>
+                            <a href="news-details"><i class="fas fa-link"></i></a>
                             <img src="{{url('assets/images/ng-img2.jpg')}}" alt="">
                         </div>
                         <div class="ng-txt">
@@ -43,7 +43,7 @@
                                 </li>
                                 <li class="likes"><i class="far fa-heart"></i> 52 Likes</li>
                             </ul>
-                            <h4><a href="#">Toon stage injury-time come back at Everton</a>
+                            <h4><a href="news-details">Toon stage injury-time come back at Everton</a>
                             </h4>
                             <ul class="post-meta">
                                 <li><i class="fas fa-calendar-alt"></i> 27 June, 2020</li>
@@ -52,7 +52,7 @@
                             <p> Deserunt Sunt in culpa qui officia mollit anim id est laborn Neque porro quisquam est,
                                 qui dolorem
                                 ipsum. </p>
-                            <a href="#" class="rm">Read More</a>
+                            <a href="news-details" class="rm">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="ng-box">
                         <div class="thumb">
-                            <a href="#"><i class="fas fa-link"></i></a>
+                            <a href="news-details"><i class="fas fa-link"></i></a>
                             <img src="{{url('assets/images/ng-img3.jpg')}}" alt="">
                         </div>
                         <div class="ng-txt">
@@ -70,7 +70,7 @@
                                 </li>
                                 <li class="likes"><i class="far fa-heart"></i> 52 Likes</li>
                             </ul>
-                            <h4><a href="#">The most intensively coach is with tigers now</a>
+                            <h4><a href="news-details">The most intensively coach is with tigers now</a>
                             </h4>
                             <ul class="post-meta">
                                 <li><i class="fas fa-calendar-alt"></i> 27 June, 2020</li>
@@ -79,7 +79,7 @@
                             <p> Deserunt Sunt in culpa qui officia mollit anim id est laborn Neque porro quisquam est,
                                 qui dolorem
                                 ipsum. </p>
-                            <a href="#" class="rm">Read More</a>
+                            <a href="news-details" class="rm">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="ng-box">
                         <div class="thumb">
-                            <a href="#"><i class="fas fa-link"></i></a>
+                            <a href="news-details"><i class="fas fa-link"></i></a>
                             <img src="{{url('assets/images/ng-img4.jpg')}}" alt="">
                         </div>
                         <div class="ng-txt">
@@ -97,7 +97,7 @@
                                 </li>
                                 <li class="likes"><i class="far fa-heart"></i> 52 Likes</li>
                             </ul>
-                            <h4><a href="#">The fastest goal of the world championship</a>
+                            <h4><a href="news-details">The fastest goal of the world championship</a>
                             </h4>
                             <ul class="post-meta">
                                 <li><i class="fas fa-calendar-alt"></i> 27 June, 2020</li>
@@ -106,7 +106,7 @@
                             <p> Deserunt Sunt in culpa qui officia mollit anim id est laborn Neque porro quisquam est,
                                 qui dolorem
                                 ipsum. </p>
-                            <a href="#" class="rm">Read More</a>
+                            <a href="news-details" class="rm">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -115,7 +115,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="ng-box">
                         <div class="thumb">
-                            <a href="#"><i class="fas fa-link"></i></a>
+                            <a href="news-details"><i class="fas fa-link"></i></a>
                             <img src="{{url('assets/images/ng-img5.jpg')}}" alt="">
                         </div>
                         <div class="ng-txt">
@@ -124,7 +124,7 @@
                                 </li>
                                 <li class="likes"><i class="far fa-heart"></i> 52 Likes</li>
                             </ul>
-                            <h4><a href="#">FC Champs will learn from Tigers mistake</a>
+                            <h4><a href="news-details">FC Champs will learn from Tigers mistake</a>
                             </h4>
                             <ul class="post-meta">
                                 <li><i class="fas fa-calendar-alt"></i> 27 June, 2020</li>
@@ -133,7 +133,7 @@
                             <p> Deserunt Sunt in culpa qui officia mollit anim id est laborn Neque porro quisquam est,
                                 qui dolorem
                                 ipsum. </p>
-                            <a href="#" class="rm">Read More</a>
+                            <a href="news-details" class="rm">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -142,7 +142,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="ng-box">
                         <div class="thumb">
-                            <a href="#"><i class="fas fa-link"></i></a>
+                            <a href="news-details"><i class="fas fa-link"></i></a>
                             <img src="{{url('assets/images/ng-img6.jpg')}}" alt="">
                         </div>
                         <div class="ng-txt">
@@ -151,7 +151,7 @@
                                 </li>
                                 <li class="likes"><i class="far fa-heart"></i> 52 Likes</li>
                             </ul>
-                            <h4><a href="#">Tigers would’ve ‘loved’ to play for Tigers</a>
+                            <h4><a href="news-details">Tigers would’ve ‘loved’ to play for Tigers</a>
                             </h4>
                             <ul class="post-meta">
                                 <li><i class="fas fa-calendar-alt"></i> 27 June, 2020</li>
@@ -160,7 +160,7 @@
                             <p> Deserunt Sunt in culpa qui officia mollit anim id est laborn Neque porro quisquam est,
                                 qui dolorem
                                 ipsum. </p>
-                            <a href="#" class="rm">Read More</a>
+                            <a href="news-details" class="rm">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -169,7 +169,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="ng-box">
                         <div class="thumb">
-                            <a href="#"><i class="fas fa-link"></i></a>
+                            <a href="news-details"><i class="fas fa-link"></i></a>
                             <img src="{{url('assets/images/ng-img7.jpg')}}" alt="">
                         </div>
                         <div class="ng-txt">
@@ -178,7 +178,7 @@
                                 </li>
                                 <li class="likes"><i class="far fa-heart"></i> 52 Likes</li>
                             </ul>
-                            <h4><a href="#">List Of The Best Football Tricks of 2019</a>
+                            <h4><a href="news-details">List Of The Best Football Tricks of 2019</a>
                             </h4>
                             <ul class="post-meta">
                                 <li><i class="fas fa-calendar-alt"></i> 27 June, 2020</li>
@@ -187,7 +187,7 @@
                             <p> Deserunt Sunt in culpa qui officia mollit anim id est laborn Neque porro quisquam est,
                                 qui dolorem
                                 ipsum. </p>
-                            <a href="#" class="rm">Read More</a>
+                            <a href="news-details" class="rm">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -196,7 +196,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="ng-box">
                         <div class="thumb">
-                            <a href="#"><i class="fas fa-link"></i></a>
+                            <a href="news-details"><i class="fas fa-link"></i></a>
                             <img src="{{url('assets/images/ng-img8.jpg')}}" alt="">
                         </div>
                         <div class="ng-txt">
@@ -205,7 +205,7 @@
                                 </li>
                                 <li class="likes"><i class="far fa-heart"></i> 52 Likes</li>
                             </ul>
-                            <h4><a href="#">FC Champs Finished In First Place</a>
+                            <h4><a href="news-details">FC Champs Finished In First Place</a>
                             </h4>
                             <ul class="post-meta">
                                 <li><i class="fas fa-calendar-alt"></i> 27 June, 2020</li>
@@ -214,7 +214,7 @@
                             <p> Deserunt Sunt in culpa qui officia mollit anim id est laborn Neque porro quisquam est,
                                 qui dolorem
                                 ipsum. </p>
-                            <a href="#" class="rm">Read More</a>
+                            <a href="news-details" class="rm">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -223,7 +223,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="ng-box">
                         <div class="thumb">
-                            <a href="#"><i class="fas fa-link"></i></a>
+                            <a href="news-details"><i class="fas fa-link"></i></a>
                             <img src="{{url('assets/images/ng-img9.jpg')}}" alt="">
                         </div>
                         <div class="ng-txt">
@@ -232,7 +232,7 @@
                                 </li>
                                 <li class="likes"><i class="far fa-heart"></i> 52 Likes</li>
                             </ul>
-                            <h4><a href="#">Every Success is a Result of
+                            <h4><a href="news-details">Every Success is a Result of
                                     Hard Working</a>
                             </h4>
                             <ul class="post-meta">
@@ -242,7 +242,7 @@
                             <p> Deserunt Sunt in culpa qui officia mollit anim id est laborn Neque porro quisquam est,
                                 qui dolorem
                                 ipsum. </p>
-                            <a href="#" class="rm">Read More</a>
+                            <a href="news-details" class="rm">Read More</a>
                         </div>
                     </div>
                 </div>

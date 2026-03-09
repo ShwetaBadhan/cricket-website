@@ -1,14 +1,14 @@
 @extends('frontend.layout.master')
-@section('title','News Detail')
+@section('title','Blog Detail | Jharkhand Super League')
 @section('content')
 <!--Main Slider Start-->
       <div class="inner-banner-header wf100">
-        <h1 data-generated="News Large">News Details</h1>
+        <h1 data-generated="Blogs">Blog Details</h1>
         <div class="gt-breadcrumbs">
           <ul>
-            <li> <a href="#" class="active"> <i class="fas fa-home"></i> Home </a> </li>
-            <li> <a href="#"> News </a> </li>
-            <li> <a href="#"> News Details </a> </li>
+            <li> <a href="#" > <i class="fas fa-home"></i> Home </a> </li>
+            <li> <a href="#"> Our Blogs </a> </li>
+            <li> <a href="#"class="active"> Blog Details </a> </li>
           </ul>
         </div>
       </div>
