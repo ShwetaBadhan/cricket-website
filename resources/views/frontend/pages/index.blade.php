@@ -12,16 +12,16 @@
 
     {{-- about section --}}
     @include('frontend.components.home.about-section')
+    {{-- features --}}
+    @include('frontend.components.home.features')
 
-     {{-- banner --}}
-     {{-- <div class="banner-wrap text-center wf100 mb-80"> <img src="{{url('assets/images/placeyourbanner.png')}}" alt=""> --}}
+    {{-- banner --}}
+    {{-- <div class="banner-wrap text-center wf100 mb-80"> <img src="{{url('assets/images/placeyourbanner.png')}}" alt=""> --}}
     {{-- widgets --}}
     @include('frontend.components.home.widgets')
     {{-- work flow --}}
     @include('frontend.components.home.work-flow')
-    <!--Banner Size 920 x 100 Start-->
-    {{-- <div class="banner-wrap text-center wf100 mb-80"> <img src="{{url('assets/images/placeyourbanner.png')}}" alt="">
-    </div> --}}
+    
     <!--Banner Size 920 x 100 End-->
     {{-- news --}}
     @include('frontend.components.home.news')
@@ -29,11 +29,12 @@
     {{-- team --}}
     @include('frontend.components.home.team')
 
-    {{-- products --}}
-    {{-- @include('frontend.components.home.product') --}}
+    
 
     {{-- gallery --}}
     @include('frontend.components.home.gallery')
+
+  
 
     {{-- sponsors --}}
     @include('frontend.components.home.sponsors')
