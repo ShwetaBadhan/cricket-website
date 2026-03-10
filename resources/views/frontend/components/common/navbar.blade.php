@@ -15,7 +15,7 @@
         </div>
         <div class="col-md-6 col-sm-6">
           <ul class="toplinks">
-            <li class="lang-btn">
+            {{-- <li class="lang-btn">
               <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> ENG </button>
@@ -24,18 +24,23 @@
                   <a class="dropdown-item" href="#">AR</a>
                 </div>
               </div>
+            </li> --}}
+            <li class="currency-btn">
+              <div class="dropdown">
+                <button class="btn btn-secondary " type="button" id="currencydropdown"> BOOK TRIAL </button>
+
+              </div>
             </li>
             <li class="currency-btn">
               <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="currencydropdown"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> USD </button>
-                <div class="dropdown-menu" aria-labelledby="currencydropdown"> <a class="dropdown-item" href="#">USD</a>
-                  <a class="dropdown-item" href="#">Euro</a> <a class="dropdown-item" href="#">Pound</a>
-                </div>
+                <button class="btn btn-secondary " type="button" id="Register"> REGISTER </button>
+
               </div>
             </li>
-            <li class="acctount-btn"> <a href="#">My Account</a> </li>
-            <li class="search-btn"> <a class="search-icon" href="#search"><i class="fas fa-search"></i></a> </li>
+
+            {{-- <li class="acctount-btn"> <a href="#">Register</a> </li> --}}
+            {{-- <li class="search-btn"> <a class="search-icon" href="#search"><i class="fas fa-search"></i></a> </li>
+            --}}
           </ul>
 
           <div id="search">
@@ -56,7 +61,8 @@
     <div class="container">
       <div class="row">
         <div class="col-md-2 col-sm-5">
-          <div class="logo"><a href="{{ route('index') }}"><img src="{{url('assets/images/logo/white-jss.png')}}" alt=""></a>
+          <div class="logo"><a href="{{ route('index') }}"><img src="{{url('assets/images/logo/white-jss.png')}}"
+                alt=""></a>
           </div>
         </div>
         <div class="col-md-10 col-sm-7">
@@ -66,13 +72,14 @@
 
               </li>
               <li class="nav-item"> <a href="{{ route('about-us')}}">About Us</a> </li>
-             
+              <li class="nav-item"> <a href="{{ route('our-team')}}">Our Team</a> </li>
 
-              <li class="nav-item drop-down"> <a href="">Events</a>
+
+              <li class="nav-item drop-down"> <a href="">Selection</a>
                 <ul>
-                  <li><a href="{{ route('upcoming-match') }}">Upcoming Match</a></li>
-                  <li><a href="{{ route('match-result') }}">Match Result</a></li>
-                  {{-- <li><a href="{{ route('match-details') }}">Match Details</a></li> --}}
+
+                  <li><a href="{{ route('selection-process') }}">Selection Process</a></li>
+                  <li><a href="{{ route('required-documents') }}">Required Documents</a></li>
                 </ul>
               </li>
 
@@ -95,9 +102,12 @@
               </li> --}}
               <li class="nav-item drop-down"> <a href="">Updates</a>
                 <ul>
-                  <li><a href="{{ route('news') }}">Our Blogs</a></li>
+                  
                   <li><a href="{{ route('announcement') }}">Announcements</a></li>
                   <li><a href="{{ route('gallery') }}">Gallery</a></li>
+                  <li><a href="{{ route('match-result') }}">Match Result</a></li>
+                  <li><a href="{{ route('news') }}">Our Blogs</a></li>
+                  <li><a href="{{ route('upcoming-match') }}">Upcoming Match</a></li>
                   <li> <a href="{{ route('videos') }}">Videos</a> </li>
                 </ul>
               </li>

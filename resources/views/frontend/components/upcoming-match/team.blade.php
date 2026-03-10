@@ -137,25 +137,7 @@
               </div>
             </div>
             <!--Box End-->
-            <!--Box Start-->
-            <div class="player-box">
-              <div class="player-thumb"><img src="{{url('assets/images/player4.png')}}" alt=""></div>
-              <div class="player-txt">
-                <span class="star-tag"><i class="fas fa-star"></i></span>
-                <h3>Billy Connor</h3>
-                <strong class="player-desi">Defender</strong>
-                <p> Hi, I am Billy Connor the Defender of the soccer club. </p>
-                <ul>
-                  <li>29 <span>Age</span></li>
-                  <li>87 <span>matches</span></li>
-                  <li>113 <span>Goals</span></li>
-                  <li>87 <span>matches</span></li>
-                </ul>
-                <a class="playerbio" href="#">Player Biography <i class="far fa-arrow-alt-circle-right"></i></a> <a
-                  href="#" class="follow">Follow</a>
-              </div>
-            </div>
-            <!--Box End-->
+           
           </div>
           <!--Team 1 Players List End-->
           <!--Team 2 Players List Start-->
@@ -275,25 +257,7 @@
               </div>
             </div>
             <!--Box End-->
-            <!--Box Start-->
-            <div class="player-box">
-              <div class="player-thumb"><img src="images/Team3-240x280.png" alt=""></div>
-              <div class="player-txt">
-                <span class="star-tag"><i class="fas fa-star"></i></span>
-                <h3>Harry Simon</h3>
-                <strong class="player-desi">Defender</strong>
-                <p> Hi, I am Harry Simon the Defender of the soccer club. </p>
-                <ul>
-                  <li>29 <span>Age</span></li>
-                  <li>87 <span>matches</span></li>
-                  <li>113 <span>Goals</span></li>
-                  <li>87 <span>matches</span></li>
-                </ul>
-                <a class="playerbio" href="#">Player Biography <i class="far fa-arrow-alt-circle-right"></i></a> <a
-                  href="#" class="follow">Follow</a>
-              </div>
-            </div>
-            <!--Box End-->
+           
             <!--Box Start-->
             <div class="player-box">
               <div class="player-thumb"><img src="{{url('assets/images/player1.png')}}" alt=""></div>

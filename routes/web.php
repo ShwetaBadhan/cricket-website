@@ -14,9 +14,9 @@ Route::get('/match-result', function () {
 Route::get('/match-details', function () {
     return view('frontend.pages.match-details');
 })->name('match-details');
-Route::get('/teams', function () {
+Route::get('/our-team', function () {
     return view('frontend.pages.teams');
-})->name('teams');
+})->name('our-team');
 
 Route::get('/team-details', function () {
     return view('frontend.pages.team-details');
@@ -67,3 +67,9 @@ Route::get('/privacy-policy', function () {
 Route::get('/terms-condition', function () {
     return view('frontend.pages.terms-condition');
 })->name('terms-condition');
+Route::get('/selection-process', function () {
+    return view('frontend.pages.selection-process');
+})->name('selection-process');
+Route::get('/required-documents', function () {
+    return view('frontend.pages.required-documents');
+})->name('required-documents');

@@ -367,3 +367,26 @@ jQuery(document).ready(function($) {
         }
     }
 }); //End
+const steps = document.querySelectorAll(".hg-step");
+const cards = document.querySelectorAll(".hg-accordion-card");
+
+steps.forEach(step => {
+
+    step.addEventListener("click", function(){
+
+        let stepNumber = this.getAttribute("data-step");
+
+        steps.forEach(s => s.classList.remove("active"));
+        this.classList.add("active");
+
+        cards.forEach(card => {
+            card.classList.remove("active");
+
+            if(card.getAttribute("data-step") === stepNumber){
+                card.classList.add("active");
+            }
+        });
+
+    });
+
+});

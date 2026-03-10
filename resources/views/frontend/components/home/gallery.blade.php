@@ -12,7 +12,6 @@
                     <button class="button is-checked" data-filter="*">All Highlights</button>
                     <button class="button" data-filter=".f1">Match Photos</button>
                     <button class="button" data-filter=".f2">Match Videos</button>
-                    <a href="#" class="live-show"><i class="fas fa-circle"></i> Live Match</a>
                 </div>
             </div>
         </div>

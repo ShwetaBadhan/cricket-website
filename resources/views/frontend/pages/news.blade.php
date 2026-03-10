@@ -7,9 +7,8 @@
     <h1 data-generated="Our Blogs">Our Blogs</h1>
     <div class="gt-breadcrumbs">
       <ul>
-        <li> <a href="#" class="active"> <i class="fas fa-home"></i> Home </a> </li>
-        <li> <a href="#"> Updates</a> </li>
-        <li> <a href="#"> Our Blogs </a> </li>
+        <li> <a href="{{ route('index') }}" > <i class="fas fa-home"></i> Home </a> </li>
+        <li> <a href="#" class="active"> Our Blogs </a> </li>
       </ul>
     </div>
   </div>

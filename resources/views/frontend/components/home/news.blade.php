@@ -23,7 +23,6 @@
                             <li><img src="{{url('assets/images/user1.jpg')}}" alt="">
                                 <strong>Admin</strong>
                             </li>
-                            <li class="share"><i class="fas fa-share-alt"></i></li>
                             <li class="likes"><i class="far fa-heart"></i> 78 Likes</li>
                         </ul>
 
@@ -31,7 +30,6 @@
 
                         <ul class="post-meta">
                             <li><i class="fas fa-calendar-alt"></i> 12 March, 2026</li>
-                            <li><i class="far fa-comment"></i> 54 Comments</li>
                         </ul>
 
                         <p>India secured a dramatic win with a last-over finish, showcasing outstanding batting and disciplined bowling performance.</p>
@@ -54,7 +52,6 @@
                             <li><img src="{{url('assets/images/user1.jpg')}}" alt="">
                                 <strong>Admin</strong>
                             </li>
-                            <li class="share"><i class="fas fa-share-alt"></i></li>
                             <li class="likes"><i class="far fa-heart"></i> 63 Likes</li>
                         </ul>
 
@@ -62,7 +59,6 @@
 
                         <ul class="post-meta">
                             <li><i class="fas fa-calendar-alt"></i> 10 March, 2026</li>
-                            <li><i class="far fa-comment"></i> 41 Comments</li>
                         </ul>
 
                         <p>Emerging players impressed selectors with exceptional performances during the latest domestic T20 league matches.</p>
@@ -89,11 +85,11 @@
                     <div class="hnews-txt">
                         <h4><a href="#">Exclusive Interview with Team Captain After Historic Win</a></h4>
 
-                        <ul class="news-meta">
+                        {{-- <ul class="news-meta">
                             <li><i class="far fa-clock"></i> 08 March, 2026</li>
                             <li><i class="far fa-comment"></i> 36</li>
                             <li><i class="fas fa-share-square"></i> 92</li>
-                        </ul>
+                        </ul> --}}
                     </div>
                 </div>
                 <!--Box End-->
@@ -110,11 +106,11 @@
                     <div class="hnews-txt">
                         <h4><a href="#">Top 10 Sixes from the Latest T20 League Matches</a></h4>
 
-                        <ul class="news-meta">
+                        {{-- <ul class="news-meta">
                             <li><i class="far fa-clock"></i> 06 March, 2026</li>
                             <li><i class="far fa-comment"></i> 48</li>
                             <li><i class="fas fa-share-square"></i> 120</li>
-                        </ul>
+                        </ul> --}}
                     </div>
                 </div>
                 <!--Box End-->

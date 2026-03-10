@@ -29,7 +29,7 @@
                 <li class="col-lg-3 col-md-6">
                     <div class="slidetab-box">
                         <span>04</span>
-                        <h6><a href="{{ route('teams') }}">All Teams</a></h6>
+                        <h6><a href="{{ route('our-team') }}">All Teams</a></h6>
                         <strong>Teams & Squads</strong>
                     </div>
                 </li>

@@ -9,8 +9,8 @@
             <h1 data-generated="Image Gallery">Videos</h1>
             <div class="gt-breadcrumbs">
                 <ul>
-                    <li> <a href="#" class="active"> <i class="fas fa-home"></i> Home </a> </li>
-                    <li> <a href="#"> Videos </a> </li>
+                    <li> <a href="#" > <i class="fas fa-home"></i> Home </a> </li>
+                    <li> <a href="#" class="active"> Videos </a> </li>
                 </ul>
             </div>
         </div>
