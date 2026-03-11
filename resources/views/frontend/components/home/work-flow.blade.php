@@ -1,4 +1,8 @@
-<section class="jssl-process-zone">
+<section class="jssl-process-zone"  style="
+    background-image: url('{{ asset('assets/images/teamsec-bg.jpg') }}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;">
 
     <div class="jssl-process-holder">
 

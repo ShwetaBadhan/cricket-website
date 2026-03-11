@@ -1,4 +1,8 @@
-<section class="hg-services-section wf100">
+<section class="hg-services-section wf100" style="
+    background-image: url('{{ asset('assets/images/video-logos.jpg') }}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;">
     <div class="hg-services-container">
 
         <div class="row">

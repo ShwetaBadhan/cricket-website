@@ -10151,7 +10151,6 @@ a.full-team,
 .jssl-process-heading {
     font-size: 38px;
     font-weight: 700;
-    margin-bottom: 10px;
 }
 
 .jssl-process-sub {
@@ -10221,13 +10220,13 @@ a.full-team,
 }
 
 .jssl-process-title {
-    margin-bottom: 10px;
+    margin-bottom: 10px !important;
 }
 
 .jssl-process-text {
     font-size: 14px;
     line-height: 1.6;
-    color: #fff;
+    color: #ccc;
 }
 
 .jssl-process-arrow {
@@ -10434,6 +10433,8 @@ a.full-team,
 .hg-services-section {
     padding: 80px 0;
     background: linear-gradient(60deg, #f00080, #4d1463);
+
+
 }
 
 .hg-services-container {
