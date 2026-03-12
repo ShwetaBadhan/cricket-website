@@ -5,26 +5,35 @@
     <div class="player-squad">
       <div class="container">
         <div class="row">
+          <div class="col-md-12">
+            <div class="section-title">
+              <h2> OUR TEAM</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
 
           <!-- Team Box Start -->
           <div class="col-md-6">
             <div class="player-box">
               <div class="player-thumb">
-                <img src="{{ asset('assets/images/gallery/team-01.png') }}" alt="">
+                <img src="{{ asset('assets/images/player1.png') }}" alt="">
               </div>
               <div class="player-txt">
                 <div class="num">01</div>
-                <h3>Rajasthan Royals XI</h3>
-                <strong class="player-desi">Team Captain</strong>
-                <p>The Rajasthan Royals XI represent the pride of Rajasthan with a strong squad known for aggressive
-                  batting and disciplined bowling.</p>
+                <h3>Rajesh Sharma</h3>
+                <strong class="player-desi">League Commissioner</strong>
+
+                <p>The League Commissioner oversees the overall governance of the league, ensuring fair play,
+                  transparent operations, and strategic growth of the tournament.</p>
+
                 <ul>
-                  <li>24 <span>Players</span></li>
-                  <li>18 <span>Matches</span></li>
-                  <li>11 <span>Wins</span></li>
-                  <li>7 <span>Losses</span></li>
+                  <li>12 <span>Years </span></li>
+                  <li>25 <span>Events </span></li>
+                  <li>18 <span>Leagues </span></li>
+                  <li>10 <span>Partners</span></li>
                 </ul>
-                
+
               </div>
             </div>
           </div>
@@ -34,21 +43,23 @@
           <div class="col-md-6">
             <div class="player-box">
               <div class="player-thumb">
-                <img src="{{ asset('assets/images/gallery/team-02.png') }}" alt="">
+                <img src="{{ asset('assets/images/player2.png') }}" alt="">
               </div>
               <div class="player-txt">
                 <div class="num">02</div>
-                <h3>Maharashtra Strikers</h3>
-                <strong class="player-desi">Team Captain</strong>
-                <p>Maharashtra Strikers are known for their balanced lineup and powerful middle order that dominates the
-                  league matches.</p>
+                <h3>Rakesh Kumar</h3>
+                <strong class="player-desi">Tournament Director</strong>
+
+                <p>The Tournament Director is responsible for planning the tournament structure, match scheduling, team
+                  coordination, and ensuring smooth execution of all league matches.</p>
+
                 <ul>
-                  <li>25 <span>Players</span></li>
-                  <li>18 <span>Matches</span></li>
-                  <li>12 <span>Wins</span></li>
-                  <li>6 <span>Losses</span></li>
+                  <li>10 <span>Years </span></li>
+                  <li>20 <span>Tournaments</span></li>
+                  <li>16 <span>Events</span></li>
+                  <li>30 <span>Teams </span></li>
                 </ul>
-                
+
               </div>
             </div>
           </div>
@@ -58,21 +69,23 @@
           <div class="col-md-6">
             <div class="player-box">
               <div class="player-thumb">
-                <img src="{{ asset('assets/images/gallery/team-03.png') }}" alt="">
+                <img src="{{ asset('assets/images/player3.png') }}" alt="">
               </div>
               <div class="player-txt">
                 <div class="num">03</div>
-                <h3>Bihar Warriors</h3>
-                <strong class="player-desi">Team Captain</strong>
-                <p>The Bihar Warriors bring young talent and fearless cricket to the league, making them one of the most
-                  exciting teams to watch.</p>
+                <h3>Priyal Sharma</h3>
+                <strong class="player-desi">Head of Operations</strong>
+
+                <p>The Operations Head manages logistics, venue coordination, match operations, and ensures that all
+                  league activities run efficiently.</p>
+
                 <ul>
-                  <li>23 <span>Players</span></li>
-                  <li>18 <span>Matches</span></li>
-                  <li>9 <span>Wins</span></li>
-                  <li>9 <span>Losses</span></li>
+                  <li>8 <span>Years </span></li>
+                  <li>50 <span>Matches </span></li>
+                  <li>12 <span>Events</span></li>
+                  <li>15 <span>Venues </span></li>
                 </ul>
-                
+
               </div>
             </div>
           </div>
@@ -82,73 +95,29 @@
           <div class="col-md-6">
             <div class="player-box">
               <div class="player-thumb">
-                <img src="{{ asset('assets/images/gallery/team-04.png') }}" alt="">
+                <img src="{{ asset('assets/images/player4.png') }}" alt="">
               </div>
               <div class="player-txt">
                 <div class="num">04</div>
-                <h3>UP Thunder</h3>
-                <strong class="player-desi">Team Captain</strong>
-                <p>UP Thunder are known for their fast bowlers and aggressive opening partnership that often sets the
-                  tone for the match.</p>
+                <h3>Amit Verma</h3>
+                <strong class="player-desi">Player Relations Manager</strong>
+
+                <p>The Player Relations Manager handles player registrations, auctions, communication with teams, and
+                  player support throughout the tournament.</p>
+
                 <ul>
-                  <li>24 <span>Players</span></li>
-                  <li>18 <span>Matches</span></li>
-                  <li>10 <span>Wins</span></li>
-                  <li>8 <span>Losses</span></li>
+                  <li>6 <span>Years </span></li>
+                  <li>500 <span>Players </span></li>
+                  <li>10 <span>Auctions </span></li>
+                  <li>18 <span>Teams </span></li>
                 </ul>
-                
+
               </div>
             </div>
           </div>
           <!-- Team Box End -->
 
-          <!-- Team Box Start -->
-          <div class="col-md-6">
-            <div class="player-box">
-              <div class="player-thumb">
-                <img src="{{ asset('assets/images/gallery/team-05.png') }}" alt="">
-              </div>
-              <div class="player-txt">
-                <div class="num">05</div>
-                <h3>Punjab Kings XI</h3>
-                <strong class="player-desi">Team Captain</strong>
-                <p>Punjab Kings XI combine experienced players with emerging talent, making them a tough competitor in
-                  every season.</p>
-                <ul>
-                  <li>25 <span>Players</span></li>
-                  <li>18 <span>Matches</span></li>
-                  <li>11 <span>Wins</span></li>
-                  <li>7 <span>Losses</span></li>
-                </ul>
-                
-              </div>
-            </div>
-          </div>
-          <!-- Team Box End -->
 
-          <!-- Team Box Start -->
-          <div class="col-md-6">
-            <div class="player-box">
-              <div class="player-thumb">
-                <img src="{{ asset('assets/images/gallery/team-06.png') }}" alt="">
-              </div>
-              <div class="player-txt">
-                <div class="num">06</div>
-                <h3>Madhya Pradesh Titans</h3>
-                <strong class="player-desi">Team Captain</strong>
-                <p>The MP Titans are a dynamic squad known for their strong bowling attack and excellent fielding
-                  performance.</p>
-                <ul>
-                  <li>23 <span>Players</span></li>
-                  <li>18 <span>Matches</span></li>
-                  <li>10 <span>Wins</span></li>
-                  <li>8 <span>Losses</span></li>
-                </ul>
-                
-              </div>
-            </div>
-          </div>
-          <!-- Team Box End -->
 
         </div>
         <div class="row">

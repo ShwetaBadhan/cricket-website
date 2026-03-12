@@ -1,4 +1,8 @@
-<section class="cric-mvv-section  wf100 p80-50">
+<section class="cric-mvv-section  wf100 p80-50" style="
+    background-image: url('{{ asset('assets/images/teamsec-bg.jpg') }}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;">
     <div class="cric-mvv-container">
 
         <div class="cric-mvv-card">

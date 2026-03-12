@@ -33,14 +33,14 @@
             </li>
             <li class="currency-btn">
               <div class="dropdown">
-                <button class="btn btn-secondary " type="button" id="Register"> REGISTER </button>
+                <button class="btn btn-secondary " type="button" id="Register"> SHOP </button>
 
               </div>
             </li>
 
             {{-- <li class="acctount-btn"> <a href="#">Register</a> </li> --}}
-            {{-- <li class="search-btn"> <a class="search-icon" href="#search"><i class="fas fa-search"></i></a> </li>
-            --}}
+            <li class="search-btn"> <a class="search-icon" href="#search"><i class="fas fa-search"></i></a> </li>
+
           </ul>
 
           <div id="search">
@@ -71,39 +71,59 @@
               <li class="nav-item"> <a href="">Home</a>
 
               </li>
-              <li class="nav-item"> <a href="{{ route('about-us')}}">About Us</a> </li>
-              <li class="nav-item"> <a href="{{ route('our-team')}}">Our Team</a> </li>
 
 
-              <li class="nav-item drop-down"> <a href="">Selection</a>
+
+              <li class="nav-item drop-down"> <a href="javascript:void(0)">Who We Are</a>
                 <ul>
 
-                  <li><a href="{{ route('selection-process') }}">Selection Process</a></li>
+                  <li> <a href="{{ route('about-us')}}">About Us</a> </li>
+                  <li> <a href="{{ route('our-team')}}">Our Team</a> </li>
+                  <li> <a href="{{ route('our-organizer') }}">Our Organiser</a> </li>
+                  {{-- <li class="drop-down"> <a href="#">More</a>
+                    <ul>
+                      <li><a href="#">Brand Promotion</a></li>
+                      <li><a href="#">Player Registeration</a></li>
+
+                    </ul>
+                  </li> --}}
+                </ul>
+              </li>
+              <li class="nav-item drop-down"> <a href="javascript:void(0)">Sports</a>
+                <ul>
+                  <li><a href="{{ route('athletics') }}">Athletics</a></li>
+                  <li><a href="{{ route('sport-details') }}">Cricket</a></li>
+                  <li><a href="{{ route('football') }}">Football</a></li>
+
+                </ul>
+              </li>
+              <li class="nav-item drop-down"> <a href="javascript:void(0)">Players</a>
+                <ul>
+
+                  <li><a href="">Auction of Players</a></li>
+                  <li><a href="">Membership / VIP Access</a></li>
+                  <li><a href="">Nodal Registration</a></li>
+                  <li><a href="">Player Registration</a></li>
+                  <li><a href="">Referral Link</a></li>
+                  <li><a href="">Total Players Registration</a></li>
+                </ul>
+              </li>
+              <li class="nav-item drop-down"> <a href="javascript:void(0)">Events</a>
+                <ul>
+
+                  <li><a href="{{ route('announcement') }}">Event Categories</a></li>
                   <li><a href="{{ route('required-documents') }}">Required Documents</a></li>
+                  <li><a href="{{ route('selection-process') }}">Selection Process</a></li>
                 </ul>
               </li>
 
-              {{-- <li class="nav-item drop-down"> <a href="">More</a>
+
+
+
+              <li class="nav-item drop-down"> <a href="javascript:void(0)">Updates</a>
                 <ul>
-                  <li><a href="#">About us</a></li>
-                  <li><a href="{{ route('photos') }}">Photos</a></li>
-                  <li><a href="#">Auction</a></li>
 
-                  <li class="drop-down"> <a href="#">Stats</a>
-                    <ul>
-                      <li><a href="#">Overall Stats</a></li>
-                      <li><a href="#">Head to Head</a></li>
-
-                    </ul>
-                  </li>
-
-
-                </ul>
-              </li> --}}
-              <li class="nav-item drop-down"> <a href="">Updates</a>
-                <ul>
-                  
-                  <li><a href="{{ route('announcement') }}">Announcements</a></li>
+                  {{-- <li><a href="{{ route('announcement') }}">Announcements</a></li> --}}
                   <li><a href="{{ route('gallery') }}">Gallery</a></li>
                   <li><a href="{{ route('match-result') }}">Match Result</a></li>
                   <li><a href="{{ route('news') }}">Our Blogs</a></li>
@@ -112,8 +132,13 @@
                 </ul>
               </li>
 
-              <li class="nav-item"> <a href="{{ route('contact-us') }}">Contact Us</a>
+              <li class="nav-item drop-down"> <a href="javascript:void(0)">Partners</a>
+                <ul>
 
+                  <li><a href="">Become a JSL Influencer</a></li>
+                  <li><a href="">Become a Sponsor</a></li>
+                  <li><a href="">Brand Promotion</a></li>
+                </ul>
               </li>
 
               {{-- <li class="nav-item drop-down"> <a href="{{ route('fixtures') }}">Fixtures</a> --}}
@@ -121,7 +146,7 @@
               </li>
 
 
-              <li class="nav-item buy-ticket"> <a href="#">Buy Tickets</a> </li>
+              <li class="nav-item buy-ticket"> <a href="{{ route('contact-us') }}">Contact Us</a> </li>
             </ul>
           </nav>
         </div>

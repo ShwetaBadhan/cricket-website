@@ -14,17 +14,12 @@
 .fvideo-box:hover a.picon,
 .news-updates .owl-theme .owl-dots .owl-dot.active span,
 .news-updates .owl-theme .owl-dots .owl-dot:hover span,
-.rev_slider_wrapper a,
 .h3-next-match .next-match-box h4,
 .h3-match-counter .hide,
 .h3-team .nav-item.nav-link.active,
 .h3-team .nav-link:hover,
-.toplinks .search-btn a:hover,
-.logo-navbar .nav-item.buy-ticket a,
+
 #home-slider .caption a,
-.next-match-widget h5.title,
-.buy-ticket a,
-.point-table-widget table thead,
 .vn-txt span.vp-date,
 .thumb a:hover,
 .vthumb a.play span:hover,
@@ -88,7 +83,7 @@ a.full-team:hover,
 .h3-twitter .owl-theme .owl-dots .owl-dot:hover span,
 .lp-box:hover .lp-name,
 .lp-box .vp:hover {
-    background-color: #4d1362;
+    background-color: var(--secondary-color)
 }
 /********** |== Redish Background Color End == | **********/
 
@@ -104,11 +99,7 @@ p.cr a,
 .lp-box .lp-name strong,
 .fvideo-box:hover .fvid-cap h5 a,
 .h3-tweets h4,
-.rev_slider_wrapper h1 span,
-.h3-match-counter .team-right strong,
-.h3-match-counter .team-left strong,
-.mdate-time strong,
-.match-loc i,
+
 .toplinks li a:hover,
 .main-nav .drop-down ul a:hover,
 .main-nav .drop-down ul .active > a,
@@ -132,7 +123,6 @@ p.cr a,
 .pro-list-box .price strong,
 .pro-list-box:hover .pro-txt h3 a,
 .tweets-banner .tbanner a:hover,
-.about-widget li i,
 .copyr a,
 .story-row h5 a:hover,
 .tsw-meta li a,
@@ -179,7 +169,7 @@ p.cr a,
 .news-list-post:hover .post-author li.share,
 .contact-box h5,
 .p404-wrap h1 {
-    color: #f00080;
+    color: var(--primary-color);
 }
 /********** |== Redish Text Color End == | **********/
 
@@ -220,7 +210,7 @@ p.cr a,
 .h4-player-squad .owl-theme .owl-dots .owl-dot.active span,
 .h4-player-squad .owl-theme .owl-dots .owl-dot:hover span,
 .home-blue .logo-navbar .nav-item > a:after,
-.logo-navbar .nav-item.buy-ticket a,
+
 .ms-news:after,
 .h4-probox .cart-btn:after,
 .h4-probox .cart-btn i,
@@ -229,7 +219,8 @@ p.cr a,
 .upcoming-live span.t1s,
 .contact-newsletter button,
 .home-blue .rev_slider_wrapper a:hover {
-    background-color: #f00080;
+    /* background-color: #f00080; */
+    background-color: var(--primary-color);
 }
 /**********  Text Color  *********/
 .hvideo-box:hover h4 a,
@@ -259,7 +250,5 @@ p.cr a,
 .nd-btn {
     border-color: #fd1e50;
 }
-.slidetab-box strong{
-	color:#fff;
-}
+
 /********** |== Home Page 4 Redish Color End == | **********/

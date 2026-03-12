@@ -73,3 +73,15 @@ Route::get('/selection-process', function () {
 Route::get('/required-documents', function () {
     return view('frontend.pages.required-documents');
 })->name('required-documents');
+Route::get('/our-organizer', function(){
+    return view('frontend.pages.organizer');
+})->name('our-organizer');
+Route::get('/sport-details' , function(){
+    return view('frontend.pages.sport-details');
+})->name('sport-details');
+Route::get('/athletics' , function(){
+    return view('frontend.pages.athletics');
+})->name('athletics');
+Route::get('/football' , function(){
+    return view('frontend.pages.football');
+})->name('football');

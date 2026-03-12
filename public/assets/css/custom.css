@@ -87,8 +87,20 @@ Sidebar heading:	font:28px/28px 'Roboto Condensed', serif;
 @import url("../../../css-3");
 /* Google Fonts End */
 
+:root {
+    --primary-color: #305e19;
+    --secondary-color: #fcd01c;
+    --light-green-theme: rgb(117 156 100);
+    --gradient-color: linear-gradient(45deg, #f0f8f4, #efdc91);
+    --gradient-color2: linear-gradient(
+        to bottom,
+        rgb(252 208 28) 0%,
+        #305e19 100%
+    );
+    --primary-btn-bg: linear-gradient(45deg, rgb(252 208 28) 0%, #305e19 100%);
+}
 html body {
- font-family: "Roboto Condensed", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
 }
 
 .wrapper h1,
@@ -213,14 +225,14 @@ html body {
     top: 0;
 }
 .main-header .topbar {
-    background: linear-gradient(60deg, #f00080, #4d1463);
+    background: var(--gradient-color);
     /* background: #f00080; */
     width: 100%;
     float: left;
     padding: 5px 0;
 }
 .main-header .logo-navbar {
-    background: #3b0d46;
+    background: var(--primary-color);
     width: 100%;
     float: left;
 }
@@ -238,7 +250,7 @@ html body {
     display: block;
     text-align: center;
     line-height: 30px;
-    background: rgb(239 156 200);
+    background: var(--light-green-theme);
     color: #fff;
     font-size: 14px;
     border-radius: 3px;
@@ -278,15 +290,15 @@ li.acctount-btn {
 .toplinks .search-btn a {
     width: 30px;
     height: 30px;
-    background: rgba(255, 255, 255, 0.05);
+    /* background: var(--secondary-color); */
     text-align: center;
     line-height: 30px;
     display: block;
-    color: #fff;
+    color: var(--primary-color);
     font-size: 14px;
 }
 .toplinks .search-btn a:hover {
-    background: #e81f3e;
+    background: var(--primary-color);
     color: #fff;
 }
 .toplinks li a:hover {
@@ -302,8 +314,9 @@ li.acctount-btn {
     padding: 0px;
     font-size: 12px;
     line-height: 30px;
+    font-weight: 700;
     border: 0px;
-    color: #fff;
+    color: var(--primary-color);
     /* border-right: 1px solid #fff; */
     padding: 0 10px;
     border-radius: 0px;
@@ -312,7 +325,7 @@ li.acctount-btn {
     border-right: 1px solid #fff;
 }
 #currencydropdown {
-    border-right: 1px solid #fff;
+    border-right: 1px solid var(--primary-color);
 }
 .logo {
     padding: 10px 0 0 0;
@@ -386,7 +399,7 @@ li.acctount-btn {
 }
 .main-nav .drop-down > a:after {
     content: "\f107";
-     font-family: "Roboto Condensed", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     padding-left: 10px;
 }
 .main-nav .drop-down .drop-down ul {
@@ -405,7 +418,7 @@ li.acctount-btn {
     content: "\f105";
     position: absolute;
     right: 15px;
-     font-family: "Roboto Condensed", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     font-weight: 900;
 }
 /* Mobile Navigation */
@@ -442,7 +455,7 @@ li.acctount-btn {
 }
 .mobile-nav .drop-down > a:after {
     content: "\f078";
-   font-family: "Roboto Condensed", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     padding-left: 10px;
     position: absolute;
     right: 15px;
@@ -538,10 +551,9 @@ li.acctount-btn {
     clear: none;
 }
 .logo-navbar .nav-item.buy-ticket a {
-    background: #e81f3e;
-    color: #fff;
+    background: var(--secondary-color);
+    color: var(--primary-color);
     line-height: 33px;
-    color: #fff;
     padding: 0 18px;
     border-radius: 3px;
     margin-top: 29px;
@@ -601,15 +613,15 @@ li.acctount-btn {
 }
 .rev_slider_wrapper h1 span,
 #home-slider .caption h1 span {
-    color: #e81f3e;
+    color: var(--secondary-color)
 }
 .rev_slider_wrapper a {
     display: inline-block;
-    background: #e81f3e;
+    background: var(--primary-btn-bg);
     border-radius: 3px;
     color: #fff;
     font-weight: 700;
-   font-family: "Roboto Condensed", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     padding: 12px 30px;
     text-transform: uppercase;
     margin-right: 20px;
@@ -639,7 +651,7 @@ li.acctount-btn {
     line-height: 46px;
     color: #fff;
     font-weight: 600;
-     font-family: "Roboto Condensed", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     padding: 0 30px;
     text-transform: uppercase;
     margin-right: 20px;
@@ -651,10 +663,10 @@ li.acctount-btn {
 }
 .slider-tabs .container {
     max-width: 1110px;
-    background: #ea0282;
+    background: var(--gradient-color);
     border-radius: 5px;
     padding: 23px 15px 15px;
-    border-bottom: 10px solid #2b3249;
+    border-bottom: 10px solid var(--primary-color);
 }
 .slider-tabs ul {
     margin: 0px;
@@ -678,7 +690,7 @@ li.acctount-btn {
     position: absolute;
     left: 0;
     bottom: -25px;
-    background: #be7ed5;
+    background: var(--primary-color);
     width: 0;
     height: 10px;
     content: "";
@@ -695,7 +707,7 @@ li.acctount-btn {
     left: 0;
     top: 0;
     border-radius: 100%;
-    color: rgb(239 156 200);
+    color: var(--primary-color);
 }
 .slidetab-box h6 {
     margin: 0 0 7px;
@@ -704,17 +716,17 @@ li.acctount-btn {
     font-weight: 700;
 }
 .slidetab-box h6 a {
-    color: #f8d0e5;
+    color: var(--primary-color);
 }
 .slidetab-box strong {
     font-weight: 600;
-    color: #e81f3e;
+    color: var(--primary-color);
     font-size: 12px;
     text-transform: uppercase;
     display: block;
 }
 .slidetab-box:hover h6 a {
-    color: #fff;
+    color: black;
 }
 .slidetab-box:hover:after {
     width: 100%;
@@ -831,7 +843,7 @@ li.acctount-btn {
     float: left;
 }
 .next-match-widget h5.title {
-    background: #e81f3e;
+    background: var(--primary-color);
     color: #fff;
     line-height: 51px;
     text-align: center;
@@ -869,8 +881,8 @@ li.acctount-btn {
     display: block;
     font-family: "Roboto Condensed", sans-serif;
     font-size: 24px;
-    color: #222222;
-    font-weight: 400;
+    color: var(--primary-color);
+    font-weight: 600;
     margin: 10px 0 0;
 }
 .nmw-txt {
@@ -926,7 +938,7 @@ li.acctount-btn {
     padding: 24px 0;
 }
 .buy-ticket a {
-    background: #e81f3e;
+    background: var(--primary-btn-bg);
     color: #fff;
     line-height: 40px;
     display: inline-block;
@@ -941,7 +953,7 @@ li.acctount-btn {
     color: #fff;
 }
 .match-teams-vs .vs {
-    background: #f0f0f0;
+    background: var(--secondary-color);
     border: 1px solid #e1e1e1;
     display: inline-block;
     line-height: 30px;
@@ -967,7 +979,7 @@ li.acctount-btn {
     border-radius:;
 }
 .point-table-widget table thead {
-    background: #e81f3e;
+    background: var(--primary-color);
 }
 .point-table-widget table thead tr th {
     line-height: 46px;
@@ -1008,20 +1020,9 @@ li.acctount-btn {
     float: left;
     border-radius: 5px;
     background: rgb(53, 61, 84);
-    background: -moz-linear-gradient(
-        top,
-        rgba(53, 61, 84, 1) 0%,
-        rgba(23, 30, 54, 1) 100%
-    ); /* FF3.6-15 */
-    background: -webkit-linear-gradient(
-        top,
-        rgba(53, 61, 84, 1) 0%,
-        rgba(23, 30, 54, 1) 100%
-    ); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(
-        to bottom,
-        rgb(234 2 130) 0%,
-        #461461 100%
+
+    background: var(
+        --gradient-color2
     ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#353d54', endColorstr='#171e36', GradientType=0 ); /* IE6-9 */
     margin: 0 0 12px;
@@ -1664,7 +1665,7 @@ li.acctount-btn {
     background-size: cover;
 }
 .player-thumb img {
-  height: 330px;
+    height: 330px;
     width: 250px;
     /* to be remove when images updated */
 }
@@ -2225,7 +2226,7 @@ a.full-team:hover {
 /********** |== Main Footer Start == | **********/
 
 .main-footer {
-    background: #171e36;
+    background: var(--primary-color);
 }
 .footer-widget {
     padding: 60px 0;
@@ -2275,7 +2276,7 @@ a.full-team:hover {
     margin: 0 0 15px;
 }
 .about-widget li i {
-    color: #e81f3e;
+    color: var(--secondary-color);
     position: absolute;
     left: 0;
     top: 5px;
@@ -2330,7 +2331,7 @@ a.full-team:hover {
     border: 0px;
     border-radius: 3px;
     background: #e81f3e;
-    color: #fff;
+    color: var(--primary-color);
     font-weight: 700;
     font-family: "Roboto Condensed", sans-serif;
     padding: 0 20px;
@@ -5032,7 +5033,7 @@ p.stars a:before {
     width: 1em;
     height: 1em;
     line-height: 1;
-     font-family: "Roboto Condensed", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     font-weight: 900;
     content: "\f005";
     color: #43454b;
@@ -5616,7 +5617,7 @@ ul.post-meta li i {
     content: "\f10d";
     font-weight: 700;
     font-size: 45px;
-     font-family: "Roboto Condensed", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     bottom: 20px;
     right: 20px;
     color: rgba(255, 255, 255, 0.07);
@@ -6863,12 +6864,12 @@ ul.rep-comments {
     font-size: 220px;
     font-weight: 600;
     color: #e81f3e;
-     font-family: "Roboto Condensed", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
 }
 .p404-wrap h2 {
     font-size: 32px;
     color: #fff;
-     font-family: "Roboto Condensed", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     font-weight: 700;
     text-transform: uppercase;
 }
@@ -7678,26 +7679,26 @@ ul.gallery-row li.gall-cal {
 .h3-match-counter .team-left strong {
     display: block;
     font-size: 14px;
-    color: #e81f3e;
+    color:var(--secondary-color);
     margin: 5px 0 0;
     font-family: "Roboto Condensed", sans-serif;
 }
 .mdate-time {
-    color: #7c859a;
+    color: #fff;
     font-size: 16px;
     margin: 12px 0 0 55px;
 }
 .mdate-time strong {
     display: block;
-    color: #e81f3e;
+    color: var(--secondary-color);
     font-weight: 400;
 }
 .match-loc i {
-    color: #e81f3e;
+    color: var(--secondary-color);
     margin-right: 5px;
 }
 .match-loc {
-    color: #7c859a;
+    color: #fff;
     font-size: 16px;
     margin: 14px 0 0;
     text-align: center;
@@ -8025,7 +8026,7 @@ p.cr a {
 .home-blue h4,
 .home-blue h5,
 .home-blue h6 {
-     font-family: "Roboto Condensed", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
 }
 .home-blue li,
 .home-blue span,
@@ -8033,7 +8034,7 @@ p.cr a {
 .home-blue p,
 .home-blue th,
 .home-blue td {
-     font-family: "Roboto Condensed", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
 }
 .home-blue .main-header .topbar {
     background: #f00080;
@@ -8047,7 +8048,7 @@ p.cr a {
 }
 .home-blue .logo-navbar .nav-item > a {
     color: #fff;
-   font-family: "Roboto Condensed", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     font-size: 14px;
     font-weight: 600;
     padding: 0 10px;
@@ -8063,7 +8064,7 @@ p.cr a {
     border-radius: 20px;
 }
 .home-blue .main-nav .drop-down ul a {
-     font-family: "Roboto Condensed", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     font-size: 14px;
     font-weight: 400;
     letter-spacing: 0.05px;
@@ -8071,7 +8072,7 @@ p.cr a {
 .slide-content-box strong {
     font-size: 30px;
     color: #fff;
-     font-family: "Roboto Condensed", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     font-weight: 400;
     text-transform: uppercase;
 }
@@ -8080,7 +8081,7 @@ p.cr a {
     font-weight: 700;
 }
 .home-blue .slide-content-box h1 {
-     font-family: "Roboto Condensed", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     font-size: 90px;
     margin: 0px;
 }
@@ -8091,7 +8092,7 @@ p.cr a {
     font-size: 14px;
     color: #fff;
     font-weight: 400;
-     font-family: "Roboto Condensed", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     padding: 12px 30px;
     text-transform: uppercase;
     margin-right: 20px;
@@ -8483,7 +8484,7 @@ body .h4-stitle {
 .share-widget ul li a .sw:after {
     position: absolute;
     content: "\f0d8";
-     font-family: "Roboto Condensed", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     font-weight: 900;
     left: 0;
     bottom: -18px;
@@ -8784,7 +8785,7 @@ body .h4-stitle {
 .mv-txt h5 {
     font-size: 20px;
     font-weight: 600;
-     font-family: "Roboto Condensed", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     letter-spacing: -0.5px;
 }
 .mv-txt h5 a {
@@ -8842,7 +8843,7 @@ body .h4-stitle {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00282881', endColorstr='#e6080a4f', GradientType=0 ); /* IE6-9 */
 }
 .h4-player-squad .player-box .pnum {
-     font-family: "Roboto Condensed", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     position: absolute;
     left: 15px;
     top: 15px;
@@ -8897,7 +8898,7 @@ body .h4-stitle {
 .tp-info p {
     font-size: 14px;
     color: #fff;
-     font-family: "Roboto Condensed", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     font-weight: 300;
     letter-spacing: -0.4px;
 }
@@ -8910,7 +8911,7 @@ body .h4-stitle {
 .tp-info ul li {
     float: left;
     color: #666666;
-     font-family: "Roboto Condensed", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     font-size: 12px;
     text-transform: uppercase;
     text-align: center;
@@ -9006,7 +9007,7 @@ body .h4-stitle {
     color: #fff;
     font-style: italic;
     font-weight: 300;
-     font-family: "Roboto Condensed", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
 }
 .social-media-wall .insta-post img {
     width: 100%;
@@ -9173,7 +9174,7 @@ body .h4-stitle {
     font-size: 20px;
     font-weight: 700;
     text-decoration: none;
-     font-family: "Roboto Condensed", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     margin-right: 7px;
 }
 .h4-probox .pro-txt .price del {
@@ -9193,7 +9194,7 @@ body .h4-stitle {
     padding: 0 60px 0 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
     color: #888888;
-     font-family: "Roboto Condensed", sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     font-size: 14px;
     overflow: hidden;
 }
@@ -10409,7 +10410,7 @@ a.full-team,
     /* margin-bottom: 15px; */
     margin: 0 auto 15px;
     padding: 5px;
-    background: #d9037c;
+    background: #759c64;
     border-radius: 50%;
     width: 60px;
     align-items: center;
@@ -10419,9 +10420,9 @@ a.full-team,
 
 .cric-mvv-title {
     font-size: 22px;
-    font-weight: 700;
+    font-weight: 700 !important;
     margin-bottom: 12px;
-    color: #222;
+    color: var(--primary-color) !important;
 }
 
 .cric-mvv-text {
@@ -10433,8 +10434,6 @@ a.full-team,
 .hg-services-section {
     padding: 80px 0;
     background: linear-gradient(60deg, #f00080, #4d1463);
-
-
 }
 
 .hg-services-container {
@@ -10528,7 +10527,7 @@ a.full-team,
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
-    padding:50px 0 0;
+    padding: 50px 0 0;
 }
 
 .hg-process-item {
@@ -10536,7 +10535,7 @@ a.full-team,
     position: relative;
     width: 180px;
 }
-.hg-process-circle:hover{
+.hg-process-circle:hover {
     transform: scale(1.08);
     transition: 0.3s;
 }
@@ -10623,102 +10622,99 @@ a.full-team,
     top: 100px;
     left: 142px;
 }
-@media (max-width:991px){
+@media (max-width: 991px) {
+    .hg-process-wrapper {
+        flex-direction: column;
+        gap: 40px;
+    }
 
-.hg-process-wrapper{
-flex-direction:column;
-gap:40px;
-}
-
-.hg-process-item::after{
-display:none;
-}
-
-}
-@media (max-width: 666px){
-    .hg-process-item{
-        border: 1px solid grey;
-    position: relative;
-    padding: 15px;
-    border-radius: 90px;
+    .hg-process-item::after {
+        display: none;
     }
 }
-.hg-documents-section{
-    padding:80px 0;
-    background:#f7f8fb;
+@media (max-width: 666px) {
+    .hg-process-item {
+        border: 1px solid grey;
+        position: relative;
+        padding: 15px;
+        border-radius: 90px;
+    }
+}
+.hg-documents-section {
+    padding: 80px 0;
+    background: #f7f8fb;
 }
 
-.hg-documents-container{
-    max-width:1100px;
-    margin:auto;
+.hg-documents-container {
+    max-width: 1100px;
+    margin: auto;
 }
 
-.hg-documents-title{
-    font-size:32px;
-    font-weight:700;
-    margin-bottom:50px;
+.hg-documents-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 50px;
 }
-
 
 /* STEP WRAPPER */
 
-.hg-steps-wrapper{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    position:relative;
-    margin-bottom:40px;
-    
+.hg-steps-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-bottom: 40px;
+
     padding-top: 50px;
 }
 
 /* dotted line */
 
-.hg-steps-wrapper::before{
-    content:"";
-    position:absolute;
-    top:95px;
-    left:10%;
-    width:80%;
-    border-top:2px dotted #8a2c8a;
-    z-index:1;
+.hg-steps-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 95px;
+    left: 10%;
+    width: 80%;
+    border-top: 2px dotted #8a2c8a;
+    z-index: 1;
 }
 
-.hg-step{
-    position:relative;
-    z-index:2;
-    cursor:pointer;
+.hg-step {
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
 }
 
-.hg-step-circle{
-    width:95px;
-    height:95px;
-    border-radius:50%;
-    background:linear-gradient(135deg,#ff0080,#7a007a);
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    color:#fff;
-    margin:auto;
-    position:relative;
-    font-weight:700;
-    box-shadow:0 0 0 6px #f3f3f3;
-    transition:0.3s;
+.hg-step-circle {
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff0080, #7a007a);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    margin: auto;
+    position: relative;
+    font-weight: 700;
+    box-shadow: 0 0 0 6px #f3f3f3;
+    transition: 0.3s;
 }
 
-.hg-step-circle small{
-    font-size:12px;
-    letter-spacing:2px;
+.hg-step-circle small {
+    font-size: 12px;
+    letter-spacing: 2px;
 }
 
-.hg-step-circle strong{
-    font-size:28px;
+.hg-step-circle strong {
+    font-size: 28px;
 }
 
-.hg-step span{
-    font-size:14px;
-   display: flex;
+.hg-step span {
+    font-size: 14px;
+    display: flex;
     font-weight: 600;
     justify-content: center;
     margin-top: 10px;
@@ -10726,36 +10722,120 @@ display:none;
 
 /* active step */
 
-.hg-step.active .hg-step-circle{
-    background:#ff3b3b;
-    color:#fff;
+.hg-step.active .hg-step-circle {
+    background: #ff3b3b;
+    color: #fff;
 }
 
 /* accordion cards */
 
-.hg-accordion-content{
-    margin-top:20px;
+.hg-accordion-content {
+    margin-top: 20px;
 }
 
-.hg-accordion-card{
-    display:none;
-    background:#fff;
-    padding:30px;
-    border-radius:8px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.08);
-    text-align:left;
+.hg-accordion-card {
+    display: none;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    text-align: left;
 }
 
-.hg-accordion-card.active{
-    display:block;
+.hg-accordion-card.active {
+    display: block;
     border-left: 4px solid #af007d;
 }
 
-.hg-accordion-card h4{
-    margin-bottom:10px;
-    font-size:22px;
+.hg-accordion-card h4 {
+    margin-bottom: 10px;
+    font-size: 22px;
 }
-.hg-step.active .hg-step-circle{
-    transform:scale(1.08);
-    box-shadow:0 0 0 6px #ffffff,0 8px 20px rgba(0,0,0,0.2);
+.hg-step.active .hg-step-circle {
+    transform: scale(1.08);
+    box-shadow:
+        0 0 0 6px #ffffff,
+        0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.sport-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+}
+
+.sport-card:hover {
+    transform: translateY(-8px);
+}
+
+.sport-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.sport-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.sport-card a {
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: 600;
+    color: #ff5b00;
+}
+.cricket-detail-section {
+    background: #f8f9fa;
+    padding: 80px 0 50px;
+}
+
+.cricket-overview-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.cricket-overview-text {
+    line-height: 1.7;
+    color: #555;
+    text-align: justify;
+}
+
+.cricket-team-card {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.cricket-team-image {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.cricket-team-name {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.cricket-gallery-widget {
+    padding: 20px;
+    background: var(--gradient-color);
+    border-radius: 10px;
+        box-shadow: 2px 2px 10px #305e19;
+}
+
+.cricket-gallery-img {
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.cricket-match-list li,
+.cricket-facts-list li {
+    margin-bottom: 8px;
 }

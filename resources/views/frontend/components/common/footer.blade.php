@@ -22,7 +22,8 @@
           <h4>Quick Links</h4>
           <ul class="footer-links">
             <li><a href="{{route('about-us')}}"><i class="fas fa-angle-double-right"></i> About Us</a></li>
-            <li><a href="{{route('upcoming-match')}}"><i class="fas fa-angle-double-right"></i> Upcoming Match</a></li>
+            <li><a href="{{route('our-team')}}"><i class="fas fa-angle-double-right"></i> Our Team</a></li>
+            <li><a href=""><i class="fas fa-angle-double-right"></i> Organiser</a></li>
             <li><a href="{{route('match-result')}}"><i class="fas fa-angle-double-right"></i> Match Results</a></li>
             <li><a href="{{route('news')}}"><i class="fas fa-angle-double-right"></i> Our Blogs</a></li>
             <li><a href="{{route('announcement')}}"><i class="fas fa-angle-double-right"></i> Announcements</a></li>
