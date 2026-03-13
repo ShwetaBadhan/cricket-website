@@ -44,7 +44,6 @@
             <div class="about-image-wrapper">
 
                 <img src="{{ asset('assets/images/gallery/mg-2.jpg') }}" class="about-img-top" alt="sports">
-
                 <img src="{{ asset('assets/images/gallery/mg-1.jpg') }}" class="about-img-bottom" alt="sports">
 
             </div>
