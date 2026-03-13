@@ -4,16 +4,19 @@
         <div class="rev_slider_wrapper fullwidthbanner-container">
             <div id="rev-slider2" class="rev_slider fullwidthabanner">
                 <ul>
-                    <li data-transition="fade"> <img src="{{url('assets/images/slide1-bg.jpg')}}" alt="" width="1920"
-                            height="750" data-bgposition="top center" data-bgfit="cover" data-bgrepeat="no-repeat"
+                    <li data-transition="fade">
+                        <img src="{{url('assets/images/slider/01.jpg')}}" alt="" width="1920" height="750"
+                            data-bgposition="top center" data-bgfit="cover" data-bgrepeat="no-repeat"
                             data-bgparallax="1">
+                        <div class="slider-overlay"></div>
+
                         <div class="tp-caption  tp-resizeme" data-x="right" data-hoffset="200" data-y="top"
                             data-voffset="100" data-transform_idle="o:1;"
                             data-transform_in="x:[-35%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0.01;s:3000;e:Power3.easeOut;"
                             data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
                             data-mask_in="x:[100%];y:0;s:inherit;e:inherit;" data-splitin="none" data-splitout="none"
                             data-start="700">
-                            <div class="slide-content-box"> <img src="{{url('assets/images/slider/player3.png')}}"
+                            <div class="slide-content-box"> <img src="{{url('assets/images/slider/player.png')}}"
                                     alt=""> </div>
                         </div>
                         {{-- <div class="tp-caption  tp-resizeme" data-x="right" data-hoffset="850" data-y="bottom"
@@ -46,9 +49,11 @@
                         </div>
                     </li>
 
-                    <li data-transition="fade"> <img src="{{url('assets/images/slide3bg.jpg')}}" alt="" width="1920"
-                            height="750" data-bgposition="top center" data-bgfit="cover" data-bgrepeat="no-repeat"
+                    <li data-transition="fade">
+                        <img src="{{url('assets/images/slider/01.jpg')}}" alt="" width="1920" height="750"
+                            data-bgposition="top center" data-bgfit="cover" data-bgrepeat="no-repeat"
                             data-bgparallax="1">
+                        <div class="slider-overlay"></div>
                         <div class="tp-caption  tp-resizeme" data-x="right" data-hoffset="350" data-y="top"
                             data-voffset="-100" data-transform_idle="o:1;"
                             data-transform_in="x:[-75%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0.01;s:3000;e:Power3.easeOut;"

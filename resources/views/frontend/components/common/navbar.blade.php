@@ -68,7 +68,7 @@
         <div class="col-md-10 col-sm-7">
           <nav class="main-nav">
             <ul>
-              <li class="nav-item"> <a href="">Home</a>
+              <li class="nav-item"> <a href="{{ route('index') }}">Home</a>
 
               </li>
 

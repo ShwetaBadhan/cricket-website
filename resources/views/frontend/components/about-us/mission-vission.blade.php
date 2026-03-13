@@ -1,5 +1,7 @@
 <section class="cric-mvv-section  wf100 p80-50" style="
-    background-image: url('{{ asset('assets/images/teamsec-bg.jpg') }}');
+background:
+linear-gradient(rgba(10,37,64,0.9), rgba(10,37,64,0.4)),
+url('{{ asset('assets/images/slider/02.jpg') }}');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;">

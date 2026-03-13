@@ -242,13 +242,13 @@ p.cr a,
 .home-blue .logo-navbar .nav-item > a:hover,
 .slide-content-box strong span,
 .ms-news-txt span {
-    color: #fd1e50;
+    color: var(--secondary-color);
 }
 /**********  border Color  *********/
 
 .hvideo-box:hover .hv-info .play:after,
 .nd-btn {
-    border-color: #fd1e50;
+    border-color: var(--secondary-color);
 }
 
 /********** |== Home Page 4 Redish Color End == | **********/
