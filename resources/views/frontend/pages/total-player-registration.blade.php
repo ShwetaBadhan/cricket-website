@@ -12,7 +12,7 @@
     </div>
 
     {{-- counter --}}
-    @include('frontend.pages.total-player-registration')
+    @include('frontend.components.total-player.counter')
 @endsection
 
 @push('scripts')
