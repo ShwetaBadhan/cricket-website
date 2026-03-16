@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+// fetch controllers 
+use App\Http\Controllers\LeadController;
 
 Route::get('/', function () {
     return view('frontend.pages.index');
@@ -85,3 +87,37 @@ Route::get('/athletics' , function(){
 Route::get('/football' , function(){
     return view('frontend.pages.football');
 })->name('football');
+
+Route::get('/auction-of-player',function(){
+    return view('frontend.pages.auction-of-player');
+})->name('auction-of-player');
+Route::get('/membership', function(){
+    return view('frontend.pages.membership-vip-access');
+})->name('membership-vip-access');
+Route::get('/nodal-registration', function(){
+    return view('frontend.pages.nodal-registeration');
+})->name('nodal-registration');
+Route::get('/player-registration', function(){
+    return view('frontend.pages.player-registration');
+})->name('player-registration');
+Route::get('/total-players-registration', function(){
+    return view('frontend.pages.total-player-registration');
+})->name('total-player-registration');
+Route::get('/jsl-influencer', function(){
+    return view('frontend.pages.jsl-influencer');
+})->name('jsl-influencer');
+Route::get('/become-sponsor', function(){
+    return view('frontend.pages.become-sponsor');
+})->name('become-sponsor');
+Route::get('/brand-promotion', function(){
+    return view('frontend.pages.brand-promotion');
+})->name('brand-promotion');
+Route::get('/shop', function(){
+return view('frontend.pages.shop');
+})->name('shop');
+Route::get('/book-trial', function(){
+    return view('frontend.pages.book-trial');
+})->name('book-trial');
+
+// to store form of contact page
+Route::post('/store', [LeadController::class, 'store'])->name('contact-us.store');

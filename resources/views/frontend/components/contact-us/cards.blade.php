@@ -1,6 +1,13 @@
 <div class="row ">
     <div class="col-md-12">
-        <h2>Contact Information</h2>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title ">
+                    <h2>Contact Information</h2>
+
+                </div>
+            </div>
+        </div>
     </div>
     <!--Start-->
     <div class="col-md-4">
@@ -24,8 +31,8 @@
     <div class="col-md-4">
         <div class="contact-box">
             <h5>For More Information:</h5>
-            <p> <strong>Email:</strong> info@soccer.com</p>
-            <p>contact@soccer.com</p>
+            <p> <strong>Email:</strong> info@jsl.com</p>
+            <p>contact@jsl.com</p>
         </div>
     </div>
     <!--End-->

@@ -27,14 +27,17 @@
             </li> --}}
             <li class="currency-btn">
               <div class="dropdown">
-                <button class="btn btn-secondary " type="button" id="currencydropdown"> BOOK TRIAL </button>
+                <a href="{{ route('book-trial') }}" class="btn btn-secondary" id="Register">
+                  BOOK TRIAL
+                </a>
 
               </div>
             </li>
             <li class="currency-btn">
               <div class="dropdown">
-                <button class="btn btn-secondary " type="button" id="Register"> SHOP </button>
-
+                <a href="{{ route('shop') }}" class="btn btn-secondary" id="Register">
+                  SHOP
+                </a>
               </div>
             </li>
 
@@ -100,12 +103,12 @@
               <li class="nav-item drop-down"> <a href="javascript:void(0)">Players</a>
                 <ul>
 
-                  <li><a href="">Auction of Players</a></li>
-                  <li><a href="">Membership / VIP Access</a></li>
-                  <li><a href="">Nodal Registration</a></li>
-                  <li><a href="">Player Registration</a></li>
-                  <li><a href="">Referral Link</a></li>
-                  <li><a href="">Total Players Registration</a></li>
+                  <li><a href="{{ route('auction-of-player') }}">Auction of Players</a></li>
+                  <li><a href="{{ route('membership-vip-access') }}">Membership / VIP Access</a></li>
+                  <li><a href="{{ route('nodal-registration') }}">Nodal Registration</a></li>
+                  <li><a href="{{ route('player-registration') }}">Player Registration</a></li>
+                  <li><a href="#" target="_blank">Referral Link</a></li>
+                  <li><a href="{{ route('total-player-registration') }}">Total Players Registration</a></li>
                 </ul>
               </li>
               <li class="nav-item drop-down"> <a href="javascript:void(0)">Events</a>
@@ -135,9 +138,9 @@
               <li class="nav-item drop-down"> <a href="javascript:void(0)">Partners</a>
                 <ul>
 
-                  <li><a href="">Become a JSL Influencer</a></li>
-                  <li><a href="">Become a Sponsor</a></li>
-                  <li><a href="">Brand Promotion</a></li>
+                  <li><a href="{{ route('jsl-influencer') }}">Become a JSL Influencer</a></li>
+                  <li><a href="{{ route('become-sponsor') }}">Become a Sponsor</a></li>
+                  <li><a href="{{ route('brand-promotion') }}">Brand Promotion</a></li>
                 </ul>
               </li>
 
