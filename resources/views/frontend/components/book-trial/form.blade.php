@@ -8,7 +8,7 @@
                 <div class="nodal-registration-wrapper">
 
                     <div class="nodal-registration-header text-center mb-4">
-                        <h2 class="nodal-registration-title">Nodal Registration</h2>
+                        <h2 class="nodal-registration-title">Book Trial Registration</h2>
                         <p class="nodal-registration-subtitle">
                             Register as an official nodal representative for the Super League.
                         </p>
