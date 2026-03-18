@@ -7,26 +7,26 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-title">
-                        <h2> ABOUT JHARKHAND SUPER  <br>
-                            LEAGUE PROGRAMME FOR <br>
-                            DEVELOPMENT OF SPORTS</h2>
+                        <h2>Where Every Game Turns into Glory
+                        </h2>
                     </div>
                 </div>
             </div>
 
 
             <p class="about-description">
-                Sports is an extremely important component for the overall development
-                of our nation. India, in the last few years has made steady progress in
-                the field of sports. This tremendous potential needs to be showcased at
-                a global platform.
+                The Jharkhand Super League (JSL) is a premier platform where talent meets opportunities. Our mission is
+                to provide individuals with a stage to showcase their skills, compete with passion, and celebrate
+                excellence.
+
+
             </p>
 
             <p class="about-description">
-                It’s time we inspire young talent, give them top-notch infrastructure and
-                training of the highest level. We need to inculcate a strong spirit of
-                participation in sports that enables players to demonstrate their true
-                potential.
+                From exciting sporting events like Cricket, Football, and Marathon to exciting talent hunts like Dance,
+                Modeling, and Singing, JSL brings together participants from different backgrounds to discover their
+                potential and shine. In our view, each talent deserves to get a stage and every dream deserves a
+                platform.
             </p>
 
             <div class="d-flex ">

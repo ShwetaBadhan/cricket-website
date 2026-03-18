@@ -21,36 +21,37 @@ url('{{ asset('assets/images/slider/02.jpg') }}');
                 <div class="hg-card-icon">
                     <i class="fas fa-baseball-ball"></i>
                 </div>
-                <h3>Professional Cricket </h3>
-                <p>Learn from experienced coaches and improve your batting, bowling, and fielding skills through
-                    structured training programs.</p>
+                <h3>Professional Training </h3>
+                <p>Structured training sessions and expert coaching to improve your cricket skills.
+                </p>
             </div>
 
             <div class="hg-service-card hg-card-yellow">
                 <div class="hg-card-icon">
                     <i class="fas fa-trophy"></i>
                 </div>
-                <h3>League & Tournament </h3>
-                <p>Participate in competitive cricket leagues and tournaments where players get the opportunity to
-                    showcase their talent.</p>
+                <h3>Tournament Opportunities </h3>
+                <p>Compete in league matches and tournaments to display your skills.
+                </p>
             </div>
 
             <div class="hg-service-card hg-card-green">
                 <div class="hg-card-icon">
                     <i class="fas fa-users"></i>
                 </div>
-                <h3>Player Selection Trials</h3>
-                <p>Players can participate in selection trials to get shortlisted for upcoming leagues and professional
-                    cricket teams.</p>
+                <h3>Career Opportunities
+                </h3>
+                <p>Progress from block-level competitions to district and state-level championships.
+                </p>
             </div>
 
             <div class="hg-service-card hg-card-purple">
                 <div class="hg-card-icon">
                     <i class="fas fa-video"></i>
                 </div>
-                <h3>Live Match </h3>
-                <p>All major matches are broadcast live, giving players exposure and allowing fans to watch and support
-                    their favorite teams.</p>
+                <h3>Recognition & Exposure </h3>
+                <p>Professionalized league matches to gain visibility, rewards and recognition.
+                </p>
             </div>
 
         </div>

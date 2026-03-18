@@ -35,8 +35,8 @@
                             data-mask_in="x:[100%];y:0;s:inherit;e:inherit;" data-splitin="none" data-splitout="none"
                             data-start="700">
                             <div class="slide-content-box">
-                                <h1><span>Elven Stort:</span><br>
-                                    Elective Player </h1>
+                                <h1><span>Chase Passion. </span><br>
+                                    Claim Victory. </h1>
                             </div>
                         </div>
                         <div class="tp-caption  tp-resizeme" data-x="left" data-hoffset="400" data-y="top"
@@ -71,8 +71,8 @@
                             data-mask_in="x:[100%];y:0;s:inherit;e:inherit;" data-splitin="none" data-splitout="none"
                             data-start="700">
                             <div class="slide-content-box">
-                                <h1><span>Match Star:</span><br>
-                                    Key Player</h1>
+                                <h1><span>Chase Passion.</span><br>
+                                    Claim Victory</h1>
                             </div>
                         </div>
                         <div class="tp-caption  tp-resizeme" data-x="left" data-hoffset="400" data-y="top"

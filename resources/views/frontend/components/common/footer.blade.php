@@ -5,7 +5,7 @@
       <!--Footer Widget Start-->
       <div class="col-lg-3 col-md-6">
         <div class="footer-widget about-widget"> <img src="{{ asset('assets/images/logo/white-jss.png') }}" alt="">
-          <p> Sports is an extremely important component for the overall development of our nation.  </p>
+          <p> JSL is a platform where talent meets opportunity, empowering individuals to showcase their skills.  </p>
           <address>
           <ul>
             <li><i class="fas fa-map-marker-alt"></i> Jharkhand</li>

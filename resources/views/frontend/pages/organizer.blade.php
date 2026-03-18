@@ -27,25 +27,27 @@
                 </div>
 
                 <p class="about-description">
-                    The Organising Committee is responsible for planning, managing, and executing all
-                    activities related to the league. Our mission is to provide a professional platform
-                    where talented players from different regions can showcase their skills and compete
-                    in a fair and competitive environment.
+                    Jharkhand Super League (JSL) is organized by a dedicated team of professionals committed to promoting
+                    sports and talent across the region. The league operates through a well-structured system of
+                    coordinators and volunteers at the block, district, and state levels to ensure that all activities are
+                    efficiently and smoothly carried out. From managing player and team registrations to coordinating events
+                    such as cricket, football, marathons, and talent hunt competitions, the organizing team ensures
+                    transparency and active participation from the players in each and every aspect of the league.
+
                 </p>
 
                 <p class="about-description">
-                    The organisers oversee various aspects of the league including player registrations,
-                    team formation, player auctions, event management, and match scheduling. By working
-                    closely with teams, sponsors, partners, and sports authorities, the organising team
-                    ensures that every tournament is conducted smoothly and professionally.
+                    <b> Key Roles & Responsibilities</b>
+                <ul>
+                    <li> Manage and execute all league activities across block, district, and state levels</li>
+                    <li> Handle player, team, and volunteer registrations with proper coordination</li>
+                    <li> Work closely with Block, District, and State Nodal Officers for smooth operations</li>
+                    <li>Organize and oversee sports events (cricket, football, marathon) and talent hunt competitions </li>
+                    <li>Ensure fair play, discipline, and a smooth experience for all participants </li>
+                </ul>
                 </p>
 
-                <p class="about-description">
-                    Our goal is to promote sports development, encourage young athletes, and create
-                    opportunities for players to gain recognition at regional and national levels.
-                    Through transparent management and strong collaboration, the organisers aim to build
-                    a dynamic sports ecosystem that benefits players, fans, and the sporting community.
-                </p>
+
 
                 <div class="d-flex">
                     <div class="buy-ticket">

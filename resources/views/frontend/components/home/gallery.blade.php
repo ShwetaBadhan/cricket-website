@@ -25,7 +25,7 @@
                         <div class="gthumb">
                             <div class="hv-info">
                                 <a href="#" class="play"><i class="far fa-image"></i></a>
-                                <h6><a href="#">Match Winning Century Celebration</a></h6>
+                                <h6><a href="#">Match Day Highlights</a></h6>
                             </div>
 
                             <a class="gt-link" href="{{url('assets/images/squadgallery-1.jpg')}}"
@@ -42,7 +42,7 @@
                         <div class="gthumb active">
                             <div class="hv-info">
                                 <a href="#" class="play"><i class="fas fa-play"></i></a>
-                                <h6><a href="#">Final Over Thriller – Match Highlights</a></h6>
+                                <h6><a href="#">Training Session Moments</a></h6>
                             </div>
 
                             <a class="gt-link" href="https://www.youtube.com/watch?v=SLi2gT5H6m8&t=11s"
@@ -59,7 +59,7 @@
                         <div class="gthumb">
                             <div class="hv-info">
                                 <a href="#" class="play"><i class="fas fa-search"></i></a>
-                                <h6><a href="#">Team Practice Session Before Big Match</a></h6>
+                                <h6><a href="#">Winning Celebrations</a></h6>
                             </div>
 
                             <a class="gt-link" href="images/squadgallery-2.jpg"
@@ -76,7 +76,7 @@
                         <div class="gthumb">
                             <div class="hv-info">
                                 <a href="#" class="play"><i class="fas fa-play"></i></a>
-                                <h6><a href="#">Top Wickets Compilation – Bowling Highlights</a></h6>
+                                <h6><a href="#">Best Bowling Moments</a></h6>
                             </div>
 
                             <a class="gt-link" href="https://www.youtube.com/watch?v=SLi2gT5H6m8&t=11s"

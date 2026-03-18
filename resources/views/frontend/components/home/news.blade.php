@@ -32,7 +32,8 @@
                             <li><i class="fas fa-calendar-alt"></i> 12 March, 2026</li>
                         </ul>
 
-                        <p>India secured a dramatic win with a last-over finish, showcasing outstanding batting and disciplined bowling performance.</p>
+                        <p>India secured a dramatic win with a last-over finish, showcasing outstanding batting and
+                            disciplined bowling performance.</p>
 
                         <a href="#" class="rm">Read More</a>
                     </div>
@@ -61,7 +62,8 @@
                             <li><i class="fas fa-calendar-alt"></i> 10 March, 2026</li>
                         </ul>
 
-                        <p>Emerging players impressed selectors with exceptional performances during the latest domestic T20 league matches.</p>
+                        <p>Emerging players impressed selectors with exceptional performances during the latest domestic
+                            T20 league matches.</p>
 
                         <a href="#" class="rm">Read More</a>
                     </div>
@@ -137,7 +139,7 @@
                                 <a href="https://vimeo.com/46882189" data-rel="prettyPhoto[]" class="play">
                                     <i class="fas fa-play"></i>
                                 </a>
-                                <h4><a href="#">Match Highlights: India vs Australia Thriller</a></h4>
+                                <h4><a href="#">JSL Match Highlights – Best Moments</a></h4>
                             </div>
                         </div>
 
@@ -146,7 +148,8 @@
                             <img src="{{url('assets/images/upload/01.jpeg')}}" alt="">
                             <div class="hv-info">
                                 <a href="#" class="play"><i class="fas fa-play"></i></a>
-                                <h4><a href="#">Best Wickets of the Week </a></h4>
+                                <h4><a href="#">Top Player Performances of the League
+                                    </a></h4>
                             </div>
                         </div>
 
@@ -155,36 +158,11 @@
                             <img src="{{url('assets/images/upload/01.jpeg')}}" alt="">
                             <div class="hv-info">
                                 <a href="#" class="play"><i class="fas fa-play"></i></a>
-                                <h4><a href="#"> Performances in ICC Series</a></h4>
+                                <h4><a href="#"> Thrilling Cricket Action – JSL
+                                    </a></h4>
                             </div>
                         </div>
 
-                        <div class="hvideo-box">
-                            <span class="vtime">03:20</span>
-                            <img src="{{url('assets/images/upload/01.jpeg')}}" alt="">
-                            <div class="hv-info">
-                                <a href="#" class="play"><i class="fas fa-play"></i></a>
-                                <h4><a href="#">Unbelievable Catches in Recent Matches</a></h4>
-                            </div>
-                        </div>
-
-                        <div class="hvideo-box">
-                            <span class="vtime">02:55</span>
-                            <img src="{{url('assets/images/upload/01.jpeg')}}" alt="">
-                            <div class="hv-info">
-                                <a href="#" class="play"><i class="fas fa-play"></i></a>
-                                <h4><a href="#">Fastest Centuries in Modern Cricket</a></h4>
-                            </div>
-                        </div>
-
-                        <div class="hvideo-box">
-                            <span class="vtime">03:40</span>
-                            <img src="{{url('assets/images/upload/01.jpeg')}}" alt="">
-                            <div class="hv-info">
-                                <a href="#" class="play"><i class="fas fa-play"></i></a>
-                                <h4><a href="#">Bowling Masterclass – Spin vs Pace</a></h4>
-                            </div>
-                        </div>
 
                     </div>
 

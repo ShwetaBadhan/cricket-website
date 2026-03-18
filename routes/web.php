@@ -119,5 +119,8 @@ Route::get('/book-trial', function(){
     return view('frontend.pages.book-trial');
 })->name('book-trial');
 
-// to store form of contact page
-Route::post('/store', [LeadController::class, 'store'])->name('contact-us.store');
+
+Route::post('/store', [LeadController::class,'store'])->name('contact-us.store');
+Route::post('/test', function () {
+    dd(request()->all());
+});

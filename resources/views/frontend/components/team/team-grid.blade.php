@@ -21,11 +21,15 @@
               </div>
               <div class="player-txt">
                 <div class="num">01</div>
-                <h3>Rajesh Sharma</h3>
-                <strong class="player-desi">League Commissioner</strong>
+                <h3>Ankit Singh
+                </h3>
+                <strong class="player-desi">Head of Marketing & Promotions
+                </strong>
 
-                <p>The League Commissioner oversees the overall governance of the league, ensuring fair play,
-                  transparent operations, and strategic growth of the tournament.</p>
+                <p>Ankit leads the marketing and branding efforts of JSL, creating campaigns that boost visibility and
+                  audience engagement. He ensures the league reaches a wider audience through digital platforms,
+                  partnerships, and promotions.
+                </p>
 
                 <ul>
                   <li>12 <span>Years </span></li>
@@ -47,11 +51,13 @@
               </div>
               <div class="player-txt">
                 <div class="num">02</div>
-                <h3>Rakesh Kumar</h3>
-                <strong class="player-desi">Tournament Director</strong>
+                <h3>Neha Gupta</h3>
+                <strong class="player-desi">Sponsorship & Partnerships Manager</strong>
 
-                <p>The Tournament Director is responsible for planning the tournament structure, match scheduling, team
-                  coordination, and ensuring smooth execution of all league matches.</p>
+                <p>Neha manages collaborations with sponsors and partners, building strong relationships that support
+                  the growth of the league. She focuses on creating mutually beneficial opportunities and long-term
+                  associations.
+                </p>
 
                 <ul>
                   <li>10 <span>Years </span></li>
@@ -73,11 +79,12 @@
               </div>
               <div class="player-txt">
                 <div class="num">03</div>
-                <h3>Priyal Sharma</h3>
-                <strong class="player-desi">Head of Operations</strong>
+                <h3>Rahul Das</h3>
+                <strong class="player-desi">Event & Venue Manager</strong>
 
-                <p>The Operations Head manages logistics, venue coordination, match operations, and ensures that all
-                  league activities run efficiently.</p>
+                <p>Rahul is responsible for planning and managing event venues, ensuring all on-ground arrangements run
+                  smoothly. From setup to execution, he ensures a seamless experience for players and spectators.
+                </p>
 
                 <ul>
                   <li>8 <span>Years </span></li>
@@ -99,11 +106,12 @@
               </div>
               <div class="player-txt">
                 <div class="num">04</div>
-                <h3>Amit Verma</h3>
-                <strong class="player-desi">Player Relations Manager</strong>
+                <h3>Sneha Roy</h3>
+                <strong class="player-desi">Media & Communications Lead</strong>
 
-                <p>The Player Relations Manager handles player registrations, auctions, communication with teams, and
-                  player support throughout the tournament.</p>
+                <p> Sneha handles media coverage, public relations, and content creation for JSL. She ensures consistent
+                  communication across platforms and highlights key moments of the league to the audience.
+                </p>
 
                 <ul>
                   <li>6 <span>Years </span></li>

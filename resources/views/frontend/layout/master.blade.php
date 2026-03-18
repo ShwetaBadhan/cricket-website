@@ -88,7 +88,86 @@
         src="{{url('assets/js/rev-slider/js/extensions/revolution.extension.slideanims.min.js')}}"></script>
     <script type="text/javascript"
         src="{{url('assets/js/rev-slider/js/extensions/revolution.extension.video.min.js')}}"></script>
+    <script>
+        const form = document.getElementById("sponsorForm");
+        const steps = document.querySelectorAll(".form-step");
+        const stepIndicators = document.querySelectorAll(".step");
 
+        let currentStep = 0;
+
+        function showStep(index) {
+            steps.forEach((step, i) => {
+                step.classList.toggle("active", i === index);
+                stepIndicators[i].classList.toggle("active", i === index);
+            });
+        }
+
+        function validateStep(stepIndex) {
+            const fields = steps[stepIndex].querySelectorAll("input, textarea, select");
+            let isValid = true;
+
+            fields.forEach(field => {
+                if (!field.checkValidity()) {
+                    field.classList.add("invalid");
+                    isValid = false;
+                } else {
+                    field.classList.remove("invalid");
+                }
+            });
+
+            if (!isValid) {
+                const firstInvalidField = steps[stepIndex].querySelector(":invalid");
+                if (firstInvalidField) {
+                    firstInvalidField.reportValidity();
+                    firstInvalidField.focus();
+                }
+            }
+
+            return isValid;
+        }
+
+        document.querySelectorAll(".next-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                if (validateStep(currentStep)) {
+                    if (currentStep < steps.length - 1) {
+                        currentStep++;
+                        showStep(currentStep);
+                    }
+                }
+            });
+        });
+
+        document.querySelectorAll(".back-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                if (currentStep > 0) {
+                    currentStep--;
+                    showStep(currentStep);
+                }
+            });
+        });
+
+        form.addEventListener("submit", function (e) {
+            if (!validateStep(currentStep)) {
+                e.preventDefault();
+            }
+        });
+
+        document.querySelectorAll("input, textarea, select").forEach(field => {
+            field.addEventListener("input", () => {
+                if (field.checkValidity()) {
+                    field.classList.remove("invalid");
+                }
+            });
+
+            field.addEventListener("blur", () => {
+                if (!field.checkValidity()) {
+                    field.classList.add("invalid");
+                } else {
+                    field.classList.remove("invalid");
+                }
+            });
+        });
+    </script>
     @stack('scripts')
 </body>
 

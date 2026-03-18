@@ -11,10 +11,9 @@ url('{{ asset('assets/images/slider/02.jpg') }}');
             <div class="cric-mvv-icon">🏏</div>
             <h3 class="cric-mvv-title">Our Mission</h3>
             <p class="cric-mvv-text">
-                Our mission is to bring cricket lovers together on one platform where they
-                can explore matches, follow teams, discover updates, and enjoy the spirit
-                of the game. We aim to create a digital hub that celebrates cricket and
-                connects fans around the world.
+                To provide a platform where individuals can showcase their talent, compete with confidence, and grow
+                through sports and talent contests.
+
             </p>
         </div>
 
@@ -22,9 +21,9 @@ url('{{ asset('assets/images/slider/02.jpg') }}');
             <div class="cric-mvv-icon">💡</div>
             <h3 class="cric-mvv-title">Our Vision</h3>
             <p class="cric-mvv-text">
-                Our vision is to become a leading online cricket platform that provides
-                engaging content, match insights, and community interaction for cricket
-                enthusiasts everywhere.
+                To become a leading platform where emerging talents can be discovered and nurtured, and where excellence
+                is encouraged, especially in the field of sports and talents.
+
             </p>
         </div>
 
@@ -32,8 +31,9 @@ url('{{ asset('assets/images/slider/02.jpg') }}');
             <div class="cric-mvv-icon">⭐</div>
             <h3 class="cric-mvv-title">Our Values</h3>
             <p class="cric-mvv-text">
-                We believe in passion for the sport, fair play, community engagement,
-                and delivering authentic cricket experiences that fans can trust and enjoy.
+                We value fair competition, teamwork, passion, and equal opportunities, creating an environment where
+                every talent gets the chance to shine.
+
             </p>
         </div>
 

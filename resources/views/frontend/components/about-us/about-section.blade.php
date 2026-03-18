@@ -16,17 +16,21 @@
 
 
             <p class="about-description">
-                Sports is an extremely important component for the overall development
-                of our nation. India, in the last few years has made steady progress in
-                the field of sports. This tremendous potential needs to be showcased at
-                a global platform.
+                Jharkhand Super League (JSL) is a dynamic platform where sports, talent, and opportunity come together.
+                Our mission is to identify and promote individuals who are passionate about showcasing their abilities
+                and competing with confidence.
+
+
             </p>
 
             <p class="about-description">
-                It’s time we inspire young talent, give them top-notch infrastructure and
-                training of the highest level. We need to inculcate a strong spirit of
-                participation in sports that enables players to demonstrate their true
-                potential.
+                We organise various sports events like Cricket, Football, and Marathons. These events allow players to
+                take part in competitive matches and also help them to improve their skills. In addition, the league
+                also runs talent hunts in Dance, Modelling, Singing, and Cultural Performances. This gives a stage for
+                creative and artistic talents. JSL also encourages community involvement through membership and
+                volunteer programmes. Individuals can help with event organisation, coordination, and management. By
+                bringing together participants from diverse backgrounds, the Jharkhand Super League aims to create a
+                space where talent shines, passion is celebrated, and opportunities are available for everyone.
             </p>
 
             <div class="d-flex ">

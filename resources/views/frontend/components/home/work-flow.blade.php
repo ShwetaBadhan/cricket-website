@@ -1,4 +1,4 @@
-<section class="jssl-process-zone"  style="
+<section class="jssl-process-zone" style="
   background:
 linear-gradient(rgba(10,37,64,0.9), rgba(10,37,64,0.4)),
 url('{{ asset('assets/images/slider/03.jpg') }}');
@@ -22,11 +22,11 @@ url('{{ asset('assets/images/slider/03.jpg') }}');
             <!-- STEP 1 -->
             <div class="jssl-process-card">
                 <div class="jssl-process-circle">1</div>
-                <h3 class="jssl-process-title">JSL Registration</h3>
+                <h3 class="jssl-process-title">JSL Register</h3>
                 <p class="jssl-process-text">
+                    Players or teams complete the online registration by submitting their details, contact information,
+                    and registration fee to join the league.
 
-                    Register with Talent Premier League on official website. Most Trusted Cricket League Of India. Most
-                    Trusted Cricket League Of India.
                 </p>
             </div>
 
@@ -35,11 +35,12 @@ url('{{ asset('assets/images/slider/03.jpg') }}');
             <!-- STEP 2 -->
             <div class="jssl-process-card">
                 <div class="jssl-process-circle">2</div>
-                <h3 class="jssl-process-title">JSL Trial</h3>
+                <h3 class="jssl-process-title">JSL Compete</h3>
                 <p class="jssl-process-text">
 
-                    Trial Fee Start From 699 for the Players. Trial fee is not same for all states and for all players
-                    role, trial will be in your states, we will notifi on your registered mobile number.
+                    Participants take part in block-level matches and tournaments, where teams compete and showcase
+                    their skills.
+
                 </p>
             </div>
 
@@ -48,10 +49,11 @@ url('{{ asset('assets/images/slider/03.jpg') }}');
             <!-- STEP 3 -->
             <div class="jssl-process-card">
                 <div class="jssl-process-circle">3</div>
-                <h3 class="jssl-process-title"> JSL Selection </h3>
+                <h3 class="jssl-process-title"> JSL Advance </h3>
                 <p class="jssl-process-text">
-                    Selection Matches Fee is 6499 for 3 selection matches, All 3 selection matches will be broadcast
-                    live. Most Trusted Cricket League Of India.
+                    Top performers advance from Block → District → State Level, gaining recognition and opportunities to
+                    grow in their sports career.
+
                 </p>
             </div>
 
