@@ -22,7 +22,8 @@ url('{{ asset('assets/images/slider/03.jpg') }}');
                     <h5>Rohit Sharma</h5>
 
                     <p>
-                        Great team effort today! Proud of the boys for showing determination and finishing strong in the final overs. On to the next challenge.
+                        Fantastic start to the series! The boys showed great spirit and teamwork on the field. Ready for the next game!
+
                     </p>
 
                     <div class="tw-foot">
@@ -39,7 +40,8 @@ url('{{ asset('assets/images/slider/03.jpg') }}');
                     <h5>Virat Kohli</h5>
 
                     <p>
-                        Incredible atmosphere at the stadium tonight. Nothing beats playing in front of passionate cricket fans. Thank you for the support!
+                       What a match! The crowd energy was electric and kept us motivated throughout. Grateful for all the support.
+
                     </p>
 
                     <div class="tw-foot">
@@ -56,7 +58,8 @@ url('{{ asset('assets/images/slider/03.jpg') }}');
                     <h5>Jasprit Bumrah</h5>
 
                     <p>
-                        Hard work during practice sessions always pays off. Focused on improving every match and delivering for the team when it matters most.
+                       Focused on perfecting my yorkers and variations in training. Every session counts toward match day performance.
+
                     </p>
 
                     <div class="tw-foot">

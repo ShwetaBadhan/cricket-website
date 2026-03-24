@@ -16,25 +16,17 @@
 
 
                     <p class="cricket-overview-text">
-                        Cricket is a globally popular team sport played between two teams of eleven players on a large
-                        circular or oval-shaped field. At the center of the field lies a 22-yard pitch where most of the
-                        action takes place. One team bats to score runs while the other team bowls and fields to
-                        restrict the scoring and dismiss the batters. The batting team attempts to accumulate runs by
-                        hitting the ball with a bat and running between the wickets or by striking boundaries. The
-                        bowling team aims to take wickets by hitting the stumps, catching the ball, or forcing errors
-                        from the batters.
-                        <br>
-                        The game requires a combination of skill, strategy, teamwork, and endurance. Players specialize
-                        in batting, bowling, or all-round performance, while fielders play a crucial role in preventing
-                        runs and creating dismissals. Cricket is played in several formats, including Test matches, One
-                        Day Internationals (ODIs), and the fast-paced Twenty20 (T20) format, each offering a unique
-                        style and level of intensity.
-                        <br>
-                        Cricket is governed internationally by the International Cricket Council (ICC) and enjoys
-                        massive popularity across countries such as India, Australia, England, South Africa, Pakistan,
-                        and many others. Major tournaments like the Cricket World Cup, T20 World Cup, and various
-                        domestic leagues bring together top teams and players, making cricket not only a sport but a
-                        celebration of competitive spirit, sportsmanship, and global unity.
+                        Football at the Jharkhand Super League (JSL) provides an exciting and competitive platform for
+                        teams to demonstrate skill, teamwork, and strategy. The league encourages participation from
+                        grassroots levels, giving players opportunities to compete and progress through structured
+                        tournaments.<br>
+                        JSL emphasizes discipline, coordination, and sportsmanship, creating a professional and engaging
+                        experience for all participants. Players are guided to perform at their best while respecting
+                        opponents and officials.<br>
+                        Matches are conducted under official rules, with referees ensuring fair play and safety. All
+                        participants are expected to follow instructions, maintain conduct, and resolve disputes through
+                        proper channels.
+
                     </p>
                 </div>
 
@@ -44,9 +36,10 @@
                     <h3 class="cricket-rules-heading">Game Rules</h3>
 
                     <ul class="cricket-rules-list">
-                        <li>Each team has 11 players</li>
-                        <li>Matches can be T20, ODI or Test</li>
-                        <li>Teams alternate between batting and bowling</li>
+                        <li>Each team must have 11 players (minimum 7 to start a match) and wear proper football kit with shoes and shin guards.</li>
+                        <li>Matches are played in two halves of 25–30 minutes each.</li>
+                        <li>Only registered players may participate; substitutions follow official rules.</li>
+                        <li>Referee decisions are final, and fair play must always be maintained.</li>
                     </ul>
 
                 </div>

@@ -11,7 +11,7 @@
         <div class="hg-process-wrapper ">
 
             <div class="hg-process-item">
-                <div class="hg-process-top">Developing<br>Selection Criteria</div>
+                <div class="hg-process-top">Player <br>Registration</div>
                 <div class="hg-process-circle">
                     <span class="hg-step-text">STEPS</span>
                     <h3>01</h3>
@@ -24,12 +24,12 @@
                     <h3>02</h3>
                 </div>
                 <div class="hg-process-bottom">
-                    Receipt of Applications<br>and Resume Review
+                    Block Level <br>Trials
                 </div>
             </div>
 
             <div class="hg-process-item">
-                <div class="hg-process-top">Conducting<br>Interview</div>
+                <div class="hg-process-top">District  <br>Selection Matches</div>
                 <div class="hg-process-circle">
                     <span class="hg-step-text">STEPS</span>
                     <h3>03</h3>
@@ -42,12 +42,12 @@
                     <h3>04</h3>
                 </div>
                 <div class="hg-process-bottom">
-                    Background<br>Checks
+                    Player <br>Auction
                 </div>
             </div>
 
             <div class="hg-process-item">
-                <div class="hg-process-top">Making the<br>Offer</div>
+                <div class="hg-process-top">JPL <br>Tournament</div>
                 <div class="hg-process-circle">
                     <span class="hg-step-text">STEPS</span>
                     <h3>05</h3>

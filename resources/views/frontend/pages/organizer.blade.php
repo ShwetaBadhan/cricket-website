@@ -27,24 +27,21 @@
                 </div>
 
                 <p class="about-description">
-                    Jharkhand Super League (JSL) is organized by a dedicated team of professionals committed to promoting
-                    sports and talent across the region. The league operates through a well-structured system of
-                    coordinators and volunteers at the block, district, and state levels to ensure that all activities are
-                    efficiently and smoothly carried out. From managing player and team registrations to coordinating events
-                    such as cricket, football, marathons, and talent hunt competitions, the organizing team ensures
-                    transparency and active participation from the players in each and every aspect of the league.
+                    The Jharkhand Super League (JSL) is driven by a dedicated team of professionals passionate about
+                    promoting sports and talent throughout the region. With a well-structured system of coordinators and
+                    volunteers operating at the block, district, and state levels, the league ensures that every activity is
+                    executed efficiently. From managing player and team registrations to organizing events such as cricket,
+                    football, marathons, and talent hunts, the team focuses on providing a transparent and engaging
+                    experience for all participants.
 
                 </p>
 
                 <p class="about-description">
-                    <b> Key Roles & Responsibilities</b>
-                <ul>
-                    <li> Manage and execute all league activities across block, district, and state levels</li>
-                    <li> Handle player, team, and volunteer registrations with proper coordination</li>
-                    <li> Work closely with Block, District, and State Nodal Officers for smooth operations</li>
-                    <li>Organize and oversee sports events (cricket, football, marathon) and talent hunt competitions </li>
-                    <li>Ensure fair play, discipline, and a smooth experience for all participants </li>
-                </ul>
+                    Key responsibilities include managing league activities across multiple levels, coordinating
+                    registrations for players, teams, and volunteers, and working closely with Block, District, and State
+                    Nodal Officers to guarantee smooth operations. The organizing team also oversees sports events and
+                    talent competitions, maintaining fair play, discipline, and a seamless experience for everyone involved.
+
                 </p>
 
 

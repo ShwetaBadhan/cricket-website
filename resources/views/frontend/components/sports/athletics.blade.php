@@ -16,24 +16,16 @@
                 <div class="cricket-overview-block">
 
                     <p class="cricket-overview-text">
-                        Athletics is one of the oldest and most fundamental forms of sport, consisting of a wide
-                        range of competitive events that involve running, jumping, throwing, and walking. It is
-                        considered the foundation of many sports because it focuses on the basic human abilities
-                        of speed, strength, endurance, and agility. Athletics competitions are usually held in
-                        stadiums with a running track and field areas designed for different events.
-                        <br><br>
-                        The sport is divided into several categories, including track events, field events,
-                        combined events, and road races. Track events include short-distance sprints, middle and
-                        long-distance races, relay races, and hurdles. Field events involve activities such as
-                        long jump, high jump, triple jump, pole vault, shot put, discus throw, javelin throw,
-                        and hammer throw. Each event tests different physical abilities and technical skills.
-                        <br><br>
-                        Athletics is widely practiced around the world and is a major part of international
-                        competitions such as the Olympic Games, World Athletics Championships, and various
-                        national and regional tournaments. The sport promotes physical fitness, discipline,
-                        determination, and sportsmanship. Athletes train extensively to improve speed, strength,
-                        technique, and endurance, making athletics both physically demanding and highly
-                        competitive.
+                        Athletics at the Jharkhand Super League (JSL) highlights speed, strength, endurance, and
+                        determination. The events include sprint races, long-distance running, and marathons, providing
+                        a platform for participants to challenge themselves and improve performance.<br>
+                        JSL encourages athletes of all levels to take part, build confidence, maintain fitness, and
+                        showcase their talent in a disciplined and motivating environment. The league promotes a strong
+                        spirit of sportsmanship and fair competition.<br>
+                        Participants are expected to follow rules, respect officials and fellow competitors, and
+                        prioritize safety and medical fitness while enjoying a rewarding athletic experience. Decisions
+                        by event officials are final and binding.
+
                     </p>
 
                 </div>
@@ -44,10 +36,10 @@
                     <h3 class="cricket-rules-heading">Game Rules</h3>
 
                     <ul class="cricket-rules-list">
-                        <li>Athletics includes track and field events such as running, jumping, and throwing.</li>
-                        <li>Competitions are conducted individually or in relay teams depending on the event.</li>
-                        <li>Participants must follow specific lane, timing, and measurement rules.</li>
-                        <li>The athlete with the fastest time or the best measured performance wins.</li>
+                        <li>Complete registration before the event and report 30 minutes early.</li>
+                        <li>Wear proper sports attire and running shoes.</li>
+                        <li>Follow assigned tracks/routes and official instructions.</li>
+                        <li>Misconduct or unsportsmanlike behavior may lead to disqualification.</li>
                     </ul>
 
                 </div>

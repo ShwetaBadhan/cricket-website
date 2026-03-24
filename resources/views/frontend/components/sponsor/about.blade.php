@@ -20,17 +20,17 @@
                         </div>
                     </div>
                     <p class="vip-description">
-                        Upgrade to our VIP Membership and unlock exclusive benefits designed
-                        for dedicated players and supporters. Enjoy premium privileges,
-                        priority tournament access, and special rewards.
+                        Jharkhand Super League (JSL) partners with leading brands and organizations to promote sports
+                        and talent across the state. Our sponsors play a vital role in supporting events, empowering
+                        players, and enhancing the overall league experience.
                     </p>
 
                     <ul class="vip-benefits">
-                        <li>✔ Priority Tournament Registration</li>
-                        <li>✔ Exclusive VIP Matches</li>
-                        <li>✔ Premium Support Access</li>
-                        <li>✔ Special Event Invitations</li>
-                        <li>✔ VIP Badge & Recognition</li>
+                        <li>✔ Gain strong brand visibility across events and digital platforms</li>
+                        <li>✔ Connect with a wide and diverse audience</li>
+                        <li>✔ Support grassroots sports and emerging talent</li>
+                        <li>✔ Be part of a growing sports and talent ecosystem</li>
+                        <li>✔ Build impactful and long-term brand associations</li>
                     </ul>
 
                     <a href="#" class="vip-btn">Get VIP Access</a>

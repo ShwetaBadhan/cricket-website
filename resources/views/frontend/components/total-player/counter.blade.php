@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title ">
-                    <h2>Total Player Registration</h2>
+                    <h2>Share the Excitement – Invite Friends and Be Part of JSL!</h2>
 
                 </div>
             </div>

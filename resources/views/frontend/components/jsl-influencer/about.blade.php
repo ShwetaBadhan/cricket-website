@@ -20,17 +20,21 @@
                         </div>
                     </div>
                     <p class="vip-description">
-                        Upgrade to our VIP Membership and unlock exclusive benefits designed
-                        for dedicated players and supporters. Enjoy premium privileges,
-                        priority tournament access, and special rewards.
+                        The Jharkhand Super League (JSL) Influencer program brings together passionate content creators,
+                        social media enthusiasts, and community leaders to promote sports and talent across the state.
+                        As a JSL Influencer, you help spread awareness about events, tournaments, and talent hunts,
+                        while engaging fans and participants through digital platforms.
+
                     </p>
 
                     <ul class="vip-benefits">
-                        <li>✔ Priority Tournament Registration</li>
-                        <li>✔ Exclusive VIP Matches</li>
-                        <li>✔ Premium Support Access</li>
-                        <li>✔ Special Event Invitations</li>
-                        <li>✔ VIP Badge & Recognition</li>
+                        <li>✔ Share JSL events and talent hunts on social media
+                        </li>
+                        <li>✔ Connect with players, teams, and the community</li>
+                        <li>✔ Get exclusive behind-the-scenes access and updates</li>
+                        <li>✔ Enjoy special privileges at matches and tournaments</li>
+                        <li>✔ Support the growth of sports and talent in Jharkhand
+                        </li>
                     </ul>
 
                     <a href="#" class="vip-btn">Get VIP Access</a>

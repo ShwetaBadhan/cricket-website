@@ -1,91 +1,79 @@
-<section class="nodal-registration-section py-5 wf100">
-    <div class="container">
 
-        <div class="row justify-content-center">
-
-            <div class="col-lg-8">
-
-                <div class="nodal-registration-wrapper">
-
-                    <div class="nodal-registration-header text-center mb-4">
-                        <h2 class="nodal-registration-title">Nodal Registration</h2>
-                        <p class="nodal-registration-subtitle">
-                            Register as an official nodal representative for the Super League.
-                        </p>
-                    </div>
-
-                    <form method="POST" action="" class="nodal-registration-form">
-                        @csrf
-
-                        <div class="row">
-
-                            <div class="col-md-6 mb-3">
-                                <label class="nodal-form-label">Full Name</label>
-                                <input type="text" name="name" class="form-control nodal-form-input"
-                                    placeholder="Enter full name">
-                            </div>
-
-                            <div class="col-md-6 mb-3">
-                                <label class="nodal-form-label">Email Address</label>
-                                <input type="email" name="email" class="form-control nodal-form-input"
-                                    placeholder="Enter email">
-                            </div>
-
-                            <div class="col-md-6 mb-3">
-                                <label class="nodal-form-label">Phone Number</label>
-                                <input type="text" name="phone" class="form-control nodal-form-input"
-                                    placeholder="Enter phone number">
-                            </div>
-
-                            <div class="col-md-6 mb-3">
-                                <label class="nodal-form-label">Organization / Club Name</label>
-                                <input type="text" name="organization" class="form-control nodal-form-input"
-                                    placeholder="Enter organization">
-                            </div>
-
-                            <div class="col-md-6 mb-3">
-                                <label class="nodal-form-label">State</label>
-                                <input type="text" name="state" class="form-control nodal-form-input"
-                                    placeholder="Enter state">
-                            </div>
-
-                            <div class="col-md-6 mb-3">
-                                <label class="nodal-form-label">City</label>
-                                <input type="text" name="city" class="form-control nodal-form-input"
-                                    placeholder="Enter city">
-                            </div>
-
-                            <div class="col-12 mb-3">
-                                <label class="nodal-form-label">Address</label>
-                                <textarea name="address" class="form-control nodal-form-textarea" rows="3"></textarea>
-                            </div>
-
-                            <div class="col-md-6 mb-3">
-                                <label class="nodal-form-label">Password</label>
-                                <input type="password" name="password" class="form-control nodal-form-input">
-                            </div>
-
-                            <div class="col-md-6 mb-3">
-                                <label class="nodal-form-label">Confirm Password</label>
-                                <input type="password" name="password_confirmation"
-                                    class="form-control nodal-form-input">
-                            </div>
-
-                        </div>
-
-                        <div class="text-center mt-4">
-                            <button type="submit" class="nodal-register-btn">
-                                Submit Registration
-                            </button>
-                        </div>
-
-                    </form>
-
-                </div>
-
-            </div>
-
+<section class="nodalreg-section wf100">
+    <div class="nodalreg-container">
+        <div class="nodalreg-topbar">
+            <h2 class="nodalreg-title">Nodal Registration</h2>
+            <p class="nodalreg-subtitle">
+                Register as an official nodal representative for the Super League.
+            </p>
         </div>
 
+        <div class="nodalreg-body">
+            <form id="nodalregForm" method="POST" action="{{ route('nodal-registration.store') }}">
+                <div class="nodalreg-row">
+                    <div class="nodalreg-group">
+                        <label for="nodalregFullName">Full Name</label>
+                        <input type="text" id="nodalregFullName" value="{{ old('name') }}" name="name" placeholder="Enter full name"
+                            required />
+                    </div>
+
+                    <div class="nodalreg-group">
+                        <label for="nodalregEmail">Email Address</label>
+                        <input type="email" id="nodalregEmail" value="{{ old('email') }}" name="email" placeholder="Enter email"
+                            required />
+                    </div>
+                </div>
+
+                <div class="nodalreg-row">
+                    <div class="nodalreg-group">
+                        <label for="nodalregPhone">Phone Number</label>
+                        <input type="tel" id="nodalregPhone" name="phone" value="{{ old('phone') }}" placeholder="Enter phone number"
+                            required />
+                    </div>
+
+                    <div class="nodalreg-group">
+                        <label for="nodalregOrganization">Organization / Club Name</label>
+                        <input type="text" id="nodalregOrganization" value="{{ old('organization') }}" name="organization"
+                            placeholder="Enter organization" required />
+                    </div>
+                </div>
+
+                <div class="nodalreg-row">
+                    <div class="nodalreg-group">
+                        <label for="nodalregState">State</label>
+                        <input type="text" id="nodalregState" name="state" value="{{ old('state') }}" placeholder="Enter state" required />
+                    </div>
+
+                    <div class="nodalreg-group">
+                        <label for="nodalregCity">City</label>
+                        <input type="text" id="nodalregCity" name="city" value="{{ old('city') }}" placeholder="Enter city" required />
+                    </div>
+                </div>
+
+                <div class="nodalreg-group nodalreg-full">
+                    <label for="nodalregAddress">Address</label>
+                    <textarea id="nodalregAddress" name="address" value="{{ old('address') }}" rows="5" placeholder="Enter address"
+                        required></textarea>
+                </div>
+
+                <div class="nodalreg-row">
+                    <div class="nodalreg-group">
+                        <label for="nodalregPassword">Password</label>
+                        <input type="password" id="nodalregPassword" name="password" 
+                            placeholder="Enter password" required />
+                    </div>
+
+                    <div class="nodalreg-group">
+                        <label for="nodalregConfirmPassword">Confirm Password</label>
+                        <input type="password" id="nodalregConfirmPassword" name="confirmpassword"
+                            placeholder="Confirm password" required />
+                    </div>
+                </div>
+
+                <button type="submit" class="nodalreg-submit-btn">
+                    Submit Registration
+                </button>
+            </form>
+        </div>
     </div>
 </section>

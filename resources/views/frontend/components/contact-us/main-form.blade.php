@@ -62,32 +62,32 @@
                 <ul class="form-row">
                     <li class="half-col">
                         <label for="name">Name</label>
-                        <input type="text" name="name" id="name" class="form-control" value="{{ old('name') }}">
+                        <input type="text" name="name" id="name" class="form-control" value="{{ old('name') }}" placeholder="Your Name" required>
                         <span class="error-message" id="name-error"></span>
                     </li>
 
                     <li class="half-col">
                         <label for="email">Email</label>
-                        <input type="email" name="email" id="email" class="form-control" value="{{ old('email') }}">
+                        <input type="email" name="email" id="email" placeholder="Your Email" class="form-control" value="{{ old('email') }}" required>
                         <span class="error-message" id="email-error"></span>
                     </li>
 
                     <li class="half-col">
                         <label for="phone">Phone</label>
-                        <input type="text" name="phone" id="phone" class="form-control" value="{{ old('phone') }}">
+                        <input type="text" name="phone" id="phone" placeholder="Your Phone" class="form-control" value="{{ old('phone') }}" required>
                         <span class="error-message" id="phone-error"></span>
                     </li>
 
                     <li class="half-col">
                         <label for="subject">Subject</label>
-                        <input type="text" name="subject" id="subject" class="form-control"
-                            value="{{ old('subject') }}">
+                        <input type="text" name="subject" placeholder="Subject" id="subject" class="form-control"
+                            value="{{ old('subject') }}" required>
                         <span class="error-message" id="subject-error"></span>
                     </li>
 
                     <li class="full-col">
                         <label for="message">Message</label>
-                        <textarea name="message" id="message" class="form-control">{{ old('message') }}</textarea>
+                        <textarea name="message" id="message" placeholder="Message" class="form-control" required>{{ old('message') }}</textarea>
                         <span class="error-message" id="message-error"></span>
                     </li>
 

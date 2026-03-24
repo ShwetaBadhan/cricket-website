@@ -66,30 +66,28 @@
             <div class="hg-accordion-content">
 
                 <div class="hg-accordion-card active" data-step="1">
-                    <h4>Age Verification Document</h4>
+                    <h4>Personal Information</h4>
                     <p>
-                        Players must submit a valid age verification document such as an
-                        Aadhar Card, Birth Certificate, Passport, or School ID. This helps
-                        the Jharkhand Super League ensure fair participation according to
-                        the official age eligibility rules of the tournament.
+                        Submit basic details including Name, Block, Address, Contact Number, and WhatsApp Number for
+                        communication and registration.
+
                     </p>
                 </div>
 
                 <div class="hg-accordion-card" data-step="2">
-                    <h4>Recent Player Photographs</h4>
+                    <h4>Identity & Profile</h4>
                     <p>
-                        Participants are required to upload two recent passport-size
-                        photographs. These photographs will be used for player identity
-                        verification, registration records, and official league profiles.
+                        Upload a recent photograph and personal profile details to verify the participant’s identity.
+
                     </p>
                 </div>
 
                 <div class="hg-accordion-card" data-step="3">
-                    <h4>Medical Fitness Certificate</h4>
+                    <h4>Team Details</h4>
                     <p>
-                        A medical fitness certificate issued by a registered doctor is
-                        mandatory to confirm that the player is physically fit to take
-                        part in cricket trials, matches, and league activities.
+                        Complete the registration payment and verification process to confirm participation in the Jharkhand
+                        Super League.
+
                     </p>
                 </div>
 

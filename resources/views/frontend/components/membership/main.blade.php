@@ -13,20 +13,23 @@
                         </div>
                     </div>
                     <p class="vip-description">
-                        Upgrade to our VIP Membership and unlock exclusive benefits designed
-                        for dedicated players and supporters. Enjoy premium privileges,
-                        priority tournament access, and special rewards.
+                        Jharkhand Super League (JSL) offers exciting opportunities through its VIP Membership and
+                        Volunteer Registration programs. With VIP Membership, you gain exclusive access and premium
+                        benefits, while the volunteer program allows passionate individuals to actively contribute to
+                        the success of the league.
+
                     </p>
 
                     <ul class="vip-benefits">
-                        <li>✔ Priority Tournament Registration</li>
-                        <li>✔ Exclusive VIP Matches</li>
-                        <li>✔ Premium Support Access</li>
-                        <li>✔ Special Event Invitations</li>
-                        <li>✔ VIP Badge & Recognition</li>
+                        <li>✔ Exclusive access & behind-the-scenes experiences</li>
+                        <li>✔ Special updates and insider information</li>
+                        <li>✔ Opportunity to volunteer at block, district & state levels</li>
+                        <li>✔ Hands-on experience in event management</li>
+                        <li>✔ Be part of a dynamic sports community</li>
                     </ul>
 
-                    <a href="#" class="vip-btn">Get VIP Access</a>
+                    <a href="#" class=" vip-btn">Get VIP Access</a>
+
                 </div>
             </div>
 

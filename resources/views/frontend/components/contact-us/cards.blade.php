@@ -4,7 +4,8 @@
             <div class="col-md-12">
                 <div class="section-title ">
                     <h2>Contact Information</h2>
-
+                    <p>Your talent deserves a platform — contact us and be part of JSL
+                    </p>
                 </div>
             </div>
         </div>

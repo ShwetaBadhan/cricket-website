@@ -1,6 +1,12 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+
+
+
+
+
 // fetch controllers 
 use App\Http\Controllers\LeadController;
 
@@ -75,52 +81,68 @@ Route::get('/selection-process', function () {
 Route::get('/required-documents', function () {
     return view('frontend.pages.required-documents');
 })->name('required-documents');
-Route::get('/our-organizer', function(){
+Route::get('/our-organizer', function () {
     return view('frontend.pages.organizer');
 })->name('our-organizer');
-Route::get('/sport-details' , function(){
+Route::get('/sport-details', function () {
     return view('frontend.pages.sport-details');
 })->name('sport-details');
-Route::get('/athletics' , function(){
+Route::get('/athletics', function () {
     return view('frontend.pages.athletics');
 })->name('athletics');
-Route::get('/football' , function(){
+Route::get('/football', function () {
     return view('frontend.pages.football');
 })->name('football');
 
-Route::get('/auction-of-player',function(){
+Route::get('/auction-of-player', function () {
     return view('frontend.pages.auction-of-player');
 })->name('auction-of-player');
-Route::get('/membership', function(){
+Route::get('/membership', function () {
     return view('frontend.pages.membership-vip-access');
 })->name('membership-vip-access');
-Route::get('/nodal-registration', function(){
+Route::get('/nodal-registration', function () {
     return view('frontend.pages.nodal-registeration');
 })->name('nodal-registration');
-Route::get('/player-registration', function(){
+Route::get('/player-registration', function () {
     return view('frontend.pages.player-registration');
 })->name('player-registration');
-Route::get('/total-players-registration', function(){
+Route::get('/total-players-registration', function () {
     return view('frontend.pages.total-player-registration');
 })->name('total-player-registration');
-Route::get('/jsl-influencer', function(){
+Route::get('/jsl-influencer', function () {
     return view('frontend.pages.jsl-influencer');
 })->name('jsl-influencer');
-Route::get('/become-sponsor', function(){
+Route::get('/become-sponsor', function () {
     return view('frontend.pages.become-sponsor');
 })->name('become-sponsor');
-Route::get('/brand-promotion', function(){
+Route::get('/brand-promotion', function () {
     return view('frontend.pages.brand-promotion');
 })->name('brand-promotion');
-Route::get('/shop', function(){
-return view('frontend.pages.shop');
+Route::get('/shop', function () {
+    return view('frontend.pages.shop');
 })->name('shop');
-Route::get('/book-trial', function(){
+Route::get('/book-trial', function () {
     return view('frontend.pages.book-trial');
 })->name('book-trial');
 
 
-Route::post('/store', [LeadController::class,'store'])->name('contact-us.store');
+Route::post('/store', [LeadController::class, 'store'])->name('contact-us.store');
 Route::post('/test', function () {
     dd(request()->all());
 });
+
+// HERE ARE THE ADMIN PANEL ROUTES KINDLY WRITE THERE ONLY
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/admin/dashboard', function () {
+        return view('admin.views.dashboard');
+    });
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__ . '/auth.php';

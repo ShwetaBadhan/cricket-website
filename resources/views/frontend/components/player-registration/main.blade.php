@@ -10,9 +10,7 @@
                 <h2 class="player-register-title">Player Registration</h2>
 
                 <p class="player-register-description">
-                    The Super League welcomes talented and passionate players to participate in the
-                    official league competition. Player registration allows athletes to officially
-                    enter the league and showcase their abilities on a competitive platform.
+                   Step Up, Show Your Skills – Register as a JSL Player Today!
                 </p>
 
                 <p class="player-register-description">

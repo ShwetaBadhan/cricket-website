@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="{{url('assets/js/rev-slider/css/navigation.css')}}" type='text/css' media='all' />
     {{-- sweetalert --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
 
     <!--Rev Slider End-->
     <title>@yield('title')</title>

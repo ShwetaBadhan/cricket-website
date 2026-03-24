@@ -5,23 +5,23 @@
                 <li class="col-lg-3 col-md-6">
                     <div class="slidetab-box">
                         <span>01</span>
-                        <h6><a href="#">Fixtures & Results</a></h6>
-                        <strong>Match Schedule </strong>
+                        <h6><a href="#">Schedule</a></h6>
+                        <strong>Matches & results </strong>
                     </div>
                 </li>
 
                 <li class="col-lg-3 col-md-6">
                     <div class="slidetab-box">
                         <span>02</span>
-                        <h6><a href="#">Points Table</a></h6>
-                        <strong>Team Rankings</strong>
+                        <h6><a href="#">Standings</a></h6>
+                        <strong>Current team rankings</strong>
                     </div>
                 </li>
 
                 <li class="col-lg-3 col-md-6">
                     <div class="slidetab-box">
                         <span>03</span>
-                        <h6><a href="#">Overall Stats</a></h6>
+                        <h6><a href="#">Statistics</a></h6>
                         <strong>Player & Match</strong>
                     </div>
                 </li>
@@ -29,7 +29,7 @@
                 <li class="col-lg-3 col-md-6">
                     <div class="slidetab-box">
                         <span>04</span>
-                        <h6><a href="{{ route('our-team') }}">All Teams</a></h6>
+                        <h6><a href="{{ route('our-team') }}">Teams</a></h6>
                         <strong>Teams & Squads</strong>
                     </div>
                 </li>

@@ -1,0 +1,299 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.admin-login-wrapper{
+    display:flex;
+    min-height:100vh;
+    width:100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* LEFT SIDE */
+.admin-login-form-area{
+    width:40%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#ffffff;
+    padding:40px;
+}
+
+.admin-login-box{
+    width:100%;
+    max-width:360px;
+}
+
+/* HEADING */
+.admin-login-heading{
+    font-size:26px;
+    font-weight:700;
+    margin-bottom:5px;
+}
+
+.admin-login-subtext{
+    color:#777;
+    font-size:14px;
+    margin-bottom:25px;
+}
+
+/* INPUTS */
+
+.admin-input-group{
+    margin-bottom:18px;
+}
+
+.admin-input-label{
+    font-size:14px;
+    margin-bottom:6px;
+    display:block;
+}
+
+.admin-text-input{
+    width:100%;
+    height:45px;
+    border:none;
+    border-bottom:1px solid #ccc;
+    outline:none;
+    padding:6px 4px;
+    background:transparent;
+}
+
+/* OPTIONS */
+
+.admin-extra-options{
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+.admin-extra-options a{
+    text-decoration:none;
+    color:#6b2be2;
+}
+
+/* LOGIN BUTTON */
+
+.admin-signin-button{
+    width:100%;
+    height:45px;
+    border:none;
+    border-radius:6px;
+    background:linear-gradient(90deg,#7b2ff7,#a044ff);
+    color:white;
+    font-size:15px;
+    cursor:pointer;
+}
+
+/* SIGNUP TEXT */
+
+.admin-signup-text{
+    margin-top:20px;
+    text-align:center;
+    font-size:14px;
+}
+
+/* RIGHT SIDE IMAGE */
+
+.admin-login-image-area{
+    width:60%;
+    position:relative;
+}
+
+.admin-login-image-area img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* PURPLE OVERLAY */
+
+.admin-login-image-area::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(90,40,200,0.6);
+}
+
+/* RESPONSIVE */
+
+@media (max-width:992px){
+
+.admin-login-wrapper{
+    flex-direction:column;
+}
+
+.admin-login-form-area{
+    width:100%;
+    min-height:100vh;
+}
+
+.admin-login-image-area{
+    display:none;
+}
+
+}
+
+.admin-signup-text {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 14px;
+}
+
+.admin-login-image-area {
+    width: 60%;
+    /* background: #184052; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-login-image-area img {
+    width: 100%;
+    height: 100vh;
+    /* border-top-left-radius: 12%; */
+    /* border-bottom-left-radius: 12%; */
+}
+.admin-image-text{
+   position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 15px;
+    transform: translate(-50%, -50%);
+    color: white;
+    background: #722ea0;
+    text-align: center;
+    z-index: 2;
+}
+@media (max-width: 900px) {
+    .admin-login-image-area {
+        display: none;
+    }
+
+    .admin-login-form-area {
+        width: 100%;
+    }
+}
+/* for register  */
+.authx-page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Background Image */
+
+.authx-page-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("../images/auth/02.jpg") center/cover
+        no-repeat;
+    z-index: -2;
+}
+
+/* Purple Overlay */
+
+.authx-page-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(66, 33, 130, 0.75);
+    z-index: -1;
+}
+
+/* Center Card */
+
+.authx-register-card {
+    width: 420px;
+    background: #ffffff;
+    padding: 45px 40px;
+    border-radius: 4px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Title */
+
+.authx-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #4e2ca3;
+    text-transform: lowercase;
+}
+
+.authx-title-line {
+    width: 40px;
+    height: 3px;
+    background: #4e2ca3;
+    margin: 10px auto 30px auto;
+}
+
+/* Inputs */
+
+.authx-field-group {
+    margin-bottom: 18px;
+}
+
+.authx-field-input {
+    width: 100%;
+    height: 46px;
+    border: none;
+    background: #f2f2f2;
+    padding: 0 14px;
+    font-size: 14px;
+}
+
+/* Lost password */
+
+.authx-small-link {
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.authx-small-link a {
+    color: #4e2ca3;
+    text-decoration: none;
+}
+
+/* Buttons */
+
+.authx-button-row {
+    display: flex;
+    gap: 12px;
+}
+
+.authx-register-btn {
+    flex: 1;
+    height: 44px;
+    border: none;
+    background: #5d1bb3;
+    color: white;
+    border-radius: 22px;
+    cursor: pointer;
+}
+
+.authx-login-btn {
+    flex: 1;
+    height: 44px;
+    border: none;
+    background: #e6e6e6;
+    border-radius: 22px;
+    cursor: pointer;
+}
+
+/* Responsive */
+
+@media (max-width: 500px) {
+    .authx-register-card {
+        width: 90%;
+        padding: 35px 25px;
+    }
+}
+.authx-error {
+    color: #ef2c2c;
+}

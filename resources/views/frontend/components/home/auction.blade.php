@@ -4,9 +4,9 @@
 
         <!-- Heading -->
         <div class="auction-header">
-            <h2 class="auction-heading">Player Auction 2026</h2>
+            <h2 class="auction-heading">Auction of Players</h2>
             <p class="auction-subtext">
-                Teams compete to secure top cricket talent through an exciting live bidding process.
+               The Jharkhand Super League (JSL) Player Auction is a transparent and competitive platform where teams bid to select registered players for tournaments from block to state levels.
             </p>
         </div>
 
@@ -26,8 +26,8 @@
                     <p class="auction-role">Opening Batsman</p>
 
                     <ul class="auction-stats">
-                        <li><strong>Base:</strong> ₹2 Cr</li>
-                        <li><strong>Sold:</strong> ₹12 Cr</li>
+                        <li><strong>Base Price:</strong> ₹2 Cr</li>
+                        <li><strong>Sold For:</strong> ₹12 Cr</li>
                         <li><strong>Team:</strong> Mumbai Titans</li>
                     </ul>
 
@@ -48,9 +48,9 @@
                     <p class="auction-role">Fast Bowler</p>
 
                     <ul class="auction-stats">
-                        <li><strong>Base:</strong> ₹1.5 Cr</li>
-                        <li><strong>Current:</strong> ₹9 Cr</li>
-                        <li><strong>Bidders:</strong> 3 Teams</li>
+                        <li><strong>Base Price:</strong> ₹1.5 Cr</li>
+                        <li><strong>Current Bid:</strong> ₹9 Cr</li>
+                        <li><strong>Interested Teams:</strong> 3 Teams</li>
                     </ul>
 
                     <button class="auction-btn">Join Auction</button>
@@ -70,9 +70,9 @@
                     <p class="auction-role">Top Order Batsman</p>
 
                     <ul class="auction-stats">
-                        <li><strong>Base:</strong> ₹1 Cr</li>
+                        <li><strong>Base Price:</strong> ₹1 Cr</li>
                         <li><strong>Status:</strong> Awaiting Bid</li>
-                        <li><strong>Slot:</strong> #24</li>
+                        <li><strong>Slot No.:</strong> #24</li>
                     </ul>
 
                     <button class="auction-btn">Notify Me</button>

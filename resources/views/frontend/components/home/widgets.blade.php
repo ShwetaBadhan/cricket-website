@@ -23,9 +23,9 @@
 
                         <ul class="nmw-txt">
                             <li><strong>ICC ODI Series 2026</strong></li>
-                            <li>15 March, 2026</li>
+                            <li>20 April, 2026</li>
                             <li>02:30 PM IST</li>
-                            <li><span>Wankhede Stadium, Mumbai</span></li>
+                            <li><span>Eden Gardens, Kolkata</span></li>
                         </ul>
 
                         <div class="defaultCountdown"></div>
@@ -45,18 +45,17 @@
                     <ul class="match-teams-vs">
                         <li class="team-logo">
                             <img src="{{url('assets/images/nmf-logo1.png')}}" alt="">
-                            <strong>England</strong>
+                            <strong>Bangladesh </strong>
                         </li>
                         <li class="mvs">
                             <p>
-                                <strong>ICC T20 Series</strong> 18 March, 2026
-                                07:00 PM IST
+                                <strong>ICC T20 Series</strong> 15 April 06:30 PM IST
                             </p>
                             <strong class="vs">VS</strong>
                         </li>
                         <li class="team-logo">
                             <img src="{{url('assets/images/nmf-logo2.png')}}" alt="">
-                            <strong>South Africa</strong>
+                            <strong> Afghanistan</strong>
                         </li>
                     </ul>
 
@@ -72,18 +71,17 @@
                     <ul class="match-teams-vs">
                         <li class="team-logo">
                             <img src="{{url('assets/images/nmf-logo2.png')}}" alt="">
-                            <strong>Pakistan</strong>
+                            <strong>New Zealand </strong>
                         </li>
                         <li class="mvs">
                             <p>
-                                <strong>Asia Cup 2026</strong> 21 March, 2026
-                                03:00 PM IST
+                                <strong>ICC T20 Series</strong> 5 May 08:00 PM IST
                             </p>
                             <strong class="vs">VS</strong>
                         </li>
                         <li class="team-logo">
                             <img src="{{url('assets/images/nmf-logo3.png')}}" alt="">
-                            <strong>Sri Lanka</strong>
+                            <strong>West Indies</strong>
                         </li>
                     </ul>
 
@@ -99,18 +97,18 @@
                     <ul class="match-teams-vs">
                         <li class="team-logo">
                             <img src="{{url('assets/images/nmf-logo1.png')}}" alt="">
-                            <strong>New Zealand</strong>
+                            <strong>Sri Lanka </strong>
                         </li>
                         <li class="mvs">
                             <p>
-                                <strong>World Test Championship</strong> 25 March, 2026
-                                09:30 AM IST
+                                <strong>ICC T20 Series</strong>15 May 07:15 PM IST
+
                             </p>
                             <strong class="vs">VS</strong>
                         </li>
                         <li class="team-logo">
                             <img src="{{url('assets/images/nmf-logo2.png')}}" alt="">
-                            <strong>West Indies</strong>
+                            <strong>Pakistan</strong>
                         </li>
                     </ul>
 
