@@ -9,7 +9,8 @@
         </div>
 
         <div class="nodalreg-body">
-            <form id="nodalregForm" method="POST" action="{{ route('nodal-registration.store') }}">
+            <form id="nodalregForm" method="POST" action="#">
+            {{-- <form id="nodalregForm" method="POST" action="{{ route('nodal-registration.store') }}"> --}}
                 <div class="nodalreg-row">
                     <div class="nodalreg-group">
                         <label for="nodalregFullName">Full Name</label>

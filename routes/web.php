@@ -2,11 +2,6 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
-
-
-
-
 // fetch controllers 
 use App\Http\Controllers\LeadController;
 
@@ -133,13 +128,25 @@ Route::post('/test', function () {
 
 // HERE ARE THE ADMIN PANEL ROUTES KINDLY WRITE THERE ONLY
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('admin.views.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/admin/dashboard', function () {
-        return view('admin.views.dashboard');
-    });
+    
+
+    // contact leads
+    Route::get('/admin-contact-leads', function () {
+        return view('admin.views.admin-leads');
+    })->name('admin-contact-leads');
+    // admin blogs
+    Route::get('/admin-blogs', function () {
+        return view('admin.views.admin-blogs');
+    })->name('admin-blogs');
+    // setting page
+    Route::get('/admin-settings', function () {
+        return view('admin.views.setting');
+    })->name('admin-setting');
+    // profile CRUD
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
