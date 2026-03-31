@@ -14,7 +14,7 @@
                 <div class="row">
                     <div class="col-xl-5 d-flex">
                         <div class="dash-user-card w-100">
-                            <h4><i class="fe fe-sun"></i>Good Morning, John</h4>
+                            <h4><i class="fe fe-sun"></i>Good Morning, {{ Auth::user()->name }}</h4>
                             <p>14 New Companies Subscribed Today</p>
                             <div class="dash-btns">
                                 <a href="companies.html" class="btn view-company-btn">View Companies</a>

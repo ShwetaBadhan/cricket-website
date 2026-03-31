@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <!-- Favicon -->
-     <link rel="icon" href="{{asset('assets/images/logo/fav.png')}}" type="image/png">
+    <link rel="icon" href="{{asset('assets/images/logo/fav.png')}}" type="image/png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('admin/assets/css/bootstrap.min.css') }}">
     <!-- Fontawesome CSS -->
@@ -81,10 +81,10 @@
 
     <!-- Custom JS -->
     <script src="{{ asset('admin/assets/js/script.js') }}"></script>
-
-</body>
-
-</html>
+    {{-- swal --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    {{-- for the push script of the pages --}}
+    @stack('scripts')
 </body>
 
 </html>
