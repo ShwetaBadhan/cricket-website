@@ -39,8 +39,7 @@
                         <span class="menu-arrow"></span></a>
                     <ul style="display: none">
                         <li><a href="{{ route('admin-blogs') }}">All Blogs</a></li>
-                        <li><a href="categories.html">Categories</a></li>
-                        <li><a href="blog-comments.html">Blog Comments</a></li>
+                      
                     </ul>
                 </li>
                 <li>
@@ -71,7 +70,7 @@
                     <a href=""><i class="fe fe-calendar"></i> <span>Upcoming Match</span></a>
                 </li>
                 <li>
-                    <a href=""><i class="fe fe-video"></i> <span>Videos</span></a>
+                    <a href="{{ route('admin-videos') }}"><i class="fe fe-video"></i> <span>Videos</span></a>
                 </li>
                 <!-- /management -->
 

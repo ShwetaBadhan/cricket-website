@@ -7,6 +7,7 @@ use App\Http\Controllers\LeadController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\VideoController;
 
 
 Route::get('/', function () {
@@ -167,7 +168,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/admin-gallery/{gallery}', [GalleryController::class, 'destroy'])->name('admin-gallery.destroy');
     // admin partner
     Route::get('/admin-partners', [PartnerController::class, 'index'])->name('admin-partners');
-    Route::post('/admin-partners', [PartnerController::class,  'store'])->name('admin-partners.store');
+    Route::post('/admin-partners', [PartnerController::class, 'store'])->name('admin-partners.store');
     Route::put('/admin-partners/{partner}', [PartnerController::class, 'update'])->name('admin-partners.update');
     Route::delete('/admin-partners/{partner}', [PartnerController::class, 'destroy'])->name('admin-partners.destroy');
     // reviews
@@ -175,7 +176,11 @@ Route::middleware('auth')->group(function () {
     Route::post('/admin-reviews', [ReviewController::class, 'store'])->name('admin-reviews.store');
     Route::put('/admin-reviews/{review}', [ReviewController::class, 'update'])->name('admin-reviews.update');
     Route::delete('/admin-reviews/{review}', [ReviewController::class, 'destroy'])->name('admin-reviews.destroy');
-
+    // video
+    Route::get('/admin-videos', [VideoController::class, 'index'])->name('admin-videos');
+    Route::post('/admin-videos', [VideoController::class, 'store'])->name('admin-videos.store');
+    Route::put('/admin-videos/{video}', [VideoController::class, 'update'])->name('admin-videos.update');
+    Route::delete('/admin-videos/{video}', [VideoController::class, 'destroy'])->name('admin-videos.destroy');
 });
 use App\Http\Controllers\Admin\UserController;
 

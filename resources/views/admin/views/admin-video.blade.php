@@ -7,7 +7,7 @@
             <!-- Page Header -->
             <div class="page-header">
                 <div class="content-page-header ">
-                    <h5>Gallery</h5>
+                    <h5>Videos</h5>
                     <div class="list-btn">
                         <ul class="filter-list">
                             <li>
@@ -38,18 +38,26 @@
                                     <thead class="thead-light">
                                         <tr>
                                             <th>#</th>
-                                            <th>Item</th>
+                                            <th>Video Item </th>
+                                            <th>Video thumbnail </th>
                                             <th>Status</th>
                                             <th class="no-sort">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @forelse($gallery as $item)
+                                        @forelse($videos as $item)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td> <img src="{{ asset('storage/' . $item->image) }}"
+                                                <td> <video class="rounded img-thumbnail" width="80" height="60"
+                                                        style="object-fit: cover;" controls>
+                                                        <source src="{{ asset('storage/' . $item->video) }}" type="video/mp4">
+                                                        Your browser does not support the video tag.
+                                                    </video></td>
+                                                <td>
+                                                    <img src="{{ asset('storage/' . $item->thumbnail) }}"
                                                         class="rounded img-thumbnail" width="80" height="60"
-                                                        style="object-fit: cover;"></td>
+                                                        style="object-fit: cover;">
+                                                </td>
                                                 <td> <span
                                                         class="badge  bg-{{ $item->status == 'active' ? 'success-light' : 'danger-light' }}">
                                                         {{ ucfirst($item->status) }}
@@ -73,7 +81,7 @@
                                                                             class="far fa-edit me-2"></i>Edit</a>
                                                                 </li>
                                                                 <li>
-                                                                    <form action="{{ route('admin-gallery.destroy', $item) }}"
+                                                                    <form action="{{ route('admin-videos.destroy', $item) }}"
                                                                         method="POST" class="d-inline">
                                                                         @csrf @method('DELETE')
                                                                         <button type="submit" class="dropdown-item delete-btn">
@@ -90,7 +98,7 @@
                                             <tr>
                                                 <td colspan="4" class="text-center py-5 text-muted">
 
-                                                    No images in gallery yet.
+                                                    No Videos in gallery yet.
                                                 </td>
                                             </tr>
                                         @endforelse
@@ -120,30 +128,31 @@
             <div class="modal-content">
                 <div class="modal-header border-0 pb-0">
                     <div class="form-header modal-header-title text-start mb-0">
-                        <h4 class="mb-0">Add Gallery Image</h4>
+                        <h4 class="mb-0">Add Video</h4>
                     </div>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
 
                     </button>
                 </div>
-                <form action="{{ route('admin-gallery.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('admin-videos.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-lg-6 col-md-12">
                                 <div class="input-block mb-3">
-                                    <label>Image <span class="text-danger">*</span></label>
-                                    <input type="file" name="image" class="form-control" accept="image/*" required>
+                                    <label>Video <span class="text-danger">*</span></label>
+                                    <input type="file" name="video" class="form-control" accept="video/*" required>
                                     <small class="text-muted">Recommended: 480x340px • Max 2MB</small>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-12">
                                 <div class="input-block mb-3">
-                                    <label>Caption / Alt Text <span class="text-danger">*</span></label>
-                                    <input type="text" name="caption" class="form-control"
-                                        placeholder="e.g. 'Team Photo', 'Stadium View', etc." required>
+                                    <label>Thumbnail <span class="text-danger">*</span></label>
+                                    <input type="file" name="thumbnail" class="form-control" accept="image/*" required>
+                                    <small class="text-muted">Recommended: 480x340px • Max 2MB</small>
                                 </div>
                             </div>
+
 
                             <div class="col-lg-6 col-md-12">
                                 <div class="input-block mb-0">
@@ -158,7 +167,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" data-bs-dismiss="modal" class="btn btn-back cancel-btn me-2">Cancel</button>
-                        <button type="submit" data-bs-dismiss="modal" class="btn btn-primary paid-continue-btn">Add</button>
+                        <button type="submit" class="btn btn-primary paid-continue-btn">Add</button>
                     </div>
                 </form>
             </div>
@@ -167,7 +176,7 @@
     <!-- /Add Inventory -->
 
     <!-- Edit Inventory -->
-    @foreach($gallery as $item)
+    @foreach($videos as $item)
         <!-- View Modal -->
         <div class="modal fade" id="view{{ $item->id }}" tabindex="-1">
             <div class="modal-dialog custom-modal modal-centered">
@@ -175,21 +184,23 @@
 
                     <!-- Header -->
                     <div class="modal-header">
-                        <h5 class="modal-title">Image Details</h5>
+                        <h5 class="modal-title">View Video</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
 
                     <!-- Table Layout -->
                     <table class="table table-bordered table-striped mb-0">
+
                         <tr>
-                            <th>Caption :</th>
-                            <td>{{ $item->caption ?: '—' }}</td>
-
-
+                            <th> Video</th>
+                            <td><video class="rounded img-thumbnail" width="80" height="60" style="object-fit: cover;" controls>
+                                    <source src="{{ asset('storage/' . $item->video) }}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video></td>
                         </tr>
                         <tr>
-                            <th> Image</th>
-                            <td><img src="{{ asset('storage/' . $item->image) }}" class="img-fluid rounded"
+                            <th> Thumbnail</th>
+                            <td><img src="{{ asset('storage/' . $item->thumbnail) }}" class="img-fluid rounded"
                                     style="max-height: 60vh; object-fit: contain;"></td>
                         </tr>
                         <tr>
@@ -262,33 +273,46 @@
 
 
         {{-- edit modal --}}
-      
+
         <div class="modal fade" id="edit{{ $item->id }}">
             <div class="modal-dialog custom-modal">
-                <form action="{{ route('admin-gallery.update', $item) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('admin-videos.update', $item) }}" method="POST" enctype="multipart/form-data">
                     @csrf @method('PUT')
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5>Edit Image</h5>
+                            <h5>Edit video</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body">
-                            <div class=" mb-4">
-                                <img src="{{ asset('storage/' . $item->image) }}" class="rounded" width="100" height="100">
-                                <p class="text-muted mt-2">Current Image</p>
+                            <div class=" mb-4 d-flex gap-3">
+                                <div class="col-6">
+                                    <video class="rounded img-thumbnail" width="80" height="60" style="object-fit: cover;"
+                                        controls>
+                                        <source src="{{ asset('storage/' . $item->video) }}" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <p class="text-muted mt-2">Current Video</p>
+                                </div>
+                                <div class="col-6"><img src="{{ asset('storage/' . $item->thumbnail) }}"
+                                        class="img-fluid rounded" style="max-height: 60vh; object-fit: contain;">
+                                    <p class="text-muted mt-2">Current thumbnail</p>
+                                </div>
                             </div>
+
                             <div class="row g-3">
                                 <div class="col-12">
-                                    <label>Change Image</label>
-                                    <input type="file" name="image" class="form-control" accept="image/*">
-                                     <small class="text-muted">Recommended: 480x340px • Max 2MB</small>
+                                    <label>Change Video</label>
+                                    <input type="file" name="video" class="form-control" accept="video/*">
+                                    <small class="text-muted">Recommended: 480x340px • Max 2MB</small>
                                 </div>
-                                <div class="col-12">
-                                    <label>Caption / Alt Text</label>
-                                    <input type="text" name="caption" value="{{ old('caption', $item->caption) }}"
-                                        class="form-control">
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="input-block mb-3">
+                                        <label>Thumbnail <span class="text-danger">*</span></label>
+                                        <input type="file" name="thumbnail" class="form-control" accept="image/*" >
+                                        <small class="text-muted">Recommended: 480x340px • Max 2MB</small>
+                                    </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <label>Status</label>
                                     <select name="status" class="form-control">
                                         <option value="active" {{ $item->status == 'active' ? 'selected' : '' }}>Active</option>
@@ -300,7 +324,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-primary">Update Image</button>
+                            <button type="submit" class="btn btn-primary">Update </button>
                         </div>
                     </div>
                 </form>
@@ -309,30 +333,7 @@
     @endforeach
     <!-- /Edit Inventory -->
 
-    <!-- Delete Stock Modal -->
-    <div class="modal custom-modal fade" id="delete_stock" role="dialog">
-        <div class="modal-dialog modal-dialog-centered modal-md">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="form-header">
-                        <h3>Delete Inventory</h3>
-                        <p>Are you sure want to delete?</p>
-                    </div>
-                    <div class="modal-btn delete-action">
-                        <div class="row">
-                            <div class="col-6">
-                                <a href="#" class="btn btn-primary paid-continue-btn">Delete</a>
-                            </div>
-                            <div class="col-6">
-                                <a href="#" data-bs-dismiss="modal" class="btn btn-primary paid-cancel-btn">Cancel</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /Delete Stock Modal -->
+
 
 
 
@@ -350,8 +351,8 @@
                 var form = $(this).closest('form');
 
                 Swal.fire({
-                    title: 'Delete Image?',
-                    text: "This Gallery image will be permanently deleted !",
+                    title: 'Delete Video?',
+                    text: "This Video will be permanently deleted !",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#d33',

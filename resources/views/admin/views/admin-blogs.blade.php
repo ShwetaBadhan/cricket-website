@@ -6,7 +6,7 @@
             <!-- Page Header -->
             <div class="page-header">
                 <div class="content-page-header ">
-                    <h5>Category </h5>
+                    <h5>Blogs </h5>
                     <div class="list-btn">
                         <ul class="filter-list">
                             <li>
@@ -44,7 +44,7 @@
                             <li>
                                 <a class="btn btn-primary" href="javascript:void(0);" data-bs-toggle="modal"
                                     data-bs-target="#add_category"><i class="fa fa-plus-circle me-2"
-                                        aria-hidden="true"></i>Add Category</a>
+                                        aria-hidden="true"></i>Add Blog</a>
                             </li>
                         </ul>
                     </div>
@@ -107,8 +107,8 @@
                                     <thead class="thead-light">
                                         <tr>
                                             <th>#</th>
-                                            <th>Category Name</th>
-                                            <th>Total Products</th>
+                                            <th>Blog Title</th>
+                                            <th>Author</th>
                                             <th class="no-sort">Action</th>
                                         </tr>
                                     </thead>
