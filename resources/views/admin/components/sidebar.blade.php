@@ -49,7 +49,7 @@
                     <a href=""><i class="fe fe-award"></i> <span>Match Result</span></a>
                 </li>
                 <li>
-                    <a href=""><i class="fe fe-users"></i> <span>Organizers</span></a>
+                    <a href="{{ route('admin-organizers') }}"><i class="fe fe-users"></i> <span>Organizers</span></a>
                 </li>
                 <li>
                     <a href="{{ route('admin-partners') }}"><i class="fe fe-briefcase"></i> <span>Partners</span></a>
@@ -64,7 +64,7 @@
                     <a href=""><i class="fe fe-activity"></i> <span>Sports</span></a>
                 </li>
                 <li>
-                    <a href=""><i class="fe fe-users"></i> <span>Team</span></a>
+                    <a href="{{ route('admin-team') }}"><i class="fe fe-users"></i> <span>Team</span></a>
                 </li>
                 <li>
                     <a href=""><i class="fe fe-calendar"></i> <span>Upcoming Match</span></a>

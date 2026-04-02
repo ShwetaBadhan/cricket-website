@@ -8,6 +8,9 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\VideoController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\OrganizerController;
+use App\Http\Controllers\TeamController;
 
 
 Route::get('/', function () {
@@ -181,7 +184,24 @@ Route::middleware('auth')->group(function () {
     Route::post('/admin-videos', [VideoController::class, 'store'])->name('admin-videos.store');
     Route::put('/admin-videos/{video}', [VideoController::class, 'update'])->name('admin-videos.update');
     Route::delete('/admin-videos/{video}', [VideoController::class, 'destroy'])->name('admin-videos.destroy');
+    // blogs
+    Route::get('/admin-blogs', [BlogController::class, 'index'])->name('admin-blogs');
+    Route::post('/admin-blogs', [BlogController::class, 'store'])->name('admin-blogs.store');
+    Route::put('/admin-blogs/{blog}', [BlogController::class, 'update'])->name('admin-blogs.update');
+    Route::delete('/admin-blogs/{blog}', [BlogController::class, 'destroy'])->name('admin-blogs.destroy');
+    // organizer 
+    Route::get('/admin-organizers', [OrganizerController::class, 'index'])->name('admin-organizers');
+    Route::post('/admin-organizers', [OrganizerController::class, 'store'])->name('admin-organizers.store');
+    Route::put('/admin-organizers/{organizer}', [OrganizerController::class, 'update'])->name('admin-organizers.update');
+    Route::delete('/admin-organizers/{organizer}', [OrganizerController::class, 'destroy'])->name('admin-organizers.destroy');
+    //    team
+    Route::get('/admin-team', [TeamController::class, 'index'])->name('admin-team');
+    Route::post('/admin-team', [TeamController::class, 'store'])->name('admin-team.store');
+    Route::put('/admin-team/{team}', [TeamController::class, 'update'])->name('admin-team.update');
+    Route::delete('/admin-team/{team}', [TeamController::class, 'destroy'])->name('admin-team.destroy');
 });
+
+
 use App\Http\Controllers\Admin\UserController;
 
 Route::middleware(['auth', 'role:admin'])->group(function () {

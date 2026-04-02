@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Blog;
+use Illuminate\Support\Facades\Storage;
 class BlogController extends Controller
 {
     //
@@ -49,7 +50,8 @@ class BlogController extends Controller
 
         return back()->with('success', 'Blog added successfully!');
     }
-    public function update(Request $request, Blog $blog){
+    public function update(Request $request, Blog $blog)
+    {
         $request->validate([
             'title' => 'required|string|max:255',
             'slug' => 'required|string|max:255|unique:blogs,slug,' . $blog->id,
@@ -84,5 +86,21 @@ class BlogController extends Controller
         ]);
 
         return back()->with('success', 'Blog updated successfully!');
+    }
+    
+
+    public function destroy(Blog $blog)
+    {
+        if ($blog->image) {
+            Storage::disk('public')->delete($blog->image);
+        }
+
+        if ($blog->author_image) {
+            Storage::disk('public')->delete($blog->author_image);
+        }
+
+        $blog->delete();
+
+        return back()->with('success', 'Blog deleted successfully!');
     }
 }
