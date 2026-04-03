@@ -6,7 +6,7 @@
             <!-- Page Header -->
             <div class="page-header">
                 <div class="content-page-header ">
-                    <h5>Contact Leads</h5>
+                    <h5>Nodal Registration Leads</h5>
                     <div class="list-btn">
                         <ul class="filter-list">
 
@@ -58,7 +58,7 @@
                                 <table class="table table-center table-hover datatable">
                                     <thead class="thead-light">
                                         <tr>
-                                            <th><input type="checkbox" id="select-all"></th>
+                                            <th>#</th>
                                             <th>Name</th>
                                             <th>Phone</th>
                                             <th>Email</th>
@@ -66,21 +66,21 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @forelse ($leads as $lead)
+                                        @forelse ($nodalRegistrations as $nodalRegistration)
                                             <tr>
                                                 <td>
-                                                    <input type="checkbox" class="checkItem" value="{{ $lead->id }}">
+                                                    <input type="checkbox" class="checkItem" value="{{ $nodalRegistration->id }}">
                                                 {{ $loop->iteration }}</td>
-                                                <td>{{ $lead->name }}</td>
-                                                <td>{{ $lead->phone }}</td>
-                                                <td>{{ $lead->email }}</td>
+                                                <td>{{ $nodalRegistration->name }}</td>
+                                                <td>{{ $nodalRegistration->phone }}</td>
+                                                <td>{{ $nodalRegistration->email }}</td>
                                                 <td class="d-flex align-items-center">
                                                     <a class="btn-action-icon me-2" href="javascript:void(0);"
-                                                        data-bs-toggle="modal" data-bs-target="#view_lead{{ $lead->id }}">
+                                                        data-bs-toggle="modal" data-bs-target="#view_lead{{ $nodalRegistration->id }}">
                                                         <i class="fe fe-eye"></i>
                                                     </a>
 
-                                                    <form action="{{ route('admin-leads.destroy', $lead->id) }}" method="POST"
+                                                    <form action="{{ route('admin-nodal-registration.destroy', $nodalRegistration->id) }}" method="POST"
                                                         class="d-inline delete-form">
                                                         @csrf
                                                         @method('DELETE')
@@ -107,7 +107,7 @@
         </div>
     </div>
 
-    @foreach($leads as $item)
+    @foreach($nodalRegistrations as $item)
         <div class="modal custom-modal fade" id="view_lead{{ $item->id }}" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
@@ -135,8 +135,22 @@
                                 <th>Phone :</th>
                                 <td>{{ $item->phone }}</td>
 
-                                <th>Subject :</th>
-                                <td>{{ $item->subject }}</td>
+                                <th>Organization :</th>
+                                <td>{{ $item->organization }}</td>
+                            </tr>
+                            <tr>
+                                <th>State :</th>
+                                <td>{{ $item->state }}</td>
+
+                                <th>City :</th>
+                                <td>{{ $item->city }}</td>
+                            </tr>
+                            <tr>
+                                <th>Address :</th>
+                                <td>{{ $item->address }}</td>
+
+                                <th>Status :</th>
+                                <td>{{ $item->status }}</td>
                             </tr>
                             <tr>
                                 <th>Created At :</th>
@@ -145,10 +159,7 @@
                                 <th>Updated At :</th>
                                 <td>{{ $item->updated_at->format('d M Y, h:i A') }}</td>
                             </tr>
-                            <tr>
-                                <th>Message :</th>
-                                <td colspan="3">{{ $item->message }}</td>
-                            </tr>
+                           
 
                         </table>
 
@@ -178,8 +189,8 @@
                 var form = $(this).closest('form');
 
                 Swal.fire({
-                    title: 'Delete Lead?',
-                    text: "This lead will be permanently deleted!",
+                    title: 'Delete Player Registration?',
+                    text: "This Player Registration will be permanently deleted!",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#d33',
@@ -228,7 +239,7 @@
 
             Swal.fire({
                 title: "Are you sure?",
-                text: "Selected Lead will be deleted permanently!",
+                text: "Selected Nodal Registrations will be deleted permanently!",
                 icon: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#d33",
@@ -239,7 +250,7 @@
                 if (result.isConfirmed) {
 
                     $.ajax({
-                        url: "/leads/delete-selected",
+                        url: "/nodal-registrations/delete-selected",
 
                         type: "POST",
                         data: {
@@ -247,7 +258,7 @@
                             _token: "{{ csrf_token() }}"
                         },
                         success: function (response) {
-                            Swal.fire("Deleted!", "Selected Lead removed.", "success");
+                            Swal.fire("Deleted!", "Selected Nodal Registrations removed.", "success");
 
                             selected.forEach(id => {
                                 $(`input[value='${id}']`).closest("tr").fadeOut(500, function () {

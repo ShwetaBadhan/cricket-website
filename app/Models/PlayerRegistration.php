@@ -15,6 +15,5 @@ class PlayerRegistration extends Model
         'city',
         'state',
         'address',
-        'password'
     ];
 }

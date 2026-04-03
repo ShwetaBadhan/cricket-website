@@ -18,13 +18,13 @@
                     <a href="javascript:void(0)"><i class="fe fe-grid"></i> <span> Leads</span>
                         <span class="menu-arrow"></span></a>
                     <ul style="display: none">
-                        <li><a href="{{ route('admin-contact-leads') }}">Booking Leads</a></li>
-                        <li><a href="{{ route('admin-contact-leads') }}">Contact Leads</a></li>
-                        <li><a href="{{ route('admin-contact-leads') }}">Influencer Leads</a></li>
-                        <li><a href="{{ route('admin-contact-leads') }}">Membership Leads</a></li>
-                        <li><a href="{{ route('admin-contact-leads') }}">Nodal Registration</a></li>
-                        <li><a href="{{ route('admin-contact-leads') }}">Player Registration</a></li>
-                        <li><a href="{{ route('admin-contact-leads') }}">Sponsor Leads</a></li>
+                        <li><a href="{{ route('admin-booking') }}">Booking Leads</a></li>
+                        <li><a href="{{ route('admin-leads') }}">Contact Leads</a></li>
+                        <li><a href="">Influencer Leads</a></li>
+                        <li><a href="">Membership Leads</a></li>
+                        <li><a href="{{ route('admin-nodal-registration') }}">Nodal Registration</a></li>
+                        <li><a href="">Player Registration</a></li>
+                        <li><a href="">Sponsor Leads</a></li>
 
                     </ul>
                 </li>
@@ -54,9 +54,7 @@
                 <li>
                     <a href="{{ route('admin-partners') }}"><i class="fe fe-briefcase"></i> <span>Partners</span></a>
                 </li>
-                <li>
-                    <a href=""><i class="fe fe-user"></i> <span>Players</span></a>
-                </li>
+               
                 <li>
                     <a href="{{ route('admin-reviews') }}"><i class="fe fe-star"></i> <span>Review</span></a>
                 </li>

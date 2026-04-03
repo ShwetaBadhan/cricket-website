@@ -6,7 +6,7 @@
             <!-- Page Header -->
             <div class="page-header">
                 <div class="content-page-header ">
-                    <h5>Contact Leads</h5>
+                    <h5>Booking Trial Leads</h5>
                     <div class="list-btn">
                         <ul class="filter-list">
 
@@ -58,7 +58,7 @@
                                 <table class="table table-center table-hover datatable">
                                     <thead class="thead-light">
                                         <tr>
-                                            <th><input type="checkbox" id="select-all"></th>
+                                            <th>#<input type="hidden" id="selectAll"></th>
                                             <th>Name</th>
                                             <th>Phone</th>
                                             <th>Email</th>
@@ -66,22 +66,26 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @forelse ($leads as $lead)
+                                        @forelse ($trials as $trial)
                                             <tr>
+                                                
                                                 <td>
-                                                    <input type="checkbox" class="checkItem" value="{{ $lead->id }}">
-                                                {{ $loop->iteration }}</td>
-                                                <td>{{ $lead->name }}</td>
-                                                <td>{{ $lead->phone }}</td>
-                                                <td>{{ $lead->email }}</td>
+                                                    <input type="checkbox" class="checkItem" value="{{ $trial->id }}">
+                                                    {{ $loop->iteration }}
+                                                </td>
+
+                                                </td>
+                                                <td>{{ $trial->name }}</td>
+                                                <td>{{ $trial->phone }}</td>
+                                                <td>{{ $trial->email }}</td>
                                                 <td class="d-flex align-items-center">
                                                     <a class="btn-action-icon me-2" href="javascript:void(0);"
-                                                        data-bs-toggle="modal" data-bs-target="#view_lead{{ $lead->id }}">
+                                                        data-bs-toggle="modal" data-bs-target="#view_lead{{ $trial->id }}">
                                                         <i class="fe fe-eye"></i>
                                                     </a>
 
-                                                    <form action="{{ route('admin-leads.destroy', $lead->id) }}" method="POST"
-                                                        class="d-inline delete-form">
+                                                    <form action="{{ route('admin-booking.destroy', $trial->id) }}"
+                                                        method="POST" class="d-inline delete-form">
                                                         @csrf
                                                         @method('DELETE')
 
@@ -107,7 +111,7 @@
         </div>
     </div>
 
-    @foreach($leads as $item)
+    @foreach($trials as $item)
         <div class="modal custom-modal fade" id="view_lead{{ $item->id }}" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
@@ -135,20 +139,27 @@
                                 <th>Phone :</th>
                                 <td>{{ $item->phone }}</td>
 
-                                <th>Subject :</th>
-                                <td>{{ $item->subject }}</td>
+                                <th>Sports :</th>
+                                <td>{{ $item->sports }}</td>
                             </tr>
                             <tr>
-                                <th>Created At :</th>
-                                <td>{{ $item->created_at->format('d M Y, h:i A') }}</td>
+                                <th>DOB :</th>
+                                <td>{{ $item->dob }}</td>
 
-                                <th>Updated At :</th>
-                                <td>{{ $item->updated_at->format('d M Y, h:i A') }}</td>
+                                <th>Gender :</th>
+                                <td>{{ $item->gender }}</td>
                             </tr>
                             <tr>
-                                <th>Message :</th>
+                                <th>Level :</th>
+                                <td>{{ $item->level }}</td>
+                                <th>Created At</th>
+                                <td>{{ $item->created_at }}</td>
+                            </tr>
+                            <tr>
+                                <th>Message</th>
                                 <td colspan="3">{{ $item->message }}</td>
                             </tr>
+
 
                         </table>
 
@@ -178,8 +189,8 @@
                 var form = $(this).closest('form');
 
                 Swal.fire({
-                    title: 'Delete Lead?',
-                    text: "This lead will be permanently deleted!",
+                    title: 'Delete Nodal Registration?',
+                    text: "This Nodal Registration will be permanently deleted!",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#d33',
@@ -222,13 +233,13 @@
             });
 
             if (selected.length === 0) {
-                Swal.fire("Oops!", "Please select at least one contact.", "warning");
+                Swal.fire("Oops!", "Please select at least one trial.", "warning");
                 return;
             }
 
             Swal.fire({
                 title: "Are you sure?",
-                text: "Selected Lead will be deleted permanently!",
+                text: "Selected Trial Leads will be deleted permanently!",
                 icon: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#d33",
@@ -239,33 +250,30 @@
                 if (result.isConfirmed) {
 
                     $.ajax({
-                        url: "/leads/delete-selected",
-
+                        url: "{{ route('booking-trials.delete-selected') }}",
                         type: "POST",
                         data: {
                             ids: selected,
                             _token: "{{ csrf_token() }}"
                         },
                         success: function (response) {
-                            Swal.fire("Deleted!", "Selected Lead removed.", "success");
+
+                            Swal.fire("Deleted!", "Selected Trial Leads removed.", "success");
 
                             selected.forEach(id => {
                                 $(`input[value='${id}']`).closest("tr").fadeOut(500, function () {
                                     $(this).remove();
                                 });
                             });
-                        },
-                        error: function (xhr) {
-                            // console.log(xhr.responseText);
-                            Swal.fire("Error!", "Something went wrong. Check console.", "error");
+
                         }
                     });
 
                 }
+
             });
 
         });
-
 
     </script>
     @if(session('success'))

@@ -16,117 +16,103 @@
     @include('frontend.components.nodal.form')
 @endsection
 @push('scripts')
-    <script>
-        const nodalregForm = document.getElementById("nodalregForm");
-
-        nodalregForm.addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            const password = document.getElementById("nodalregPassword").value;
-            const confirmPassword = document.getElementById(
-                "nodalregConfirmPassword",
-            ).value;
-
-            if (password !== confirmPassword) {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Success!',
-                    text: response.message,
-                    confirmButtonColor: '#28a745',
-                    confirmButtonText: 'OK',
-                    timer: 3000,
-                    timerProgressBar: true
-                })
-                return;
-            }
-
-            alert("Nodal registration submitted successfully!");
-        });
-    </script>
+    <script src="https://www.google.com/recaptcha/api.js?render={{ env('RECAPTCHA_SITE_KEY') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
-        jQuery(document).ready(function ($) {
+        $(document).ready(function () {
+
             $('#nodalregForm').on('submit', function (e) {
+
                 e.preventDefault();
 
-                // Clear previous errors
-                $('.error-message').text('');
+                let password = $('#nodalregPassword').val();
+                let confirmPassword = $('#nodalregConfirmPassword').val();
 
-                // Disable submit button & show loading
-                $('#submitBtn').prop('disabled', true);
-                $('#btnText').hide();
-                $('#btnLoader').show();
+                if (password !== confirmPassword) {
 
-                $.ajax({
-                    url: $(this).attr('action'),
-                    method: 'POST',
-                    data: $(this).serialize(),
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest'
-                    },
-                    success: function (response) {
-                        if (response.success) {
-                            // Show Success SweetAlert
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Success!',
-                                text: response.message,
-                                confirmButtonColor: '#28a745',
-                                confirmButtonText: 'OK',
-                                timer: 3000,
-                                timerProgressBar: true
-                            }).then(() => {
-                                // Reset form after alert closes
-                                $('#contactForm')[0].reset();
-                            });
-                        }
-                    },
-                    error: function (xhr) {
-                        if (xhr.status === 422) {
-                            // Validation Errors - Show each field error
-                            var errors = xhr.responseJSON.errors;
-                            $.each(errors, function (key, value) {
-                                $('#' + key + '-error').text(value[0]);
-                            });
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Password Mismatch',
+                        text: 'Password and Confirm Password must be same'
+                    });
 
-                            // Show SweetAlert for validation
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Validation Error!',
-                                text: 'Please check the form fields and try again.',
-                                confirmButtonColor: '#dc3545',
-                                confirmButtonText: 'OK'
-                            });
- 
-                        } else if (xhr.status === 500) {
-                            // Server Error
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Server Error!',
-                                text: xhr.responseJSON?.message || 'Something went wrong. Please try again.',
-                                confirmButtonColor: '#dc3545',
-                                confirmButtonText: 'OK'
-                            });
-                        } else {
-                            // Generic Error
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Error!',
-                                text: 'Unable to submit form. Please try again.',
-                                confirmButtonColor: '#dc3545',
-                                confirmButtonText: 'OK'
-                            });
-                        }
-                    },
-                    complete: function () {
-                        // Re-enable submit button
-                        $('#submitBtn').prop('disabled', false);
-                        $('#btnText').show();
-                        $('#btnLoader').hide();
-                    }
+                    return;
+                }
+
+                grecaptcha.ready(function () {
+
+                    grecaptcha.execute('{{ env("RECAPTCHA_SITE_KEY") }}', { action: 'nodal' }).then(function (token) {
+
+                        let formData = $('#nodalregForm').serialize() + "&g-recaptcha-response=" + token;
+
+                        $.ajax({
+
+                            url: $('#nodalregForm').attr('action'),
+                            type: 'POST',
+                            data: formData,
+                            headers: { 'X-Requested-With': 'XMLHttpRequest' },
+
+                            success: function (response) {
+
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Success',
+                                    text: response.message
+                                });
+
+                                $('#nodalregForm')[0].reset();
+                            },
+
+                            error: function (xhr) {
+
+                                if (xhr.status === 422) {
+
+                                    let errors = xhr.responseJSON.errors;
+
+                                    $.each(errors, function (key, value) {
+
+                                        $('#' + key + '-error').text(value[0]);
+
+                                    });
+
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: 'Validation Error',
+                                        text: 'Please check the form'
+                                    });
+
+                                } else {
+
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: 'Error',
+                                        text: 'Something went wrong'
+                                    });
+
+                                }
+
+                            }
+
+                        });
+
+                    });
+
                 });
+
             });
+
+        });
+        $('.toggle-password').click(function () {
+
+            let input = $($(this).attr("toggle"));
+
+            if (input.attr("type") == "password") {
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+
         });
     </script>
 @endpush

@@ -1,81 +1,98 @@
-<section class="nodal-registration-section py-5 wf100">
-    <div class="container">
+<section class="nodalreg-section wf100">
+    <div class="nodalreg-container">
+        <div class="nodalreg-topbar">
+            <h2 class="nodalreg-title">Book Trial Registration</h2>
+            <p class="nodalreg-subtitle">
+                Register as an official Book Trial representative for the Super League.
+            </p>
+        </div>
 
-        <div class="row justify-content-center">
+        <div class="nodalreg-body">
+            <form id="trialForm" method="POST" action="{{ route('book-trial-registration.store') }}">
+                @csrf
 
-            <div class="col-lg-8">
+                <div class="nodalreg-row">
 
-                <div class="nodal-registration-wrapper">
-
-                    <div class="nodal-registration-header text-center mb-4">
-                        <h2 class="nodal-registration-title">Book Trial Registration</h2>
-                        <p class="nodal-registration-subtitle">
-                            Register as an official nodal representative for the Super League.
-                        </p>
+                    <div class="nodalreg-group">
+                        <label>Full Name <span class="text-danger">*</span></label>
+                        <input type="text" name="name" value="{{ old('name') }}" placeholder="Enter full name" required>
                     </div>
 
-                    <form method="POST" action="" class="nodal-registration-form">
-                        @csrf
-
-                        <div class="row">
-
-                            <div class="col-md-6 mb-3">
-                                <label class="nodal-form-label">Full Name</label>
-                                <input type="text" name="name" class="form-control nodal-form-input"
-                                    placeholder="Enter full name">
-                            </div>
-
-                            <div class="col-md-6 mb-3">
-                                <label class="nodal-form-label">Email Address</label>
-                                <input type="email" name="email" class="form-control nodal-form-input"
-                                    placeholder="Enter email">
-                            </div>
-
-                            <div class="col-md-6 mb-3">
-                                <label class="nodal-form-label">Phone Number</label>
-                                <input type="text" name="phone" class="form-control nodal-form-input"
-                                    placeholder="Enter phone number">
-                            </div>
-
-                            <div class="col-md-6 mb-3">
-                                <label class="nodal-form-label">Organization / Club Name</label>
-                                <input type="text" name="organization" class="form-control nodal-form-input"
-                                    placeholder="Enter organization">
-                            </div>
-
-                            <div class="col-md-6 mb-3">
-                                <label class="nodal-form-label">State</label>
-                                <input type="text" name="state" class="form-control nodal-form-input"
-                                    placeholder="Enter state">
-                            </div>
-
-                            <div class="col-md-6 mb-3">
-                                <label class="nodal-form-label">City</label>
-                                <input type="text" name="city" class="form-control nodal-form-input"
-                                    placeholder="Enter city">
-                            </div>
-
-                            <div class="col-12 mb-3">
-                                <label class="nodal-form-label">Address</label>
-                                <textarea name="address" class="form-control nodal-form-textarea" rows="3"></textarea>
-                            </div>
-
-                           
-                        </div>
-
-                        <div class="text-center mt-4">
-                            <button type="submit" class="nodal-register-btn">
-                                Submit Registration
-                            </button>
-                        </div>
-
-                    </form>
+                    <div class="nodalreg-group">
+                        <label>Email Address <span class="text-danger">*</span></label>
+                        <input type="email" name="email" value="{{ old('email') }}" placeholder="Enter email" required>
+                    </div>
 
                 </div>
 
-            </div>
 
+                <div class="nodalreg-row">
+
+                    <div class="nodalreg-group">
+                        <label>Phone Number <span class="text-danger">*</span></label>
+                        <input type="tel" name="phone" value="{{ old('phone') }}" placeholder="Enter phone number"
+                            maxlength="10" pattern="[6-9]{1}[0-9]{9}" inputmode="numeric" required>
+                    </div>
+
+                    <div class="nodalreg-group">
+                        <label>Sport <span class="text-danger">*</span></label>
+                        <select name="sports" required>
+                            <option value="">Select Sport</option>
+                            <option value="Athletic">Athletic</option>
+                            <option value="Cricket">Cricket</option>
+                            <option value="Football">Football</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <div class="nodalreg-row">
+
+                    <div class="nodalreg-group">
+                        <label>Date of Birth <span class="text-danger">*</span></label>
+                        <input type="date" name="dob" value="{{ old('dob') }}" max="{{ date('Y-m-d', strtotime('-10 years')) }}" required>
+                    </div>
+
+                    <div class="nodalreg-group">
+                        <label>Gender <span class="text-danger">*</span></label>
+                        <select name="gender" required>
+                            <option value="">Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <div class="nodalreg-row">
+
+                    <div class="nodalreg-group">
+                        <label>Level <span class="text-danger">*</span></label>
+                        <select name="level" required>
+                            <option value="">Select Level</option>
+                            <option value="Beginner">Beginner</option>
+                            <option value="Intermediate">Intermediate</option>
+                            <option value="Advanced">Advanced</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <div class="nodalreg-group nodalreg-full">
+                    <label>Message</label>
+                    <textarea name="message" rows="5" placeholder="Write your message">{{ old('message') }}</textarea>
+                </div>
+
+
+                <button type="submit" class="nodalreg-submit-btn">
+                    Book Trial
+                </button>
+
+            </form>
         </div>
-
     </div>
 </section>

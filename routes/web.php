@@ -1,8 +1,11 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+// ************************************************************************************
+// ************************************************************************************
 // fetch controllers 
+// ************************************************************************************
+// ************************************************************************************
 use App\Http\Controllers\LeadController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\PartnerController;
@@ -11,8 +14,16 @@ use App\Http\Controllers\VideoController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\OrganizerController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\NodalRegisterationController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\BookATrialController;
+use App\Http\Controllers\PlayerRegistrationController;
 
-
+// ************************************************************************************
+// ************************************************************************************
+// UI ROUTES
+// ************************************************************************************
+// ************************************************************************************
 Route::get('/', function () {
     return view('frontend.pages.index');
 })->name('index');
@@ -28,31 +39,24 @@ Route::get('/match-details', function () {
 Route::get('/our-team', function () {
     return view('frontend.pages.teams');
 })->name('our-team');
-
 Route::get('/team-details', function () {
     return view('frontend.pages.team-details');
 })->name('team-details');
-
 Route::get('/staff-details', function () {
     return view('frontend.pages.staff-details');
 })->name('staff-details');
-
 Route::get('/point-table', function () {
     return view('frontend.pages.point-table');
 })->name('point-table');
-
 Route::get('/news', function () {
     return view('frontend.pages.news');
 })->name('news');
-
 Route::get('/news-details', function () {
     return view('frontend.pages.news-details');
 })->name('news-details');
-
 Route::get('/fixtures', function () {
     return view('frontend.pages.fixtures');
 })->name('fixtures');
-
 Route::get('/contact-us', function () {
     return view('frontend.pages.contact-us');
 })->name('contact-us');
@@ -129,27 +133,39 @@ Route::get('/book-trial', function () {
 })->name('book-trial');
 
 
-Route::post('/store', [LeadController::class, 'store'])->name('contact-us.store');
-Route::post('/test', function () {
-    dd(request()->all());
-});
 
+
+
+// ************************************************************************************
+// ************************************************************************************
+// HERE ARE ALL THE FORM SUBMISSION ROUTES KINDLY WRITE THERE ONLY
+// ************************************************************************************
+// ************************************************************************************
+
+
+
+Route::post('/store', [LeadController::class, 'store'])->name('contact-us.store');
+Route::post('/nodal-registration', [NodalRegisterationController::class, 'store'])->name('nodal-registration.store');
+Route::post('/book-trial-registration', [BookATrialController::class, 'store'])->name('book-trial-registration.store');
+Route::post('/player-registration', [PlayerRegistrationController::class, 'store'])->name('player-registration.store');
+
+
+
+
+// ************************************************************************************
+// ************************************************************************************
 // HERE ARE THE ADMIN PANEL ROUTES KINDLY WRITE THERE ONLY
+// ************************************************************************************
+// ************************************************************************************
+
+
+
 Route::get('/dashboard', function () {
     return view('admin.views.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
 
-
-    // contact leads
-    Route::get('/admin-contact-leads', function () {
-        return view('admin.views.admin-leads');
-    })->name('admin-contact-leads');
-    // admin blogs
-    Route::get('/admin-blogs', function () {
-        return view('admin.views.admin-blogs');
-    })->name('admin-blogs');
     // setting page
     Route::get('/admin-settings', function () {
         return view('admin.views.setting');
@@ -199,6 +215,22 @@ Route::middleware('auth')->group(function () {
     Route::post('/admin-team', [TeamController::class, 'store'])->name('admin-team.store');
     Route::put('/admin-team/{team}', [TeamController::class, 'update'])->name('admin-team.update');
     Route::delete('/admin-team/{team}', [TeamController::class, 'destroy'])->name('admin-team.destroy');
+    // CONTACT LEADS
+    Route::get('/admin-leads', [LeadController::class, 'index'])->name('admin-leads');
+    Route::delete('/admin-leads/{lead}', [LeadController::class, 'destroy'])->name('admin-leads.destroy');
+    Route::post('/leads/delete-selected', [LeadController::class, 'deleteSelected']);
+    // Nodal Registration Leads
+    Route::get('/admin-nodal-registration', [NodalRegisterationController::class, 'index'])->name('admin-nodal-registration');
+    Route::delete('/admin-nodal-registration/{nodalRegistration}', [NodalRegisterationController::class, 'destroy'])->name('admin-nodal-registration.destroy');
+    Route::post('/nodal-registrations/delete-selected', [NodalRegisterationController::class, 'deleteSelected'])->name('nodal-registrations.delete-selected');
+    // booking trial leads
+    Route::get('/admin-booking', [BookATrialController::class, 'index'])->name('admin-booking');
+    Route::delete('/admin-booking/{trial}', [BookATrialController::class, 'destroy'])->name('admin-booking.destroy');
+    Route::post('/booking-trials/delete-selected', [BookATrialController::class, 'deleteSelected'])->name('booking-trials.delete-selected');
+    // player registration leads
+    Route::get('/admin-player-registration', [PlayerRegistrationController::class, 'index'])->name('admin-player-registration');
+    Route::delete('/admin-player-registration/{player}', [PlayerRegistrationController::class, 'destroy'])->name('admin-player-registration.destroy');
+    Route::post('/player-registrations/delete-selected', [PlayerRegistrationController::class, 'deleteSelected'])->name('player-registrations.delete-selected');
 });
 
 

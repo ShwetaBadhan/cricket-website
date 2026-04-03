@@ -15,6 +15,5 @@ class NodalRegisteration extends Model
         'city',
         'state',
         'address',
-        'password'
     ];
 }

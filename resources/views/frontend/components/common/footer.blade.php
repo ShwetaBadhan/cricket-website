@@ -1,21 +1,15 @@
 <!--Main Footer Start-->
 <footer class="wf100 main-footer">
   <div class="container">
-    <div class="row"> 
+    <div class="row">
       <!--Footer Widget Start-->
       <div class="col-lg-3 col-md-6">
         <div class="footer-widget about-widget"> <img src="{{ asset('assets/images/logo/white-jss.png') }}" alt="">
-          <p> JSL is a platform where talent meets opportunity, empowering individuals to showcase their skills.  </p>
-          <address>
-          <ul>
-            <li><i class="fas fa-map-marker-alt"></i> Jharkhand</li>
-            <li><i class="fas fa-phone"></i> +91 92637 47143</li>
-            <li><i class="fas fa-envelope"></i> info@jharkhandsuperleague.com</li>
-          </ul>
-          </address>
+          <p> JSL is a platform where talent meets opportunity, empowering individuals to showcase their skills. </p>
+
         </div>
       </div>
-      <!--Footer Widget End--> 
+      <!--Footer Widget End-->
       <!--Footer Widget Start-->
       <div class="col-lg-3 col-md-6">
         <div class="footer-widget">
@@ -33,7 +27,7 @@
           </ul>
         </div>
       </div>
-      <!--Footer Widget End--> 
+      <!--Footer Widget End-->
       <!--Footer Widget Start-->
       <div class="col-lg-3 col-md-6">
         <div class="footer-widget">
@@ -48,39 +42,37 @@
           </ul>
         </div>
       </div>
-      <!--Footer Widget End--> 
+      <!--Footer Widget End-->
       <!--Footer Widget Start-->
       <div class="col-lg-3 col-md-6">
-        <div class="footer-widget">
+        <div class="footer-widget about-widget">
           <h4>Get Updated</h4>
           <p> Sign up to Get Updated & latest offers with our Newsletter. </p>
-          <ul class="newsletter">
-            <li>
-              <input type="text" class="form-control" placeholder="Your Name">
-            </li>
-            <li>
-              <input type="text" class="form-control" placeholder="Your Emaill Address">
-            </li>
-            <li> <strong>We respect your privacy</strong>
-              <button><span>Subscribe</span></button>
-            </li>
-          </ul>
+          <address>
+            <ul>
+              <li><i class="fas fa-map-marker-alt"></i> Jharkhand</li>
+              <li><i class="fas fa-phone"></i> +91 92637 47143</li>
+              <li><i class="fas fa-envelope"></i> info@jharkhandsuperleague.com</li>
+            </ul>
+          </address>
         </div>
       </div>
-      <!--Footer Widget End--> 
+      <!--Footer Widget End-->
     </div>
   </div>
   <div class="container brtop">
     <div class="row">
       <div class="col-lg-6 col-md-6">
-        <p class="copyr"> &copy; <?php echo date('Y')?> <a href="{{route('index')}}" class="text-white">Jharkhand Super League</a> | Developed By : <a href="#" class="text-white" target="_blank">Vibrantick Infotech Solutions</a> </p>
+        <p class="copyr"> &copy; <?php echo date('Y')?> <a href="{{route('index')}}" class="text-white">Jharkhand Super
+            League</a> | Developed By : <a href="#" class="text-white" target="_blank">Vibrantick Infotech Solutions</a>
+        </p>
       </div>
       <div class="col-lg-6 col-md-6">
         <ul class="quick-links">
           <li><a href="{{route('privacy-policy')}}">Privacy Policy</a></li>
           <li><a href="#">|</a></li>
           <li><a href="{{route('terms-condition')}}">Terms &amp; Conditions</a></li>
-        
+
         </ul>
       </div>
     </div>

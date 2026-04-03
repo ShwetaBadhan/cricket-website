@@ -11,83 +11,43 @@
                 </div>
             </div>
 
-            {{-- <form method="POST" action="/test" id="contactForm">
-                @csrf
-
-                <ul class="form-row">
-                    <li class="half-col">
-                        <input type="text" class="form-control" name="name" placeholder="Name"
-                            value="{{ old('name') }}">
-                        @error('name')
-                        <div class="text-danger small">{{ $message }}</div>
-                        @enderror
-                    </li>
-                    <li class="half-col">
-                        <input type="email" class="form-control" name="email" placeholder="Email"
-                            value="{{ old('email') }}">
-                        @error('email')
-                        <div class="text-danger small">{{ $message }}</div>
-                        @enderror
-                    </li>
-                    <li class="half-col">
-                        <input type="tel" class="form-control" name="phone" placeholder="99999 00000"
-                            pattern="[0-9]{10}" maxlength="10" minlength="10" value="{{ old('phone') }}">
-                        @error('phone')
-                        <div class="text-danger small">{{ $message }}</div>
-                        @enderror
-                    </li>
-                    <li class="half-col">
-                        <input type="text" class="form-control" name="subject" placeholder="Subject"
-                            value="{{ old('subject') }}">
-                        @error('subject')
-                        <div class="text-danger small">{{ $message }}</div>
-                        @enderror
-                    </li>
-                    <li class="full-col">
-                        <textarea class="form-control" name="message"
-                            placeholder="Write Your Message">{{ old('message') }}</textarea>
-                        @error('message')
-                        <div class="text-danger small">{{ $message }}</div>
-                        @enderror
-                    </li>
-                    <li class="full-col">
-                        <button type="submit">Submit</button>
-                    </li>
-                </ul>
-            </form> --}}
-            {{-- contact.blade.php --}}
 
             <form id="contactForm" action="{{ route('contact-us.store') }}" method="POST">
                 @csrf
                 <ul class="form-row">
                     <li class="half-col">
-                        <label for="name">Name</label>
-                        <input type="text" name="name" id="name" class="form-control" value="{{ old('name') }}" placeholder="Your Name" required>
+                        <label for="name">Name <span class="text-danger">*</span></label>
+                        <input type="text" name="name" id="name" class="form-control" value="{{ old('name') }}"
+                            placeholder="Your Name" required>
                         <span class="error-message" id="name-error"></span>
                     </li>
 
                     <li class="half-col">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" id="email" placeholder="Your Email" class="form-control" value="{{ old('email') }}" required>
+                        <label for="email">Email <span class="text-danger">*</span></label>
+                        <input type="email" name="email" id="email" placeholder="Your Email" class="form-control"
+                            value="{{ old('email') }}" required>
                         <span class="error-message" id="email-error"></span>
                     </li>
 
                     <li class="half-col">
-                        <label for="phone">Phone</label>
-                        <input type="text" name="phone" id="phone" placeholder="Your Phone" class="form-control" value="{{ old('phone') }}" required>
+                        <label for="phone">Phone <span class="text-danger">*</span></label>
+                        <input type="text" name="phone" id="phone" placeholder="Your Phone" class="form-control"
+                            value="{{ old('phone') }}" maxlength="10" pattern="[6-9]{1}[0-9]{9}" inputmode="numeric"
+                            required>
                         <span class="error-message" id="phone-error"></span>
                     </li>
 
                     <li class="half-col">
-                        <label for="subject">Subject</label>
+                        <label for="subject">Subject <span class="text-danger">*</span></label>
                         <input type="text" name="subject" placeholder="Subject" id="subject" class="form-control"
                             value="{{ old('subject') }}" required>
                         <span class="error-message" id="subject-error"></span>
                     </li>
 
                     <li class="full-col">
-                        <label for="message">Message</label>
-                        <textarea name="message" id="message" placeholder="Message" class="form-control" required>{{ old('message') }}</textarea>
+                        <label for="message">Message <span class="text-danger">*</span></label>
+                        <textarea name="message" id="message" placeholder="Message" class="form-control"
+                            required>{{ old('message') }}</textarea>
                         <span class="error-message" id="message-error"></span>
                     </li>
 

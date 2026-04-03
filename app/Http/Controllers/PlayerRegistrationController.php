@@ -3,16 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\NodalRegisteration;
+use App\Models\PlayerRegistration;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Hash;
-class NodalRegisterationController extends Controller
+class PlayerRegistrationController extends Controller
 {
     //
-    public function index()
+     public function index()
     {
-        $nodalRegistrations = NodalRegisteration::latest()->get();
-        return view('admin.views.admin-nodal-registeration', compact('nodalRegistrations'));
+        $playerRegistrations = PlayerRegistration::latest()->get();
+        return view('admin.views.admin-player-registration', compact('playerRegistrations'));
     }
 
     public function store(Request $request)
@@ -55,7 +55,7 @@ class NodalRegisterationController extends Controller
                 ]);
 
                 // STORE DATA
-                NodalRegisteration::create([
+                PlayerRegistration::create([
                     'name' => $request->name,
                     'email' => $request->email,
                     'phone' => $request->phone,
@@ -90,7 +90,7 @@ class NodalRegisterationController extends Controller
         }
     }
     // delete function
-    public function destroy(NodalRegisteration $nodalRegistration)
+    public function destroy(PlayerRegistration $nodalRegistration)
     {
         $nodalRegistration->delete();
         return redirect()->back()->with('success', 'Nodal registration deleted successfully!');
@@ -102,7 +102,7 @@ class NodalRegisterationController extends Controller
             return response()->json(['error' => true, 'message' => 'No IDs received']);
         }
 
-        NodalRegisteration::whereIn('id', $request->ids)->delete();
+        PlayerRegistration::whereIn('id', $request->ids)->delete();
 
         return response()->json(['success' => true, 'message' => 'Deleted successfully']);
     }

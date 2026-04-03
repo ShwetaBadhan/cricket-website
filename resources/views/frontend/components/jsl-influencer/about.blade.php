@@ -37,7 +37,7 @@
                         </li>
                     </ul>
 
-                    <a href="#" class="vip-btn">Get VIP Access</a>
+                    <a href="#influencerForm" class="vip-btn">Get VIP Access</a>
                 </div>
             </div>
 
