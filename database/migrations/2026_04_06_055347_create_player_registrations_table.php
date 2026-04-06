@@ -11,19 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('influencers', function (Blueprint $table) {
+         Schema::create('player_registrations', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('email');
             $table->string('phone');
-            $table->string('state');
+            $table->string('organization');
             $table->string('city');
-            $table->string('address');         
-            $table->string('facebook');
-            $table->string('instagram');
-            $table->string('youtube');
-            $table->string('other');
-            $table->text('message')->nullable();
+            $table->string('state');
+            $table->string('address');
             $table->timestamps();
         });
     }
@@ -33,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('influencers');
+        Schema::dropIfExists('player_registrations');
     }
 };

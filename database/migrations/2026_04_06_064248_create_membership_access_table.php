@@ -10,16 +10,15 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('player_registrations', function (Blueprint $table) {
+        Schema::create('membership_access', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('email');
             $table->string('phone');
-            $table->string('organization');
-            $table->string('city');
-            $table->string('state');
-            $table->string('address');
-            $table->string('password');
+            $table->string('plan');
+            $table->string('benefits');
+            $table->string('occupation');
+            $table->text('notes')->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('player_registrations');
+        Schema::dropIfExists('membership_access');
     }
 };

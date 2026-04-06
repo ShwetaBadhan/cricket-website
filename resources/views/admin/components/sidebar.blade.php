@@ -20,11 +20,11 @@
                     <ul style="display: none">
                         <li><a href="{{ route('admin-booking') }}">Booking Leads</a></li>
                         <li><a href="{{ route('admin-leads') }}">Contact Leads</a></li>
-                        <li><a href="">Influencer Leads</a></li>
-                        <li><a href="">Membership Leads</a></li>
+                        <li><a href="{{ route('admin-influencer') }}">Influencer Leads</a></li>
+                        <li><a href="{{ route('admin-membership-access') }}">Membership Leads</a></li>
                         <li><a href="{{ route('admin-nodal-registration') }}">Nodal Registration</a></li>
-                        <li><a href="">Player Registration</a></li>
-                        <li><a href="">Sponsor Leads</a></li>
+                        <li><a href="{{ route('admin-player-registration') }}">Player Registration</a></li>
+                        <li><a href="{{ route('admin-sponsor') }}">Sponsor Leads</a></li>
 
                     </ul>
                 </li>

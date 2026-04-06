@@ -32,7 +32,7 @@
                     <div class="influencer-registration-row">
                         <div class="influencer-registration-group">
                             <label for="influencerFullName">Name</label>
-                            <input type="text" id="influencerFullName" name="influencerFullName"
+                            <input type="text" id="influencerFullName" name="name"
                                 placeholder="Enter full name" required minlength="2" pattern="[A-Za-z ]{2,}"
                                 title="Please enter a valid name using letters only"
                                 oninput="this.value=this.value.replace(/[^A-Za-z ]/g,'')" />
@@ -40,7 +40,7 @@
 
                         <div class="influencer-registration-group">
                             <label for="influencerEmailAddress">Email</label>
-                            <input type="email" id="influencerEmailAddress" name="influencerEmailAddress"
+                            <input type="email" id="influencerEmailAddress" name="email"
                                 placeholder="Enter email" required title="Please enter a valid email address" />
                         </div>
                     </div>
@@ -48,17 +48,13 @@
                     <div class="influencer-registration-row">
                         <div class="influencer-registration-group">
                             <label for="influencerPhoneNumber">Phone</label>
-                            <input type="text" id="influencerPhoneNumber" name="influencerPhoneNumber"
+                            <input type="text" id="influencerPhoneNumber" name="phone"
                                 placeholder="Enter phone number" required pattern="[0-9]{10}" maxlength="10"
                                 title="Please enter a 10-digit phone number"
                                 oninput="this.value=this.value.replace(/[^0-9]/g,'')" />
                         </div>
 
-                        <div class="influencer-registration-group">
-                            <label for="influencerStateName">State</label>
-                            <input type="text" id="influencerStateName" name="influencerStateName"
-                                placeholder="Enter state" />
-                        </div>
+                       
                     </div>
 
                     <div class="influencer-registration-button-row influencer-registration-button-row-right">
@@ -71,14 +67,21 @@
                     <div class="influencer-registration-row">
                         <div class="influencer-registration-group">
                             <label for="influencerCityName">City</label>
-                            <input type="text" id="influencerCityName" name="influencerCityName"
-                                placeholder="Enter city" />
+                            <input type="text" id="influencerCityName" name="city" placeholder="Enter city" />
                         </div>
+                        <div class="influencer-registration-group">
+                            <label for="influencerStateName">State</label>
+                            <input type="text" id="influencerStateName" name="influencerStateName"
+                                placeholder="Enter state" />
+                        </div>
+
+                    </div>
+                    <div class="influencer-registration-row">
+
 
                         <div class="influencer-registration-group">
                             <label for="influencerAddressText">Address</label>
-                            <input type="text" id="influencerAddressText" name="influencerAddressText"
-                                placeholder="Enter address" />
+                            <input type="text" id="influencerAddressText" name="address" placeholder="Enter address" />
                         </div>
                     </div>
 
@@ -95,35 +98,35 @@
                     <div class="influencer-registration-row">
                         <div class="influencer-registration-group">
                             <label for="influencerFacebookLink">Facebook</label>
-                            <input type="url" id="influencerFacebookLink" name="influencerFacebookLink"
-                                placeholder="Facebook profile link" />
+                            <input type="url" id="influencerFacebookLink" name="facebook"
+                                placeholder="Facebook profile link">
                         </div>
 
                         <div class="influencer-registration-group">
                             <label for="influencerInstagramLink">Instagram</label>
-                            <input type="url" id="influencerInstagramLink" name="influencerInstagramLink"
-                                placeholder="Instagram profile link" />
+                            <input type="url" id="influencerInstagramLink" name="instagram"
+                                placeholder="Instagram profile link">
                         </div>
                     </div>
 
                     <div class="influencer-registration-row">
                         <div class="influencer-registration-group">
                             <label for="influencerYoutubeLink">YouTube</label>
-                            <input type="url" id="influencerYoutubeLink" name="influencerYoutubeLink"
-                                placeholder="YouTube channel link" />
+                            <input type="url" id="influencerYoutubeLink" name="youtube"
+                                placeholder="YouTube channel link">
                         </div>
 
                         <div class="influencer-registration-group">
                             <label for="influencerOtherPlatformLink">Other Link</label>
-                            <input type="url" id="influencerOtherPlatformLink" name="influencerOtherPlatformLink"
-                                placeholder="Any other link" />
+                            <input type="url" id="influencerOtherPlatformLink" name="other"
+                                placeholder="Any other link">
                         </div>
                     </div>
 
                     <div class="influencer-registration-group influencer-registration-full-width">
                         <label for="influencerMessageText">Message</label>
-                        <textarea id="influencerMessageText" name="influencerMessageText"
-                            placeholder="Write something..." rows="4"></textarea>
+                        <textarea id="influencerMessageText" name="message" placeholder="Write something..."
+                            rows="4"></textarea>
                     </div>
 
                     <div class="influencer-registration-button-row">
@@ -238,7 +241,7 @@
                 message: document.getElementById("influencerMessageText").value
             };
 
-            console.log("Influencer Form Data:", influencerFormData);
+            // console.log("Influencer Form Data:", influencerFormData);
             alert("Form submitted successfully!");
         });
 

@@ -6,7 +6,7 @@
             <!-- Page Header -->
             <div class="page-header">
                 <div class="content-page-header ">
-                    <h5>Player Registration Leads</h5>
+                    <h5>Membership Access Request</h5>
                     <div class="list-btn">
                         <ul class="filter-list">
 
@@ -68,22 +68,22 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @forelse ($playerRegistrations as $player)
+                                        @forelse ($membershipAccessRequests as $membershipAccess)
                                             <tr>
                                                 <td>
-                                                    <input type="checkbox" class="checkItem" value="{{ $player->id }}">
+                                                    <input type="checkbox" class="checkItem" value="{{ $membershipAccess->id }}">
                                                     {{ $loop->iteration }}
                                                 </td>
-                                                <td>{{ $player->name }}</td>
-                                                <td>{{ $player->phone }}</td>
-                                                <td>{{ $player->email }}</td>
+                                                <td>{{ $membershipAccess->name }}</td>
+                                                <td>{{ $membershipAccess->phone }}</td>
+                                                <td>{{ $membershipAccess->email }}</td>
                                                 <td class="d-flex align-items-center">
                                                     <a class="btn-action-icon me-2" href="javascript:void(0);"
-                                                        data-bs-toggle="modal" data-bs-target="#view_lead{{ $player->id }}">
+                                                        data-bs-toggle="modal" data-bs-target="#view_lead{{ $membershipAccess->id }}">
                                                         <i class="fe fe-eye"></i>
                                                     </a>
 
-                                                    <form action="{{ route('admin-player-registration.destroy', $player->id) }}"
+                                                    <form action="{{ route('admin-membership-access.destroy', $membershipAccess->id) }}"
                                                         method="POST" class="d-inline delete-form">
                                                         @csrf
                                                         @method('DELETE')
@@ -110,7 +110,7 @@
         </div>
     </div>
 
-    @foreach($playerRegistrations as $item)
+    @foreach($membershipAccessRequests as $item)
         <div class="modal custom-modal fade" id="view_lead{{ $item->id }}" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
@@ -142,27 +142,21 @@
                             </tr>
 
                             <tr>
-                                <th>Organization :</th>
-                                <td>{{ $item->organization }}</td>
+                                <th>Plans :</th>
+                                <td>{{ $item->plan }}</td>
                             </tr>
-                            <tr>
-                                <th>State :</th>
-                                <td>{{ $item->state }}</td>
-                            </tr>
+                           
 
                             <tr>
-                                <th>City :</th>
-                                <td>{{ $item->city }}</td>
+                                <th>Benefits :</th>
+                                <td>{{ $item->benefits }}</td>
                             </tr>
                             <tr>
-                                <th>Address :</th>
-                                <td>{{ $item->address }}</td>
+                                <th>Notes :</th>
+                                <td>{{ $item->notes }}</td>
                             </tr>
 
-                            <tr>
-                                <th>Status :</th>
-                                <td>{{ $item->status }}</td>
-                            </tr>
+                         
                             <tr>
                                 <th>Created At :</th>
                                 <td>{{ $item->created_at->format('d M Y, h:i A') }}</td>
@@ -202,8 +196,8 @@
                 var form = $(this).closest('form');
 
                 Swal.fire({
-                    title: 'Delete Player Registration?',
-                    text: "This Player Registration will be permanently deleted!",
+                    title: 'Delete Request ?',
+                    text: "This Membership Access Request will be permanently deleted!",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#d33',
@@ -252,7 +246,7 @@
 
             Swal.fire({
                 title: "Are you sure?",
-                text: "Selected Player Registrations will be deleted permanently!",
+                text: "Selected Membership Access Requests will be deleted permanently!",
                 icon: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#d33",
@@ -263,7 +257,7 @@
                 if (result.isConfirmed) {
 
                     $.ajax({
-                        url: "/player-registrations/delete-selected",
+                        url: "/membership-access/delete-selected",
 
                         type: "POST",
                         data: {
@@ -271,7 +265,7 @@
                             _token: "{{ csrf_token() }}"
                         },
                         success: function (response) {
-                            Swal.fire("Deleted!", "Selected Player Registrations removed.", "success");
+                            Swal.fire("Deleted!", "Selected Membership Access Requests removed.", "success");
 
                             selected.forEach(id => {
                                 $(`input[value='${id}']`).closest("tr").fadeOut(500, function () {

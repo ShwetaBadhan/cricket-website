@@ -7,10 +7,10 @@
         <div class="col-md-6 col-sm-6">
           <ul class="topsocial">
             <li><a href="#" class="fb"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#" class="tw"><i class="fab fa-twitter"></i></a></li>
+            {{-- <li><a href="#" class="tw"><i class="fab fa-twitter"></i></a></li> --}}
             <li><a href="#" class="insta"><i class="fab fa-instagram"></i></a></li>
-            <li><a href="#" class="in"><i class="fab fa-linkedin-in"></i></a></li>
-            <li><a href="#" class="yt"><i class="fab fa-youtube"></i></a></li>
+            {{-- <li><a href="#" class="in"><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="#" class="yt"><i class="fab fa-youtube"></i></a></li> --}}
           </ul>
         </div>
         <div class="col-md-6 col-sm-6">
@@ -42,7 +42,7 @@
             </li>
 
             {{-- <li class="acctount-btn"> <a href="#">Register</a> </li> --}}
-            <li class="search-btn"> <a class="search-icon" href="#search"><i class="fas fa-search"></i></a> </li>
+            {{-- <li class="search-btn"> <a class="search-icon" href="#search"><i class="fas fa-search"></i></a> </li> --}}
 
           </ul>
 

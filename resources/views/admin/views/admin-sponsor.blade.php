@@ -6,7 +6,7 @@
             <!-- Page Header -->
             <div class="page-header">
                 <div class="content-page-header ">
-                    <h5>Player Registration Leads</h5>
+                    <h5>Sponsors Requests</h5>
                     <div class="list-btn">
                         <ul class="filter-list">
 
@@ -68,22 +68,22 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @forelse ($playerRegistrations as $player)
+                                        @forelse ($sponsors as $sponsor)
                                             <tr>
                                                 <td>
-                                                    <input type="checkbox" class="checkItem" value="{{ $player->id }}">
+                                                    <input type="checkbox" class="checkItem" value="{{ $sponsor->id }}">
                                                     {{ $loop->iteration }}
                                                 </td>
-                                                <td>{{ $player->name }}</td>
-                                                <td>{{ $player->phone }}</td>
-                                                <td>{{ $player->email }}</td>
+                                                <td>{{ $sponsor->name }}</td>
+                                                <td>{{ $sponsor->phone }}</td>
+                                                <td>{{ $sponsor->email }}</td>
                                                 <td class="d-flex align-items-center">
                                                     <a class="btn-action-icon me-2" href="javascript:void(0);"
-                                                        data-bs-toggle="modal" data-bs-target="#view_lead{{ $player->id }}">
+                                                        data-bs-toggle="modal" data-bs-target="#view_lead{{ $sponsor->id }}">
                                                         <i class="fe fe-eye"></i>
                                                     </a>
 
-                                                    <form action="{{ route('admin-player-registration.destroy', $player->id) }}"
+                                                    <form action="{{ route('admin-sponsor.destroy', $sponsor->id) }}"
                                                         method="POST" class="d-inline delete-form">
                                                         @csrf
                                                         @method('DELETE')
@@ -110,7 +110,7 @@
         </div>
     </div>
 
-    @foreach($playerRegistrations as $item)
+    @foreach($sponsors as $item)
         <div class="modal custom-modal fade" id="view_lead{{ $item->id }}" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">

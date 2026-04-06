@@ -17,7 +17,23 @@
           <ul class="footer-links">
             <li><a href="{{route('about-us')}}"><i class="fas fa-angle-double-right"></i> About Us</a></li>
             <li><a href="{{route('our-team')}}"><i class="fas fa-angle-double-right"></i> Our Team</a></li>
-            <li><a href=""><i class="fas fa-angle-double-right"></i> Organiser</a></li>
+            <li><a href="{{ route('our-organizer') }}"><i class="fas fa-angle-double-right"></i> Organizer</a></li>
+            <li><a href="{{route('match-result')}}"><i class="fas fa-angle-double-right"></i> Match Results</a></li>
+            <li><a href="{{route('news')}}"><i class="fas fa-angle-double-right"></i> Our Blogs</a></li>
+            <li><a href="{{route('announcement')}}"><i class="fas fa-angle-double-right"></i> Announcements</a></li>
+            <li><a href="{{route('gallery')}}"><i class="fas fa-angle-double-right"></i> Gallery</a></li>
+            <li><a href="{{route('videos')}}"><i class="fas fa-angle-double-right"></i> Videos</a></li>
+            <li><a href="{{route('contact-us')}}"><i class="fas fa-angle-double-right"></i> Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="footer-widget">
+          <h4>Useful Links</h4>
+          <ul class="footer-links">
+            <li><a href="{{route('about-us')}}"><i class="fas fa-angle-double-right"></i> About Us</a></li>
+            <li><a href="{{route('our-team')}}"><i class="fas fa-angle-double-right"></i> Our Team</a></li>
+            <li><a href=""><i class="fas fa-angle-double-right"></i> Organizer</a></li>
             <li><a href="{{route('match-result')}}"><i class="fas fa-angle-double-right"></i> Match Results</a></li>
             <li><a href="{{route('news')}}"><i class="fas fa-angle-double-right"></i> Our Blogs</a></li>
             <li><a href="{{route('announcement')}}"><i class="fas fa-angle-double-right"></i> Announcements</a></li>
@@ -29,7 +45,7 @@
       </div>
       <!--Footer Widget End-->
       <!--Footer Widget Start-->
-      <div class="col-lg-3 col-md-6">
+      {{-- <div class="col-lg-3 col-md-6">
         <div class="footer-widget">
           <h4>Recent Instagram</h4>
           <ul class="instagram">
@@ -41,7 +57,7 @@
             <li><img src="{{ asset('assets/images/insta6.jpg') }}" alt=""></li>
           </ul>
         </div>
-      </div>
+      </div> --}}
       <!--Footer Widget End-->
       <!--Footer Widget Start-->
       <div class="col-lg-3 col-md-6">

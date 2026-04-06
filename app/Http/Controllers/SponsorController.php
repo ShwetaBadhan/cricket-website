@@ -3,18 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\PlayerRegistration;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Hash;
-class PlayerRegistrationController extends Controller
+use App\Models\Sponsor;
+class SponsorController extends Controller
 {
     //
-     public function index()
+    //
+    public function index()
     {
-        $playerRegistrations = PlayerRegistration::latest()->get();
-        return view('admin.views.admin-player-registration', compact('playerRegistrations'));
+        $sponsors = Sponsor::latest()->get();
+        return view('admin.views.admin-sponsor', compact('sponsors'));
     }
-
     public function store(Request $request)
     {
         if ($request->ajax()) {
@@ -47,21 +46,21 @@ class PlayerRegistrationController extends Controller
                     'name' => ['required', 'regex:/^[a-zA-Z\s\.\-]{2,255}$/'],
                     'email' => ['required', 'email'],
                     'phone' => ['required', 'digits:10'],
-                    'organization' => ['required', 'string', 'max:255'],
-                    'state' => ['required', 'string', 'max:255'],
-                    'city' => ['required', 'string', 'max:255'],
-                    'address' => ['required', 'string', 'max:500'],
+                    'plans' => ['required', 'regex:/^[a-zA-Z\s\.\-]{2,255}$/'],
+                    'benefits' => ['required', 'regex:/^[a-zA-Z\s\.\-]{2,255}$/'],
+                    'occupation' => ['required', 'regex:/^[a-zA-Z\s\.\-]{2,255}$/'],
+                    'notes' => ['required', 'string', 'max:900'],
                 ]);
 
                 // STORE DATA
-                PlayerRegistration::create([
+                Sponsor::create([
                     'name' => $request->name,
                     'email' => $request->email,
                     'phone' => $request->phone,
-                    'organization' => $request->organization,
-                    'state' => $request->state,
-                    'city' => $request->city,
-                    'address' => $request->address,
+                    'plan' => $request->plans,
+                    'benefits' => $request->benefits,
+                    'occupation' => $request->occupation,
+                    'notes' => $request->notes,
                     'ip' => $request->ip(),
                 ]);
 
@@ -86,11 +85,10 @@ class PlayerRegistrationController extends Controller
             }
         }
     }
-    // delete function
-    public function destroy(PlayerRegistration $player)
+    public function destroy(Sponsor $sponsor)
     {
-        $player->delete();
-        return redirect()->back()->with('success', 'Player registration deleted successfully!');
+        $sponsor->delete();
+        return redirect()->back()->with('success', 'Sponsor deleted successfully!');
     }
     // multiple delete function
     public function deleteSelected(Request $request)
@@ -99,7 +97,7 @@ class PlayerRegistrationController extends Controller
             return response()->json(['error' => true, 'message' => 'No IDs received']);
         }
 
-        PlayerRegistration::whereIn('id', $request->ids)->delete();
+        Sponsor::whereIn('id', $request->ids)->delete();
 
         return response()->json(['success' => true, 'message' => 'Deleted successfully']);
     }

@@ -13,62 +13,50 @@
         @csrf
         <div class="nodalreg-row">
           <div class="nodalreg-group">
-            <label for="nodalregFullName">Full Name</label>
-            <input type="text"  name="nodalregFullName" placeholder="Enter full name" required>
+            <label for="nodalregFullName">Full Name <span class="text-danger">*</span></label>
+            <input type="text"  name="name" placeholder="Enter full name" required>
           </div>
 
           <div class="nodalreg-group">
-            <label for="nodalregEmail">Email Address</label>
-            <input type="email" name="nodalregEmail" placeholder="Enter email" required>
+            <label for="nodalregEmail">Email Address <span class="text-danger">*</span></label>
+            <input type="email" name="email" placeholder="Enter email" required>
           </div>
         </div>
 
         <div class="nodalreg-row">
           <div class="nodalreg-group">
-            <label for="nodalregPhone">Phone Number</label>
-            <input type="tel"  name="nodalregPhone" placeholder="Enter phone number" required>
+            <label for="nodalregPhone">Phone Number <span class="text-danger">*</span></label>
+            <input type="tel"  name="phone" placeholder="Enter phone number"  maxlength="10" pattern="[6-9]{1}[0-9]{9}" inputmode="numeric" required>
           </div>
 
           <div class="nodalreg-group">
-            <label for="nodalregOrganization">Organization</label>
-            <input type="text"  name="nodalregOrganization" placeholder="Enter organization"
+            <label for="nodalregOrganization">Organization <span class="text-danger">*</span></label>
+            <input type="text"  name="organization" placeholder="Enter organization"
               required>
           </div>
         </div>
 
         <div class="nodalreg-row">
           <div class="nodalreg-group">
-            <label for="nodalregState">State</label>
-            <input type="text" id="nodalregState" name="nodalregState" placeholder="Enter state" required>
+            <label for="nodalregState">State <span class="text-danger">*</span></label>
+            <input type="text" id="nodalregState" name="state" placeholder="Enter state" required>
           </div>
 
           <div class="nodalreg-group">
-            <label for="nodalregCity">City</label>
-            <input type="text" id="nodalregCity" name="nodalregCity" placeholder="Enter city" required>
+            <label for="nodalregCity">City <span class="text-danger">*</span></label>
+            <input type="text" id="nodalregCity" name="city" placeholder="Enter city" required>
           </div>
         </div>
 
         <div class="nodalreg-group nodalreg-full">
-          <label for="nodalregAddress">Address</label>
-          <textarea id="nodalregAddress" name="nodalregAddress" rows="5" placeholder="Enter address"
+          <label for="nodalregAddress">Address <span class="text-danger">*</span></label>
+          <textarea id="nodalregAddress" name="address" rows="5" placeholder="Enter address"
             required></textarea>
         </div>
 
-        <div class="nodalreg-row">
-          <div class="nodalreg-group">
-            <label for="nodalregPassword">Password <span class="text-danger">*</span></label>
-            <input type="password" id="nodalregPassword" name="password" placeholder="Enter password" required />
-            {{-- <span toggle="#nodalregPassword" class="toggle-password">👁</span> --}}
-          </div>
+       
 
-          <div class="nodalreg-group">
-            <label for="nodalregConfirmPassword">Confirm Password <span class="text-danger">*</span></label>
-            <input type="password" id="nodalregConfirmPassword" name="password_confirmation"
-              placeholder="Confirm password" required />
-          </div>
-        </div>
-
-        <button type="submit" class="nodalreg-submit-btn">Submit Registration</button>
+        <button type="submit" class="nodalreg-submit-btn">Submit </button>
 
       </form>
     </div>

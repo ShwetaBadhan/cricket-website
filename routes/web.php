@@ -18,6 +18,9 @@ use App\Http\Controllers\NodalRegisterationController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BookATrialController;
 use App\Http\Controllers\PlayerRegistrationController;
+use App\Http\Controllers\MembershipAccessController;
+use App\Http\Controllers\InfluencerController;
+use App\Http\Controllers\SponsorController;
 
 // ************************************************************************************
 // ************************************************************************************
@@ -148,6 +151,7 @@ Route::post('/store', [LeadController::class, 'store'])->name('contact-us.store'
 Route::post('/nodal-registration', [NodalRegisterationController::class, 'store'])->name('nodal-registration.store');
 Route::post('/book-trial-registration', [BookATrialController::class, 'store'])->name('book-trial-registration.store');
 Route::post('/player-registration', [PlayerRegistrationController::class, 'store'])->name('player-registration.store');
+Route::post('/membership-vip-access', [MembershipAccessController::class, 'store'])->name('membership-vip-access.store');
 
 
 
@@ -231,6 +235,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin-player-registration', [PlayerRegistrationController::class, 'index'])->name('admin-player-registration');
     Route::delete('/admin-player-registration/{player}', [PlayerRegistrationController::class, 'destroy'])->name('admin-player-registration.destroy');
     Route::post('/player-registrations/delete-selected', [PlayerRegistrationController::class, 'deleteSelected'])->name('player-registrations.delete-selected');
+    // admin membership access leads
+    Route::get('/admin-membership-access', [MembershipAccessController::class, 'index'])->name('admin-membership-access');
+    Route::delete('/admin-membership-access/{membershipAccess}', [MembershipAccessController::class, 'destroy'])->name('admin-membership-access.destroy');      
+    Route::post('/membership-access/delete-selected', [MembershipAccessController::class, 'deleteSelected'])->name('membership-access.delete-selected');   
+        // admin influencer leads
+    Route::get('/admin-influencer', [InfluencerController::class, 'index'])->name('admin-influencer'); 
+    // sponsor leads
+    Route::get('/admin-sponsor', [SponsorController::class, 'index'])->name('admin-sponsor');
 });
 
 

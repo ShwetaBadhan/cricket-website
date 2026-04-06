@@ -3,18 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\PlayerRegistration;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Hash;
-class PlayerRegistrationController extends Controller
+use App\Models\Influencer;
+class InfluencerController extends Controller
 {
-    //
-     public function index()
-    {
-        $playerRegistrations = PlayerRegistration::latest()->get();
-        return view('admin.views.admin-player-registration', compact('playerRegistrations'));
-    }
 
+    public function index()
+    {
+        $influencers = Influencer::latest()->get();
+        return view('admin.views.admin-influencer', compact('influencers'));
+    }
+    //
     public function store(Request $request)
     {
         if ($request->ajax()) {
@@ -47,22 +46,28 @@ class PlayerRegistrationController extends Controller
                     'name' => ['required', 'regex:/^[a-zA-Z\s\.\-]{2,255}$/'],
                     'email' => ['required', 'email'],
                     'phone' => ['required', 'digits:10'],
-                    'organization' => ['required', 'string', 'max:255'],
-                    'state' => ['required', 'string', 'max:255'],
-                    'city' => ['required', 'string', 'max:255'],
-                    'address' => ['required', 'string', 'max:500'],
+                    'state' => ['required', 'regex:/^[a-zA-Z\s\.\-]{2,255}$/'],
+                    'city' => ['required', 'regex:/^[a-zA-Z\s\.\-]{2,255}$/'],
+                    'facebook' => ['required', 'regex:/^[a-zA-Z\s\.\-]{2,255}$/'],
+                    'instagram' => ['required', 'regex:/^[a-zA-Z\s\.\-]{2,255}$/'],
+                    'youtube' => ['required', 'regex:/^[a-zA-Z\s\.\-]{2,255}$/'],
+                    'other' => ['required', 'regex:/^[a-zA-Z\s\.\-]{2,255}$/'],
+                    'message' => ['required', 'regex:/^[a-zA-Z\s\.\-]{2,900}$/'],
+
                 ]);
 
                 // STORE DATA
-                PlayerRegistration::create([
+                Influencer::create([
                     'name' => $request->name,
                     'email' => $request->email,
                     'phone' => $request->phone,
-                    'organization' => $request->organization,
                     'state' => $request->state,
                     'city' => $request->city,
-                    'address' => $request->address,
-                    'ip' => $request->ip(),
+                    'facebook' => $request->facebook,
+                    'instagram' => $request->instagram,
+                    'youtube' => $request->youtube,
+                    'other' => $request->other,
+                    'message' => $request->message,
                 ]);
 
                 return response()->json([
@@ -85,22 +90,5 @@ class PlayerRegistrationController extends Controller
                 ], 500);
             }
         }
-    }
-    // delete function
-    public function destroy(PlayerRegistration $player)
-    {
-        $player->delete();
-        return redirect()->back()->with('success', 'Player registration deleted successfully!');
-    }
-    // multiple delete function
-    public function deleteSelected(Request $request)
-    {
-        if (!$request->ids || count($request->ids) == 0) {
-            return response()->json(['error' => true, 'message' => 'No IDs received']);
-        }
-
-        PlayerRegistration::whereIn('id', $request->ids)->delete();
-
-        return response()->json(['success' => true, 'message' => 'Deleted successfully']);
     }
 }
