@@ -20,9 +20,17 @@ class SponsorController extends Controller
 
             try {
 
-                // GOOGLE CAPTCHA VERIFY
+                // CAPTCHA TOKEN
                 $recaptcha = $request->input('g-recaptcha-response');
 
+                if (!$recaptcha) {
+                    return response()->json([
+                        'success' => false,
+                        'message' => 'Captcha token missing'
+                    ], 422);
+                }
+
+                // VERIFY CAPTCHA
                 $response = Http::asForm()->post(
                     'https://www.google.com/recaptcha/api/siteverify',
                     [
@@ -34,7 +42,7 @@ class SponsorController extends Controller
 
                 $result = $response->json();
 
-                if (!$result['success'] || $result['score'] < 0.5) {
+                if (!$result['success'] || ($result['score'] ?? 0) < 0.5) {
                     return response()->json([
                         'success' => false,
                         'message' => 'Captcha verification failed'
@@ -46,23 +54,20 @@ class SponsorController extends Controller
                     'name' => ['required', 'regex:/^[a-zA-Z\s\.\-]{2,255}$/'],
                     'email' => ['required', 'email'],
                     'phone' => ['required', 'digits:10'],
-                    'plans' => ['required', 'regex:/^[a-zA-Z\s\.\-]{2,255}$/'],
-                    'benefits' => ['required', 'regex:/^[a-zA-Z\s\.\-]{2,255}$/'],
-                    'occupation' => ['required', 'regex:/^[a-zA-Z\s\.\-]{2,255}$/'],
-                    'notes' => ['required', 'string', 'max:900'],
+                    'state' => ['required', 'regex:/^[a-zA-Z\s\.\-]{2,255}$/'],
+                    'city' => ['required', 'regex:/^[a-zA-Z\s\.\-]{2,255}$/'],
+                    'address' => ['required', 'string', 'max:255'],
+
+                    'company_name' => ['required', 'regex:/^[a-zA-Z\s\.\-]{2,255}$/'],
+                    'company_website' => ['required', 'url'],
+                    'company_address' => ['required', 'string', 'max:255'],
+                    'company_phone' => ['required', 'digits:10'],
+
+                    'message' => ['nullable', 'string', 'max:900'],
                 ]);
 
-                // STORE DATA
-                Sponsor::create([
-                    'name' => $request->name,
-                    'email' => $request->email,
-                    'phone' => $request->phone,
-                    'plan' => $request->plans,
-                    'benefits' => $request->benefits,
-                    'occupation' => $request->occupation,
-                    'notes' => $request->notes,
-                    'ip' => $request->ip(),
-                ]);
+                // STORE
+                Sponsor::create($request->all());
 
                 return response()->json([
                     'success' => true,

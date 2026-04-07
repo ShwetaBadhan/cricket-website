@@ -58,7 +58,9 @@
                                 <table class="table table-center table-hover datatable">
                                     <thead class="thead-light">
                                         <tr>
-                                            <th><input type="checkbox" id="select-all"></th>
+                                             <th>
+                                                <input type="checkbox" id="selectAll">
+                                            </th>
                                             <th>Name</th>
                                             <th>Phone</th>
                                             <th>Email</th>
@@ -68,9 +70,10 @@
                                     <tbody>
                                         @forelse ($leads as $lead)
                                             <tr>
-                                                <td>
+                                                 <td>
                                                     <input type="checkbox" class="checkItem" value="{{ $lead->id }}">
-                                                {{ $loop->iteration }}</td>
+                                                    {{ $loop->iteration }}
+                                                </td>
                                                 <td>{{ $lead->name }}</td>
                                                 <td>{{ $lead->phone }}</td>
                                                 <td>{{ $lead->email }}</td>
@@ -94,7 +97,11 @@
                                             </tr>
                                         @empty
                                             <tr>
-                                                <td colspan="5" class="text-center">No leads found.</td>
+                                                <td></td>
+                                                <td class="text-center">No leads found.</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
                                             </tr>
                                         @endforelse
                                     </tbody>
@@ -195,7 +202,7 @@
 
         });
 
-        // SELECT ALL
+      // SELECT ALL
         $("#selectAll").click(function () {
 
             $(".checkItem").prop('checked', $(this).prop('checked'));

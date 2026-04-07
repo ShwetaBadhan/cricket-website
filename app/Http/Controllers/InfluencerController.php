@@ -20,8 +20,15 @@ class InfluencerController extends Controller
 
             try {
 
-                // GOOGLE CAPTCHA VERIFY
+                // ================= CAPTCHA VERIFY =================
                 $recaptcha = $request->input('g-recaptcha-response');
+
+                if (!$recaptcha) {
+                    return response()->json([
+                        'success' => false,
+                        'message' => 'Captcha token missing'
+                    ], 422);
+                }
 
                 $response = Http::asForm()->post(
                     'https://www.google.com/recaptcha/api/siteverify',
@@ -34,39 +41,45 @@ class InfluencerController extends Controller
 
                 $result = $response->json();
 
-                if (!$result['success'] || $result['score'] < 0.5) {
+                if (!$result['success'] || ($result['score'] ?? 0) < 0.5) {
                     return response()->json([
                         'success' => false,
                         'message' => 'Captcha verification failed'
                     ], 422);
                 }
 
-                // VALIDATION
+                // ================= VALIDATION =================
                 $request->validate([
                     'name' => ['required', 'regex:/^[a-zA-Z\s\.\-]{2,255}$/'],
                     'email' => ['required', 'email'],
                     'phone' => ['required', 'digits:10'],
+
                     'state' => ['required', 'regex:/^[a-zA-Z\s\.\-]{2,255}$/'],
                     'city' => ['required', 'regex:/^[a-zA-Z\s\.\-]{2,255}$/'],
-                    'facebook' => ['required', 'regex:/^[a-zA-Z\s\.\-]{2,255}$/'],
-                    'instagram' => ['required', 'regex:/^[a-zA-Z\s\.\-]{2,255}$/'],
-                    'youtube' => ['required', 'regex:/^[a-zA-Z\s\.\-]{2,255}$/'],
-                    'other' => ['required', 'regex:/^[a-zA-Z\s\.\-]{2,255}$/'],
-                    'message' => ['required', 'regex:/^[a-zA-Z\s\.\-]{2,900}$/'],
+                    'address' => ['required', 'string', 'max:255'],
 
+                    'facebook' => ['nullable', 'url'],
+                    'instagram' => ['nullable', 'url'],
+                    'youtube' => ['nullable', 'url'],
+                    'other' => ['nullable', 'url'],
+
+                    'message' => ['nullable', 'string', 'max:900'],
                 ]);
 
-                // STORE DATA
+                // ================= STORE DATA =================
                 Influencer::create([
                     'name' => $request->name,
                     'email' => $request->email,
                     'phone' => $request->phone,
                     'state' => $request->state,
                     'city' => $request->city,
+                    'address' => $request->address,
+
                     'facebook' => $request->facebook,
                     'instagram' => $request->instagram,
                     'youtube' => $request->youtube,
                     'other' => $request->other,
+
                     'message' => $request->message,
                 ]);
 
@@ -90,5 +103,20 @@ class InfluencerController extends Controller
                 ], 500);
             }
         }
+    }
+    public function destroy($id)
+    {
+        $influencer = Influencer::findOrFail($id);
+        $influencer->delete();
+
+        return redirect()->back()->with('success', 'Influencer deleted successfully');
+    }
+
+    public function deleteSELECTED(Request $request)
+    {
+        $ids = $request->input('ids');
+        Influencer::whereIn('id', $ids)->delete();
+
+        return response()->json(['success' => true, 'message' => 'Selected Influencers deleted successfully']);
     }
 }

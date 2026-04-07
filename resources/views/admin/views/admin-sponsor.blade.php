@@ -1,7 +1,7 @@
 @extends('admin.layout.app')
 @section('content')
     <div class="page-wrapper">
-        <div class="content container-fluid">
+        <div class="content container-fluid ">
 
             <!-- Page Header -->
             <div class="page-header">
@@ -97,7 +97,11 @@
                                             </tr>
                                         @empty
                                             <tr>
-                                                <td colspan="5" class="text-center">No leads found.</td>
+                                                <td></td>
+                                                <td class="text-center">No leads found.</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
                                             </tr>
                                         @endforelse
                                     </tbody>
@@ -107,9 +111,10 @@
                     </div>
                 </div>
             </div>
+
+
         </div>
     </div>
-
     @foreach($sponsors as $item)
         <div class="modal custom-modal fade" id="view_lead{{ $item->id }}" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -141,10 +146,7 @@
                                 <td>{{ $item->phone }}</td>
                             </tr>
 
-                            <tr>
-                                <th>Organization :</th>
-                                <td>{{ $item->organization }}</td>
-                            </tr>
+
                             <tr>
                                 <th>State :</th>
                                 <td>{{ $item->state }}</td>
@@ -158,10 +160,26 @@
                                 <th>Address :</th>
                                 <td>{{ $item->address }}</td>
                             </tr>
+                            <tr>
+                                <th>Company Name :</th>
+                                <td>{{ $item->company_name }}</td>
+                            </tr>
+                            <tr>
+                                <th>Company Website :</th>
+                                <td>{{ $item->company_website }}</td>
+                            </tr>
+                            <tr>
+                                <th>Company phone :</th>
+                                <td>{{ $item->company_phone }}</td>
+                            </tr>
+                            <tr>
+                                <th>Company Address :</th>
+                                <td>{{ $item->company_address }}</td>
+                            </tr>
 
                             <tr>
-                                <th>Status :</th>
-                                <td>{{ $item->status }}</td>
+                                <th>Message :</th>
+                                <td>{{ $item->message }}</td>
                             </tr>
                             <tr>
                                 <th>Created At :</th>
@@ -188,6 +206,7 @@
             </div>
         </div>
     @endforeach
+
 @endsection
 @push('scripts')
 
@@ -246,13 +265,13 @@
             });
 
             if (selected.length === 0) {
-                Swal.fire("Oops!", "Please select at least one contact.", "warning");
+                Swal.fire("Oops!", "Please select at least one sponsor.", "warning");
                 return;
             }
 
             Swal.fire({
                 title: "Are you sure?",
-                text: "Selected Player Registrations will be deleted permanently!",
+                text: "Selected Sponsor Registrations will be deleted permanently!",
                 icon: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#d33",
@@ -263,7 +282,7 @@
                 if (result.isConfirmed) {
 
                     $.ajax({
-                        url: "/player-registrations/delete-selected",
+                        url: "/sponsors/delete-selected",
 
                         type: "POST",
                         data: {
@@ -271,7 +290,7 @@
                             _token: "{{ csrf_token() }}"
                         },
                         success: function (response) {
-                            Swal.fire("Deleted!", "Selected Player Registrations removed.", "success");
+                            Swal.fire("Deleted!", "Selected Sponsor Registrations removed.", "success");
 
                             selected.forEach(id => {
                                 $(`input[value='${id}']`).closest("tr").fadeOut(500, function () {

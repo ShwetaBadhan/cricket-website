@@ -58,7 +58,9 @@
                                 <table class="table table-center table-hover datatable">
                                     <thead class="thead-light">
                                         <tr>
-                                            <th>#<input type="hidden" id="selectAll"></th>
+                                            <th>
+                                                <input type="checkbox" id="selectAll">
+                                            </th>
                                             <th>Name</th>
                                             <th>Phone</th>
                                             <th>Email</th>
@@ -68,7 +70,7 @@
                                     <tbody>
                                         @forelse ($trials as $trial)
                                             <tr>
-                                                
+
                                                 <td>
                                                     <input type="checkbox" class="checkItem" value="{{ $trial->id }}">
                                                     {{ $loop->iteration }}
@@ -98,7 +100,11 @@
                                             </tr>
                                         @empty
                                             <tr>
-                                                <td colspan="5" class="text-center">No leads found.</td>
+                                                <td></td>
+                                                <td class="text-center">No leads found.</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
                                             </tr>
                                         @endforelse
                                     </tbody>

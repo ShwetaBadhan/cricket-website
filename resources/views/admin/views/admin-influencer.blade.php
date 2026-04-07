@@ -68,22 +68,22 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @forelse ($influencers as $influencers)
+                                        @forelse ($influencers as $influencer)
                                             <tr>
                                                 <td>
-                                                    <input type="checkbox" class="checkItem" value="{{ $influencers->id }}">
+                                                    <input type="checkbox" class="checkItem" value="{{ $influencer->id }}">
                                                     {{ $loop->iteration }}
                                                 </td>
-                                                <td>{{ $influencers->name }}</td>
-                                                <td>{{ $influencers->phone }}</td>
-                                                <td>{{ $influencers->email }}</td>
+                                                <td>{{ $influencer->name }}</td>
+                                                <td>{{ $influencer->phone }}</td>
+                                                <td>{{ $influencer->email }}</td>
                                                 <td class="d-flex align-items-center">
                                                     <a class="btn-action-icon me-2" href="javascript:void(0);"
-                                                        data-bs-toggle="modal" data-bs-target="#view_lead{{ $influencers->id }}">
+                                                        data-bs-toggle="modal" data-bs-target="#view_lead{{ $influencer->id }}">
                                                         <i class="fe fe-eye"></i>
                                                     </a>
 
-                                                    <form action="{{ route('admin-influencer.destroy', $influencers->id) }}"
+                                                    <form action="{{ route('admin-influencer.destroy', $influencer->id) }}"
                                                         method="POST" class="d-inline delete-form">
                                                         @csrf
                                                         @method('DELETE')
@@ -96,8 +96,12 @@
                                                 </td>
                                             </tr>
                                         @empty
-                                            <tr>
-                                                <td colspan="5" class="text-center">No leads found.</td>
+                                           <tr>
+                                                <td></td>
+                                                <td class="text-center">No leads found.</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
                                             </tr>
                                         @endforelse
                                     </tbody>
@@ -141,10 +145,7 @@
                                 <td>{{ $item->phone }}</td>
                             </tr>
 
-                            <tr>
-                                <th>Organization :</th>
-                                <td>{{ $item->organization }}</td>
-                            </tr>
+                           
                             <tr>
                                 <th>State :</th>
                                 <td>{{ $item->state }}</td>
@@ -158,10 +159,26 @@
                                 <th>Address :</th>
                                 <td>{{ $item->address }}</td>
                             </tr>
+                            <tr>
+                                <th>Facebook :</th>
+                                <td>{{ $item->facebook  ? $item->facebook : 'Not provided' }}</td>
+                            </tr>
+                            <tr>
+                                <th>Instagram :</th>
+                                <td>{{ $item->instagram  ? $item->instagram : 'Not provided' }}</td>
+                            </tr>
+                            <tr>
+                                <th>Youtube :</th>
+                                <td>{{ $item->youtube  ? $item->youtube : 'Not provided' }}</td>
+                            </tr>
+                            <tr>
+                                <th>Other :</th>
+                                <td>{{ $item->other  ? $item->other : 'Not provided'    }}</td>
+                            </tr>
 
                             <tr>
-                                <th>Status :</th>
-                                <td>{{ $item->status }}</td>
+                                <th>Message :</th>
+                                <td>{{ $item->message }}</td>
                             </tr>
                             <tr>
                                 <th>Created At :</th>
@@ -202,8 +219,8 @@
                 var form = $(this).closest('form');
 
                 Swal.fire({
-                    title: 'Delete Player Registration?',
-                    text: "This Player Registration will be permanently deleted!",
+                    title: 'Delete Influencer Registration?',
+                    text: "This Influencer Registration will be permanently deleted!",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#d33',
@@ -246,13 +263,13 @@
             });
 
             if (selected.length === 0) {
-                Swal.fire("Oops!", "Please select at least one contact.", "warning");
+                Swal.fire("Oops!", "Please select at least one Influencer Registration.", "warning");
                 return;
             }
 
             Swal.fire({
                 title: "Are you sure?",
-                text: "Selected Player Registrations will be deleted permanently!",
+                text: "Selected Influencer Registrations will be deleted permanently!",
                 icon: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#d33",
@@ -263,7 +280,7 @@
                 if (result.isConfirmed) {
 
                     $.ajax({
-                        url: "/player-registrations/delete-selected",
+                        url: "/influencers/delete-selected",
 
                         type: "POST",
                         data: {

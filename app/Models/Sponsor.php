@@ -8,16 +8,16 @@ class Sponsor extends Model
 {
     //
     protected $fillable = [
-        'name',
-        'email',
-        'phone',
-        'address',
-        'state',
-        'city',
-        'company_name',
-        'company_address',
-        'company_phone',
-        'company_website',
-        'message'
-    ];
+    'name',
+    'email',
+    'phone',
+    'state',
+    'city',
+    'address',
+    'company_name',
+    'company_website',
+    'company_address',
+    'company_phone',
+    'message'
+];
 }

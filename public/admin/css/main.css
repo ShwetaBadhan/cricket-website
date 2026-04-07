@@ -442,7 +442,7 @@ body {
     font-display: swap;
 }
 
-@font-face {
+/* @font-face {
     font-family: Inter;
     font-style: normal;
     font-weight: 100;
@@ -452,7 +452,7 @@ body {
         U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
         U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
     font-display: swap;
-}
+} */
 
 @font-face {
     font-family: Inter;
@@ -485,7 +485,7 @@ body {
     font-display: swap;
 }
 
-@font-face {
+/* @font-face {
     font-family: Inter;
     font-style: normal;
     font-weight: 200;
@@ -495,7 +495,7 @@ body {
         U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
         U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
     font-display: swap;
-}
+} */
 
 @font-face {
     font-family: Inter;
@@ -557,7 +557,7 @@ body {
     font-display: swap;
 }
 
-@font-face {
+/* @font-face {
     font-family: Inter;
     font-style: normal;
     font-weight: 300;
@@ -567,7 +567,7 @@ body {
         U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
         U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
     font-display: swap;
-}
+} */
 
 @font-face {
     font-family: Inter;
@@ -658,7 +658,7 @@ body {
     font-display: swap;
 }
 
-@font-face {
+/* @font-face {
     font-family: Inter;
     font-style: normal;
     font-weight: 400;
@@ -668,9 +668,9 @@ body {
         U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
         U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
     font-display: swap;
-}
+} */
 
-@font-face {
+/* @font-face {
     font-family: Inter;
     font-style: normal;
     font-weight: 500;
@@ -680,7 +680,7 @@ body {
         U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
         U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
     font-display: swap;
-}
+} */
 
 @font-face {
     font-family: Inter;
@@ -764,7 +764,7 @@ body {
     font-display: swap;
 }
 
-@font-face {
+/* @font-face {
     font-family: Inter;
     font-style: normal;
     font-weight: 600;
@@ -774,7 +774,7 @@ body {
         U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
         U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
     font-display: swap;
-}
+} */
 
 @font-face {
     font-family: Inter;
@@ -833,7 +833,7 @@ body {
     font-display: swap;
 }
 
-@font-face {
+/* @font-face {
     font-family: Inter;
     font-style: normal;
     font-weight: 700;
@@ -843,7 +843,7 @@ body {
         U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
         U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
     font-display: swap;
-}
+} */
 
 @font-face {
     font-family: Inter;
@@ -894,7 +894,7 @@ body {
     unicode-range: U+0370-03FF;
     font-display: swap;
 }
-
+/* 
 @font-face {
     font-family: Inter;
     font-style: normal;
@@ -905,7 +905,7 @@ body {
         U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
         U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
     font-display: swap;
-}
+} */
 
 @font-face {
     font-family: Inter;
@@ -996,7 +996,7 @@ body {
     font-display: swap;
 }
 
-@font-face {
+/* @font-face {
     font-family: Inter;
     font-style: normal;
     font-weight: 900;
@@ -1006,7 +1006,7 @@ body {
         U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
         U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
     font-display: swap;
-}
+} */
 
 @font-face {
     font-family: Inter;

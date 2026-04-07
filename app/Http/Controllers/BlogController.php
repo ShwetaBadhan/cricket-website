@@ -87,8 +87,6 @@ class BlogController extends Controller
 
         return back()->with('success', 'Blog updated successfully!');
     }
-    
-
     public function destroy(Blog $blog)
     {
         if ($blog->image) {

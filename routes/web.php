@@ -21,6 +21,7 @@ use App\Http\Controllers\PlayerRegistrationController;
 use App\Http\Controllers\MembershipAccessController;
 use App\Http\Controllers\InfluencerController;
 use App\Http\Controllers\SponsorController;
+use App\Http\Controllers\SportController;
 
 // ************************************************************************************
 // ************************************************************************************
@@ -152,6 +153,8 @@ Route::post('/nodal-registration', [NodalRegisterationController::class, 'store'
 Route::post('/book-trial-registration', [BookATrialController::class, 'store'])->name('book-trial-registration.store');
 Route::post('/player-registration', [PlayerRegistrationController::class, 'store'])->name('player-registration.store');
 Route::post('/membership-vip-access', [MembershipAccessController::class, 'store'])->name('membership-vip-access.store');
+Route::post('/jsl-influencer', [InfluencerController::class, 'store'])->name('jsl-influencer.store');
+Route::post('/become-sponsor', [SponsorController::class, 'store'])->name('become-sponsor.store');
 
 
 
@@ -241,8 +244,15 @@ Route::middleware('auth')->group(function () {
     Route::post('/membership-access/delete-selected', [MembershipAccessController::class, 'deleteSelected'])->name('membership-access.delete-selected');   
         // admin influencer leads
     Route::get('/admin-influencer', [InfluencerController::class, 'index'])->name('admin-influencer'); 
+    Route::delete('/admin-influencer/{influencer}', [InfluencerController::class, 'destroy'])->name('admin-influencer.destroy');
+    Route::post('/influencers/delete-selected', [InfluencerController::class, 'deleteSelected'])->name('influencers.delete-selected');
     // sponsor leads
     Route::get('/admin-sponsor', [SponsorController::class, 'index'])->name('admin-sponsor');
+    ROute::delete('/admin-sponsor/{sponsor}', [SponsorController::class, 'destroy'])->name('admin-sponsor.destroy');
+    Route::post('/sponsors/delete-selected', [SponsorController::class, 'deleteSelected'])->name('sponsors.delete-selected');
+
+    // admin sports
+    Route::get('/admin-sports', [SportController::class, 'index'])->name('admin-sports');
 });
 
 
