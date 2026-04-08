@@ -79,8 +79,10 @@
                         <span> Home Page</span>
                         <span class="menu-arrow"></span></a>
                     <ul style="display: none">
-                        <li><a href="">Slider</a></li>
-                        <li><a href="">About Section</a></li>
+                        <li><a href="{{ route('admin-home-slider') }}">Slider</a></li>
+                        <li><a href="{{ route('admin-home-about.index') }}">About Section</a></li>
+                        <li><a href="{{ route('admin-how-we-work.index') }}">How We Work Section</a></li>
+                        <li><a href="{{ route('admin-home-benefit.index') }}">Benefits Section</a></li>
                     </ul>
                 </li>
 

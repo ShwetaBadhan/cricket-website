@@ -7,7 +7,7 @@
             <!-- Page Header -->
             <div class="page-header">
                 <div class="content-page-header ">
-                    <h5>Gallery</h5>
+                    <h5>Sliders</h5>
                     <div class="list-btn">
                         <ul class="filter-list">
                             <li>
@@ -44,15 +44,15 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @forelse($gallery as $item)
+                                        @forelse($sliders as $slider)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td> <img src="{{ asset('storage/' . $item->image) }}"
+                                                <td> <img src="{{ asset('storage/' . $slider->image) }}"
                                                         class="rounded img-thumbnail" width="80" height="60"
                                                         style="object-fit: cover;"></td>
                                                 <td> <span
-                                                        class="badge  bg-{{ $item->status == 'active' ? 'success-light' : 'danger-light' }}">
-                                                        {{ ucfirst($item->status) }}
+                                                        class="badge  bg-{{ $slider->status == 'active' ? 'success-light' : 'danger-light' }}">
+                                                        {{ ucfirst($slider->status) }}
                                                     </span></td>
                                                 <td class="d-flex align-items-center">
 
@@ -64,20 +64,22 @@
                                                                 <li>
 
                                                                     <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                                                        data-bs-target="#view{{ $item->id }}"><i
+                                                                        data-bs-target="#view{{ $slider->id }}"><i
                                                                             class="far fa-eye me-2"></i>view</a>
                                                                 </li>
                                                                 <li>
                                                                     <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                                                        data-bs-target="#edit{{ $item->id }}"><i
+                                                                        data-bs-target="#edit{{ $slider->id }}"><i
                                                                             class="far fa-edit me-2"></i>Edit</a>
                                                                 </li>
                                                                 <li>
-                                                                    <form action="{{ route('admin-gallery.destroy', $item) }}"
+
+                                                                    <form
+                                                                        action="{{ route('admin-home-slider.destroy', $slider) }}"
                                                                         method="POST" class="d-inline">
                                                                         @csrf @method('DELETE')
                                                                         <button type="submit" class="dropdown-item delete-btn">
-                                                                            <i class="far fa-trash-alt me-2"></i>Delete</a>
+                                                                            <i class="far fa-trash-alt me-2"></i>Delete
                                                                         </button>
                                                                     </form>
                                                                 </li>
@@ -89,10 +91,10 @@
                                         @empty
                                             <tr>
                                                 <td></td>
-                                                <td class="text-center">No Gallery image found.</td>
+                                                <td class="text-center">No Slider image found.</td>
                                                 <td></td>
                                                 <td></td>
-                                                
+
                                             </tr>
                                         @endforelse
 
@@ -121,13 +123,13 @@
             <div class="modal-content">
                 <div class="modal-header border-0 pb-0">
                     <div class="form-header modal-header-title text-start mb-0">
-                        <h4 class="mb-0">Add Gallery Image</h4>
+                        <h4 class="mb-0">Add Slider's Image</h4>
                     </div>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
 
                     </button>
                 </div>
-                <form action="{{ route('admin-gallery.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('admin-home-slider.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-body">
                         <div class="row">
@@ -168,7 +170,7 @@
     <!-- /Add Inventory -->
 
     <!-- Edit Inventory -->
-    @foreach($gallery as $item)
+    @foreach($sliders as $item)
         <!-- View Modal -->
         <div class="modal fade" id="view{{ $item->id }}" tabindex="-1">
             <div class="modal-dialog custom-modal modal-centered">
@@ -263,10 +265,9 @@
 
 
         {{-- edit modal --}}
-      
         <div class="modal fade" id="edit{{ $item->id }}">
             <div class="modal-dialog custom-modal">
-                <form action="{{ route('admin-gallery.update', $item) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('admin-home-slider.update', $item) }}" method="POST" enctype="multipart/form-data">
                     @csrf @method('PUT')
                     <div class="modal-content">
                         <div class="modal-header">
@@ -282,7 +283,7 @@
                                 <div class="col-12">
                                     <label>Change Image</label>
                                     <input type="file" name="image" class="form-control" accept="image/*">
-                                     <small class="text-muted">Recommended: 480x340px • Max 2MB</small>
+                                    <small class="text-muted">Recommended: 480x340px • Max 2MB</small>
                                 </div>
                                 <div class="col-12">
                                     <label>Caption / Alt Text</label>
@@ -301,7 +302,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-primary">Update Image</button>
+                            <button type="submit" class="btn btn-primary">Update </button>
                         </div>
                     </div>
                 </form>
@@ -309,34 +310,6 @@
         </div>
     @endforeach
     <!-- /Edit Inventory -->
-
-    <!-- Delete Stock Modal -->
-    <div class="modal custom-modal fade" id="delete_stock" role="dialog">
-        <div class="modal-dialog modal-dialog-centered modal-md">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="form-header">
-                        <h3>Delete Inventory</h3>
-                        <p>Are you sure want to delete?</p>
-                    </div>
-                    <div class="modal-btn delete-action">
-                        <div class="row">
-                            <div class="col-6">
-                                <a href="#" class="btn btn-primary paid-continue-btn">Delete</a>
-                            </div>
-                            <div class="col-6">
-                                <a href="#" data-bs-dismiss="modal" class="btn btn-primary paid-cancel-btn">Cancel</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /Delete Stock Modal -->
-
-
-
 
 
 @endsection
@@ -352,7 +325,7 @@
 
                 Swal.fire({
                     title: 'Delete Image?',
-                    text: "This Gallery image will be permanently deleted !",
+                    text: "This Slider image will be permanently deleted !",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#d33',
@@ -365,4 +338,32 @@
             });
         });
     </script>
+    @if(session('success'))
+
+        <script>
+
+            Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: '{{ session('success') }}',
+                showConfirmButton: false,
+                timer: 2000
+            })
+
+        </script>
+
+    @endif
+    @if($errors->any())
+
+        <script>
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Validation Error',
+                text: '{{ $errors->first() }}'
+            })
+
+        </script>
+
+    @endif
 @endpush

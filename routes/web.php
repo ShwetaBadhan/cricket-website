@@ -22,6 +22,10 @@ use App\Http\Controllers\MembershipAccessController;
 use App\Http\Controllers\InfluencerController;
 use App\Http\Controllers\SponsorController;
 use App\Http\Controllers\SportController;
+use App\Http\Controllers\HomeSliderController;
+use App\Http\Controllers\HomeAboutSectionController;
+use App\Http\Controllers\HomeWorkSectionController;
+use App\Http\Controllers\HomeBenefitController;
 
 // ************************************************************************************
 // ************************************************************************************
@@ -240,10 +244,10 @@ Route::middleware('auth')->group(function () {
     Route::post('/player-registrations/delete-selected', [PlayerRegistrationController::class, 'deleteSelected'])->name('player-registrations.delete-selected');
     // admin membership access leads
     Route::get('/admin-membership-access', [MembershipAccessController::class, 'index'])->name('admin-membership-access');
-    Route::delete('/admin-membership-access/{membershipAccess}', [MembershipAccessController::class, 'destroy'])->name('admin-membership-access.destroy');      
-    Route::post('/membership-access/delete-selected', [MembershipAccessController::class, 'deleteSelected'])->name('membership-access.delete-selected');   
-        // admin influencer leads
-    Route::get('/admin-influencer', [InfluencerController::class, 'index'])->name('admin-influencer'); 
+    Route::delete('/admin-membership-access/{membershipAccess}', [MembershipAccessController::class, 'destroy'])->name('admin-membership-access.destroy');
+    Route::post('/membership-access/delete-selected', [MembershipAccessController::class, 'deleteSelected'])->name('membership-access.delete-selected');
+    // admin influencer leads
+    Route::get('/admin-influencer', [InfluencerController::class, 'index'])->name('admin-influencer');
     Route::delete('/admin-influencer/{influencer}', [InfluencerController::class, 'destroy'])->name('admin-influencer.destroy');
     Route::post('/influencers/delete-selected', [InfluencerController::class, 'deleteSelected'])->name('influencers.delete-selected');
     // sponsor leads
@@ -253,6 +257,26 @@ Route::middleware('auth')->group(function () {
 
     // admin sports
     Route::get('/admin-sports', [SportController::class, 'index'])->name('admin-sports');
+    // ************************************************************************************
+    // ************************************************************************************
+    // home page CMS
+    // ************************************************************************************
+    // ************************************************************************************
+    // admin home slider
+    Route::get('/admin-home-slider', [HomeSliderController::class, 'index'])->name('admin-home-slider');
+    Route::post('/admin-home-slider', [HomeSliderController::class, 'store'])->name('admin-home-slider.store');
+    Route::put('/admin-home-slider/{slider}', [HomeSliderController::class, 'update'])->name('admin-home-slider.update');
+    Route::delete('/admin-home-slider/{slider}', [HomeSliderController::class, 'destroy'])->name('admin-home-slider.destroy');
+    // about section
+    Route::get('/admin-home-about', [HomeAboutSectionController::class, 'index'])->name('admin-home-about.index');
+    Route::put('/admin-home-about', [HomeAboutSectionController::class, 'update'])->name('admin-home-about.update');
+    // how we work section
+    Route::get('/admin-how-we-work', [HomeWorkSectionController::class, 'index'])->name('admin-how-we-work.index');
+    Route::put('/admin-how-we-work', [HomeWorkSectionController::class, 'update'])->name('admin-how-we-work.update');
+    // home benefit section
+    Route::get('/admin-home-benefit', [HomeBenefitController::class, 'index'])->name('admin-home-benefit.index');
+    Route::put('/admin-home-benefit/{section}', [HomeBenefitController::class, 'update'])
+        ->name('admin-home-benefit.update');
 });
 
 
