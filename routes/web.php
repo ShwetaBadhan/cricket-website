@@ -26,6 +26,7 @@ use App\Http\Controllers\HomeSliderController;
 use App\Http\Controllers\HomeAboutSectionController;
 use App\Http\Controllers\HomeWorkSectionController;
 use App\Http\Controllers\HomeBenefitController;
+use App\Http\Controllers\AboutSectionController;
 
 // ************************************************************************************
 // ************************************************************************************
@@ -277,6 +278,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin-home-benefit', [HomeBenefitController::class, 'index'])->name('admin-home-benefit.index');
     Route::put('/admin-home-benefit/{section}', [HomeBenefitController::class, 'update'])
         ->name('admin-home-benefit.update');
+    // about page about section
+    Route::get('/admin-about-section', [AboutSectionController::class, 'index'])->name('admin-about-section.index');
+    Route::put('/admin-about-section/{section}', [AboutSectionController::class, 'update'])
+        ->name('admin-about-section.update');
 });
 
 

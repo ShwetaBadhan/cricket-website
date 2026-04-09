@@ -91,7 +91,7 @@
                         <span> About Page</span>
                         <span class="menu-arrow"></span></a>
                     <ul style="display: none">
-                        <li><a href="">About Section</a></li>
+                        <li><a href="{{ route('admin-about-section.index') }}">About Section</a></li>
                     </ul>
                 </li>
 
