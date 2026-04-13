@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Log;
-use App\Models\AboutSection;
-class AboutSectionController extends Controller
+use Illuminate\Http\Request;
+use App\Models\OrganizerAboutSection;
+
+class OrganizerAboutSectionController extends Controller
 {
-   
+    //
     public function index()
     {
-        $aboutSection = AboutSection::firstOrCreate(
+        $aboutSection = OrganizerAboutSection::firstOrCreate(
             [],
             [
                 'main_title' => 'Where Every Game Turns into Glory',
@@ -21,12 +22,12 @@ class AboutSectionController extends Controller
             ]
         );
 
-        return view('admin.views.admin-home-about', compact('aboutSection'));
+        return view('admin.views.admin-organizer-about-section', compact('aboutSection'));
     }
 
     public function update(Request $request)
     {
-        $aboutSection = AboutSection::firstOrFail();
+        $aboutSection = OrganizerAboutSection::firstOrFail();
 
         $request->validate([
 
@@ -53,20 +54,14 @@ class AboutSectionController extends Controller
                 Storage::disk('public')->delete($aboutSection->image);
             }
 
-            $imagePath = $request->file('image')->store('about-sections', 'public');
+            $imagePath = $request->file('image')->store('organizer-about-sections', 'public');
             $data['image'] = $imagePath;
 
             // Log for debugging
             Log::info('Main image uploaded: ' . $imagePath);
         }
 
-        // Handle icon 1 upload
-        if ($request->hasFile('side_image')) {
-            if ($aboutSection->side_image && Storage::disk('public')->exists($aboutSection->side_image)) {
-                Storage::disk('public')->delete($aboutSection->side_image);
-            }
-            $data['side_image'] = $request->file('side_image')->store('about-sections-side', 'public');
-        }
+     
 
 
         $aboutSection->update($data);

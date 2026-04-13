@@ -82,7 +82,7 @@
 
                   <li> <a href="{{ route('about-us')}}">About Us</a> </li>
                   <li> <a href="{{ route('our-team')}}">Our Team</a> </li>
-                  <li> <a href="{{ route('our-organizer') }}">Our Organiser</a> </li>
+                  <li> <a href="{{ route('our-organizer') }}">Our Organizer</a> </li>
                   {{-- <li class="drop-down"> <a href="#">More</a>
                     <ul>
                       <li><a href="#">Brand Promotion</a></li>

@@ -6,7 +6,7 @@
             <!-- Page Header -->
             <div class="page-header">
                 <div class="content-page-header ">
-                    <h5>Sports </h5>
+                    <h5>Event Category </h5>
                     <div class="list-btn">
                         <ul class="filter-list">
 
@@ -14,7 +14,7 @@
                             <li>
                                 <a class="btn btn-primary" href="javascript:void(0);" data-bs-toggle="modal"
                                     data-bs-target="#add_category"><i class="fa fa-plus-circle me-2"
-                                        aria-hidden="true"></i>Add Sport</a>
+                                        aria-hidden="true"></i>Add Event</a>
                             </li>
                         </ul>
                     </div>
@@ -36,30 +36,32 @@
                                     <thead class="thead-light">
                                         <tr>
                                             <th>#</th>
-                                            <th>Sport Title</th>
-                                            <th>Status</th>
+                                            <th>Event Name</th>
+                                            <th>Posted By</th>
                                             <th class="no-sort">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @forelse ($Sports as $sport)
+                                        @forelse ($eventCategories as $eventCategory)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td><a href="" class="product-list-item-img"><img
-                                                            src="{{ $sport->image ? asset('storage/' . $sport->image) : asset('placeholder.png') }}"
-                                                            alt="product-list"><span>{{ $sport->title }}</span></a></td>
-                                                <td>{{ $sport->status }} </td>
+                                                            src="{{ $eventCategory->image ? asset('storage/' . $eventCategory->image) : asset('placeholder.png') }}"
+                                                            alt="product-list"><span>{{ $eventCategory->name }}</span></a></td>
+                                                <td>{{ $eventCategory->author }}</td>
                                                 <td class="d-flex align-items-center">
                                                     <a class="btn-action-icon me-2" href="javascript:void(0);"
-                                                        data-bs-toggle="modal" data-bs-target="#view_sport{{ $sport->id }}">
+                                                        data-bs-toggle="modal"
+                                                        data-bs-target="#view_eventCategory{{ $eventCategory->id }}">
                                                         <i class="fe fe-eye"></i>
                                                     </a>
                                                     <a class=" btn-action-icon me-2" href="javascript:void(0);"
                                                         data-bs-toggle="modal" data-bs-target="#edit_category"><i
                                                             class="fe fe-edit"></i></a>
 
-                                                    <form action="{{ route('admin-sports.destroy', $sport->id) }}" method="POST"
-                                                        class="d-inline delete-form">
+                                                    <form
+                                                        action="{{ route('admin-event-categories.destroy', $eventCategory->id) }}"
+                                                        method="POST" class="d-inline delete-form">
                                                         @csrf
                                                         @method('DELETE')
 
@@ -73,7 +75,7 @@
                                         @empty
                                             <tr>
                                                 <td></td>
-                                                <td>No Sports found yet.</td>
+                                                <td>No Event Categories found yet.</td>
                                                 <td></td>
                                                 <td></td>
                                             </tr>
@@ -97,21 +99,22 @@
             <div class="modal-content">
                 <div class="modal-header border-0 pb-0">
                     <div class="form-header modal-header-title text-start mb-0">
-                        <h4 class="mb-0">Add Sport</h4>
+                        <h4 class="mb-0">Add Event</h4>
                     </div>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
 
                     </button>
                 </div>
-                <form action="{{ route('admin-sports.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('admin-event-categories.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <div class="modal-body">
                         <div class="row">
 
                             <div class="col-lg-6 mb-3">
-                                <label>Sport Title <span class="text-danger">*</span></label>
-                                <input type="text" name="title" class="form-control" placeholder="Enter Title" required>
+                                <label>Event Category Name <span class="text-danger">*</span></label>
+                                <input type="text" name="name" class="form-control" placeholder="Enter Event Category Name"
+                                    required>
                             </div>
 
                             <div class="col-lg-6 mb-3">
@@ -119,10 +122,20 @@
                                 <input type="text" name="slug" class="form-control" placeholder="Enter Slug" readonly>
                             </div>
 
-
+                            <div class="col-lg-6 mb-3">
+                                <label>Posted by <span class="text-danger">*</span></label>
+                                <input type="text" name="author" class="form-control" placeholder="Enter Posted By"
+                                    required>
+                                <small class="form-text text-muted">Size : 490 * 390(max size : 5MB)</small>
+                            </div>
 
                             <div class="col-lg-6 mb-3">
-                                <label>Sport Image <span class="text-danger">*</span></label>
+                                <label>Date <span class="text-danger">*</span></label>
+                                <input type="date" name="date" class="form-control" required>
+                            </div>
+
+                            <div class="col-lg-6 mb-3">
+                                <label>Event Category Image <span class="text-danger">*</span></label>
                                 <input type="file" name="image" class="form-control" required>
                             </div>
 
@@ -130,17 +143,7 @@
 
                             <div class="col-lg-12 mb-3">
                                 <label>Description <span class="text-danger">*</span></label>
-                                <textarea name="description" class="form-control" placeholder="Enter Description Here ...."
-                                    rows="4" required></textarea>
-                            </div>
-                            <div class="col-lg-12 mb-3">
-                                <label>Benefits <span class="text-danger">*</span></label>
-                                <textarea name="benefits" class="form-control" placeholder="Enter Benefits Here ...."
-                                    rows="4" required></textarea>
-                            </div>
-                            <div class="col-lg-12 mb-3">
-                                <label>Rules <span class="text-danger">*</span></label>
-                                <textarea name="rules" class="form-control" placeholder="Enter Rules Here ...." rows="4"
+                                <textarea name="description" class="form-control" placeholder="Enter description" rows="4"
                                     required></textarea>
                             </div>
 
@@ -167,14 +170,14 @@
     <!-- /Add  Modal -->
     {{-- view modal --}}
 
-    @foreach($Sports as $item)
-        <div class="modal custom-modal fade" id="view_sport{{ $item->id }}" role="dialog">
+    @foreach($eventCategories as $item)
+        <div class="modal custom-modal fade" id="view_eventCategory{{ $item->id }}" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
 
                     <div class="modal-header border-0 pb-0">
                         <div class="form-header modal-header-title text-start mb-0">
-                            <h4 class="mb-0">View Sport</h4>
+                            <h4 class="mb-0">View Event</h4>
                         </div>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
@@ -184,12 +187,19 @@
                         <table class="table table-bordered table-striped mb-0">
 
                             <tr>
-                                <th>Title :</th>
-                                <td>{{ $item->title }}</td>
-
-
+                                <th>Name :</th>
+                                <td>{{ $item->name }}</td>
+                            </tr>
+                            <tr>
+                                <th>Posted by :</th>
+                                <td>{{ $item->author }}</td>
                             </tr>
 
+                            <tr>
+                                <th>Date :</th>
+                                <td>{{ $item->date }}</td>
+
+                            </tr>
                             <tr>
                                 <th>Status :</th>
                                 <td>
@@ -199,7 +209,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th>Sport Image :</th>
+                                <th>Event Category Image :</th>
                                 <td>
                                     @if($item->image)
                                         <img src="{{ asset('storage/' . $item->image) }}" width="120">
@@ -214,14 +224,6 @@
                             <tr>
                                 <th>Description :</th>
                                 <td colspan="3">{{ $item->description }}</td>
-                            </tr>
-                            <tr>
-                                <th>Benefits :</th>
-                                <td colspan="3">{{ $item->Benefits }}</td>
-                            </tr>
-                            <tr>
-                                <th>Rules :</th>
-                                <td colspan="3">{{ $item->Rules }}</td>
                             </tr>
 
                         </table>
@@ -247,13 +249,14 @@
                 <div class="modal-content">
                     <div class="modal-header border-0 pb-0">
                         <div class="form-header modal-header-title text-start mb-0">
-                            <h4 class="mb-0">Edit Sport</h4>
+                            <h4 class="mb-0">Edit Event Category</h4>
                         </div>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
 
                         </button>
                     </div>
-                    <form action="{{ route('admin-sports.update', $sport->id) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('admin-event-categories.update', $eventCategory->id) }}" method="POST"
+                        enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
 
@@ -261,24 +264,31 @@
                             <div class="row">
 
                                 <div class="col-lg-12">
-                                    <label>Blog Title *</label>
-                                    <input type="text" name="title" class="form-control" value="{{ $sport->title }}">
+                                    <label>Category Name *</label>
+                                    <input type="text" name="name" class="form-control" value="{{ $item->name }}">
                                 </div>
 
                                 <div class="col-lg-12">
                                     <label>Slug *</label>
-                                    <input type="text" name="slug" class="form-control" value="{{ $sport->slug }}">
+                                    <input type="text" name="slug" class="form-control" value="{{ $item->slug }}">
                                 </div>
 
-
-
+                                <div class="col-lg-6">
+                                    <label>Author *</label>
+                                    <input type="text" name="author" class="form-control" value="{{ $item->author }}">
+                                </div>
 
                                 <div class="col-lg-6">
-                                    <label>Sport Image</label>
+                                    <label>Date *</label>
+                                    <input type="date" name="date" class="form-control" value="{{ $item->date }}">
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <label>Event Category Image</label>
                                     <input type="file" name="image" class="form-control">
 
-                                    @if($sport->image)
-                                        <img src="{{ asset('storage/' . $sport->image) }}" width="80" class="mt-2">
+                                    @if($item->image)
+                                        <img src="{{ asset('storage/' . $item->image) }}" width="80" class="mt-2">
                                     @endif
                                 </div>
 
@@ -287,22 +297,14 @@
                                 <div class="col-lg-12">
                                     <label>Description *</label>
                                     <textarea name="description" class="form-control"
-                                        rows="4">{{ $sport->description }}</textarea>
-                                </div>
-                                <div class="col-lg-12">
-                                    <label>Benefits *</label>
-                                    <textarea name="benefits" class="form-control" rows="4">{{ $sport->Benefits }}</textarea>
-                                </div>
-                                <div class="col-lg-12">
-                                    <label>Rules *</label>
-                                    <textarea name="rules" class="form-control" rows="4">{{ $sport->Rules }}</textarea>
+                                        rows="4">{{ $item->description }}</textarea>
                                 </div>
 
                                 <div class="col-lg-6">
                                     <label>Status *</label>
                                     <select name="status" class="form-control">
-                                        <option value="active" {{ $sport->status == 'active' ? 'selected' : '' }}>Active</option>
-                                        <option value="inactive" {{ $sport->status == 'inactive' ? 'selected' : '' }}>Inactive
+                                        <option value="active" {{ $item->status == 'active' ? 'selected' : '' }}>Active</option>
+                                        <option value="inactive" {{ $item->status == 'inactive' ? 'selected' : '' }}>Inactive
                                         </option>
                                     </select>
                                 </div>
@@ -326,7 +328,7 @@
 @push('scripts')
 
     <script>
-        document.querySelectorAll('input[name="title"]').forEach(function (input) {
+        document.querySelectorAll('input[name="name"]').forEach(function (input) {
             input.addEventListener('keyup', function () {
                 let slug = this.value.toLowerCase()
                     .replace(/ /g, '-')
@@ -344,8 +346,8 @@
                 var form = $(this).closest('form');
 
                 Swal.fire({
-                    title: 'Delete Sport?',
-                    text: "This sport will be permanently deleted!",
+                    title: 'Delete Event?',
+                    text: "This event will be permanently deleted!",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#d33',

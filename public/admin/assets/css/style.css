@@ -31149,4 +31149,16 @@ td .invoice-detail i {
     }
 }
 
+/* to enhance tab */
+form .nav .nav-link {
+    background: #ddf2fb;
+    margin: 5px;
+    color: #183f52;
+    border-radius:12px;
+}
+form .nav-tabs .nav-link.active {
+    color: #ddf2fb;
+    background: #183f52;
+    border-radius:12px;
+}
 /*# sourceMappingURL=style.css.map */

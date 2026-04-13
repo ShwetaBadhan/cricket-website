@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\HomeBenefit;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Log;
 class HomeBenefitController extends Controller
 {
     //

@@ -13,11 +13,11 @@
     </div>
 
     {{-- about jsl influencer --}}
-    @include('frontend.components.jsl-influencer.about')
+    <!-- @include('frontend.components.jsl-influencer.about') -->
 
 
     {{-- facilities --}}
-    @include('frontend.components.jsl-influencer.facilities')
+    <!-- @include('frontend.components.jsl-influencer.facilities') -->
     {{-- influencer form --}}
     @include('frontend.components.jsl-influencer.influencer-form')
 

@@ -13,7 +13,7 @@
 
     {{-- main section --}}
 
-    @include('frontend.components.membership.main')
+    <!-- @include('frontend.components.membership.main') -->
     @include('frontend.components.membership.form')
 @endsection
 @push('scripts')

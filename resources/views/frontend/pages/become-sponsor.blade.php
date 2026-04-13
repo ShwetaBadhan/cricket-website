@@ -12,9 +12,9 @@
         </div>
     </div>
 
-    @include('frontend.components.sponsor.about')
+    <!-- @include('frontend.components.sponsor.about') -->
 
-    @include('frontend.components.sponsor.facilities')
+    <!-- @include('frontend.components.sponsor.facilities') -->
 
     {{-- form --}}
     @include('frontend.components.sponsor.form')

@@ -72,10 +72,10 @@
                                             </tr>
                                         @empty
                                             <tr>
-                                                <td colspan="4" class="text-center py-5 text-muted">
-
-                                                    No blogs found yet.
-                                                </td>
+                                               <td></td>
+                                               <td>No blogs found yet.</td>
+                                               <td></td>
+                                               <td></td>
                                             </tr>
                                         @endforelse
 

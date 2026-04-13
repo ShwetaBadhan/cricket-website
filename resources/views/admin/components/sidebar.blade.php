@@ -1,7 +1,7 @@
 <div class="sidebar" id="sidebar">
     <div class="sidebar-inner slimscroll">
         <div id="sidebar-menu" class="sidebar-menu">
-          
+
             {{-- -----------------------------------------------------------------------------------------------------
             SIDEBAR VERTICAL NAVBAR
             ------------------------------------------------------------------------------------------------------- --}}
@@ -39,8 +39,11 @@
                         <span class="menu-arrow"></span></a>
                     <ul style="display: none">
                         <li><a href="{{ route('admin-blogs') }}">All Blogs</a></li>
-                      
+
                     </ul>
+                </li>
+                <li>
+                    <a href="{{ route('admin-event-categories') }}"><i class="fe fe-image"></i> <span>Event Categories</span></a>
                 </li>
                 <li>
                     <a href="{{ route('admin-gallery') }}"><i class="fe fe-image"></i> <span>Gallery</span></a>
@@ -54,12 +57,12 @@
                 <li>
                     <a href="{{ route('admin-partners') }}"><i class="fe fe-briefcase"></i> <span>Partners</span></a>
                 </li>
-               
+
                 <li>
                     <a href="{{ route('admin-reviews') }}"><i class="fe fe-star"></i> <span>Review</span></a>
                 </li>
                 <li>
-                    <a href=""><i class="fe fe-activity"></i> <span>Sports</span></a>
+                    <a href="{{ route('admin-sports') }}"><i class="fe fe-activity"></i> <span>Sports</span></a>
                 </li>
                 <li>
                     <a href="{{ route('admin-team') }}"><i class="fe fe-users"></i> <span>Team</span></a>
@@ -92,17 +95,36 @@
                         <span class="menu-arrow"></span></a>
                     <ul style="display: none">
                         <li><a href="{{ route('admin-about-section.index') }}">About Section</a></li>
+                        <li><a href="{{ route('admin-about-values.index') }}">Values Section</a></li>
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="javascript:void(0)"><i class="fe fe-user"></i>
+                        <span> Organizer About</span>
+                        <span class="menu-arrow"></span></a>
+                    <ul style="display: none">
+                        <li><a href="{{ route('admin-organizer-about.index') }}">Organizer About Section</a></li>
                     </ul>
                 </li>
 
                 <li>
-                    <a href=""><i class="fe fe-shield"></i>
+                    <a href="{{ route('admin-required-documents.index') }}"><i class="fe fe-folder"></i> 
+                        <span> Required Documents</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('admin-selection-process.index') }}"><i class="fe fe-check-circle"></i>
+                        <span> Selection Process</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('admin-privacy-policy.index') }}"><i class="fe fe-shield"></i>
                         <span> Privacy Policy</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href=""><i class="fe fe-file-text"></i>
+                    <a href="{{ route('admin-terms-condition.index') }}"><i class="fe fe-file-text"></i>
                         <span> Terms & Conditions</span>
                     </a>
                 </li>

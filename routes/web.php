@@ -27,6 +27,13 @@ use App\Http\Controllers\HomeAboutSectionController;
 use App\Http\Controllers\HomeWorkSectionController;
 use App\Http\Controllers\HomeBenefitController;
 use App\Http\Controllers\AboutSectionController;
+use App\Http\Controllers\AboutValueController;
+use App\Http\Controllers\OrganizerAboutSectionController;
+use App\Http\Controllers\PrivacyPolicyController;
+use App\Http\Controllers\TermsConditionController;
+use App\Http\Controllers\RequiredDocumentController;
+use App\Http\Controllers\SelectionProcessController;
+use App\Http\Controllers\EventCategoryController;
 
 // ************************************************************************************
 // ************************************************************************************
@@ -79,7 +86,7 @@ Route::get('/about-us', function () {
     return view('frontend.pages.about-us');
 })->name('about-us');
 
-Route::get('/announcement', function () {
+Route::get('/event-categories', function () {
     return view('frontend.pages.announcement');
 })->name('announcement');
 Route::get('/gallery', function () {
@@ -256,8 +263,26 @@ Route::middleware('auth')->group(function () {
     ROute::delete('/admin-sponsor/{sponsor}', [SponsorController::class, 'destroy'])->name('admin-sponsor.destroy');
     Route::post('/sponsors/delete-selected', [SponsorController::class, 'deleteSelected'])->name('sponsors.delete-selected');
 
-    // admin sports
+    // ************************************************************************************
+    // ************************************************************************************
+    // Sports CRUD CMS
+    // ************************************************************************************
+    // ************************************************************************************
     Route::get('/admin-sports', [SportController::class, 'index'])->name('admin-sports');
+    Route::post('/admin-sports', [SportController::class, 'store'])->name('admin-sports.store');
+    Route::put('/admin-sports/{sport}', [SportController::class, 'update'])->name('admin-sports.update');
+    Route::delete('/admin-sports/{sport}', [SportController::class, 'destroy'])->name('admin-sports.destroy');
+
+    // ************************************************************************************
+    // ************************************************************************************
+    // Event categories page CMS
+    // ************************************************************************************
+    // ************************************************************************************
+    Route::get('/admin-event-categories', [EventCategoryController::class, 'index'])->name('admin-event-categories');
+    Route::post('/admin-event-categories', [EventCategoryController::class, 'store'])->name('admin-event-categories.store');
+    Route::put('/admin-event-categories/{eventCategory}', [EventCategoryController::class, 'update'])->name('admin-event-categories.update');
+    Route::delete('/admin-event-categories/{eventCategory}', [EventCategoryController::class, 'destroy'])->name('admin-event-categories.destroy');
+
     // ************************************************************************************
     // ************************************************************************************
     // home page CMS
@@ -278,12 +303,58 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin-home-benefit', [HomeBenefitController::class, 'index'])->name('admin-home-benefit.index');
     Route::put('/admin-home-benefit/{section}', [HomeBenefitController::class, 'update'])
         ->name('admin-home-benefit.update');
+    // ************************************************************************************
+    // ************************************************************************************
+    // About page CMS
+    // ************************************************************************************
+    // ************************************************************************************
     // about page about section
     Route::get('/admin-about-section', [AboutSectionController::class, 'index'])->name('admin-about-section.index');
     Route::put('/admin-about-section/{section}', [AboutSectionController::class, 'update'])
         ->name('admin-about-section.update');
-});
+    // about page values section
+    Route::get('/admin-about-values', [AboutValueController::class, 'index'])->name('admin-about-values.index');
+    Route::put('/admin-about-values/{section}', [AboutValueController::class, 'update'])
+        ->name('admin-about-values.update');
+    // ************************************************************************************
+    // ************************************************************************************
+    // Organizer page CMS
+    // ************************************************************************************
+    // ************************************************************************************
+    // organizer about section
+    Route::get('/admin-organizer-about', [OrganizerAboutSectionController::class, 'index'])->name('admin-organizer-about.index');
+    Route::put('/admin-organizer-about/{section}', [OrganizerAboutSectionController::class, 'update'])
+        ->name('admin-organizer-about.update');
+    // ************************************************************************************
+    // ************************************************************************************
+    // privacy Policy page CMS
+    // ************************************************************************************
+    // ************************************************************************************
+    Route::get('/admin-privacy-policy', [PrivacyPolicyController::class, 'index'])->name('admin-privacy-policy.index');
+    Route::put('/admin-privacy-policy/{section}', [PrivacyPolicyController::class, 'update'])->name('admin-privacy-policy.update');
+    // ************************************************************************************
+    // ************************************************************************************
+    // Terms Condition page CMS
+    // ************************************************************************************
+    // ************************************************************************************
+    Route::get('/admin-terms-condition', [TermsConditionController::class, 'index'])->name('admin-terms-condition.index');
+    Route::put('/admin-terms-condition/{section}', [TermsConditionController::class, 'update'])->name('admin-terms-condition.update');
+    // ************************************************************************************
+    // ************************************************************************************
+    // Required Documents CMS
+    // ************************************************************************************
+    // ************************************************************************************
+    Route::get('/admin-required-documents', [RequiredDocumentController::class, 'index'])->name('admin-required-documents.index');
+    Route::put('/admin-required-documents/{section}', [RequiredDocumentController::class, 'update'])->name('admin-required-documents.update');
+    // ************************************************************************************
+    // ************************************************************************************
+    // Selection Process CMS
+    // ************************************************************************************
+    // ************************************************************************************
+    Route::get('/admin-selection-process', [SelectionProcessController::class, 'index'])->name('admin-selection-process.index');
+    Route::put('/admin-selection-process/{section}', [SelectionProcessController::class, 'update'])->name('admin-selection-process.update');
 
+});
 
 use App\Http\Controllers\Admin\UserController;
 
