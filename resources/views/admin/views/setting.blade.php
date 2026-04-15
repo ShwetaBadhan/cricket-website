@@ -25,116 +25,116 @@
                     <div class="card">
                         <div class="card-body w-100">
                             <div class="content-page-header">
-                                <h5 class="setting-menu">Account Settings</h5>
+                                <h5 class="setting-menu">Website Settings</h5>
                             </div>
-                            <div class="row">
-                                <div class="profile-picture">
-                                    <div class="upload-profile me-2">
-                                        <div class="profile-img">
-                                            <img id="blah" class="avatar" src="{{ asset('admin/assets/img/profiles/avatar-10.jpg') }}"
-                                                alt="profile-img">
-                                        </div>
-                                    </div>
-                                    <div class="img-upload">
-                                        <label class="btn btn-primary">
-                                            Upload new picture <input type="file">
-                                        </label>
-                                        <a class="btn btn-remove">Delete</a>
-                                        <p class="mt-1">Logo Should be minimum 152 * 152 Supported File format JPG,PNG,SVG
-                                        </p>
-                                    </div>
-                                </div>
 
-                                <div class="col-lg-12">
-                                    <div class="form-title">
-                                        <h5>General Information</h5>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-12">
-                                    <div class="input-block mb-3">
-                                        <label>First Name</label>
-                                        <input type="text" class="form-control" placeholder="Enter First Name">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-12">
-                                    <div class="input-block mb-3">
-                                        <label>Last Name</label>
-                                        <input type="text" class="form-control" placeholder="Enter Last Name">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-12">
-                                    <div class="input-block mb-3">
-                                        <label>Email</label>
-                                        <input type="text" class="form-control" placeholder="Enter Email Address">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-12">
-                                    <div class="input-block mb-3">
-                                        <label>Mobile Number</label>
-                                        <input type="text" class="form-control" placeholder="Enter Mobile Number">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-12">
-                                    <div class="input-block mb-0">
-                                        <label>Gender</label>
-                                        <select class="select">
-                                            <option>Select Gender</option>
-                                            <option>Male</option>
-                                            <option>Female</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-12">
-                                    <div class="input-block mb-3">
-                                        <label>Date of Birth</label>
-                                        <div class="cal-icon cal-icon-info">
-                                            <input type="text" class="datetimepicker form-control"
-                                                placeholder="Select Date">
+                            <div class="row">
+                                <form class="row" action="{{ route('admin-settings.update') }}" method="POST"
+                                    enctype="multipart/form-data">
+                                    @csrf
+                                    @method('PUT')
+
+                                    <!-- LOGO -->
+                                    <div class="profile-picture col-6">
+                                        <div class="upload-profile me-2">
+                                            <div class="profile-img">
+                                                <img id="logoPreview"
+                                                    src="{{ $websiteSetting->logo ? asset('storage/' . $websiteSetting->logo) : asset('admin/assets/img/profiles/avatar-10.jpg') }}"
+                                                    class="" width="100">
+
+                                                <input type="file" name="logo" id="logoInput" hidden>
+                                            </div>
+                                        </div>
+
+                                        <div class="img-upload">
+                                            <label class="" for="logoInput">
+                                                Upload Logo
+                                            </label>
+
+                                            <input type="file" name="logo" id="logoInput" class="form-control">
+                                            <br>
+                                            <span class="form-text text-muted">
+                                                <small>Accepted file types: JPG, PNG, GIF (180*70)</small>
+                                            </span>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="form-title">
-                                        <h5>Address Information</h5>
+                                    <!-- LOGO -->
+                                    <div class="profile-picture col-6">
+                                        <div class="upload-profile me-2">
+                                            <div class="profile-img">
+                                                <img id="logoWhitePreview"
+                                                    src="{{ $websiteSetting->logo_white ? asset('storage/' . $websiteSetting->logo_white) : asset('admin/assets/img/profiles/avatar-10.jpg') }}"
+                                                    class="" width="100">
+
+                                                <input type="file" name="logo_white" id="logoWhiteInput" hidden>
+                                            </div>
+                                        </div>
+
+                                        <div class="img-upload">
+                                            <label class="">
+                                                Upload Logo (White)
+
+                                            </label>
+                                            <input class="form-control" type="file" name="logo_white">
+                                            <br>
+                                            <span class="form-text text-muted">
+                                                <small>Accepted file types: JPG, PNG, GIF (180*70)</small>
+                                            </span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="input-block mb-3">
-                                        <label>Address</label>
-                                        <input type="text" class="form-control" placeholder="Enter your Address">
+
+
+                                    <hr>
+
+                                    <!-- BRAND NAME -->
+                                    <div class="input-block mb-3 col-6">
+                                        <label>Brand Name</label>
+                                        <input type="text" name="brand_name" class="form-control"
+                                            value="{{ $websiteSetting->brand_name }}">
                                     </div>
-                                </div>
-                                <div class="col-lg-6 col-12">
-                                    <div class="input-block mb-3">
-                                        <label>Country</label>
-                                        <input type="text" class="form-control" placeholder="Enter your Country">
+
+
+
+                                    <!-- LOCATION -->
+                                    <div class="input-block mb-3 col-6">
+                                        <label>Location</label>
+                                        <input type="text" name="location" class="form-control"
+                                            value="{{ $websiteSetting->location }}">
                                     </div>
-                                </div>
-                                <div class="col-lg-6 col-12">
-                                    <div class="input-block mb-3">
-                                        <label>State</label>
-                                        <input type="text" class="form-control" placeholder="Enter your State">
+
+                                    <!-- EMAIL -->
+                                    <div class="input-block mb-3 col-6">
+                                        <label>Email</label>
+                                        <input type="email" name="email" class="form-control"
+                                            value="{{ $websiteSetting->email }}">
                                     </div>
-                                </div>
-                                <div class="col-lg-6 col-12">
-                                    <div class="input-block mb-3">
-                                        <label>City</label>
-                                        <input type="text" class="form-control" placeholder="Enter your City">
+
+                                    <!-- PHONE 1 -->
+                                    <div class="input-block mb-3 col-6">
+                                        <label>Phone 1</label>
+                                        <input type="text" name="phone_1" class="form-control"
+                                            value="{{ $websiteSetting->phone_1 }}">
                                     </div>
-                                </div>
-                                <div class="col-lg-6 col-12">
-                                    <div class="input-block mb-3">
-                                        <label>Postal Code</label>
-                                        <input type="text" class="form-control" placeholder="Enter Your Postal Code">
+
+                                    <!-- PHONE 2 -->
+                                    <div class="input-block mb-3 col-6">
+                                        <label>Phone 2</label>
+                                        <input type="text" name="phone_2" class="form-control"
+                                            value="{{ $websiteSetting->phone_2 }}">
                                     </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="btn-path text-end">
-                                        <a href="javascript:void(0);"
-                                            class="btn btn-cancel bg-primary-light me-3">Cancel</a>
-                                        <a href="javascript:void(0);" class="btn btn-primary">Save Changes</a>
+
+                                    <!-- DESCRIPTION -->
+                                    <div class="input-block mb-3 col-12">
+                                        <label>Description</label>
+                                        <textarea name="description"
+                                            class="form-control">{{ $websiteSetting->description }}</textarea>
                                     </div>
-                                </div>
+                                  
+                                    <!-- SUBMIT -->
+                                    <div class="text-end">
+                                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -143,3 +143,33 @@
         </div>
     </div>
 @endsection
+@push('scripts')
+    @if(session('success'))
+
+        <script>
+
+            Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: '{{ session('success') }}',
+                showConfirmButton: false,
+                timer: 2000
+            })
+
+        </script>
+
+    @endif
+    @if($errors->any())
+
+        <script>
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Validation Error',
+                text: '{{ $errors->first() }}'
+            })
+
+        </script>
+
+    @endif
+@endpush

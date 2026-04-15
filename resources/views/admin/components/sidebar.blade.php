@@ -164,7 +164,7 @@
                 <li class="menu-title"><span>Settings</span></li>
 
                 <li>
-                    <a href="{{ route('admin-setting') }}"><i class="fe fe-settings"></i> <span>Settings</span></a>
+                    <a href="{{ route('admin-settings.index') }}"><i class="fe fe-settings"></i> <span>Settings</span></a>
                 </li>
                 <li>
                     <a href="{{ route('logout') }}"

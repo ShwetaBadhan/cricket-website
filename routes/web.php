@@ -34,6 +34,8 @@ use App\Http\Controllers\TermsConditionController;
 use App\Http\Controllers\RequiredDocumentController;
 use App\Http\Controllers\SelectionProcessController;
 use App\Http\Controllers\EventCategoryController;
+use App\Http\Controllers\WebsiteSettingController;
+use App\Http\Controllers\SocialSettingController;
 
 // ************************************************************************************
 // ************************************************************************************
@@ -353,7 +355,24 @@ Route::middleware('auth')->group(function () {
     // ************************************************************************************
     Route::get('/admin-selection-process', [SelectionProcessController::class, 'index'])->name('admin-selection-process.index');
     Route::put('/admin-selection-process/{section}', [SelectionProcessController::class, 'update'])->name('admin-selection-process.update');
+    // ************************************************************************************
+    // ************************************************************************************
+    // Website settings CMS
+    // ************************************************************************************
+    // ************************************************************************************
 
+    Route::get('/admin-settings', [WebsiteSettingController::class, 'index'])->name('admin-settings.index');
+    Route::put('/admin-settings', [WebsiteSettingController::class, 'update'])->name('admin-settings.update');
+    // ************************************************************************************
+    // ************************************************************************************
+    // social settings CMS
+    // ************************************************************************************
+    // ************************************************************************************
+    Route::get('/admin-social-settings', [SocialSettingController::class, 'index'])
+        ->name('admin-social-settings.index');
+
+    Route::put('/admin-social-settings', [SocialSettingController::class, 'update'])
+        ->name('admin-social-settings.update');
 });
 
 use App\Http\Controllers\Admin\UserController;

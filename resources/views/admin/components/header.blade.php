@@ -217,7 +217,7 @@
                                 <a class="dropdown-item" href="{{ route('profile.edit') }}">Profile</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="{{ route('admin-setting') }}">Settings</a>
+                                <a class="dropdown-item" href="{{ route('admin-settings.index') }}">Settings</a>
                             </li>
                         </ul>
                     </div>
