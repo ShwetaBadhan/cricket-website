@@ -30,6 +30,11 @@
                                             <i class="fe fe-settings"></i> <span>Company Settings</span>
                                         </a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a href="colour-settings.html" class="nav-link">
+                                            <i class="fe fe-palette"></i> <span>Colour Settings</span>
+                                        </a>
+                                    </li>
                                 
                                     <li class="nav-item">
                                         <a href="seo-settings.html" class="nav-link">

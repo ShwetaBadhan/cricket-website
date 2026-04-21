@@ -36,6 +36,7 @@ use App\Http\Controllers\SelectionProcessController;
 use App\Http\Controllers\EventCategoryController;
 use App\Http\Controllers\WebsiteSettingController;
 use App\Http\Controllers\SocialSettingController;
+use App\Http\Controllers\ColourSettingController;
 
 // ************************************************************************************
 // ************************************************************************************
@@ -373,6 +374,16 @@ Route::middleware('auth')->group(function () {
 
     Route::put('/admin-social-settings', [SocialSettingController::class, 'update'])
         ->name('admin-social-settings.update');
+    // ************************************************************************************
+    // ************************************************************************************
+    // color settings CMS
+    // ************************************************************************************
+    // ************************************************************************************
+    Route::get('/admin-colour-settings', [ColourSettingController::class, 'index'])
+        ->name('admin-colour-settings.index');
+
+    Route::put('/admin-colour-settings', [ColourSettingController::class, 'update'])
+        ->name('admin-colour-settings.update');
 });
 
 use App\Http\Controllers\Admin\UserController;
@@ -381,7 +392,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
     // user management
 
-    Route::get('/admin-users', [UserController::class, 'index'])->name('admin-users');
+    Route::get('/admin-users', [UserController::class, 'index'])->name('admin-users.index');
     Route::post('/users', [UserController::class, 'store'])->name('users.store');
     Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
     Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');

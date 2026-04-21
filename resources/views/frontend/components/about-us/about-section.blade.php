@@ -1,3 +1,6 @@
+@php
+    $AboutSection = App\Models\AboutSection::where('is_active', true)->first();
+@endphp
 <section class="home-about-section wf100 p80-50">
 
     <div class="about-flex-wrap">
@@ -7,35 +10,25 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-title">
-                        <h2> ABOUT JHARKHAND SUPER <br>
-                            LEAGUE PROGRAMME FOR <br>
-                            DEVELOPMENT OF SPORTS</h2>
+                        <h2>{{ $AboutSection->main_title ?? 'About Jharkhand Super League' }}</h2>
                     </div>
                 </div>
             </div>
 
 
             <p class="about-description">
-                Jharkhand Super League (JSL) is a dynamic platform where sports, talent, and opportunity come together.
-                Our mission is to identify and promote individuals who are passionate about showcasing their abilities
-                and competing with confidence.
+               {{ $AboutSection->description_1 ?? 'The Jharkhand Super League (JSL) is a dynamic sports and talent league based in the state of Jharkhand, India. It serves as a platform to nurture and showcase the diverse talents of individuals across various fields, including sports, arts, and culture. The league aims to promote sportsmanship, creativity, and community engagement while providing opportunities for participants to excel in their respective domains.' }}
 
 
             </p>
 
             <p class="about-description">
-                We organise various sports events like Cricket, Football, and Marathons. These events allow players to
-                take part in competitive matches and also help them to improve their skills. In addition, the league
-                also runs talent hunts in Dance, Modelling, Singing, and Cultural Performances. This gives a stage for
-                creative and artistic talents. JSL also encourages community involvement through membership and
-                volunteer programmes. Individuals can help with event organisation, coordination, and management. By
-                bringing together participants from diverse backgrounds, the Jharkhand Super League aims to create a
-                space where talent shines, passion is celebrated, and opportunities are available for everyone.
+               {{ $AboutSection->description_2 ?? 'JSL organizes a wide range of events and competitions, fostering a spirit of healthy competition and camaraderie among participants. From cricket tournaments to cultural showcases, the league celebrates the rich tapestry of talent that Jharkhand has to offer. Through its initiatives, JSL strives to empower individuals, promote local culture, and contribute to the overall development of the community.' }}
             </p>
 
             <div class="d-flex ">
                 <div class="buy-ticket">
-                    <a href="#">Learn More</a>
+                    <a href="{{ route('contact-us') }}">Learn More</a>
                 </div>
             </div>
 
@@ -47,8 +40,8 @@
 
             <div class="about-image-wrapper">
 
-                <img src="{{ asset('assets/images/gallery/mg-2.jpg') }}" class="about-img-top" alt="sports">
-                <img src="{{ asset('assets/images/gallery/mg-1.jpg') }}" class="about-img-bottom" alt="sports">
+                <img src="{{ $AboutSection->image ? asset('storage/'.$AboutSection->image) :asset('assets/images/gallery/mg-2.jpg') }}" class="about-img-top" alt="sports">
+                <img src="{{ $AboutSection->side_image ? asset('storage/'.$AboutSection->side_image) : asset('assets/images/gallery/mg-1.jpg') }}" class="about-img-bottom" alt="sports">
 
             </div>
 

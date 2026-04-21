@@ -1,3 +1,7 @@
+@php
+    $HomeAbout = App\Models\HomeAboutSection::where('is_active', true)->first();
+@endphp
+
 <section class="home-about-section wf100 p80-50">
 
     <div class="about-flex-wrap">
@@ -7,48 +11,43 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-title">
-                        <h2>Where Every Game Turns into Glory
+                        <h2>
+                            {{ $HomeAbout->main_title ?? 'Welcome to Our Institution' }}
                         </h2>
                     </div>
                 </div>
             </div>
 
-
             <p class="about-description">
-                The Jharkhand Super League (JSL) is a premier platform where talent meets opportunities. Our mission is
-                to provide individuals with a stage to showcase their skills, compete with passion, and celebrate
-                excellence.
-
-
+                {{ $HomeAbout->description_1 ?? 'We provide quality education and focus on holistic development of students.' }}
             </p>
 
             <p class="about-description">
-                From exciting sporting events like Cricket, Football, and Marathon to exciting talent hunts like Dance,
-                Modeling, and Singing, JSL brings together participants from different backgrounds to discover their
-                potential and shine. In our view, each talent deserves to get a stage and every dream deserves a
-                platform.
+                {{ $HomeAbout->description_2 ?? 'Our programs are designed to build strong academic and professional foundations.' }}
             </p>
 
-            <div class="d-flex ">
+            <div class="d-flex">
                 <div class="buy-ticket">
-                    <a href="#">Learn More</a>
+                    <a href="{{ route('contact-us') }}">Learn More</a>
                 </div>
             </div>
-
         </div>
-
 
         <!-- RIGHT IMAGES -->
         <div class="about-image-side">
-
             <div class="about-image-wrapper">
 
-                <img src="{{ asset('assets/images/gallery/mg-2.jpg') }}" class="about-img-top" alt="sports">
+                <img 
+                    src="{{ isset($HomeAbout->image) ? asset('storage/'.$HomeAbout->image) : asset('assets/images/gallery/mg-2.jpg') }}"
+                    class="about-img-top" 
+                    alt="about image">
 
-                <img src="{{ asset('assets/images/gallery/mg-1.jpg') }}" class="about-img-bottom" alt="sports">
+                <img 
+                    src="{{ isset($HomeAbout->side_image) ? asset('storage/'.$HomeAbout->side_image) : asset('assets/images/gallery/mg-1.jpg') }}"
+                    class="about-img-bottom" 
+                    alt="about image">
 
             </div>
-
         </div>
 
     </div>

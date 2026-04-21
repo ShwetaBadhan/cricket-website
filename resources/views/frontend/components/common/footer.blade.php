@@ -78,12 +78,12 @@
   </div>
   <div class="container brtop">
     <div class="row">
-      <div class="col-lg-6 col-md-6">
+      <div class="col-lg-8 col-md-6">
         <p class="copyr"> &copy; <?php echo date('Y')?> <a href="{{route('index')}}" class="text-white">Jharkhand Super
-            League</a> | Developed By : <a href="#" class="text-white" target="_blank">Vibrantick Infotech Solutions</a>
+            League</a> | Designed &amp; developed By  <a href="#" class="text-white" target="_blank">Vibrantick Infotech Solutions</a>
         </p>
       </div>
-      <div class="col-lg-6 col-md-6">
+      <div class="col-lg-4 col-md-6">
         <ul class="quick-links">
           <li><a href="{{route('privacy-policy')}}">Privacy Policy</a></li>
           <li><a href="#">|</a></li>

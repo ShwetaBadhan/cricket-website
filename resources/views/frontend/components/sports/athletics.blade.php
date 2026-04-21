@@ -1,65 +1,83 @@
-<section class="cricket-detail-section wf100 py-80">
+<section class="sports-section wf100">
     <div class="container">
-
         <div class="row">
 
             <!-- LEFT CONTENT -->
             <div class="col-lg-8">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="section-title">
-                            <h2> ABOUT ATHLETICS</h2>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="cricket-overview-block">
+                <img src="https://cricket.vibrantick.org/assets/images/fvid1.jpg" class="sports-hero">
 
-                    <p class="cricket-overview-text">
-                        Athletics at the Jharkhand Super League (JSL) highlights speed, strength, endurance, and
-                        determination. The events include sprint races, long-distance running, and marathons, providing
-                        a platform for participants to challenge themselves and improve performance.<br>
-                        JSL encourages athletes of all levels to take part, build confidence, maintain fitness, and
-                        showcase their talent in a disciplined and motivating environment. The league promotes a strong
-                        spirit of sportsmanship and fair competition.<br>
-                        Participants are expected to follow rules, respect officials and fellow competitors, and
-                        prioritize safety and medical fitness while enjoying a rewarding athletic experience. Decisions
-                        by event officials are final and binding.
+                <h2 class="sports-title">Athletics: Build Speed & Strength</h2>
 
-                    </p>
+                <p class="sports-text">
+                    Athletics at JSL focuses on endurance, discipline, and performance. Participants engage in
+                    sprinting,
+                    long-distance running, and marathons to enhance their physical fitness and competitive spirit.
+                    The program encourages individuals of all levels to challenge themselves while maintaining
+                    sportsmanship.
+                </p>
 
-                </div>
+                <div class="divider"></div>
+
+                <h4 class="section-heading">Benefits</h4>
+                <p class="benefits-text">
+                    Improving overall stamina and building long-lasting physical endurance plays a vital role in
+                    enhancing performance
+                    in both daily activities and sports. At the same time, it strengthens mental resilience by improving
+                    focus, determination,
+                    and the ability to handle challenges under pressure. Along with physical and mental growth, it also
+                    boosts self-confidence
+                    and instills a sense of discipline, helping individuals stay consistent, motivated, and committed to
+                    achieving their goals.
+
+                </p>
+
+                <div class="divider"></div>
+
+                <h4 class="section-heading">Game Rules</h4>
+                <ul class="custom-list">
+                    <li>Complete registration before the event and report 30 minutes early.</li>
+                    <li>Misconduct or unsportsmanlike behavior may lead to disqualification.</li>
+                    <li>Follow assigned tracks/routes and official instructions.</li>
+                </ul>
 
 
-                <div class="cricket-rules-block mt-4">
 
-                    <h3 class="cricket-rules-heading">Game Rules</h3>
-
-                    <ul class="cricket-rules-list">
-                        <li>Complete registration before the event and report 30 minutes early.</li>
-                        <li>Wear proper sports attire and running shoes.</li>
-                        <li>Follow assigned tracks/routes and official instructions.</li>
-                        <li>Misconduct or unsportsmanlike behavior may lead to disqualification.</li>
-                    </ul>
-
-                </div>
 
             </div>
 
-
             <!-- RIGHT SIDEBAR -->
             <div class="col-lg-4">
+                <div class="sports-sidebar">
 
-                <div class="cricket-gallery-widget">
+                    <h3 class="sidebar-title">Sports</h3>
 
-                    <h4 class="cricket-gallery-title">Athletics Moments</h4>
+                    <ul class="sidebar-menu">
 
-                    <img src="{{ asset('assets/images/fvid1.jpg') }}" class="cricket-gallery-img">
-                    <img src="{{ asset('assets/images/fvid1.jpg') }}" class="cricket-gallery-img">
-                    <img src="{{ asset('assets/images/fvid1.jpg') }}" class="cricket-gallery-img">
+                        <li class="active">
+                            <a href="#">
+                                <span>Athletics</span>
+                                <span class="arrow">›</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <span>Cricket</span>
+                                <span class="arrow">›</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <span>Football</span>
+                                <span class="arrow">›</span>
+                            </a>
+                        </li>
+
+                    </ul>
 
                 </div>
-
             </div>
 
         </div>

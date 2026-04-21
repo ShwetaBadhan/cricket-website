@@ -136,7 +136,7 @@
                 <!-- User Management -->
                 <li class="menu-title"><span>User Management</span></li>
                 <li>
-                    <a href="{{ route('admin-users') }}"><i class="fe fe-user"></i> <span>Users</span></a>
+                    <a href="{{ route('admin-users.index') }}"><i class="fe fe-user"></i> <span>Users</span></a>
                 </li>
                 <li>
                     <a href="{{ route('admin-roles') }}"><i class="fe fe-clipboard"></i>
