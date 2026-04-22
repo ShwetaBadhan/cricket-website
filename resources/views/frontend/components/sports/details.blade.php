@@ -1,72 +1,47 @@
-<section class="cricket-detail-section wf100 py-80">
-    <div class="container">
+<div class="col-lg-8">
 
-        <div class="row">
+    <img src="{{ $sport->image ? asset('storage/'.$sport->image) : asset('assets/images/gallery/mg-2.jpg') }}" class="sports-hero">
 
-            <!-- LEFT CONTENT -->
-            <div class="col-lg-8">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="section-title">
-                            <h2> ABOUT CRICKET</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="cricket-overview-block">
+    <h2 class="sports-title">{{ $sport->title ? $sport->title : 'Athletics: Build Speed & Strength' }}</h2>
 
+    <p class="sports-text">
+        {{ $sport->description ? $sport->description : ' Athletics at JSL focuses on endurance, discipline, and performance. Participants engage in
+                        sprinting,
+                        long-distance running, and marathons to enhance their physical fitness and competitive spirit.
+                        The program encourages individuals of all levels to challenge themselves while maintaining
+                        sportsmanship.' }}
+    </p>
 
-                    <p class="cricket-overview-text">
-                        Football at the Jharkhand Super League (JSL) provides an exciting and competitive platform for
-                        teams to demonstrate skill, teamwork, and strategy. The league encourages participation from
-                        grassroots levels, giving players opportunities to compete and progress through structured
-                        tournaments.<br>
-                        JSL emphasizes discipline, coordination, and sportsmanship, creating a professional and engaging
-                        experience for all participants. Players are guided to perform at their best while respecting
-                        opponents and officials.<br>
-                        Matches are conducted under official rules, with referees ensuring fair play and safety. All
-                        participants are expected to follow instructions, maintain conduct, and resolve disputes through
-                        proper channels.
+    <div class="divider"></div>
 
-                    </p>
-                </div>
+    <h4 class="section-heading">Benefits</h4>
+    <p class="benefits-text">
+        {{ $sport->Benefits ? $sport->Benefits : 'Improving overall stamina and building long-lasting physical endurance plays a vital role in
+                        enhancing performance
+                        in both daily activities and sports. At the same time, it strengthens mental resilience by improving
+                        focus, determination,
+                        and the ability to handle challenges under pressure. Along with physical and mental growth, it also
+                        boosts self-confidence
+                        and instills a sense of discipline, helping individuals stay consistent, motivated, and committed to
+                        achieving their goals.' }}
 
+    </p>
 
-                <div class="cricket-rules-block mt-4">
+    <div class="divider"></div>
 
-                    <h3 class="cricket-rules-heading">Game Rules</h3>
-
-                    <ul class="cricket-rules-list">
-                        <li>Each team must have 11 players (minimum 7 to start a match) and wear proper football kit with shoes and shin guards.</li>
-                        <li>Matches are played in two halves of 25–30 minutes each.</li>
-                        <li>Only registered players may participate; substitutions follow official rules.</li>
-                        <li>Referee decisions are final, and fair play must always be maintained.</li>
-                    </ul>
-
-                </div>
-
-
-
-            </div>
-
-
-            <!-- RIGHT SIDEBAR -->
-            <div class="col-lg-4">
-
-                <div class="cricket-gallery-widget">
-
-                    <h4 class="cricket-gallery-title">Cricket Moments</h4>
-
-                    <img src="{{ asset('assets/images/fvid1.jpg') }}" class="cricket-gallery-img">
-                    <img src="{{ asset('assets/images/fvid1.jpg') }}" class="cricket-gallery-img">
-                    <img src="{{ asset('assets/images/fvid1.jpg') }}" class="cricket-gallery-img">
-
-                </div>
+    <h4 class="section-heading">Game Rules</h4>
+    <p class="benefits-text">
+        {{ $sport->Rules ? $sport->Rules : 'Improving overall stamina and building long-lasting physical endurance plays a vital role in
+                        enhancing performance
+                        in both daily activities and sports. At the same time, it strengthens mental resilience by improving
+                        focus, determination,
+                        and the ability to handle challenges under pressure. Along with physical and mental growth, it also
+                        boosts self-confidence
+                        and instills a sense of discipline, helping individuals stay consistent, motivated, and committed to
+                        achieving their goals.' }}
+    </p>
 
 
 
 
-            </div>
-
-        </div>
-    </div>
-</section>
+</div>

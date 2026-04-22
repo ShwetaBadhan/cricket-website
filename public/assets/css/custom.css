@@ -1736,9 +1736,12 @@ li.acctount-btn {
 }
 .player-txt ul li span {
     display: block;
-    font-size: 10px;
+    font-size: 20px;
     text-transform: uppercase;
     font-weight: 400;
+}
+.player-txt ul li span i{
+color: #ffcb05;
 }
 .player-txt a.playerbio {
     text-transform: uppercase;

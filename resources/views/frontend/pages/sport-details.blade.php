@@ -11,10 +11,22 @@
             </ul>
         </div>
     </div>
-   
-    {{-- sport details  --}}
-    @include('frontend.components.sports.details')
+
+    {{-- sport details --}}
+    <section class="sports-section wf100">
+        <div class="container">
+            <div class="row">
+
+                <!-- LEFT CONTENT -->
+                @include('frontend.components.sports.details')
+                <!-- RIGHT SIDEBAR -->
+                @include('frontend.components.sports.sidebar')
+
+            </div>
+        </div>
+    </section>
+
 
     {{-- sports section --}}
-    @include('frontend.components.common.sports-section')
+  
 @endsection

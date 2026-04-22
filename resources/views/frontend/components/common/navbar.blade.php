@@ -7,24 +7,14 @@
         <div class="col-md-6 col-sm-6">
           <ul class="topsocial">
             <li><a href="#" class="fb"><i class="fab fa-facebook-f"></i></a></li>
-            {{-- <li><a href="#" class="tw"><i class="fab fa-twitter"></i></a></li> --}}
+
             <li><a href="#" class="insta"><i class="fab fa-instagram"></i></a></li>
-            {{-- <li><a href="#" class="in"><i class="fab fa-linkedin-in"></i></a></li>
-            <li><a href="#" class="yt"><i class="fab fa-youtube"></i></a></li> --}}
+
           </ul>
         </div>
         <div class="col-md-6 col-sm-6">
           <ul class="toplinks">
-            {{-- <li class="lang-btn">
-              <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> ENG </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"> <a class="dropdown-item"
-                    href="#">ENG</a> <a class="dropdown-item" href="#">FR</a> <a class="dropdown-item" href="#">GR</a>
-                  <a class="dropdown-item" href="#">AR</a>
-                </div>
-              </div>
-            </li> --}}
+
             <li class="currency-btn">
               <div class="dropdown">
                 <a href="{{ route('book-trial') }}" class="btn btn-secondary" id="Register">
@@ -41,8 +31,6 @@
               </div>
             </li>
 
-            {{-- <li class="acctount-btn"> <a href="#">Register</a> </li> --}}
-            {{-- <li class="search-btn"> <a class="search-icon" href="#search"><i class="fas fa-search"></i></a> </li> --}}
 
           </ul>
 
@@ -94,9 +82,15 @@
               </li>
               <li class="nav-item drop-down"> <a href="javascript:void(0)">Sports</a>
                 <ul>
-                  <li><a href="{{ route('athletics') }}">Athletics</a></li>
-                  <li><a href="{{ route('sport-details') }}">Cricket</a></li>
-                  <li><a href="{{ route('football') }}">Football</a></li>
+                  @php 
+                    $sports = App\Models\Sport::where('status', 'active')->get();
+                  @endphp
+                  @forelse($sports as $sport)
+                    <li><a href="{{ route('sport-details', $sport->slug) }}">{{ $sport->title }}</a></li>
+                  @empty
+                    <li><a>No Sport Found Yet!!</a></li>
+                  @endforelse
+                 
 
                 </ul>
               </li>

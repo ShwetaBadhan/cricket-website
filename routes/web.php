@@ -110,8 +110,10 @@ Route::get('/required-documents', function () {
 Route::get('/our-organizer', function () {
     return view('frontend.pages.organizer');
 })->name('our-organizer');
-Route::get('/sport-details', function () {
-    return view('frontend.pages.sport-details');
+Route::get('/sport-details/{slug}', function ($slug) {
+    $sport = App\Models\Sport::where('slug', $slug)->first();
+
+    return view('frontend.pages.sport-details', compact('sport'));
 })->name('sport-details');
 Route::get('/athletics', function () {
     return view('frontend.pages.athletics');

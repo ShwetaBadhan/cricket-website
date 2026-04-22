@@ -18,10 +18,9 @@
                             role="tab">Leadership</a>
 
                         <a class="nav-item nav-link" id="nav-2-tab" data-toggle="tab" href="#nav-operations"
-                            role="tab">Operations</a>
+                            role="tab">Management</a>
 
-                        <a class="nav-item nav-link" id="nav-3-tab" data-toggle="tab" href="#nav-marketing"
-                            role="tab">Marketing & Partnerships</a>
+                      
 
                     </div>
                 </nav>
@@ -34,89 +33,63 @@
             <!-- Leadership -->
             <div class="tab-pane fade show active" id="nav-leadership" role="tabpanel">
                 <div class="row">
+                    @php
+                        $leaderOrganizer = App\Models\Organizer::where('status', 'active')
+                            ->where('tag', 'Leadership')
+                            ->get();
+                    @endphp
 
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="lp-box">
-                            <div class="lp-thumb">
-                                <a class="vp" href="#">View Profile</a>
+                    @forelse($leaderOrganizer as $leader)
+                                        <div class="col-lg-3 col-md-6 col-sm-6">
+                                            <div class="lp-box">
+                                                <div class="lp-thumb">
+                                                    <p class="vp">{{ $leader->tag }}</p>
 
-                                <ul class="lp-social">
-                                    <li><a href="#" class="fb"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#" class="tw"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#" class="insta"><i class="fab fa-instagram"></i></a></li>
-                                </ul>
+                                                    <ul class="lp-social">
+                                                        <?php 
+                                                                                                        if ($leader->facebook_link) {
+                                                                                                            ?>
+                                                        <li><a href="{{ $leader->facebook_link }}" class="fb" target="_blank"><i
+                                                                    class="fab fa-facebook-f"></i></a></li><?php
+                        }
+                                                                                                        ?>
+                                                        <?php
+                        if ($leader->instagram_link) {
+                                                ?>
+                                                        <li><a href="{{ $leader->instagram_link }}" class="insta" target="_blank"><i
+                                                                    class="fab fa-instagram"></i></a></li>
+                                                        <?php
+                        }
+                                            ?>
+                                                        <?php
+                        if ($leader->twitter_link) {
 
-                                <img src="{{ asset('assets/images/lp-img1.jpg') }}" alt="">
-                            </div>
 
-                            <div class="lp-name">
-                                <h4><a href="#">Rakesh Kumar</a></h4>
-                                <strong>League Director</strong>
-                            </div>
+                                            ?>
+                                                        <li><a href="{{ $leader->twitter_link }}" class="tw" target="_blank"><i
+                                                                    class="fab fa-twitter"></i></a></li>
+                                                        <?php
+                        }
+                                            ?>
+
+                                                    </ul>
+
+                                                    <img src="{{ $leader->image ? asset('storage/' . $leader->image) : asset('assets/images/lp-img1.jpg') }}" alt="img">
+                                                </div>
+
+                                                <div class="lp-name">
+                                                    <h4><a href="#">{{ $leader->name }}</a></h4>
+                                                    <strong>{{ $leader->designation }}</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                    @empty
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                           <p> No Organizer Found</p>
                         </div>
-                    </div>
+                    @endforelse
 
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="lp-box">
-                            <div class="lp-thumb">
-                                <a class="vp" href="#">View Profile</a>
 
-                                <ul class="lp-social">
-                                    <li><a href="#" class="fb"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#" class="tw"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#" class="insta"><i class="fab fa-instagram"></i></a></li>
-                                </ul>
-
-                                <img src="{{ asset('assets/images/lp-img2.jpg') }}" alt="">
-                            </div>
-
-                            <div class="lp-name">
-                                <h4><a href="#">Priya Sharma</a></h4>
-                                <strong>Head of Operations</strong>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="lp-box">
-                            <div class="lp-thumb">
-                                <a class="vp" href="#">View Profile</a>
-
-                                <ul class="lp-social">
-                                    <li><a href="#" class="fb"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#" class="tw"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#" class="insta"><i class="fab fa-instagram"></i></a></li>
-                                </ul>
-
-                                <img src="{{ asset('assets/images/lp-img1.jpg') }}" alt="">
-                            </div>
-
-                            <div class="lp-name">
-                                <h4><a href="#">Rakesh Kumar</a></h4>
-                                <strong>League Director</strong>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="lp-box">
-                            <div class="lp-thumb">
-                                <a class="vp" href="#">View Profile</a>
-
-                                <ul class="lp-social">
-                                    <li><a href="#" class="fb"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#" class="tw"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#" class="insta"><i class="fab fa-instagram"></i></a></li>
-                                </ul>
-
-                                <img src="{{ asset('assets/images/lp-img2.jpg') }}" alt="">
-                            </div>
-
-                            <div class="lp-name">
-                                <h4><a href="#">Priya Sharma</a></h4>
-                                <strong>Head of Operations</strong>
-                            </div>
-                        </div>
-                    </div>
 
                 </div>
             </div>
@@ -125,99 +98,66 @@
             <div class="tab-pane fade" id="nav-operations" role="tabpanel">
                 <div class="row">
 
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="lp-box">
-                            <div class="lp-thumb">
-                                <a class="vp" href="#">View Profile</a>
+                    @php
+                        $managerOrganizer = App\Models\Organizer::where('status', 'active')
+                            ->where('tag', 'Management')
+                            ->get();
+                    @endphp
 
-                                <ul class="lp-social">
-                                    <li><a href="#" class="fb"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#" class="tw"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#" class="insta"><i class="fab fa-instagram"></i></a></li>
-                                </ul>
+                    @forelse($managerOrganizer as $manager)
+                                        <div class="col-lg-3 col-md-6 col-sm-6">
+                                            <div class="lp-box">
+                                                <div class="lp-thumb">
+                                                    <p class="vp">{{ $manager->tag }}</p>
 
-                                <img src="{{ asset('assets/images/lp-img3.jpg') }}" alt="">
-                            </div>
+                                                    <ul class="lp-social">
+                                                        <?php 
+                                                                                                        if ($manager->facebook_link) {
+                                                                                                            ?>
+                                                        <li><a href="{{ $manager->facebook_link }}" class="fb" target="_blank"><i
+                                                                    class="fab fa-facebook-f"></i></a></li><?php
+                        }
+                                                                                                        ?>
+                                                        <?php
+                        if ($manager->instagram_link) {
+                                                ?>
+                                                        <li><a href="{{ $manager->instagram_link }}" class="insta" target="_blank"><i
+                                                                    class="fab fa-instagram"></i></a></li>
+                                                        <?php
+                        }
+                                            ?>
+                                                        <?php
+                        if ($manager->twitter_link) {
 
-                            <div class="lp-name">
-                                <h4><a href="#">Amit Verma</a></h4>
-                                <strong>Event Coordinator</strong>
-                            </div>
+
+                                            ?>
+                                                        <li><a href="{{ $manager->twitter_link }}" class="tw" target="_blank"><i
+                                                                    class="fab fa-twitter"></i></a></li>
+                                                        <?php
+                        }
+                                            ?>
+
+                                                    </ul>
+
+                                                    <img src="{{ $manager->image ? asset('storage/' . $manager->image) : asset('assets/images/lp-img1.jpg') }}" alt="">
+                                                </div>
+
+                                                <div class="lp-name">
+                                                    <h4><a href="#">{{ $manager->name }}</a></h4>
+                                                    <strong>{{ $manager->designation }}</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                    @empty
+                         <div class="col-lg-3 col-md-6 col-sm-6">
+                           <p> No Organizer Found</p>
                         </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="lp-box">
-                            <div class="lp-thumb">
-                                <a class="vp" href="#">View Profile</a>
-
-                                <ul class="lp-social">
-                                    <li><a href="#" class="fb"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#" class="tw"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#" class="insta"><i class="fab fa-instagram"></i></a></li>
-                                </ul>
-
-                                <img src="{{ asset('assets/images/lp-img4.jpg') }}" alt="">
-                            </div>
-
-                            <div class="lp-name">
-                                <h4><a href="#">Sneha Kapoor</a></h4>
-                                <strong>Match Operations Manager</strong>
-                            </div>
-                        </div>
-                    </div>
+                    @endforelse
 
                 </div>
             </div>
 
-            <!-- Marketing -->
-            <div class="tab-pane fade" id="nav-marketing" role="tabpanel">
-                <div class="row">
-
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="lp-box">
-                            <div class="lp-thumb">
-                                <a class="vp" href="#">View Profile</a>
-
-                                <ul class="lp-social">
-                                    <li><a href="#" class="fb"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#" class="tw"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#" class="insta"><i class="fab fa-instagram"></i></a></li>
-                                </ul>
-
-                                <img src="{{ asset('assets/images/lp-img1.jpg') }}" alt="">
-                            </div>
-
-                            <div class="lp-name">
-                                <h4><a href="#">Rahul Singh</a></h4>
-                                <strong>Marketing Head</strong>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="lp-box">
-                            <div class="lp-thumb">
-                                <a class="vp" href="#">View Profile</a>
-
-                                <ul class="lp-social">
-                                    <li><a href="#" class="fb"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#" class="tw"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#" class="insta"><i class="fab fa-instagram"></i></a></li>
-                                </ul>
-
-                                <img src="{{ asset('assets/images/lp-img2.jpg') }}" alt="">
-                            </div>
-
-                            <div class="lp-name">
-                                <h4><a href="#">Neha Gupta</a></h4>
-                                <strong>Sponsorship Manager</strong>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+      
 
         </div>
     </div>
