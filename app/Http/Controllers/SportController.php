@@ -11,7 +11,7 @@ class SportController extends Controller
     public function index()
     {
         $Sports = Sport::latest()->get();
-        return view('admin.views.admin-Sports', compact('Sports'));
+        return view('admin.views.admin-sports', compact('Sports'));
     }
     public function store(Request $request)
     {
