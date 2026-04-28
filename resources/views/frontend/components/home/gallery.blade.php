@@ -1,92 +1,69 @@
+@php
+    $videos = \App\Models\Video::where('status', 'active')->latest()->take(3)->get() ?? collect();
+@endphp
 <section class="wf100 p-80 players-squad portfolio filter-gallery">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
                 <div class="section-title">
-                    <h2>Cricket League Gallery</h2>
+                    <h2>JSL Videos</h2>
                 </div>
             </div>
 
             <div class="col-md-6">
-                <div id="filters" class="button-group">
-                    <button class="button is-checked" data-filter="*">All Highlights</button>
-                    <button class="button" data-filter=".f1">Match Photos</button>
-                    <button class="button" data-filter=".f2">Match Videos</button>
-                </div>
+
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-12">
-                <ul class="gallery isotope items">
+                <ul class="gallery items">
 
-                    <!-- Item 1 -->
-                    <li class="item f1">
-                        <div class="gthumb">
-                            <div class="hv-info">
-                                <a href="#" class="play"><i class="far fa-image"></i></a>
-                                <h6><a href="#">Match Day Highlights</a></h6>
+                    @forelse($videos as $video)
+                                    <li class="item">
+
+                                        <div class="gthumb active">
+
+                                            {{-- VIDEO INFO --}}
+                                            <div class="hv-info">
+                                                <a href="{{ $video->video }}" class="play" data-rel="prettyPhoto[gallery1]">
+                                                    <i class="fas fa-play"></i>
+                                                </a>
+
+                                                <h6>
+                                                    <a href="{{ $video->video }}">
+                                                        JSL Highlights
+                                                    </a>
+                                                </h6>
+                                            </div>
+
+                                            {{-- VIDEO LINK --}}
+                                            <a class="gt-link" href="{{ $video->video }}" data-rel="prettyPhoto[gallery1]">
+                                                <i class="fas fa-play"></i>
+                                            </a>
+
+                                            {{-- THUMBNAIL --}}
+                                            <img src="{{ $video->thumbnail
+                        ? asset('storage/' . $video->thumbnail)
+                        : asset('assets/images/squadgallery-1.jpg') }}" alt="video">
+
+                                        </div>
+
+                                    </li>
+
+                    @empty
+
+
+                        <li class="item">
+                            <div class="gthumb">
+                                <img src="{{ asset('assets/images/squadgallery-1.jpg') }}">
+                                <div class="hv-info">
+                                    <h6>No Videos Available</h6>
+                                </div>
                             </div>
+                        </li>
 
-                            <a class="gt-link" href="{{url('assets/images/squadgallery-1.jpg')}}"
-                                data-rel="prettyPhoto[gallery1]">
-                                <i class="far fa-image"></i>
-                            </a>
-
-                            <img src="{{url('assets/images/squadgallery-1.jpg')}}" alt="">
-                        </div>
-                    </li>
-
-                    <!-- Item 2 -->
-                    <li class="item f2">
-                        <div class="gthumb active">
-                            <div class="hv-info">
-                                <a href="#" class="play"><i class="fas fa-play"></i></a>
-                                <h6><a href="#">Training Session Moments</a></h6>
-                            </div>
-
-                            <a class="gt-link" href="https://www.youtube.com/watch?v=SLi2gT5H6m8&t=11s"
-                                data-rel="prettyPhoto[gallery1]">
-                                <i class="fas fa-play"></i>
-                            </a>
-
-                            <img src="{{url('assets/images/squadgallery-2.jpg')}}" alt="">
-                        </div>
-                    </li>
-
-                    <!-- Item 3 -->
-                    <li class="item f1">
-                        <div class="gthumb">
-                            <div class="hv-info">
-                                <a href="#" class="play"><i class="fas fa-search"></i></a>
-                                <h6><a href="#">Winning Celebrations</a></h6>
-                            </div>
-
-                            <a class="gt-link" href="images/squadgallery-2.jpg"
-                                data-rel="prettyPhoto[gallery1]">
-                                <i class="fas fa-search"></i>
-                            </a>
-
-                            <img src="{{url('assets/images/squadgallery-3.jpg')}}" alt="">
-                        </div>
-                    </li>
-
-                    <!-- Item 4 -->
-                    <li class="item f2">
-                        <div class="gthumb">
-                            <div class="hv-info">
-                                <a href="#" class="play"><i class="fas fa-play"></i></a>
-                                <h6><a href="#">Best Bowling Moments</a></h6>
-                            </div>
-
-                            <a class="gt-link" href="https://www.youtube.com/watch?v=SLi2gT5H6m8&t=11s"
-                                data-rel="prettyPhoto[gallery1]">
-                                <i class="fas fa-play"></i>
-                            </a>
-
-                            <img src="{{url('assets/images/squadgallery-4.jpg')}}" alt="">
-                        </div>
-                    </li>
+                    @endforelse
 
                 </ul>
             </div>

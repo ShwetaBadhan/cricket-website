@@ -139,7 +139,7 @@
                     <a href="{{ route('admin-users.index') }}"><i class="fe fe-user"></i> <span>Users</span></a>
                 </li>
                 <li>
-                    <a href="{{ route('admin-roles') }}"><i class="fe fe-clipboard"></i>
+                    <a href="{{ route('roles.index') }}"><i class="fe fe-clipboard"></i>
                         <span>Roles & Permission</span></a>
                 </li>
 

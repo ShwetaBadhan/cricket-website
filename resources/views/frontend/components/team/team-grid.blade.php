@@ -81,13 +81,7 @@
                     partnerships, and promotions.
                   </p>
 
-                  <ul>
-                    <li>12 <span>Years </span></li>
-                    <li>25 <span>Events </span></li>
-                    <li>18 <span>Leagues </span></li>
-                    <li>10 <span>Partners</span></li>
-                  </ul>
-
+                 
                 </div>
               </div>
             </div>

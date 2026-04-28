@@ -1,5 +1,7 @@
 @extends('admin.layout.app')
 @section('content')
+
+   
     <!-- Page Wrapper -->
     <div class="page-wrapper">
         <div class="content container-fluid">
@@ -137,14 +139,14 @@
                                 <div class="input-block mb-3">
                                     <label>Image <span class="text-danger">*</span></label>
                                     <input type="file" name="image" class="form-control" accept="image/*" required>
-                                    <small class="text-muted">Recommended: 480x340px • Max 2MB</small>
+                                    <small class="text-muted">Recommended: 1900x750px • Max 2MB</small>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-12">
                                 <div class="input-block mb-3">
-                                    <label>Caption / Alt Text <span class="text-danger">*</span></label>
+                                    <label>Title <span class="text-danger">*</span></label>
                                     <input type="text" name="caption" class="form-control"
-                                        placeholder="e.g. 'Team Photo', 'Stadium View', etc." required>
+                                        placeholder="Title " required>
                                 </div>
                             </div>
 
@@ -185,7 +187,7 @@
                     <!-- Table Layout -->
                     <table class="table table-bordered table-striped mb-0">
                         <tr>
-                            <th>Caption :</th>
+                            <th>Title :</th>
                             <td>{{ $item->caption ?: '—' }}</td>
 
 
@@ -234,7 +236,7 @@
                         <div class="modal-body">
                             <table class="table table-bordered  mb-0">
                                 <tr>
-                                    <th>Caption :</th>
+                                    <th>Title :</th>
                                     <td colspan="3">{{ $item->caption ?: '—' }}</td>
 
 
@@ -286,7 +288,7 @@
                                     <small class="text-muted">Recommended: 480x340px • Max 2MB</small>
                                 </div>
                                 <div class="col-12">
-                                    <label>Caption / Alt Text</label>
+                                    <label>Title</label>
                                     <input type="text" name="caption" value="{{ old('caption', $item->caption) }}"
                                         class="form-control">
                                 </div>

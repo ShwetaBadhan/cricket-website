@@ -1676,7 +1676,7 @@ li.acctount-btn {
     top: -10px;
 }
 .player-box:hover .num {
-    background: var(--secondary-color);
+    /* background: var(--secondary-color); */
 }
 .player-box:hover .num:after {
     border-bottom: 10px solid #b4001c;
@@ -1705,7 +1705,7 @@ li.acctount-btn {
     margin: 0 0 5px;
 }
 .player-txt strong.player-desi {
-    color: #ffcb05;
+    color: #ffcb05 !important;
     font-size: 12px;
     font-weight: 700;
     display: block;
@@ -1861,9 +1861,7 @@ a.full-team:hover {
 .player-box:hover .player-txt a.playerbio {
     color: #ffcb05;
 }
-.player-box:hover .player-txt strong.player-desi {
-    color: var(--secondary-color);
-}
+
 .player-box:hover .player-txt a.follow {
     background: #ffcb05;
     color: #000;
@@ -9925,7 +9923,6 @@ a.rm,
 .pro-box,
 .player-txt h3,
 .player-txt a.playerbio,
-.player-txt strong.player-desi,
 a.full-team,
 .player-txt a.follow,
 .gallery-thumb a,

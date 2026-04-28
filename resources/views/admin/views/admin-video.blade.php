@@ -62,7 +62,7 @@
                                                         class="badge  bg-{{ $item->status == 'active' ? 'success-light' : 'danger-light' }}">
                                                         {{ ucfirst($item->status) }}
                                                     </span></td>
-                                                <td class="d-flex align-items-center">
+                                                <td class="">
 
                                                     <div class="dropdown dropdown-action">
                                                         <a href="#" class=" btn-action-icon " data-bs-toggle="dropdown"

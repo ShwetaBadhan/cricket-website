@@ -1,5 +1,5 @@
 @php
-    $AboutSection = App\Models\AboutSection::where('is_active', true)->first();
+    $AboutSection = App\Models\AboutSection::where('is_active', true)->first() ?? new \App\Models\AboutSection();
 @endphp
 <section class="home-about-section wf100 p80-50">
 
@@ -40,7 +40,7 @@
 
             <div class="about-image-wrapper">
 
-                <img src="{{ $AboutSection->image ? asset('storage/'.$AboutSection->image) :asset('assets/images/gallery/mg-2.jpg') }}" class="about-img-top" alt="sports">
+                <img src="{{ $AboutSection->image ? asset('storage/'.$AboutSection->image) : asset('assets/images/gallery/mg-2.jpg') }}" class="about-img-top" alt="sports">
                 <img src="{{ $AboutSection->side_image ? asset('storage/'.$AboutSection->side_image) : asset('assets/images/gallery/mg-1.jpg') }}" class="about-img-bottom" alt="sports">
 
             </div>

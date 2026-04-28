@@ -1,54 +1,53 @@
+@php
+    $partners = \App\Models\Partner::where('status', 'active')->latest()->get() ?? collect();
+@endphp
 <div class="main-content innerpagebg wf100">
     <!--Image Gallery Start-->
     <div class="image-gallery gallery p80">
         <div class="container">
             <div class="classic-gallery gallery">
                 <div class="isotope items">
-                    <div class="item height2">
-                        <div class="gallery-thumb"> <a href="{{ asset('assets/images/gallery/cg-7.jpg') }}"
-                                data-rel="prettyPhoto[gallery]"><i class="fas fa-search"></i></a> <img
-                                src="{{ asset('assets/images/gallery/cg-7.jpg') }}" alt=""> </div>
-                    </div>
-                    <div class="item">
-                        <div class="gallery-thumb"> <a href="{{ asset('assets/images/gallery/cg-1.jpg') }}"
-                                data-rel="prettyPhoto[gallery]"><i class="fas fa-search"></i></a> <img
-                                src="{{ asset('assets/images/gallery/cg-1.jpg') }}" alt=""> </div>
-                    </div>
-                    <div class="item">
-                        <div class="gallery-thumb"> <a href="{{ asset('assets/images/gallery/cg-2.jpg') }}"
-                                data-rel="prettyPhoto[gallery]"><i class="fas fa-search"></i></a> <img
-                                src="{{ asset('assets/images/gallery/cg-2.jpg') }}" alt=""> </div>
-                    </div>
-                    <div class="item">
-                        <div class="gallery-thumb"> <a href="{{ asset('assets/images/gallery/cg-3.jpg') }}"
-                                data-rel="prettyPhoto[gallery]"><i class="fas fa-search"></i></a> <img
-                                src="{{ asset('assets/images/gallery/cg-3.jpg') }}" alt=""> </div>
-                    </div>
-                    <div class="item">
-                        <div class="gallery-thumb"> <a href="{{ asset('assets/images/gallery/cg-4.jpg') }}"
-                                data-rel="prettyPhoto[gallery]"><i class="fas fa-search"></i></a> <img
-                                src="{{ asset('assets/images/gallery/cg-4.jpg') }}" alt=""> </div>
-                    </div>
-                    <div class="item height2">
-                        <div class="gallery-thumb"> <a href="{{ asset('assets/images/gallery/cg-8.jpg') }}"
-                                data-rel="prettyPhoto[gallery]"><i class="fas fa-search"></i></a> <img
-                                src="{{ asset('assets/images/gallery/cg-8.jpg') }}" alt=""> </div>
-                    </div>
-                    <div class="item">
-                        <div class="gallery-thumb"> <a href="{{ asset('assets/images/gallery/cg-5.jpg') }}"
-                                data-rel="prettyPhoto[gallery]"><i class="fas fa-search"></i></a> <img
-                                src="{{ asset('assets/images/gallery/cg-5.jpg') }}" alt=""> </div>
-                    </div>
-                    <div class="item width2">
-                        <div class="gallery-thumb"> <a href="{{ asset('assets/images/gallery/cg-9.jpg') }}"
-                                data-rel="prettyPhoto[gallery]"><i class="fas fa-search"></i></a> <img
-                                src="{{ asset('assets/images/gallery/cg-9.jpg') }}" alt=""> </div>
-                    </div>
-                    <div class="item">
-                        <div class="gallery-thumb"> <a href="{{ asset('assets/images/gallery/cg-6.jpg') }}"
-                                data-rel="prettyPhoto[gallery]"><i class="fas fa-search"></i></a> <img
-                                src="{{ asset('assets/images/gallery/cg-6.jpg') }}" alt=""> </div>
-                    </div>
+
+                    @forelse($partners as $index => $partner)
+
+                                    @php
+                                        // Random layout classes for variation (optional)
+                                        $classes = ['', 'height2', 'width2'];
+                                        $randomClass = $classes[array_rand($classes)];
+                                    @endphp
+
+                                    <div class="item {{ $randomClass }}">
+                                        <div class="gallery-thumb">
+
+                                            {{-- FULL IMAGE --}}
+                                            <a href="{{ $partner->image
+                        ? asset('storage/' . $partner->image)
+                        : asset('assets/images/gallery/cg-1.jpg') }}" data-rel="prettyPhoto[gallery]">
+
+                                                <i class="fas fa-search"></i>
+                                            </a>
+
+                                            {{-- THUMB --}}
+                                            <img src="{{ $partner->image
+                        ? asset('storage/' . $partner->image)
+                        : asset('assets/images/gallery/cg-1.jpg') }}" alt="{{ $partner->caption ?? 'partner' }}">
+
+                                        </div>
+                                    </div>
+
+                    @empty
+
+                       
+                        @for($i = 1; $i <= 9; $i++)
+                            <div class="item {{ $i % 3 == 0 ? 'height2' : '' }}">
+                                <div class="gallery-thumb">
+                                    <img src="{{ asset('assets/images/gallery/cg-' . $i . '.jpg') }}">
+                                </div>
+                            </div>
+                        @endfor
+
+                    @endforelse
+
                 </div>
             </div>
         </div>

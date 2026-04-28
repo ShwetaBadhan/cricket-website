@@ -139,14 +139,6 @@
                                 <input type="file" name="image" class="form-control" required>
                             </div>
 
-
-
-                            <div class="col-lg-12 mb-3">
-                                <label>Description <span class="text-danger">*</span></label>
-                                <textarea name="description" class="form-control" placeholder="Enter description" rows="4"
-                                    required></textarea>
-                            </div>
-
                             <div class="col-lg-6 mb-3">
                                 <label>Status <span class="text-danger">*</span></label>
                                 <select name="status" class="form-control">
@@ -154,6 +146,14 @@
                                     <option value="inactive">Inactive</option>
                                 </select>
                             </div>
+
+                            <div class="col-lg-12 mb-3">
+                                <label>Description <span class="text-danger">*</span></label>
+                                <textarea name="description" class="form-control" placeholder="Enter description" rows="4"
+                                    required></textarea>
+                            </div>
+
+
 
                         </div>
                     </div>
@@ -292,14 +292,6 @@
                                     @endif
                                 </div>
 
-
-
-                                <div class="col-lg-12">
-                                    <label>Description *</label>
-                                    <textarea name="description" class="form-control"
-                                        rows="4">{{ $item->description }}</textarea>
-                                </div>
-
                                 <div class="col-lg-6">
                                     <label>Status *</label>
                                     <select name="status" class="form-control">
@@ -308,6 +300,14 @@
                                         </option>
                                     </select>
                                 </div>
+
+                                <div class="col-lg-12">
+                                    <label>Description *</label>
+                                    <textarea name="description" class="form-control"
+                                        rows="4">{{ $item->description }}</textarea>
+                                </div>
+
+
 
                             </div>
                         </div>

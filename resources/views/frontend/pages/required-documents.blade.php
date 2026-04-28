@@ -12,6 +12,9 @@
             </ul>
         </div>
     </div>
+    @php
+        $docs = \App\Models\RequiredDocument::where('is_active', true)->first() ?? new \App\Models\RequiredDocument();
+    @endphp
     <!--Main Slider Start-->
     <section class="hg-documents-section wf100">
         <div class="hg-documents-container">
@@ -31,7 +34,7 @@
                         <small>STEP</small>
                         <strong>01</strong>
                     </div>
-                    <span>Age Proof</span>
+                    <span>{{ $docs->main_title_1 ?? 'Age Proof' }}</span>
                 </div>
 
                 <div class="hg-step" data-step="2">
@@ -39,7 +42,7 @@
                         <small>STEP</small>
                         <strong>02</strong>
                     </div>
-                    <span>Photos</span>
+                    <span>{{ $docs->main_title_2 ?? 'Photos' }}</span>
                 </div>
 
                 <div class="hg-step" data-step="3">
@@ -47,7 +50,7 @@
                         <small>STEP</small>
                         <strong>03</strong>
                     </div>
-                    <span>Medical</span>
+                    <span>{{ $docs->main_title_3 ?? 'Medical' }}</span>
                 </div>
 
                 <div class="hg-step" data-step="4">
@@ -55,7 +58,7 @@
                         <small>STEP</small>
                         <strong>04</strong>
                     </div>
-                    <span>Address Proof</span>
+                    <span>{{ $docs->main_title_4 ?? 'Address Proof' }}</span>
                 </div>
 
             </div>
@@ -66,39 +69,23 @@
             <div class="hg-accordion-content">
 
                 <div class="hg-accordion-card active" data-step="1">
-                    <h4>Personal Information</h4>
-                    <p>
-                        Submit basic details including Name, Block, Address, Contact Number, and WhatsApp Number for
-                        communication and registration.
-
-                    </p>
+                    <h4>{{ $docs->main_title_1 ?? 'Step 1' }}</h4>
+                    <p>{{ $docs->sub_title_1 ?? 'Default description' }}</p>
                 </div>
 
                 <div class="hg-accordion-card" data-step="2">
-                    <h4>Identity & Profile</h4>
-                    <p>
-                        Upload a recent photograph and personal profile details to verify the participant’s identity.
-
-                    </p>
+                    <h4>{{ $docs->main_title_2 ?? 'Step 2' }}</h4>
+                    <p>{{ $docs->sub_title_2 ?? 'Default description' }}</p>
                 </div>
 
                 <div class="hg-accordion-card" data-step="3">
-                    <h4>Team Details</h4>
-                    <p>
-                        Complete the registration payment and verification process to confirm participation in the Jharkhand
-                        Super League.
-
-                    </p>
+                    <h4>{{ $docs->main_title_3 ?? 'Step 3' }}</h4>
+                    <p>{{ $docs->sub_title_3 ?? 'Default description' }}</p>
                 </div>
 
                 <div class="hg-accordion-card" data-step="4">
-                    <h4>Residential Address Proof</h4>
-                    <p>
-                        Players must submit a valid address proof such as Aadhar Card,
-                        Voter ID, Driving License, or any government-issued document.
-                        This helps verify the player’s location and eligibility for the
-                        Jharkhand Super League registration.
-                    </p>
+                    <h4>{{ $docs->main_title_4 ?? 'Step 4' }}</h4>
+                    <p>{{ $docs->sub_title_4 ?? 'Default description' }}</p>
                 </div>
 
             </div>

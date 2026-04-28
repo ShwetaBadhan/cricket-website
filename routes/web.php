@@ -37,7 +37,8 @@ use App\Http\Controllers\EventCategoryController;
 use App\Http\Controllers\WebsiteSettingController;
 use App\Http\Controllers\SocialSettingController;
 use App\Http\Controllers\ColourSettingController;
-
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
 // ************************************************************************************
 // ************************************************************************************
 // UI ROUTES
@@ -67,11 +68,12 @@ Route::get('/staff-details', function () {
 Route::get('/point-table', function () {
     return view('frontend.pages.point-table');
 })->name('point-table');
-Route::get('/news', function () {
+Route::get('/our-blogs', function () {
     return view('frontend.pages.news');
 })->name('news');
-Route::get('/news-details', function () {
-    return view('frontend.pages.news-details');
+Route::get('/news-details/{slug}', function ($slug) {
+    $blog = \App\Models\Blog::where('slug', $slug)->firstOrFail();
+    return view('frontend.pages.news-details', compact('blog'));
 })->name('news-details');
 Route::get('/fixtures', function () {
     return view('frontend.pages.fixtures');
@@ -386,25 +388,22 @@ Route::middleware('auth')->group(function () {
 
     Route::put('/admin-colour-settings', [ColourSettingController::class, 'update'])
         ->name('admin-colour-settings.update');
-});
 
-use App\Http\Controllers\Admin\UserController;
 
-Route::middleware(['auth', 'role:admin'])->group(function () {
+    // ROLE CONTROLLER
+    Route::get('roles', [RoleController::class, 'index'])->name('roles.index');
+    Route::post('roles', [RoleController::class, 'store'])->name('roles.store');
+    Route::put('roles/{id}', [RoleController::class, 'update'])->name('roles.update');
+    Route::delete('roles/{id}', [RoleController::class, 'destroy'])->name('roles.destroy');
 
-    // user management
 
     Route::get('/admin-users', [UserController::class, 'index'])->name('admin-users.index');
     Route::post('/users', [UserController::class, 'store'])->name('users.store');
     Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
     Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
-
-
-    // roles
-    Route::get('/admin-roles', function () {
-        return view('admin.views.admin-roles');
-    })->name('admin-roles');
-
-
 });
+
+
+
+
 require __DIR__ . '/auth.php';

@@ -13,7 +13,7 @@
     </div>
     {{-- about organizer --}}
     @php
-        $organizerAbout = App\Models\OrganizerAboutSection::where('is_active', 1)->first();
+        $organizerAbout = App\Models\OrganizerAboutSection::where('is_active', 1)->first() ?? new \App\Models\OrganizerAboutSection();
     @endphp
     <section class="home-about-section wf100 p80-50">
 
@@ -33,21 +33,21 @@
                 <p class="about-description">
 
                     {{ $organizerAbout->description_1 ? $organizerAbout->description_1 : ' The Jharkhand Super League (JSL) is driven by a dedicated team of professionals passionate about
-                        promoting sports and talent throughout the region. With a well-structured system of coordinators and
-                        volunteers operating at the block, district, and state levels, the league ensures that every activity is
-                        executed efficiently. From managing player and team registrations to organizing events such as cricket,
-                        football, marathons, and talent hunts, the team focuses on providing a transparent and engaging
-                        experience for all participants.' }}
+                            promoting sports and talent throughout the region. With a well-structured system of coordinators and
+                            volunteers operating at the block, district, and state levels, the league ensures that every activity is
+                            executed efficiently. From managing player and team registrations to organizing events such as cricket,
+                            football, marathons, and talent hunts, the team focuses on providing a transparent and engaging
+                            experience for all participants.' }}
                 </p>
 
                 <p class="about-description">
 
                     {{ $organizerAbout->description_2 ? $organizerAbout->description_2 : ' The Jharkhand Super League (JSL) is driven by a dedicated team of professionals passionate about
-                        promoting sports and talent throughout the region. With a well-structured system of coordinators and
-                        volunteers operating at the block, district, and state levels, the league ensures that every activity is
-                        executed efficiently. From managing player and team registrations to organizing events such as cricket,
-                        football, marathons, and talent hunts, the team focuses on providing a transparent and engaging
-                        experience for all participants.' }}
+                            promoting sports and talent throughout the region. With a well-structured system of coordinators and
+                            volunteers operating at the block, district, and state levels, the league ensures that every activity is
+                            executed efficiently. From managing player and team registrations to organizing events such as cricket,
+                            football, marathons, and talent hunts, the team focuses on providing a transparent and engaging
+                            experience for all participants.' }}
                 </p>
 
 
@@ -65,8 +65,9 @@
 
                 <div class="about-image-wrapper">
 
-                   <img src="{{ $organizerAbout->image ? asset('storage/'.$organizerAbout->image) :asset('assets/images/gallery/mg-2.jpg') }}" class="about-img-top" alt="sports">
-                
+                    <img src="{{ $organizerAbout->image ? asset('storage/' . $organizerAbout->image) : asset('assets/images/gallery/mg-2.jpg') }}"
+                        class="about-img-top" alt="sports">
+
 
 
                 </div>

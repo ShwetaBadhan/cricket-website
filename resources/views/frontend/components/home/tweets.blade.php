@@ -1,3 +1,6 @@
+@php
+    $homeTweets = App\Models\Review::where('status', 'active')->latest()->take(3)->get();
+@endphp
 <section class="tweets-banner wf100" style="
 background:
 linear-gradient(rgba(10,37,64,0.9), rgba(10,37,64,0.4)),
@@ -16,58 +19,45 @@ url('{{ asset('assets/images/slider/03.jpg') }}');
 
         <ul class="row">
 
-            <li class="col-md-4">
-                <div class="tweet-box">
-                    <a href="#" class="tshare"><i class="fas fa-share"></i></a>
-                    <h5>Rohit Sharma</h5>
+            @forelse($homeTweets as $msg)
+                <li class="col-md-4">
+                    <div class="tweet-box">
+                        <a href="#" class="tshare"><i class="fas fa-share"></i></a>
+                        <h5>{{ $msg->first_name.''.$msg->last_name }}</h5>
 
-                    <p>
-                        Fantastic start to the series! The boys showed great spirit and teamwork on the field. Ready for the next game!
+                        <p>
+                            {{ $msg->tweet ? Str::limit($msg->tweet , 20) : 'Fantastic start to the series! The boys showed great spirit and teamwork on the field. Ready for
+                            the next game!' }}
 
-                    </p>
+                        </p>
 
-                    <div class="tw-foot">
-                        @rohit.sharma<br>
-                        12 March, 2026 <i class="fab fa-twitter"></i>
+                        <div class="tw-foot">
+                            {{ $msg->tweet_id ?? '@rohit.sharma' }}<br>
+                            {{ \Carbon\Carbon::parse($tweet->date)->format('d F, Y') }} <i class="fab fa-twitter"></i>
+                        </div>
                     </div>
-                </div>
-            </li>
+                </li>
+            @empty
 
+                <li class="col-md-4">
+                    <div class="tweet-box active">
+                        <a href="#" class="tshare"><i class="fas fa-share"></i></a>
+                        <h5>Virat Kohli</h5>
 
-            <li class="col-md-4">
-                <div class="tweet-box active">
-                    <a href="#" class="tshare"><i class="fas fa-share"></i></a>
-                    <h5>Virat Kohli</h5>
+                        <p>
+                            What a match! The crowd energy was electric and kept us motivated throughout. Grateful for all
+                            the support.
 
-                    <p>
-                       What a match! The crowd energy was electric and kept us motivated throughout. Grateful for all the support.
+                        </p>
 
-                    </p>
-
-                    <div class="tw-foot">
-                        @virat.kohli<br>
-                        11 March, 2026 <i class="fab fa-twitter"></i>
+                        <div class="tw-foot">
+                            @virat.kohli<br>
+                            11 March, 2026 <i class="fab fa-twitter"></i>
+                        </div>
                     </div>
-                </div>
-            </li>
+                </li>
+            @endforelse
 
-
-            <li class="col-md-4">
-                <div class="tweet-box">
-                    <a href="#" class="tshare"><i class="fas fa-share"></i></a>
-                    <h5>Jasprit Bumrah</h5>
-
-                    <p>
-                       Focused on perfecting my yorkers and variations in training. Every session counts toward match day performance.
-
-                    </p>
-
-                    <div class="tw-foot">
-                        @jasprit.bumrah<br>
-                        10 March, 2026 <i class="fab fa-twitter"></i>
-                    </div>
-                </div>
-            </li>
 
         </ul>
     </div>
