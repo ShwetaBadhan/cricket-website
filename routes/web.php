@@ -39,6 +39,8 @@ use App\Http\Controllers\SocialSettingController;
 use App\Http\Controllers\ColourSettingController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\GameMatchController;
+use App\Http\Controllers\AuctionController;
 // ************************************************************************************
 // ************************************************************************************
 // UI ROUTES
@@ -401,6 +403,26 @@ Route::middleware('auth')->group(function () {
     Route::post('/users', [UserController::class, 'store'])->name('users.store');
     Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
     Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+    // admin match
+    Route::prefix('admin-game-match')->name('admin-game-match.')->group(function () {
+
+        Route::get('/', [GameMatchController::class, 'index'])->name('index');
+        Route::post('/', [GameMatchController::class, 'store'])->name('store');
+        Route::put('/{id}', [GameMatchController::class, 'update'])->name('update');
+        Route::delete('/{id}', [GameMatchController::class, 'destroy'])->name('destroy');
+
+    });
+    // auction
+    Route::get('/auction', [AuctionController::class, 'index'])->name('auction.index');
+    Route::post('/auction/{id}/bid', [AuctionController::class, 'placeBid'])->name('auction.bid');
+    Route::prefix('admin-auction')->name('admin-auction.')->group(function () {
+
+        Route::get('/', [AuctionController::class, 'index'])->name('index');
+        Route::post('/', [AuctionController::class, 'store'])->name('store');
+        Route::put('/{id}', [AuctionController::class, 'update'])->name('update');
+        Route::delete('/{id}', [AuctionController::class, 'destroy'])->name('destroy');
+
+    });
 });
 
 

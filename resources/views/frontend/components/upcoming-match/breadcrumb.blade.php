@@ -1,28 +1,9 @@
-<div class="match-header upcoming-match wf100">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h5>Super Euro League</h5>
-                <ul class="teamz">
-                    <li class="mt-left"><img src="{{url('assets/images/mlogo1.png')}}" alt=""> <strong>North
-                            Carolina</strong> </li>
-                    <li class="mt-center-score">
-                        <span class="vs">VS</span>
-                        <ul class="up-match-meta">
-                            <li><i class="fas fa-calendar-alt"></i> 17 October, 2020</li>
-                            <li><i class="far fa-clock"></i> 04:00 PM GMT+</li>
-                            <li><i class="fas fa-map-marker-alt"></i> New Expo Stadium, NYK</li>
-                        </ul>
-                    </li>
-                    <li class="mt-right"> <img src="{{url('assets/images/mlogo2.png')}}" alt=""> <strong>Indy
-                            Eleven</strong> </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="match-counter">
-        <div class="container">
-            <div class="defaultCountdown"></div>
-        </div>
+<div class="inner-banner-header wf100">
+    <h1 data-generated="Upcoming Match">Upcoming Match</h1>
+    <div class="gt-breadcrumbs">
+        <ul>
+            <li> <a href="{{ route('index') }}"> <i class="fas fa-home"></i> Home </a> </li>
+            <li> <a href="#" class="active"> Upcoming Match </a> </li>
+        </ul>
     </div>
 </div>

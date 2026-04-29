@@ -49,7 +49,7 @@
                     <a href="{{ route('admin-gallery') }}"><i class="fe fe-image"></i> <span>Gallery</span></a>
                 </li>
                 <li>
-                    <a href=""><i class="fe fe-award"></i> <span>Match Result</span></a>
+                    <a href="{{ route('admin-game-match.index') }}"><i class="fe fe-award"></i> <span>Match Result</span></a>
                 </li>
                 <li>
                     <a href="{{ route('admin-organizers') }}"><i class="fe fe-users"></i> <span>Organizers</span></a>
@@ -67,9 +67,7 @@
                 <li>
                     <a href="{{ route('admin-team') }}"><i class="fe fe-users"></i> <span>Team</span></a>
                 </li>
-                <li>
-                    <a href=""><i class="fe fe-calendar"></i> <span>Upcoming Match</span></a>
-                </li>
+               
                 <li>
                     <a href="{{ route('admin-videos') }}"><i class="fe fe-video"></i> <span>Videos</span></a>
                 </li>

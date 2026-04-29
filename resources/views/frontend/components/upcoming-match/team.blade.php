@@ -1,284 +1,112 @@
-<div class="match-teams wf100 p80">
-      <div class="container">
-        <div class="row">
-          <!--Team 1 Players List Start-->
-          <div class="col-lg-6 col-md-6">
-            <h2>North Carolina Squad</h2>
-            <!--Box Start-->
-            <div class="player-box">
-              <div class="player-thumb"><img src="{{url('assets/images/player1.png')}}" alt=""></div>
-              <div class="player-txt">
-                <span class="star-tag"><i class="fas fa-star"></i></span>
-                <h3>Geryson Ramsy</h3>
-                <strong class="player-desi">League Captain</strong>
-                <p> Hi, I am Gerrysson Ramsy the team captain of the soccer club. </p>
-                <ul>
-                  <li>29 <span>Age</span></li>
-                  <li>87 <span>matches</span></li>
-                  <li>113 <span>Goals</span></li>
-                  <li>87 <span>matches</span></li>
-                </ul>
-                <a class="playerbio" href="#">Player Biography <i class="far fa-arrow-alt-circle-right"></i></a> <a
-                  href="#" class="follow">Follow</a>
-              </div>
+@php
+  $upcomingMatch = \App\Models\GameMatch::where('status', 'active')->where('match_status', 'upcoming')->latest()->get();
+@endphp
+<div class="main-content innerpagebg wf100">
+  <!--Match Result Start-->
+  <div class="match-results wf100 p80">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 ">
+          <!--Box Start-->
+          <div class="group-result">
+            <div class="nms-title">
+              <h4> Upcoming Match</h4>
             </div>
-            <!--Box End-->
-            <!--Box Start-->
-            <div class="player-box">
-              <div class="player-thumb"><img src="{{url('assets/images/Team3-240x280.png')}}" alt=""></div>
-              <div class="player-txt">
-                <span class="star-tag"><i class="fas fa-star"></i></span>
-                <h3>Kevin Rob</h3>
-                <strong class="player-desi">Defender</strong>
-                <p> Hi, I am Kevin Rob the Defender of the soccer club. </p>
-                <ul>
-                  <li>29 <span>Age</span></li>
-                  <li>87 <span>matches</span></li>
-                  <li>113 <span>Goals</span></li>
-                  <li>87 <span>matches</span></li>
-                </ul>
-                <a class="playerbio" href="#">Player Biography <i class="far fa-arrow-alt-circle-right"></i></a> <a
-                  href="#" class="follow">Follow</a>
-              </div>
+            <div class="row">
+              @forelse($upcomingMatch as $match)
+
+                <div class="col-lg-6">
+                  <div class="last-match-result-full-light">
+                    <div class="row">
+
+                      <!-- TEAM 1 -->
+                      <div class="col-sm-4">
+                        <div class="match-left">
+
+                          <div class="mtl-left">
+                            @if($match->team_1_logo)
+                              <img src="{{ asset('storage/' . $match->team_1_logo) }}" alt="">
+                            @endif
+                            <strong>{{ $match->team_1_name }}</strong>
+                          </div>
+
+                          <div class="mscore">
+                            <strong>
+                              @if(isset($match->score_data['team1']['score']))
+                                {{ $match->score_data['team1']['score'] }}
+                              @elseif(isset($match->score_data['team1']['goals']))
+                                {{ $match->score_data['team1']['goals'] }}
+                              @else
+                                -
+                              @endif
+                            </strong>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!-- MATCH INFO -->
+                      <div class="col-sm-4">
+                        <div class="lmr-info">
+
+                          <strong>{{ ucfirst($match->match_type ?? 'Match') }}</strong>
+
+                          <p>{{ $match->result_text }}</p>
+
+                          <img src="{{ url('assets/images/sp.png') }}" alt="">
+
+                          <p>{{ $match->match_date }}</p>
+                          <p>{{ $match->venue }}</p>
+
+                          @if($match->video_link)
+                            <a href="{{ $match->video_link }}" target="_blank" class="mh">
+                              view Highlights
+                            </a>
+                          @endif
+
+                        </div>
+                      </div>
+
+                      <!-- TEAM 2 -->
+                      <div class="col-sm-4">
+                        <div class="match-right">
+
+                          <div class="mscore">
+                            <strong>
+                              @if(isset($match->score_data['team2']['score']))
+                                {{ $match->score_data['team2']['score'] }}
+                              @elseif(isset($match->score_data['team2']['goals']))
+                                {{ $match->score_data['team2']['goals'] }}
+                              @else
+                                -
+                              @endif
+                            </strong>
+                          </div>
+
+                          <div class="mtl-right">
+                            @if($match->team_2_logo)
+                              <img src="{{ asset('storage/' . $match->team_2_logo) }}" alt="">
+                            @endif
+                            <strong>{{ $match->team_2_name }}</strong>
+                          </div>
+
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              @empty
+                <p>No Match found yet</p>
+              @endforelse
+              <!--Box End-->
             </div>
-            <!--Box End-->
-            <!--Box Start-->
-            <div class="player-box">
-              <div class="player-thumb"><img src="{{url('assets/images/player3.png')}}" alt=""></div>
-              <div class="player-txt">
-                <span class="star-tag"><i class="fas fa-star"></i></span>
-                <h3>Smith Ross</h3>
-                <strong class="player-desi">Goal Keeper</strong>
-                <p> Hi, I am Smith Ross the Goal Keeper of the soccer club. </p>
-                <ul>
-                  <li>29 <span>Age</span></li>
-                  <li>87 <span>matches</span></li>
-                  <li>113 <span>Goals</span></li>
-                  <li>87 <span>matches</span></li>
-                </ul>
-                <a class="playerbio" href="#">Player Biography <i class="far fa-arrow-alt-circle-right"></i></a> <a
-                  href="#" class="follow">Follow</a>
-              </div>
-            </div>
-            <!--Box End-->
-            <!--Box Start-->
-            <div class="player-box">
-              <div class="player-thumb"><img src="{{url('assets/images/Team3-240x280.png')}}" alt=""></div>
-              <div class="player-txt">
-                <span class="star-tag"><i class="fas fa-star"></i></span>
-                <h3>Williams Lee</h3>
-                <strong class="player-desi">Defender</strong>
-                <p> Hi, I am Williams Lee the Defender of the soccer club. </p>
-                <ul>
-                  <li>29 <span>Age</span></li>
-                  <li>87 <span>matches</span></li>
-                  <li>113 <span>Goals</span></li>
-                  <li>87 <span>matches</span></li>
-                </ul>
-                <a class="playerbio" href="#">Player Biography <i class="far fa-arrow-alt-circle-right"></i></a> <a
-                  href="#" class="follow">Follow</a>
-              </div>
-            </div>
-            <!--Box End-->
-            <!--Box Start-->
-            <div class="player-box">
-              <div class="player-thumb"><img src="{{url('assets/images/player1.png')}}" alt=""></div>
-              <div class="player-txt">
-                <span class="star-tag"><i class="fas fa-star"></i></span>
-                <h3>Phillips Hunt</h3>
-                <strong class="player-desi">Defender</strong>
-                <p> Hi, I am Phillips Hunt the Defender of the soccer club. </p>
-                <ul>
-                  <li>29 <span>Age</span></li>
-                  <li>87 <span>matches</span></li>
-                  <li>113 <span>Goals</span></li>
-                  <li>87 <span>matches</span></li>
-                </ul>
-                <a class="playerbio" href="#">Player Biography <i class="far fa-arrow-alt-circle-right"></i></a> <a
-                  href="#" class="follow">Follow</a>
-              </div>
-            </div>
-            <!--Box End-->
-            <!--Box Start-->
-            <div class="player-box">
-              <div class="player-thumb"><img src="{{url('assets/images/player2.png')}}" alt=""></div>
-              <div class="player-txt">
-                <span class="star-tag"><i class="fas fa-star"></i></span>
-                <h3>Jordan Grand</h3>
-                <strong class="player-desi">Defender</strong>
-                <p> Hi, I am Jordan Grand the Defender of the soccer club. </p>
-                <ul>
-                  <li>29 <span>Age</span></li>
-                  <li>87 <span>matches</span></li>
-                  <li>113 <span>Goals</span></li>
-                  <li>87 <span>matches</span></li>
-                </ul>
-                <a class="playerbio" href="#">Player Biography <i class="far fa-arrow-alt-circle-right"></i></a> <a
-                  href="#" class="follow">Follow</a>
-              </div>
-            </div>
-            <!--Box End-->
-            <!--Box Start-->
-            <div class="player-box">
-              <div class="player-thumb"><img src="{{url('assets/images/Team4-240x280.png')}}" alt=""></div>
-              <div class="player-txt">
-                <span class="star-tag"><i class="fas fa-star"></i></span>
-                <h3>Harry Simon</h3>
-                <strong class="player-desi">Defender</strong>
-                <p> Hi, I am Harry Simon the Defender of the soccer club. </p>
-                <ul>
-                  <li>29 <span>Age</span></li>
-                  <li>87 <span>matches</span></li>
-                  <li>113 <span>Goals</span></li>
-                  <li>87 <span>matches</span></li>
-                </ul>
-                <a class="playerbio" href="#">Player Biography <i class="far fa-arrow-alt-circle-right"></i></a> <a
-                  href="#" class="follow">Follow</a>
-              </div>
-            </div>
-            <!--Box End-->
-           
+
           </div>
-          <!--Team 1 Players List End-->
-          <!--Team 2 Players List Start-->
-          <div class="col-lg-6 col-md-6 team-two">
-            <h2>Indy Eleven Squad</h2>
-            <!--Box Start-->
-            <div class="player-box">
-              <div class="player-thumb"><img src="{{url('assets/images/player4.png')}}" alt=""></div>
-              <div class="player-txt">
-                <span class="star-tag"><i class="fas fa-star"></i></span>
-                <h3>Callum Mark</h3>
-                <strong class="player-desi">League Captain</strong>
-                <p> Hi, I am Callum Mark the team captain of the soccer club. </p>
-                <ul>
-                  <li>29 <span>Age</span></li>
-                  <li>87 <span>matches</span></li>
-                  <li>113 <span>Goals</span></li>
-                  <li>87 <span>matches</span></li>
-                </ul>
-                <a class="playerbio" href="#">Player Biography <i class="far fa-arrow-alt-circle-right"></i></a> <a
-                  href="#" class="follow">Follow</a>
-              </div>
-            </div>
-            <!--Box End-->
-            <!--Box Start-->
-            <div class="player-box">
-              <div class="player-thumb"><img src="{{url('assets/images/Team4-240x280.png')}}" alt=""></div>
-              <div class="player-txt">
-                <span class="star-tag"><i class="fas fa-star"></i></span>
-                <h3>Stewart Paul</h3>
-                <strong class="player-desi">Goal Keeper</strong>
-                <p> Hi, I am Stewart Paul the Goal Keeper of the soccer club. </p>
-                <ul>
-                  <li>29 <span>Age</span></li>
-                  <li>87 <span>matches</span></li>
-                  <li>113 <span>Goals</span></li>
-                  <li>87 <span>matches</span></li>
-                </ul>
-                <a class="playerbio" href="#">Player Biography <i class="far fa-arrow-alt-circle-right"></i></a> <a
-                  href="#" class="follow">Follow</a>
-              </div>
-            </div>
-            <!--Box End-->
-            <!--Box Start-->
-            <div class="player-box">
-              <div class="player-thumb"><img src="{{url('assets/images/player2.png')}}" alt=""></div>
-              <div class="player-txt">
-                <span class="star-tag"><i class="fas fa-star"></i></span>
-                <h3>Carl Martin</h3>
-                <strong class="player-desi">Defender</strong>
-                <p> Hi, I am Carl Martin the Defender of the soccer club. </p>
-                <ul>
-                  <li>29 <span>Age</span></li>
-                  <li>87 <span>matches</span></li>
-                  <li>113 <span>Goals</span></li>
-                  <li>87 <span>matches</span></li>
-                </ul>
-                <a class="playerbio" href="#">Player Biography <i class="far fa-arrow-alt-circle-right"></i></a> <a
-                  href="#" class="follow">Follow</a>
-              </div>
-            </div>
-            <!--Box End-->
-            <!--Box Start-->
-            <div class="player-box">
-              <div class="player-thumb"><img src="{{url('assets/images/Team4-240x280.png')}}" alt=""></div>
-              <div class="player-txt">
-                <span class="star-tag"><i class="fas fa-star"></i></span>
-                <h3>Ramsy Geordion</h3>
-                <strong class="player-desi">Defender</strong>
-                <p> Hi, I am Ramsy Geordion the Defender of the soccer club. </p>
-                <ul>
-                  <li>29 <span>Age</span></li>
-                  <li>87 <span>matches</span></li>
-                  <li>113 <span>Goals</span></li>
-                  <li>87 <span>matches</span></li>
-                </ul>
-                <a class="playerbio" href="#">Player Biography <i class="far fa-arrow-alt-circle-right"></i></a> <a
-                  href="#" class="follow">Follow</a>
-              </div>
-            </div>
-            <!--Box End-->
-            <!--Box Start-->
-            <div class="player-box">
-              <div class="player-thumb"><img src="{{url('assets/images/player4.png')}}" alt=""></div>
-              <div class="player-txt">
-                <span class="star-tag"><i class="fas fa-star"></i></span>
-                <h3>Phillips Hunt</h3>
-                <strong class="player-desi">Defender</strong>
-                <p> Hi, I am Phillips Hunt the Defender of the soccer club. </p>
-                <ul>
-                  <li>29 <span>Age</span></li>
-                  <li>87 <span>matches</span></li>
-                  <li>113 <span>Goals</span></li>
-                  <li>87 <span>matches</span></li>
-                </ul>
-                <a class="playerbio" href="#">Player Biography <i class="far fa-arrow-alt-circle-right"></i></a> <a
-                  href="#" class="follow">Follow</a>
-              </div>
-            </div>
-            <!--Box End-->
-            <!--Box Start-->
-            <div class="player-box">
-              <div class="player-thumb"><img src="{{url('assets/images/player3.png')}}" alt=""></div>
-              <div class="player-txt">
-                <span class="star-tag"><i class="fas fa-star"></i></span>
-                <h3>Geryson Ramsy</h3>
-                <strong class="player-desi">Defender</strong>
-                <p> Hi, I am Gerrysson Ramsy the Defender of the soccer club. </p>
-                <ul>
-                  <li>29 <span>Age</span></li>
-                  <li>87 <span>matches</span></li>
-                  <li>113 <span>Goals</span></li>
-                  <li>87 <span>matches</span></li>
-                </ul>
-                <a class="playerbio" href="#">Player Biography <i class="far fa-arrow-alt-circle-right"></i></a> <a
-                  href="#" class="follow">Follow</a>
-              </div>
-            </div>
-            <!--Box End-->
-           
-            <!--Box Start-->
-            <div class="player-box">
-              <div class="player-thumb"><img src="{{url('assets/images/player1.png')}}" alt=""></div>
-              <div class="player-txt">
-                <span class="star-tag"><i class="fas fa-star"></i></span>
-                <h3>Geryson Ramsy</h3>
-                <strong class="player-desi">Defender</strong>
-                <p> Hi, I am Gerrysson Ramsy the Defender of the soccer club. </p>
-                <ul>
-                  <li>29 <span>Age</span></li>
-                  <li>87 <span>matches</span></li>
-                  <li>113 <span>Goals</span></li>
-                  <li>87 <span>matches</span></li>
-                </ul>
-                <a class="playerbio" href="#">Player Biography <i class="far fa-arrow-alt-circle-right"></i></a> <a
-                  href="#" class="follow">Follow</a>
-              </div>
-            </div>
-            <!--Box End-->
-          </div>
-          <!--Team 2 Players List End-->
         </div>
+
       </div>
     </div>
+  </div>
+  <!--Match Result End-->
+</div>

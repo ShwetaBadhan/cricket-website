@@ -8,7 +8,7 @@
     <h1 data-generated="Match Result">Match Result</h1>
     <div class="gt-breadcrumbs">
       <ul>
-        <li> <a href="#" > <i class="fas fa-home"></i> Home </a> </li>
+        <li> <a href="{{ route('index') }}" > <i class="fas fa-home"></i> Home </a> </li>
         <li> <a href="#" class="active"> Match Result </a> </li>
       </ul>
     </div>

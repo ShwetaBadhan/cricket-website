@@ -79,12 +79,7 @@ url('{{ asset('assets/images/slider/02.jpg') }}');
               <strong class="player-desi">Team Captain</strong>
               <p>The Rajasthan Royals XI represent the pride of Rajasthan with a strong squad known for aggressive
                 batting and disciplined bowling.</p>
-              <ul>
-                <li>24 <span>Players</span></li>
-                <li>18 <span>Matches</span></li>
-                <li>11 <span>Wins</span></li>
-                <li>7 <span>Losses</span></li>
-              </ul>
+            
 
             </div>
           </div>

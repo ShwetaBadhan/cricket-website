@@ -1,465 +1,110 @@
+@php
+    $MatchResult = \App\Models\GameMatch::where('status', 'active')->latest()->get();
+@endphp
 <div class="main-content innerpagebg wf100">
     <!--Match Result Start-->
     <div class="match-results wf100 p80">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-12 ">
                     <!--Box Start-->
                     <div class="group-result">
                         <div class="nms-title">
-                            <h4>24 May, 2020 | <span>Super Euro League</span></h4>
+                            <h4> Match Results</h4>
                         </div>
-                        <div class="last-match-result-full-light">
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <div class="match-left">
-                                        <div class="mtl-left"> <img src="{{url('assets/images/mlogo1.png')}}" alt="">
-                                            <strong>North
-                                                Carolina</strong> </div>
-                                        <div class="mscore"> <strong>2</strong> loss </div>
-                                        <ul>
-                                            <li>Charlie Darren <span>(1 goal)</span></li>
-                                            <li>kevin Jamie <span>(1 goal)</span></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="lmr-info">
-                                        <strong>Super Euro League</strong>
-                                        <p>Indy Eleven Qualified for Semi Final</p>
-                                        <img src="{{url('assets/images/sp.png')}}" alt="">
-                                        <p>17 October, 2020</p>
-                                        <p>New Expo Stadium, NYK</p>
-                                        <a href="#" class="mh">Match Highlights</a>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="match-right">
-                                        <div class="mscore"> <strong>3</strong> Win </div>
-                                        <div class="mtl-right"> <img src="{{url('assets/images/mlogo2.png')}}" alt="">
-                                            <strong>Indy
-                                                Eleven</strong> </div>
-                                        <ul>
-                                            <li> Jon Taylor <span>(1 goal)</span></li>
-                                            <li> Steven Dean <span>(1 goal)</span></li>
-                                            <li> Smith Ross <span>(1 goal)</span></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Box End-->
-                        <!--Box Start-->
-                        <div class="last-match-result-full-light">
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <div class="match-left">
-                                        <div class="mtl-left"> <img src="{{url('assets/images/mlogo1.png')}}" alt="">
-                                            <strong>North
-                                                Carolina</strong> </div>
-                                        <div class="mscore"> <strong>2</strong> loss </div>
-                                        <ul>
-                                            <li>Charlie Darren <span>(1 goal)</span></li>
-                                            <li>kevin Jamie <span>(1 goal)</span></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="lmr-info">
-                                        <strong>Super Euro League</strong>
-                                        <p>Indy Eleven Qualified for Semi Final</p>
-                                        <img src="{{url('assets/images/sp.png')}}" alt="">
-                                        <p>17 October, 2020</p>
-                                        <p>New Expo Stadium, NYK</p>
-                                        <a href="#" class="mh">Match Highlights</a>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="match-right">
-                                        <div class="mscore"> <strong>3</strong> Win </div>
-                                        <div class="mtl-right"> <img src="{{url('assets/images/mlogo2.png')}}" alt="">
-                                            <strong>Indy
-                                                Eleven</strong> </div>
-                                        <ul>
-                                            <li> Jon Taylor <span>(1 goal)</span></li>
-                                            <li> Steven Dean <span>(1 goal)</span></li>
-                                            <li> Smith Ross <span>(1 goal)</span></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Box End-->
-                        <!--Box Start-->
-                        <div class="last-match-result-full-light">
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <div class="match-left">
-                                        <div class="mtl-left"> <img src="{{url('assets/images/mlogo1.png')}}" alt="">
-                                            <strong>North
-                                                Carolina</strong> </div>
-                                        <div class="mscore"> <strong>2</strong> loss </div>
-                                        <ul>
-                                            <li>Charlie Darren <span>(1 goal)</span></li>
-                                            <li>kevin Jamie <span>(1 goal)</span></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="lmr-info">
-                                        <strong>Super Euro League</strong>
-                                        <p>Indy Eleven Qualified for Semi Final</p>
-                                        <img src="{{url('assets/images/sp.png')}}" alt="">
-                                        <p>17 October, 2020</p>
-                                        <p>New Expo Stadium, NYK</p>
-                                        <a href="#" class="mh">Match Highlights</a>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="match-right">
-                                        <div class="mscore"> <strong>3</strong> Win </div>
-                                        <div class="mtl-right"> <img src="{{url('assets/images/mlogo2.png')}}" alt="">
-                                            <strong>Indy
-                                                Eleven</strong> </div>
-                                        <ul>
-                                            <li> Jon Taylor <span>(1 goal)</span></li>
-                                            <li> Steven Dean <span>(1 goal)</span></li>
-                                            <li> Smith Ross <span>(1 goal)</span></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Box End-->
-                    </div>
-                    <div class="group-result">
-                        <div class="nms-title">
-                            <h4>17 June, 2020 | <span>Super Euro League</span></h4>
-                        </div>
-                        <!--Box Start-->
-                        <div class="last-match-result-full-light">
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <div class="match-left">
-                                        <div class="mtl-left"> <img src="{{url('assets/images/mlogo1.png')}}" alt="">
-                                            <strong>North
-                                                Carolina</strong> </div>
-                                        <div class="mscore"> <strong>2</strong> loss </div>
-                                        <ul>
-                                            <li>Charlie Darren <span>(1 goal)</span></li>
-                                            <li>kevin Jamie <span>(1 goal)</span></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="lmr-info">
-                                        <strong>Super Euro League</strong>
-                                        <p>Indy Eleven Qualified for Semi Final</p>
-                                        <img src="{{url('assets/images/sp.png')}}" alt="">
-                                        <p>17 October, 2020</p>
-                                        <p>New Expo Stadium, NYK</p>
-                                        <a href="#" class="mh">Match Highlights</a>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="match-right">
-                                        <div class="mscore"> <strong>3</strong> Win </div>
-                                        <div class="mtl-right"> <img src="{{url('assets/images/mlogo2.png')}}" alt="">
-                                            <strong>Indy
-                                                Eleven</strong> </div>
-                                        <ul>
-                                            <li> Jon Taylor <span>(1 goal)</span></li>
-                                            <li> Steven Dean <span>(1 goal)</span></li>
-                                            <li> Smith Ross <span>(1 goal)</span></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Box End-->
-                        <!--Box Start-->
-                        <div class="last-match-result-full-light">
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <div class="match-left">
-                                        <div class="mtl-left"> <img src="{{url('assets/images/mlogo1.png')}}" alt="">
-                                            <strong>North
-                                                Carolina</strong> </div>
-                                        <div class="mscore"> <strong>2</strong> loss </div>
-                                        <ul>
-                                            <li>Charlie Darren <span>(1 goal)</span></li>
-                                            <li>kevin Jamie <span>(1 goal)</span></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="lmr-info">
-                                        <strong>Super Euro League</strong>
-                                        <p>Indy Eleven Qualified for Semi Final</p>
-                                        <img src="{{url('assets/images/sp.png')}}" alt="">
-                                        <p>17 October, 2020</p>
-                                        <p>New Expo Stadium, NYK</p>
-                                        <a href="#" class="mh">Match Highlights</a>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="match-right">
-                                        <div class="mscore"> <strong>3</strong> Win </div>
-                                        <div class="mtl-right"> <img src="{{url('assets/images/mlogo2.png')}}" alt="">
-                                            <strong>Indy
-                                                Eleven</strong> </div>
-                                        <ul>
-                                            <li> Jon Taylor <span>(1 goal)</span></li>
-                                            <li> Steven Dean <span>(1 goal)</span></li>
-                                            <li> Smith Ross <span>(1 goal)</span></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Box End-->
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="sidebar">
-                        <!--widget start-->
-                        <div class="widget sidebar-ad"> <img src="{{url('assets/images/sideadbanner1.png')}}" alt="">
-                        </div>
-                        <!--widget end-->
-                        <!--widget start-->
-                        <div class="widget">
-                            <h4>Featured Videos</h4>
-                            <div class="featured-video-widget">
-                                <div class="fvideo-box mb15">
-                                    <div class="fvid-cap">
-                                        <a class="vicon" href="#"><img src="{{url('assets/images/play.png')}}"
-                                                alt=""></a>
-                                        <div class="fvid-right">
-                                            <h5><a href="#">Success is a Result of Hard Work </a></h5>
-                                            <span><i class="far fa-clock"></i> 4:32</span> <span><i
-                                                    class="far fa-eye"></i> 174</span>
-                                        </div>
-                                    </div>
-                                    <img src="images/fvid1.jpg" alt="">
-                                </div>
-                                <div class="fvideo-box">
-                                    <div class="fvid-cap">
-                                        <a class="vicon" href="#"><img src="{{url('assets/images/play.png')}}"
-                                                alt=""></a>
-                                        <div class="fvid-right">
-                                            <h5><a href="#">Success is a Result of Hard Work </a></h5>
-                                            <span><i class="far fa-clock"></i> 4:32</span> <span><i
-                                                    class="far fa-eye"></i> 174</span>
-                                        </div>
-                                    </div>
-                                    <img src="images/fvid2.jpg" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <!--widget end-->
-                        <!--widget start-->
-                        <div class="widget">
-                            <h4>Top Stories</h4>
-                            <div class="top-stories-widget">
-                                <div id="top-stories" class="owl-carousel owl-theme">
-                                    <!--Slide 1 Start-->
-                                    <div class="item">
-                                        <ul class="top-stories">
-                                            <!--Story Start-->
-                                            <li class="story-row">
-                                                <div class="ts-thumb"><img src="{{url('assets/images/tsimg1.jpg')}}"
-                                                        alt=""> </div>
-                                                <div class="ts-txt">
-                                                    <h5> <a href="#">Success is not Accident it’s a Result of Hard Work
+                        <div class="row">
+                            @forelse($MatchResult as $match)
+
+                                <div class="col-lg-6">
+                                    <div class="last-match-result-full-light">
+                                        <div class="row">
+
+                                            <!-- TEAM 1 -->
+                                            <div class="col-sm-4">
+                                                <div class="match-left">
+
+                                                    <div class="mtl-left">
+                                                        @if($match->team_1_logo)
+                                                            <img src="{{ asset('storage/' . $match->team_1_logo) }}" alt="">
+                                                        @endif
+                                                        <strong>{{ $match->team_1_name }}</strong>
+                                                    </div>
+
+                                                    <div class="mscore">
+                                                        <strong>
+                                                            @if(isset($match->score_data['team1']['score']))
+                                                                {{ $match->score_data['team1']['score'] }}
+                                                            @elseif(isset($match->score_data['team1']['goals']))
+                                                                {{ $match->score_data['team1']['goals'] }}
+                                                            @else
+                                                                -
+                                                            @endif
+                                                        </strong>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <!-- MATCH INFO -->
+                                            <div class="col-sm-4">
+                                                <div class="lmr-info">
+
+                                                    <strong>{{ ucfirst($match->match_type ?? 'Match') }}</strong>
+
+                                                    <p>{{ $match->result_text }}</p>
+
+                                                    <img src="{{ url('assets/images/sp.png') }}" alt="">
+
+                                                    <p>{{ $match->match_date }}</p>
+                                                    <p>{{ $match->venue }}</p>
+
+                                                    @if($match->video_link)
+                                                        <a href="{{ $match->video_link }}" target="_blank" class="mh">
+                                                            view Highlights
                                                         </a>
-                                                    </h5>
-                                                    <ul class="tsw-meta">
-                                                        <li><a href="#">NFL League</a></li>
-                                                        <li>12 Mar, 2020</li>
-                                                    </ul>
+                                                    @endif
+
                                                 </div>
-                                            </li>
-                                            <!--Story End-->
-                                            <!--Story Start-->
-                                            <li class="story-row">
-                                                <div class="ts-thumb"><img src="{{url('assets/images/tsimg1.jpg')}}"
-                                                        alt=""> </div>
-                                                <div class="ts-txt">
-                                                    <h5> <a href="#">Toon stage injury-time come back at Everton </a>
-                                                    </h5>
-                                                    <ul class="tsw-meta">
-                                                        <li><a href="#">NFL League</a></li>
-                                                        <li>12 Mar, 2020</li>
-                                                    </ul>
+                                            </div>
+
+                                            <!-- TEAM 2 -->
+                                            <div class="col-sm-4">
+                                                <div class="match-right">
+
+                                                    <div class="mscore">
+                                                        <strong>
+                                                            @if(isset($match->score_data['team2']['score']))
+                                                                {{ $match->score_data['team2']['score'] }}
+                                                            @elseif(isset($match->score_data['team2']['goals']))
+                                                                {{ $match->score_data['team2']['goals'] }}
+                                                            @else
+                                                                -
+                                                            @endif
+                                                        </strong>
+                                                    </div>
+
+                                                    <div class="mtl-right">
+                                                        @if($match->team_2_logo)
+                                                            <img src="{{ asset('storage/' . $match->team_2_logo) }}" alt="">
+                                                        @endif
+                                                        <strong>{{ $match->team_2_name }}</strong>
+                                                    </div>
+
                                                 </div>
-                                            </li>
-                                            <!--Story End-->
-                                            <!--Story Start-->
-                                            <li class="story-row">
-                                                <div class="ts-thumb"><img src="{{url('assets/images/tsimg1.jpg')}}"
-                                                        alt=""> </div>
-                                                <div class="ts-txt">
-                                                    <h5> <a href="#">League continues support for Rainbow Laces </a>
-                                                    </h5>
-                                                    <ul class="tsw-meta">
-                                                        <li><a href="#">NFL League</a></li>
-                                                        <li>12 Mar, 2020</li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                            <!--Story End-->
-                                            <!--Story Start-->
-                                            <li class="story-row">
-                                                <div class="ts-thumb"><img src="{{url('assets/images/tsimg1.jpg')}}"
-                                                        alt=""> </div>
-                                                <div class="ts-txt">
-                                                    <h5> <a href="#">Tigers would’ve ‘loved’ to play for Tigers </a>
-                                                    </h5>
-                                                    <ul class="tsw-meta">
-                                                        <li><a href="#">NFL League</a></li>
-                                                        <li>12 Mar, 2020</li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                            <!--Story End-->
-                                        </ul>
+                                            </div>
+
+                                        </div>
                                     </div>
-                                    <!--Slide 1 End-->
-                                    <!--Slide 2 Start-->
-                                    <div class="item">
-                                        <ul class="top-stories">
-                                            <!--Story Start-->
-                                            <li class="story-row">
-                                                <div class="ts-thumb"><img src="{{url('assets/images/tsimg1.jpg')}}"
-                                                        alt=""> </div>
-                                                <div class="ts-txt">
-                                                    <h5> <a href="#">FC Champs will learn from Tigers mistake </a>
-                                                    </h5>
-                                                    <ul class="tsw-meta">
-                                                        <li><a href="#">NFL League</a></li>
-                                                        <li>12 Mar, 2020</li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                            <!--Story End-->
-                                            <!--Story Start-->
-                                            <li class="story-row">
-                                                <div class="ts-thumb"><img src="{{url('assets/images/tsimg1.jpg')}}"
-                                                        alt=""> </div>
-                                                <div class="ts-txt">
-                                                    <h5> <a href="#">Toon stage injury-time come back at Everton </a>
-                                                    </h5>
-                                                    <ul class="tsw-meta">
-                                                        <li><a href="#">NFL League</a></li>
-                                                        <li>12 Mar, 2020</li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                            <!--Story End-->
-                                            <!--Story Start-->
-                                            <li class="story-row">
-                                                <div class="ts-thumb"><img src="{{url('assets/images/tsimg1.jpg')}}"
-                                                        alt=""> </div>
-                                                <div class="ts-txt">
-                                                    <h5> <a href="#">Tigers would’ve ‘loved’ to play for Tigers </a>
-                                                    </h5>
-                                                    <ul class="tsw-meta">
-                                                        <li><a href="#">NFL League</a></li>
-                                                        <li>12 Mar, 2020</li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                            <!--Story End-->
-                                            <!--Story Start-->
-                                            <li class="story-row">
-                                                <div class="ts-thumb"><img src="{{url('assets/images/tsimg1.jpg')}}"
-                                                        alt=""> </div>
-                                                <div class="ts-txt">
-                                                    <h5> <a href="#">Success is not Accident
-                                                            it’s a Result of Hard Work </a>
-                                                    </h5>
-                                                    <ul class="tsw-meta">
-                                                        <li><a href="#">NFL League</a></li>
-                                                        <li>12 Mar, 2020</li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                            <!--Story End-->
-                                        </ul>
-                                    </div>
-                                    <!--Slide 2 End-->
-                                    <!--Slide 3 Start-->
-                                    <div class="item">
-                                        <ul class="top-stories">
-                                            <!--Story Start-->
-                                            <li class="story-row">
-                                                <div class="ts-thumb"><img src="{{url('assets/images/tsimg1.jpg')}}"
-                                                        alt=""> </div>
-                                                <div class="ts-txt">
-                                                    <h5> <a href="#">Success is not Accident
-                                                            it’s a Result of Hard Work </a>
-                                                    </h5>
-                                                    <ul class="tsw-meta">
-                                                        <li><a href="#">NFL League</a></li>
-                                                        <li>12 Mar, 2020</li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                            <!--Story End-->
-                                            <!--Story Start-->
-                                            <li class="story-row">
-                                                <div class="ts-thumb"><img src="{{url('assets/images/tsimg1.jpg')}}"
-                                                        alt=""> </div>
-                                                <div class="ts-txt">
-                                                    <h5> <a href="#">Success is not Accident
-                                                            it’s a Result of Hard Work </a>
-                                                    </h5>
-                                                    <ul class="tsw-meta">
-                                                        <li><a href="#">NFL League</a></li>
-                                                        <li>12 Mar, 2020</li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                            <!--Story End-->
-                                            <!--Story Start-->
-                                            <li class="story-row">
-                                                <div class="ts-thumb"><img src="{{url('assets/images/tsimg1.jpg')}}"
-                                                        alt=""> </div>
-                                                <div class="ts-txt">
-                                                    <h5> <a href="#">Success is not Accident
-                                                            it’s a Result of Hard Work </a>
-                                                    </h5>
-                                                    <ul class="tsw-meta">
-                                                        <li><a href="#">NFL League</a></li>
-                                                        <li>12 Mar, 2020</li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                            <!--Story End-->
-                                            <!--Story Start-->
-                                            <li class="story-row">
-                                                <div class="ts-thumb"><img src="{{url('assets/images/tsimg1.jpg')}}"
-                                                        alt=""> </div>
-                                                <div class="ts-txt">
-                                                    <h5> <a href="#">Success is not Accident
-                                                            it’s a Result of Hard Work </a>
-                                                    </h5>
-                                                    <ul class="tsw-meta">
-                                                        <li><a href="#">NFL League</a></li>
-                                                        <li>12 Mar, 2020</li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                            <!--Story End-->
-                                        </ul>
-                                    </div>
-                                    <!--Slide 3 End-->
                                 </div>
-                            </div>
+                            @empty
+                                <p>No Match found yet</p>
+                            @endforelse
+                            <!--Box End-->
                         </div>
-                        <!--widget end-->
+
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
