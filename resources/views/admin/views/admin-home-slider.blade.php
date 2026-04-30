@@ -1,7 +1,7 @@
 @extends('admin.layout.app')
 @section('content')
 
-   
+
     <!-- Page Wrapper -->
     <div class="page-wrapper">
         <div class="content container-fluid">
@@ -145,8 +145,7 @@
                             <div class="col-lg-6 col-md-12">
                                 <div class="input-block mb-3">
                                     <label>Title <span class="text-danger">*</span></label>
-                                    <input type="text" name="caption" class="form-control"
-                                        placeholder="Title " required>
+                                    <input type="text" name="caption" class="form-control" placeholder="Title " required>
                                 </div>
                             </div>
 
@@ -304,7 +303,9 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-primary">Update </button>
+                            @can('edit home slider')
+                                <button type="submit" class="btn btn-primary">Update </button>
+                            @endcan
                         </div>
                     </div>
                 </form>

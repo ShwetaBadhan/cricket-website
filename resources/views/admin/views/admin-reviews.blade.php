@@ -17,11 +17,13 @@
                                             alt="filter"></span>Filter </a>
                             </li>
 
-                            <li>
-                                <a class="btn btn-primary" href="javascript:void(0);" data-bs-toggle="modal"
-                                    data-bs-target="#add_inventory"><i class="fa fa-plus-circle me-2"
-                                        aria-hidden="true"></i>Add New</a>
-                            </li>
+                            @can('create reviews')
+                                <li>
+                                    <a class="btn btn-primary" href="javascript:void(0);" data-bs-toggle="modal"
+                                        data-bs-target="#add_inventory"><i class="fa fa-plus-circle me-2"
+                                            aria-hidden="true"></i>Add New</a>
+                                </li>
+                            @endcan
                         </ul>
                     </div>
                 </div>
@@ -59,26 +61,32 @@
                                                             aria-expanded="false"><i class="fas fa-ellipsis-v"></i></a>
                                                         <div class="dropdown-menu dropdown-menu-right">
                                                             <ul>
-                                                                <li>
+                                                                @can('view reviews')
+                                                                    <li>
 
-                                                                    <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                                                        data-bs-target="#view{{ $item->id }}"><i
-                                                                            class="far fa-eye me-2"></i>view</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                                                        data-bs-target="#edit{{ $item->id }}"><i
-                                                                            class="far fa-edit me-2"></i>Edit</a>
-                                                                </li>
-                                                                <li>
-                                                                    <form action="{{ route('admin-reviews.destroy', $item) }}"
-                                                                        method="POST" class="d-inline">
-                                                                        @csrf @method('DELETE')
-                                                                        <button type="submit" class="dropdown-item delete-btn">
-                                                                            <i class="far fa-trash-alt me-2"></i>Delete</a>
-                                                                        </button>
-                                                                    </form>
-                                                                </li>
+                                                                        <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                                            data-bs-target="#view{{ $item->id }}"><i
+                                                                                class="far fa-eye me-2"></i>view</a>
+                                                                    </li>
+                                                                @endcan
+                                                                @can('edit reviews')
+                                                                    <li>
+                                                                        <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                                            data-bs-target="#edit{{ $item->id }}"><i
+                                                                                class="far fa-edit me-2"></i>Edit</a>
+                                                                    </li>
+                                                                @endcan
+                                                                @can('delete reviews')
+                                                                    <li>
+                                                                        <form action="{{ route('admin-reviews.destroy', $item) }}"
+                                                                            method="POST" class="d-inline">
+                                                                            @csrf @method('DELETE')
+                                                                            <button type="submit" class="dropdown-item delete-btn">
+                                                                                <i class="far fa-trash-alt me-2"></i>Delete</a>
+                                                                            </button>
+                                                                        </form>
+                                                                    </li>
+                                                                @endcan
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -265,9 +273,9 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body">
-                           
+
                             <div class="row g-3">
-                               
+
                                 <div class="col-12">
                                     <label>First Name <span class="text-danger">*</span></label>
                                     <input type="text" name="first_name" value="{{ old('first_name', $item->first_name) }}"
@@ -285,12 +293,13 @@
                                 </div>
                                 <div class="col-12">
                                     <label>Date <span class="text-danger">*</span></label>
-                                    <input type="date" name="date" value="{{ old('date', $item->date) }}"
-                                        class="form-control" required>
+                                    <input type="date" name="date" value="{{ old('date', $item->date) }}" class="form-control"
+                                        required>
                                 </div>
                                 <div class="col-12">
                                     <label>Tweet <span class="text-danger">*</span></label>
-                                    <textarea name="tweet" class="form-control" required>{{ old('tweet', $item->tweet) }}</textarea>
+                                    <textarea name="tweet" class="form-control"
+                                        required>{{ old('tweet', $item->tweet) }}</textarea>
                                 </div>
                                 <div class="col-md-6">
                                     <label>Status <span class="text-danger">*</span></label>

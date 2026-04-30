@@ -189,7 +189,42 @@ Route::post('/become-sponsor', [SponsorController::class, 'store'])->name('becom
 
 
 Route::get('/dashboard', function () {
-    return view('admin.views.dashboard');
+    $totalLeads = App\Models\Lead::count();
+    $blogs = App\Models\Blog::count();
+    $totalOrgainzer = App\Models\Organizer::count();
+    $totalReview = App\Models\Review::count();
+    $totalSports = App\Models\Sport::count();
+
+    $EventCategory = App\Models\EventCategory::where('status', 'active')->latest()->take(5)->get();
+    $team = App\Models\Team::where('status', 'active')->latest()->take(5)->get();
+    $partner = App\Models\Partner::where('status', 'active')->latest()->take(5)->get();
+
+    $bookingLeads = App\Models\BookATrial::count();
+    $contactLeads = App\Models\Lead::count();
+    $influencerLeads = App\Models\Influencer::count();
+    $membershipLeads = App\Models\MembershipAccess::count();
+    $nodalLeads = App\Models\NodalRegisteration::count();
+    $playerLeads = App\Models\PlayerRegistration::count();
+    $sponsorLeads = App\Models\Sponsor::count();
+    
+
+    return view('admin.views.dashboard', [
+        'totalLeads' => $totalLeads,
+        'blogs' => $blogs,
+        'totalOrgainzer' => $totalOrgainzer,
+        'totalReview' => $totalReview,
+        'totalSports' => $totalSports,
+        'EventCategory' => $EventCategory,
+        'team' => $team,
+        'partner' => $partner,
+        'bookingLeads' => $bookingLeads,
+        'contactLeads' => $contactLeads,
+        'influencerLeads' => $influencerLeads,
+        'membershipLeads' => $membershipLeads,
+        'nodalLeads' => $nodalLeads,
+        'playerLeads' => $playerLeads,
+        'sponsorLeads' => $sponsorLeads,
+    ]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {

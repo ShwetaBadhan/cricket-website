@@ -10,18 +10,14 @@
                     <h5>Gallery</h5>
                     <div class="list-btn">
                         <ul class="filter-list">
-                            <li>
-                                <a class="btn btn-filters w-auto popup-toggle" data-bs-toggle="tooltip"
-                                    data-bs-placement="bottom" data-bs-original-title="filter"><span class="me-2"><img
-                                            src="{{ asset('admin/assets/img/icons/filter-icon.svg') }}"
-                                            alt="filter"></span>Filter </a>
-                            </li>
 
-                            <li>
-                                <a class="btn btn-primary" href="javascript:void(0);" data-bs-toggle="modal"
-                                    data-bs-target="#add_inventory"><i class="fa fa-plus-circle me-2"
-                                        aria-hidden="true"></i>Add New</a>
-                            </li>
+                            @can('create gallery')
+                                <li>
+                                    <a class="btn btn-primary" href="javascript:void(0);" data-bs-toggle="modal"
+                                        data-bs-target="#add_inventory"><i class="fa fa-plus-circle me-2"
+                                            aria-hidden="true"></i>Add New</a>
+                                </li>
+                            @endcan
                         </ul>
                     </div>
                 </div>
@@ -61,26 +57,32 @@
                                                             aria-expanded="false"><i class="fas fa-ellipsis-v"></i></a>
                                                         <div class="dropdown-menu dropdown-menu-right">
                                                             <ul>
-                                                                <li>
+                                                                @can('view gallery')
+                                                                    <li>
 
-                                                                    <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                                                        data-bs-target="#view{{ $item->id }}"><i
-                                                                            class="far fa-eye me-2"></i>view</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                                                        data-bs-target="#edit{{ $item->id }}"><i
-                                                                            class="far fa-edit me-2"></i>Edit</a>
-                                                                </li>
-                                                                <li>
-                                                                    <form action="{{ route('admin-gallery.destroy', $item) }}"
-                                                                        method="POST" class="d-inline">
-                                                                        @csrf @method('DELETE')
-                                                                        <button type="submit" class="dropdown-item delete-btn">
-                                                                            <i class="far fa-trash-alt me-2"></i>Delete</a>
-                                                                        </button>
-                                                                    </form>
-                                                                </li>
+                                                                        <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                                            data-bs-target="#view{{ $item->id }}"><i
+                                                                                class="far fa-eye me-2"></i>view</a>
+                                                                    </li>
+                                                                @endcan
+                                                                @can('edit gallery')
+                                                                    <li>
+                                                                        <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                                            data-bs-target="#edit{{ $item->id }}"><i
+                                                                                class="far fa-edit me-2"></i>Edit</a>
+                                                                    </li>
+                                                                @endcan
+                                                                @can('delete gallery')
+                                                                    <li>
+                                                                        <form action="{{ route('admin-gallery.destroy', $item) }}"
+                                                                            method="POST" class="d-inline">
+                                                                            @csrf @method('DELETE')
+                                                                            <button type="submit" class="dropdown-item delete-btn">
+                                                                                <i class="far fa-trash-alt me-2"></i>Delete</a>
+                                                                            </button>
+                                                                        </form>
+                                                                    </li>
+                                                                @endcan
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -92,7 +94,7 @@
                                                 <td class="text-center">No Gallery image found.</td>
                                                 <td></td>
                                                 <td></td>
-                                                
+
                                             </tr>
                                         @endforelse
 
@@ -263,7 +265,7 @@
 
 
         {{-- edit modal --}}
-      
+
         <div class="modal fade" id="edit{{ $item->id }}">
             <div class="modal-dialog custom-modal">
                 <form action="{{ route('admin-gallery.update', $item) }}" method="POST" enctype="multipart/form-data">
@@ -282,7 +284,7 @@
                                 <div class="col-12">
                                     <label>Change Image</label>
                                     <input type="file" name="image" class="form-control" accept="image/*">
-                                     <small class="text-muted">Recommended: 480x340px • Max 2MB</small>
+                                    <small class="text-muted">Recommended: 480x340px • Max 2MB</small>
                                 </div>
                                 <div class="col-12">
                                     <label>Caption / Alt Text</label>

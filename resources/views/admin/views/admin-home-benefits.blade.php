@@ -138,9 +138,11 @@
                                 </div>
 
                                 <div class="text-end mt-5">
-                                    <button type="submit" class="btn btn-primary btn-lg px-6">
-                                       <i class="fas fa-save me-2"></i>Update
-                                    </button>
+                                    @can('edit home benefit')
+                                        <button type="submit" class="btn btn-primary btn-lg px-6">
+                                            <i class="fas fa-save me-2"></i>Update
+                                        </button>
+                                    @endcan
                                 </div>
                             </form>
                         </div>
@@ -150,7 +152,7 @@
         </div>
     </div>
 
-   
+
 @endsection
 @push('scripts')
     @if(session('success'))

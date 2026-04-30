@@ -12,7 +12,7 @@
             <!-- /Page Header -->
 
             @if(session('success'))
-                <script>Swal.fire('Success!', '{{ session('success') }}', 'success');</script>
+                <script>Swal.fire('Success!', '{{ session("success") }}', 'success');</script>
             @endif
 
             @if ($errors->any())
@@ -41,7 +41,7 @@
                                 @method('PUT')
 
                                 <div class="row">
-                                  
+
 
 
                                     <div class="col-lg-12">
@@ -81,12 +81,13 @@
 
                                     </div>
                                 </div>
-
-                                <div class="text-end mt-4">
-                                    <button type="submit" class="btn btn-primary btn-lg px-5">
-                                        <i class="fas fa-save me-2"></i>Update
-                                    </button>
-                                </div>
+                                @can('edit privacy policy')
+                                    <div class="text-end mt-4">
+                                        <button type="submit" class="btn btn-primary btn-lg px-5">
+                                            <i class="fas fa-save me-2"></i>Update
+                                        </button>
+                                    </div>
+                                @endcan
                             </form>
                         </div>
                     </div>
@@ -103,7 +104,7 @@
             Swal.fire({
                 icon: 'success',
                 title: 'Success',
-                text: '{{ session('success') }}',
+                text: "{{ session('success') }}",
                 showConfirmButton: false,
                 timer: 2000
             })

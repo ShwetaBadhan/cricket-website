@@ -45,7 +45,7 @@
 
                                         <!-- Secondary Color -->
                                         <div class="col-md-4 mb-3">
-                                            <label>Secondary Color</label>
+                                            <label>Secondary Color </label>
                                             <input type="color" name="secondary_color"
                                                 value="{{ $colourSetting->secondary_color ?? '#ffffff' }}"
                                                 class="form-control form-control-color">
@@ -55,7 +55,7 @@
 
                                         <!-- Gradient Colors -->
                                         <div class="col-md-12 mb-3">
-                                            <label>Gradient Colors</label>
+                                            <label>Gradient Colors (Top Header)</label>
 
                                             <!-- Preview -->
                                             <div id="gradient-preview"
@@ -94,14 +94,14 @@
 
                                         <!-- Light Colors -->
                                         <div class="col-md-4 mb-3">
-                                            <label>Light Color 1</label>
+                                            <label>Header Button Background</label>
                                             <input type="color" name="light_color1"
                                                 value="{{ $colourSetting->light_color1 ?? '#f8f9fa' }}"
                                                 class="form-control form-control-color">
                                         </div>
 
                                         <div class="col-md-4 mb-3">
-                                            <label>Light Color 2</label>
+                                            <label>Light Background Section</label>
                                             <input type="color" name="light_color2"
                                                 value="{{ $colourSetting->light_color2 ?? '#e9ecef' }}"
                                                 class="form-control form-control-color">
@@ -124,9 +124,9 @@
                                         </div>
 
                                     </div>
-
+@can('edit settings')
                                     <button type="submit" class="btn btn-primary">Save </button>
-
+@endcan
                                 </form>
                             </div>
                         </div>
@@ -145,12 +145,12 @@
             div.classList.add('d-flex', 'mb-2');
 
             div.innerHTML = `
-            <input type="color" name="gradient_colors[]" value="#000000"
-                class="form-control form-control-color me-2"
-                oninput="updatePreview()">
+                <input type="color" name="gradient_colors[]" value="#000000"
+                    class="form-control form-control-color me-2"
+                    oninput="updatePreview()">
 
-            <button type="button" class="btn btn-danger btn-sm" onclick="removeColor(this)">X</button>
-        `;
+                <button type="button" class="btn btn-danger btn-sm" onclick="removeColor(this)">X</button>
+            `;
 
             wrapper.appendChild(div);
 

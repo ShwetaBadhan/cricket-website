@@ -57,7 +57,8 @@
 
 
                                             <div class="col-md-12">
-                                                <label class="form-label fw-bold">Our Mission <span class="text-danger">*</span></label>
+                                                <label class="form-label fw-bold">Our Mission <span
+                                                        class="text-danger">*</span></label>
                                                 <textarea type="text" name="small_card_1_description" class="form-control"
                                                     required>{{ old('small_card_1_description', $section->small_card_1_description) }}</textarea>
                                             </div>
@@ -70,7 +71,8 @@
                                     <div class="tab-pane fade" id="our-vision">
                                         <div class="row g-4">
                                             <div class="col-md-12">
-                                                <label class="form-label fw-bold">Our Vision <span class="text-danger">*</span></label>
+                                                <label class="form-label fw-bold">Our Vision <span
+                                                        class="text-danger">*</span></label>
                                                 <textarea type="text" name="small_card_2_description" class="form-control"
                                                     required>{{ old('small_card_2_description', $section->small_card_2_description) }}</textarea>
                                             </div>
@@ -80,19 +82,22 @@
                                     <div class="tab-pane fade" id="our-values">
                                         <div class="row g-4">
                                             <div class="col-md-12">
-                                                <label class="form-label fw-bold">Our Values <span class="text-danger">*</span></label>
+                                                <label class="form-label fw-bold">Our Values <span
+                                                        class="text-danger">*</span></label>
                                                 <textarea type="text" name="small_card_3_description" class="form-control"
                                                     required>{{ old('small_card_3_description', $section->small_card_3_description) }}</textarea>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                @can('edit about values')
+                                    <div class="text-end mt-5">
+                                        <button type="submit" class="btn btn-primary btn-lg px-6">
+                                            <i class="fas fa-save me-2"></i>Update
+                                        </button>
+                                    </div>
+                                @endcan
 
-                                <div class="text-end mt-5">
-                                    <button type="submit" class="btn btn-primary btn-lg px-6">
-                                        <i class="fas fa-save me-2"></i>Update
-                                    </button>
-                                </div>
                             </form>
                         </div>
                     </div>

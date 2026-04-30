@@ -41,7 +41,8 @@
                                 @method('PUT')
 
                                 <ul class="nav nav-tabs mb-4" id="contentTabs">
-                                    <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#step-1">Step 1</a></li>
+                                    <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#step-1">Step
+                                            1</a></li>
                                     <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#step-2">Step 2</a>
                                     </li>
                                     <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#step-3">Step 3</a>
@@ -239,11 +240,13 @@
                                     </div>
                                 </div>
 
-                                <div class="text-end mt-5">
-                                    <button type="submit" class="btn btn-primary btn-lg px-6">
-                                        <i class="fas fa-save me-2"></i>Update
-                                    </button>
-                                </div>
+                                @can('edit required documents')
+                                    <div class="text-end mt-5">
+                                        <button type="submit" class="btn btn-primary btn-lg px-6">
+                                            <i class="fas fa-save me-2"></i>Update
+                                        </button>
+                                    </div>
+                                @endcan
                             </form>
                         </div>
                     </div>
@@ -262,7 +265,7 @@
             Swal.fire({
                 icon: 'success',
                 title: 'Success',
-                text: '{{ session('success') }}',
+                text: "{{ session('success') }}",
                 showConfirmButton: false,
                 timer: 2000
             })

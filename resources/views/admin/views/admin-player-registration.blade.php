@@ -1,327 +1,324 @@
 @extends('admin.layout.app')
 @section('content')
-    <div class="page-wrapper">
-        <div class="content container-fluid">
+<div class="page-wrapper">
+    <div class="content container-fluid">
 
-            <!-- Page Header -->
-            <div class="page-header">
-                <div class="content-page-header ">
-                    <h5>Player Registration Leads</h5>
-                    <div class="list-btn">
-                        <ul class="filter-list">
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="content-page-header ">
+                <h5>Player Registration Leads</h5>
+                <div class="list-btn">
+                    <ul class="filter-list">
 
-                            <li class="">
-                                <div class="dropdown dropdown-action" data-bs-toggle="tooltip" data-bs-placement="top"
-                                    title="download">
-                                    <a href="#" class="btn-filters" data-bs-toggle="dropdown" aria-expanded="false"><span><i
-                                                class="fe fe-download"></i></span></a>
-                                    <div class="dropdown-menu dropdown-menu-end">
-                                        <ul class="d-block">
-                                            <li>
-                                                <a class="d-flex align-items-center download-item"
-                                                    href="javascript:void(0);" download=""><i
-                                                        class="far fa-file-pdf me-2"></i>PDF</a>
-                                            </li>
-                                            <li>
-                                                <a class="d-flex align-items-center download-item"
-                                                    href="javascript:void(0);" download=""><i
-                                                        class="far fa-file-text me-2"></i>CVS</a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                        <li class="">
+                            <div class="dropdown dropdown-action" data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="download">
+                                <a href="#" class="btn-filters" data-bs-toggle="dropdown" aria-expanded="false"><span><i
+                                            class="fe fe-download"></i></span></a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <ul class="d-block">
+                                        <li>
+                                            <a class="d-flex align-items-center download-item"
+                                                href="javascript:void(0);" download=""><i
+                                                    class="far fa-file-pdf me-2"></i>PDF</a>
+                                        </li>
+                                        <li>
+                                            <a class="d-flex align-items-center download-item"
+                                                href="javascript:void(0);" download=""><i
+                                                    class="far fa-file-text me-2"></i>CVS</a>
+                                        </li>
+                                    </ul>
                                 </div>
-                            </li>
-                            <li>
-                                <a class="btn-filters" href="javascript:void(0);" data-bs-toggle="tooltip"
-                                    data-bs-placement="bottom" title="print"><span><i class="fe fe-printer"></i></span> </a>
-                            </li>
-                            <li>
-                                <div class="ms-auto">
-                                    <a href="javascript:void(0);" class="btn btn-danger btn-rounded deleteSelected">Delete
-                                        Selected</a>
-                                </div>
-                            </li>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="btn-filters" href="javascript:void(0);" data-bs-toggle="tooltip"
+                                data-bs-placement="bottom" title="print"><span><i class="fe fe-printer"></i></span> </a>
+                        </li>
+                        @can('delete player registration')
+                        <li>
+                            <div class="ms-auto">
+                                <a href="javascript:void(0);" class="btn btn-danger btn-rounded deleteSelected">Delete
+                                    Selected</a>
+                            </div>
+                        </li>
+                        @endcan
 
-                        </ul>
-                    </div>
+                    </ul>
                 </div>
             </div>
-            <!-- /Page Header -->
+        </div>
+        <!-- /Page Header -->
 
 
 
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class=" card-table">
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-center table-hover datatable">
-                                    <thead class="thead-light">
-                                        <tr>
-                                            <th>
-                                                <input type="checkbox" id="selectAll">
-                                            </th>
-                                            <th>Name</th>
-                                            <th>Phone</th>
-                                            <th>Email</th>
-                                            <th class="no-sort">Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @forelse ($playerRegistrations as $player)
-                                            <tr>
-                                                <td>
-                                                    <input type="checkbox" class="checkItem" value="{{ $player->id }}">
-                                                    {{ $loop->iteration }}
-                                                </td>
-                                                <td>{{ $player->name }}</td>
-                                                <td>{{ $player->phone }}</td>
-                                                <td>{{ $player->email }}</td>
-                                                <td class="d-flex align-items-center">
-                                                    <a class="btn-action-icon me-2" href="javascript:void(0);"
-                                                        data-bs-toggle="modal" data-bs-target="#view_lead{{ $player->id }}">
-                                                        <i class="fe fe-eye"></i>
-                                                    </a>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class=" card-table">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-center table-hover datatable">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th>
+                                            <input type="checkbox" id="selectAll">
+                                        </th>
+                                        <th>Name</th>
+                                        <th>Phone</th>
+                                        <th>Email</th>
+                                        <th class="no-sort">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @forelse ($playerRegistrations as $player)
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="checkItem" value="{{ $player->id }}">
+                                            {{ $loop->iteration }}
+                                        </td>
+                                        <td>{{ $player->name }}</td>
+                                        <td>{{ $player->phone }}</td>
+                                        <td>{{ $player->email }}</td>
+                                        <td class="d-flex align-items-center">
+                                            @can('view player registration')
+                                            <a class="btn-action-icon me-2" href="javascript:void(0);"
+                                                data-bs-toggle="modal" data-bs-target="#view_lead{{ $player->id }}">
+                                                <i class="fe fe-eye"></i>
+                                            </a>
+                                            @endcan
+                                            @can('delete player registration')
+                                            <form action="{{ route('admin-player-registration.destroy', $player->id) }}"
+                                                method="POST" class="d-inline delete-form">
+                                                @csrf
+                                                @method('DELETE')
 
-                                                    <form action="{{ route('admin-player-registration.destroy', $player->id) }}"
-                                                        method="POST" class="d-inline delete-form">
-                                                        @csrf
-                                                        @method('DELETE')
-
-                                                        <button type="button"
-                                                            class="btn-action-icon border-0 bg-transparent delete-btn">
-                                                            <i class="fe fe-trash-2"></i>
-                                                        </button>
-                                                    </form>
-                                                </td>
-                                            </tr>
-                                        @empty
-                                            <tr>
-                                                <td></td>
-                                                <td class="text-center">No leads found.</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                        @endforelse
-                                    </tbody>
-                                </table>
-                            </div>
+                                                <button type="button"
+                                                    class="btn-action-icon border-0 bg-transparent delete-btn">
+                                                    <i class="fe fe-trash-2"></i>
+                                                </button>
+                                            </form>
+                                            @endcan
+                                        </td>
+                                    </tr>
+                                    @empty
+                                    <tr>
+                                        <td></td>
+                                        <td class="text-center">No leads found.</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    @endforelse
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    @foreach($playerRegistrations as $item)
-        <div class="modal custom-modal fade" id="view_lead{{ $item->id }}" role="dialog">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
+@foreach($playerRegistrations as $item)
+<div class="modal custom-modal fade" id="view_lead{{ $item->id }}" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
 
-                    <div class="modal-header border-0 pb-0">
-                        <div class="form-header modal-header-title text-start mb-0">
-                            <h4 class="mb-0">View Lead</h4>
-                        </div>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-
-                    <div class="modal-body">
-
-                        <table class="table table-bordered table-striped mb-0">
-
-                            <tr>
-                                <th>Name :</th>
-                                <td>{{ $item->name }}</td>
-                            </tr>
-
-                            <tr>
-                                <th>Email :</th>
-                                <td>{{ $item->email }}</td>
-                            </tr>
-
-                            <tr>
-                                <th>Phone :</th>
-                                <td>{{ $item->phone }}</td>
-                            </tr>
-
-                            <tr>
-                                <th>Organization :</th>
-                                <td>{{ $item->organization }}</td>
-                            </tr>
-                            <tr>
-                                <th>State :</th>
-                                <td>{{ $item->state }}</td>
-                            </tr>
-
-                            <tr>
-                                <th>City :</th>
-                                <td>{{ $item->city }}</td>
-                            </tr>
-                            <tr>
-                                <th>Address :</th>
-                                <td>{{ $item->address }}</td>
-                            </tr>
-
-                            <tr>
-                                <th>Status :</th>
-                                <td>{{ $item->status }}</td>
-                            </tr>
-                            <tr>
-                                <th>Created At :</th>
-                                <td>{{ $item->created_at->format('d M Y, h:i A') }}</td>
-                            </tr>
-
-                            <tr>
-                                <th>Updated At :</th>
-                                <td>{{ $item->updated_at->format('d M Y, h:i A') }}</td>
-                            </tr>
-
-
-                        </table>
-
-                    </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
-                            Close
-                        </button>
-                    </div>
-
+            <div class="modal-header border-0 pb-0">
+                <div class="form-header modal-header-title text-start mb-0">
+                    <h4 class="mb-0">View Lead</h4>
                 </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
+
+            <div class="modal-body">
+
+                <table class="table table-bordered table-striped mb-0">
+
+                    <tr>
+                        <th>Name :</th>
+                        <td>{{ $item->name }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Email :</th>
+                        <td>{{ $item->email }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Phone :</th>
+                        <td>{{ $item->phone }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Organization :</th>
+                        <td>{{ $item->organization }}</td>
+                    </tr>
+                    <tr>
+                        <th>State :</th>
+                        <td>{{ $item->state }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>City :</th>
+                        <td>{{ $item->city }}</td>
+                    </tr>
+                    <tr>
+                        <th>Address :</th>
+                        <td>{{ $item->address }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Status :</th>
+                        <td>{{ $item->status }}</td>
+                    </tr>
+                    <tr>
+                        <th>Created At :</th>
+                        <td>{{ $item->created_at->format('d M Y, h:i A') }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Updated At :</th>
+                        <td>{{ $item->updated_at->format('d M Y, h:i A') }}</td>
+                    </tr>
+
+
+                </table>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+                    Close
+                </button>
+            </div>
+
         </div>
-    @endforeach
+    </div>
+</div>
+@endforeach
 @endsection
 @push('scripts')
 
-    <script>
+<script>
+    $(document).ready(function() {
 
+        $('.delete-btn').click(function(e) {
+            e.preventDefault();
 
-        $(document).ready(function () {
-
-            $('.delete-btn').click(function (e) {
-                e.preventDefault();
-
-                var form = $(this).closest('form');
-
-                Swal.fire({
-                    title: 'Delete Player Registration?',
-                    text: "This Player Registration will be permanently deleted!",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#d33',
-                    cancelButtonColor: '#3085d6',
-                    confirmButtonText: 'Yes, delete it'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        form.submit();
-                    }
-                });
-
-            });
-
-        });
-
-        // SELECT ALL
-        $("#selectAll").click(function () {
-
-            $(".checkItem").prop('checked', $(this).prop('checked'));
-
-        });
-
-        // if any checkbox unchecked -> uncheck select all
-        $(".checkItem").click(function () {
-
-            if ($(".checkItem:checked").length == $(".checkItem").length) {
-                $("#selectAll").prop('checked', true);
-            } else {
-                $("#selectAll").prop('checked', false);
-            }
-
-        });
-        // DELETE SELECTED
-        $('.deleteSelected').click(function () {
-
-            let selected = [];
-
-            $(".checkItem:checked").each(function () {
-                selected.push($(this).val());
-            });
-
-            if (selected.length === 0) {
-                Swal.fire("Oops!", "Please select at least one contact.", "warning");
-                return;
-            }
+            var form = $(this).closest('form');
 
             Swal.fire({
-                title: "Are you sure?",
-                text: "Selected Player Registrations will be deleted permanently!",
-                icon: "warning",
+                title: 'Delete Player Registration?',
+                text: "This Player Registration will be permanently deleted!",
+                icon: 'warning',
                 showCancelButton: true,
-                confirmButtonColor: "#d33",
-                cancelButtonColor: "#3085d6",
-                confirmButtonText: "Yes, delete selected!"
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Yes, delete it'
             }).then((result) => {
-
                 if (result.isConfirmed) {
-
-                    $.ajax({
-                        url: "/player-registrations/delete-selected",
-
-                        type: "POST",
-                        data: {
-                            ids: selected,
-                            _token: "{{ csrf_token() }}"
-                        },
-                        success: function (response) {
-                            Swal.fire("Deleted!", "Selected Player Registrations removed.", "success");
-
-                            selected.forEach(id => {
-                                $(`input[value='${id}']`).closest("tr").fadeOut(500, function () {
-                                    $(this).remove();
-                                });
-                            });
-                        },
-                        error: function (xhr) {
-                            // console.log(xhr.responseText);
-                            Swal.fire("Error!", "Something went wrong. Check console.", "error");
-                        }
-                    });
-
+                    form.submit();
                 }
             });
 
         });
 
+    });
 
-    </script>
-    @if(session('success'))
+    // SELECT ALL
+    $("#selectAll").click(function() {
 
-        <script>
+        $(".checkItem").prop('checked', $(this).prop('checked'));
 
-            Swal.fire({
-                icon: 'success',
-                title: 'Success',
-                text: '{{ session('success') }}',
-                showConfirmButton: false,
-                timer: 2000
-            })
+    });
 
-        </script>
+    // if any checkbox unchecked -> uncheck select all
+    $(".checkItem").click(function() {
 
-    @endif
-    @if($errors->any())
+        if ($(".checkItem:checked").length == $(".checkItem").length) {
+            $("#selectAll").prop('checked', true);
+        } else {
+            $("#selectAll").prop('checked', false);
+        }
 
-        <script>
+    });
+    // DELETE SELECTED
+    $('.deleteSelected').click(function() {
 
-            Swal.fire({
-                icon: 'error',
-                title: 'Validation Error',
-                text: '{{ $errors->first() }}'
-            })
+        let selected = [];
 
-        </script>
+        $(".checkItem:checked").each(function() {
+            selected.push($(this).val());
+        });
 
-    @endif
+        if (selected.length === 0) {
+            Swal.fire("Oops!", "Please select at least one contact.", "warning");
+            return;
+        }
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "Selected Player Registrations will be deleted permanently!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Yes, delete selected!"
+        }).then((result) => {
+
+            if (result.isConfirmed) {
+
+                $.ajax({
+                    url: "/player-registrations/delete-selected",
+
+                    type: "POST",
+                    data: {
+                        ids: selected,
+                        _token: "{{ csrf_token() }}"
+                    },
+                    success: function(response) {
+                        Swal.fire("Deleted!", "Selected Player Registrations removed.", "success");
+
+                        selected.forEach(id => {
+                            $(`input[value='${id}']`).closest("tr").fadeOut(500, function() {
+                                $(this).remove();
+                            });
+                        });
+                    },
+                    error: function(xhr) {
+                        // console.log(xhr.responseText);
+                        Swal.fire("Error!", "Something went wrong. Check console.", "error");
+                    }
+                });
+
+            }
+        });
+
+    });
+</script>
+@if(session('success'))
+
+<script>
+    Swal.fire({
+        icon: 'success',
+        title: 'Success',
+        text: "{{ session('success') }}",
+        showConfirmButton: false,
+        timer: 2000
+    })
+</script>
+
+@endif
+@if($errors->any())
+
+<script>
+    Swal.fire({
+        icon: 'error',
+        title: 'Validation Error',
+        text: '{{ $errors->first() }}'
+    })
+</script>
+
+@endif
 @endpush

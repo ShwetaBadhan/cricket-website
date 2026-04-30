@@ -35,12 +35,14 @@
                                 <a class="btn-filters" href="javascript:void(0);" data-bs-toggle="tooltip"
                                     data-bs-placement="bottom" title="print"><span><i class="fe fe-printer"></i></span> </a>
                             </li>
-                            <li>
-                                <div class="ms-auto">
-                                    <a href="javascript:void(0);" class="btn btn-danger btn-rounded deleteSelected">Delete
-                                        Selected</a>
-                                </div>
-                            </li>
+                            @can('delete sponsor leads')
+                                <li>
+                                    <div class="ms-auto">
+                                        <a href="javascript:void(0);" class="btn btn-danger btn-rounded deleteSelected">Delete
+                                            Selected</a>
+                                    </div>
+                                </li>
+                            @endcan
 
                         </ul>
                     </div>
@@ -78,21 +80,24 @@
                                                 <td>{{ $sponsor->phone }}</td>
                                                 <td>{{ $sponsor->email }}</td>
                                                 <td class="d-flex align-items-center">
-                                                    <a class="btn-action-icon me-2" href="javascript:void(0);"
-                                                        data-bs-toggle="modal" data-bs-target="#view_lead{{ $sponsor->id }}">
-                                                        <i class="fe fe-eye"></i>
-                                                    </a>
+                                                    @can('view sponsor leads')
+                                                        <a class="btn-action-icon me-2" href="javascript:void(0);"
+                                                            data-bs-toggle="modal" data-bs-target="#view_lead{{ $sponsor->id }}">
+                                                            <i class="fe fe-eye"></i>
+                                                        </a>
+                                                    @endcan
+                                                    @can('delete sponsor leads')
+                                                        <form action="{{ route('admin-sponsor.destroy', $sponsor->id) }}"
+                                                            method="POST" class="d-inline delete-form">
+                                                            @csrf
+                                                            @method('DELETE')
 
-                                                    <form action="{{ route('admin-sponsor.destroy', $sponsor->id) }}"
-                                                        method="POST" class="d-inline delete-form">
-                                                        @csrf
-                                                        @method('DELETE')
-
-                                                        <button type="button"
-                                                            class="btn-action-icon border-0 bg-transparent delete-btn">
-                                                            <i class="fe fe-trash-2"></i>
-                                                        </button>
-                                                    </form>
+                                                            <button type="button"
+                                                                class="btn-action-icon border-0 bg-transparent delete-btn">
+                                                                <i class="fe fe-trash-2"></i>
+                                                            </button>
+                                                        </form>
+                                                    @endcan
                                                 </td>
                                             </tr>
                                         @empty
@@ -318,7 +323,7 @@
             Swal.fire({
                 icon: 'success',
                 title: 'Success',
-                text: '{{ session('success') }}',
+                text: '{{ session("success") }}',
                 showConfirmButton: false,
                 timer: 2000
             })

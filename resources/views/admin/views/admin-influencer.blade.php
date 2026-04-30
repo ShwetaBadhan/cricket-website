@@ -35,13 +35,14 @@
                                 <a class="btn-filters" href="javascript:void(0);" data-bs-toggle="tooltip"
                                     data-bs-placement="bottom" title="print"><span><i class="fe fe-printer"></i></span> </a>
                             </li>
+                            @can('delete influencer leads')
                             <li>
                                 <div class="ms-auto">
                                     <a href="javascript:void(0);" class="btn btn-danger btn-rounded deleteSelected">Delete
                                         Selected</a>
                                 </div>
                             </li>
-
+                            @endcan
                         </ul>
                     </div>
                 </div>
@@ -78,25 +79,28 @@
                                                 <td>{{ $influencer->phone }}</td>
                                                 <td>{{ $influencer->email }}</td>
                                                 <td class="d-flex align-items-center">
-                                                    <a class="btn-action-icon me-2" href="javascript:void(0);"
-                                                        data-bs-toggle="modal" data-bs-target="#view_lead{{ $influencer->id }}">
-                                                        <i class="fe fe-eye"></i>
-                                                    </a>
+                                                    @can('view influencer leads')
+                                                        <a class="btn-action-icon me-2" href="javascript:void(0);"
+                                                            data-bs-toggle="modal" data-bs-target="#view_lead{{ $influencer->id }}">
+                                                            <i class="fe fe-eye"></i>
+                                                        </a>
+                                                    @endcan
+                                                    @can('delete influencer leads')
+                                                        <form action="{{ route('admin-influencer.destroy', $influencer->id) }}"
+                                                            method="POST" class="d-inline delete-form">
+                                                            @csrf
+                                                            @method('DELETE')
 
-                                                    <form action="{{ route('admin-influencer.destroy', $influencer->id) }}"
-                                                        method="POST" class="d-inline delete-form">
-                                                        @csrf
-                                                        @method('DELETE')
-
-                                                        <button type="button"
-                                                            class="btn-action-icon border-0 bg-transparent delete-btn">
-                                                            <i class="fe fe-trash-2"></i>
-                                                        </button>
-                                                    </form>
+                                                            <button type="button"
+                                                                class="btn-action-icon border-0 bg-transparent delete-btn">
+                                                                <i class="fe fe-trash-2"></i>
+                                                            </button>
+                                                        </form>
+                                                    @endcan
                                                 </td>
                                             </tr>
                                         @empty
-                                           <tr>
+                                            <tr>
                                                 <td></td>
                                                 <td class="text-center">No leads found.</td>
                                                 <td></td>
@@ -145,7 +149,7 @@
                                 <td>{{ $item->phone }}</td>
                             </tr>
 
-                           
+
                             <tr>
                                 <th>State :</th>
                                 <td>{{ $item->state }}</td>
@@ -161,19 +165,19 @@
                             </tr>
                             <tr>
                                 <th>Facebook :</th>
-                                <td>{{ $item->facebook  ? $item->facebook : 'Not provided' }}</td>
+                                <td>{{ $item->facebook ? $item->facebook : 'Not provided' }}</td>
                             </tr>
                             <tr>
                                 <th>Instagram :</th>
-                                <td>{{ $item->instagram  ? $item->instagram : 'Not provided' }}</td>
+                                <td>{{ $item->instagram ? $item->instagram : 'Not provided' }}</td>
                             </tr>
                             <tr>
                                 <th>Youtube :</th>
-                                <td>{{ $item->youtube  ? $item->youtube : 'Not provided' }}</td>
+                                <td>{{ $item->youtube ? $item->youtube : 'Not provided' }}</td>
                             </tr>
                             <tr>
                                 <th>Other :</th>
-                                <td>{{ $item->other  ? $item->other : 'Not provided'    }}</td>
+                                <td>{{ $item->other ? $item->other : 'Not provided'    }}</td>
                             </tr>
 
                             <tr>
@@ -316,7 +320,7 @@
             Swal.fire({
                 icon: 'success',
                 title: 'Success',
-                text: '{{ session('success') }}',
+                text: "{{ session('success') }}",
                 showConfirmButton: false,
                 timer: 2000
             })

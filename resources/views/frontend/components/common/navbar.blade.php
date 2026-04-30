@@ -1,4 +1,9 @@
 <!--Header Start-->
+
+@php
+  $websiteSetting = App\Models\WebsiteSetting::where('is_active', true)->first();
+  $socialSetting = App\Models\SocialSetting::where('is_active', true)->first();
+@endphp
 <header id="main-header" class="main-header">
   <!--topbar-->
   <div class="topbar">
@@ -6,9 +11,29 @@
       <div class="row">
         <div class="col-md-6 col-sm-6">
           <ul class="topsocial">
-            <li><a href="#" class="fb"><i class="fab fa-facebook-f"></i></a></li>
+            @if($socialSetting)
+              @if($socialSetting->facebook_url)
 
-            <li><a href="#" class="insta"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="{{ $socialSetting->facebook_url }}" class="fb"><i class="fab fa-facebook-f"></i></a></li>
+              @endif
+
+              @if($socialSetting->instagram_url)
+                <li><a href="{{ $socialSetting->instagram_url }}" class="insta"><i class="fab fa-instagram"></i></a></li>
+              @endif
+
+              @if($socialSetting->twitter_url)
+                <li><a href="{{ $socialSetting->twitter_url }}" class="fb" target="_blank"><i
+                      class="fab fa-twitter"></i></a></li>
+              @endif
+
+              @if($socialSetting->linkedin_url)
+                <li>
+                  <a href="{{ $socialSetting->linkedin_url }}" class="insta" target="_blank"><i
+                      class="fab fa-linkedin-in"></i></a>
+                </li>
+              @endif
+            @endif
+
 
           </ul>
         </div>
@@ -52,8 +77,18 @@
     <div class="container">
       <div class="row">
         <div class="col-md-2 col-sm-5">
-          <div class="logo"><a href="{{ route('index') }}"><img src="{{url('assets/images/logo/white-jss.png')}}"
-                alt=""></a>
+          <div class="logo">
+            @php
+              $logo = optional($websiteSetting)->logo
+                ? asset('storage/' . $websiteSetting->logo)
+                : asset('assets/images/logo/jss.png');
+              $logoWhite = optional($websiteSetting)->logo_white
+                ? asset('storage/' . $websiteSetting->logo_white)
+                : asset('assets/images/logo/white-jss.png');
+            @endphp
+            <a href="{{ route('index') }}">
+              <img src="{{ $logoWhite }}" alt="">
+            </a>
           </div>
         </div>
         <div class="col-md-10 col-sm-7">

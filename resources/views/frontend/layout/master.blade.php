@@ -25,6 +25,32 @@
     <!--Rev Slider End-->
     <title>@yield('title')</title>
 
+    <style>
+        :root {
+            --primary-color:
+                {{ $colors->primary_color ?? '#0a2540' }}
+            ;
+            --secondary-color:
+                {{ $colors->secondary_color ?? '#f4bf41' }}
+            ;
+            --light-green-theme:
+                {{ $colors->light_color1 ?? '#375b71' }}
+            ;
+            --light-blue-theme:
+                {{ $colors->light_color2 ?? '#e8f1f6' }}
+            ;
+            --primary-btn-bg:
+                {{ $colors->primary_button_color ?? '#f4b41a' }}
+            ;
+
+            --gradient-color:
+                {{ isset($colors->gradient_colors[0]) && isset($colors->gradient_colors[1])
+    ? 'linear-gradient(45deg,' . $colors->gradient_colors[0] . ',' . $colors->gradient_colors[1] . ')'
+    : 'linear-gradient(45deg,#184052,#184052)' }}
+            ;
+        }
+    </style>
+
 </head>
 
 <body>

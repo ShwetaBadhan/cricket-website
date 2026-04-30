@@ -1,3 +1,7 @@
+@php
+    $websiteSetting = App\Models\WebsiteSetting::where('is_active', true)->first();
+    $socialSetting = App\Models\SocialSetting::where('is_active', true)->first();
+@endphp
 <div class="row ">
     <div class="col-md-12">
         <div class="row">
@@ -14,7 +18,7 @@
     <div class="col-md-4">
         <div class="contact-box">
             <h5>Address:</h5>
-            <p> Jharkhand
+            <p> {{$websiteSetting->location ?? 'Jharkhand'}}
             </p>
         </div>
     </div>
@@ -23,8 +27,12 @@
     <div class="col-md-4">
         <div class="contact-box">
             <h5>Contact:</h5>
-            <p><strong>Phone:</strong> +1 321 2345 678-9</p>
-            <p><strong>Fax: </strong>+1 321 2345 876-7 </p>
+              @php
+                $phone1 = $websiteSetting->phone_1 ?? '+91 92637 47143';
+                $phone2 = $websiteSetting->phone_2 ?? '+91 92637 47143';
+              @endphp
+            <p><strong>Phone 1 :</strong> {{$phone1}}</p>
+            <p><strong>Phone 2 : </strong> {{$phone2}} </p>
         </div>
     </div>
     <!--End-->
@@ -32,8 +40,8 @@
     <div class="col-md-4">
         <div class="contact-box">
             <h5>For More Information:</h5>
-            <p> <strong>Email:</strong> info@jsl.com</p>
-            <p>contact@jsl.com</p>
+            <p> <strong>Email:</strong> <a href="mailto:{{$websiteSetting->email ?? 'info@jharkhandsuperleague.com'}}" target="_blank">{{$websiteSetting->email ?? 'info@jharkhandsuperleague.com'}}</a></p>
+           
         </div>
     </div>
     <!--End-->

@@ -17,11 +17,13 @@
                                             alt="filter"></span>Filter </a>
                             </li>
 
-                            <li>
-                                <a class="btn btn-primary" href="javascript:void(0);" data-bs-toggle="modal"
-                                    data-bs-target="#add_inventory"><i class="fa fa-plus-circle me-2"
-                                        aria-hidden="true"></i>Add New</a>
-                            </li>
+                            @can('create videos')
+                                <li>
+                                    <a class="btn btn-primary" href="javascript:void(0);" data-bs-toggle="modal"
+                                        data-bs-target="#add_inventory"><i class="fa fa-plus-circle me-2"
+                                            aria-hidden="true"></i>Add New</a>
+                                </li>
+                            @endcan
                         </ul>
                     </div>
                 </div>
@@ -69,26 +71,34 @@
                                                             aria-expanded="false"><i class="fas fa-ellipsis-v"></i></a>
                                                         <div class="dropdown-menu dropdown-menu-right">
                                                             <ul>
-                                                                <li>
+                                                                @can('view videos')
+                                                                    <li>
 
-                                                                    <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                                                        data-bs-target="#view{{ $item->id }}"><i
-                                                                            class="far fa-eye me-2"></i>view</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                                                        data-bs-target="#edit{{ $item->id }}"><i
-                                                                            class="far fa-edit me-2"></i>Edit</a>
-                                                                </li>
-                                                                <li>
-                                                                    <form action="{{ route('admin-videos.destroy', $item) }}"
-                                                                        method="POST" class="d-inline">
-                                                                        @csrf @method('DELETE')
-                                                                        <button type="submit" class="dropdown-item delete-btn">
-                                                                            <i class="far fa-trash-alt me-2"></i>Delete</a>
-                                                                        </button>
-                                                                    </form>
-                                                                </li>
+
+                                                                        <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                                            data-bs-target="#view{{ $item->id }}"><i
+                                                                                class="far fa-eye me-2"></i>view</a>
+
+                                                                    </li>
+                                                                @endcan
+                                                                @can('edit videos')
+                                                                    <li>
+                                                                        <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                                            data-bs-target="#edit{{ $item->id }}"><i
+                                                                                class="far fa-edit me-2"></i>Edit</a>
+                                                                    </li>
+                                                                @endcan
+                                                                @can('delete videos')
+                                                                    <li>
+                                                                        <form action="{{ route('admin-videos.destroy', $item) }}"
+                                                                            method="POST" class="d-inline">
+                                                                            @csrf @method('DELETE')
+                                                                            <button type="submit" class="dropdown-item delete-btn">
+                                                                                <i class="far fa-trash-alt me-2"></i>Delete</a>
+                                                                            </button>
+                                                                        </form>
+                                                                    </li>
+                                                                @endcan
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -308,7 +318,7 @@
                                 <div class="col-lg-12 col-md-12">
                                     <div class="input-block mb-3">
                                         <label>Thumbnail <span class="text-danger">*</span></label>
-                                        <input type="file" name="thumbnail" class="form-control" accept="image/*" >
+                                        <input type="file" name="thumbnail" class="form-control" accept="image/*">
                                         <small class="text-muted">Recommended: 480x340px • Max 2MB</small>
                                     </div>
                                 </div>

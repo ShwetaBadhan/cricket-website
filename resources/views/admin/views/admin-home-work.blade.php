@@ -1,4 +1,3 @@
-
 @extends("admin.layout.app")
 @section("content")
     <div class="page-wrapper">
@@ -78,7 +77,8 @@
                                             <input type="file" name="image"
                                                 class="form-control @error('image') is-invalid @enderror"
                                                 accept="image/*,.svg">
-                                            <small class="text-muted">Recommended: 1400x700px • PNG/JPG/SVG (Max 2MB)</small>
+                                            <small class="text-muted">Recommended: 1400x700px • PNG/JPG/SVG (Max
+                                                2MB)</small>
                                             @error('image')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -108,7 +108,7 @@
                                                 class="form-control @error('step_1') is-invalid @enderror" rows="2"
                                                 required>{{ old('step_1', $workSection->step_1) }}</textarea>
                                             @error('step_1')
-                                            <div class="invalid-feedback">{{ $message }}</div>
+                                                <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
                                         <!-- Description 1 -->
@@ -130,7 +130,7 @@
                                                 class="form-control @error('step_2') is-invalid @enderror" rows="2"
                                                 required>{{ old('step_2', $workSection->step_2) }}</textarea>
                                             @error('step_2')
-                                            <div class="invalid-feedback">{{ $message }}</div>
+                                                <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
                                         <!-- Description 1 -->
@@ -152,7 +152,7 @@
                                                 class="form-control @error('step_3') is-invalid @enderror" rows="2"
                                                 required>{{ old('step_3', $workSection->step_3) }}</textarea>
                                             @error('step_3')
-                                            <div class="invalid-feedback">{{ $message }}</div>
+                                                <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
                                         <!-- Description 1 -->
@@ -167,15 +167,16 @@
                                             @enderror
                                         </div>
 
-                                       
+
                                     </div>
                                 </div>
-
-                                <div class="text-end mt-4">
-                                    <button type="submit" class="btn btn-primary btn-lg px-5">
-                                        <i class="fas fa-save me-2"></i>Update
-                                    </button>
-                                </div>
+                                @can('edit how we work')
+                                    <div class="text-end mt-4">
+                                        <button type="submit" class="btn btn-primary btn-lg px-5">
+                                            <i class="fas fa-save me-2"></i>Update
+                                        </button>
+                                    </div>
+                                @endcan
                             </form>
                         </div>
                     </div>

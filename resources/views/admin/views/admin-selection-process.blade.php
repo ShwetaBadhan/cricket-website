@@ -61,20 +61,19 @@
 
 
                                             <div class="col-md-12">
-                                              
+
                                                 <!-- Main Title -->
                                                 <div class="mb-3">
                                                     <label class="form-label fw-bold">Step 1 Title <span
                                                             class="text-danger">*</span></label>
                                                     <textarea name="step_1"
-                                                        class="form-control @error('step_1') is-invalid @enderror"
-                                                        rows="2"
+                                                        class="form-control @error('step_1') is-invalid @enderror" rows="2"
                                                         required>{{ old('step_1', $section->step_1) }}</textarea>
                                                     @error('step_1')
                                                         <div class="invalid-feedback">{{ $message }}</div>
                                                     @enderror
                                                 </div>
-                                               
+
                                             </div>
                                         </div>
                                     </div>
@@ -85,20 +84,19 @@
                                     <div class="tab-pane fade" id="step-2">
                                         <div class="row g-4">
                                             <div class="col-md-12">
-                                              
+
                                                 <!-- Main Title -->
                                                 <div class="mb-3">
                                                     <label class="form-label fw-bold">Step 2 Title <span
                                                             class="text-danger">*</span></label>
                                                     <textarea name="step_2"
-                                                        class="form-control @error('step_2') is-invalid @enderror"
-                                                        rows="2"
+                                                        class="form-control @error('step_2') is-invalid @enderror" rows="2"
                                                         required>{{ old('step_2', $section->step_2) }}</textarea>
                                                     @error('step_2')
                                                         <div class="invalid-feedback">{{ $message }}</div>
                                                     @enderror
                                                 </div>
-                                               
+
                                             </div>
                                         </div>
                                     </div>
@@ -106,20 +104,19 @@
                                     <div class="tab-pane fade" id="step-3">
                                         <div class="row g-4">
                                             <div class="col-md-12">
-                                               
+
                                                 <!-- Main Title -->
                                                 <div class="mb-3">
                                                     <label class="form-label fw-bold">Step 3 Title <span
                                                             class="text-danger">*</span></label>
                                                     <textarea name="step_3"
-                                                        class="form-control @error('step_3') is-invalid @enderror"
-                                                        rows="2"
+                                                        class="form-control @error('step_3') is-invalid @enderror" rows="2"
                                                         required>{{ old('step_3', $section->step_3) }}</textarea>
                                                     @error('step_3')
                                                         <div class="invalid-feedback">{{ $message }}</div>
                                                     @enderror
                                                 </div>
-                                              
+
                                             </div>
                                         </div>
                                     </div>
@@ -127,20 +124,19 @@
                                     <div class="tab-pane fade" id="step-4">
                                         <div class="row g-4">
                                             <div class="col-md-12">
-                                               
+
                                                 <!-- Main Title -->
                                                 <div class="mb-3">
                                                     <label class="form-label fw-bold">Step 4 Title <span
                                                             class="text-danger">*</span></label>
                                                     <textarea name="step_4"
-                                                        class="form-control @error('step_4') is-invalid @enderror"
-                                                        rows="2"
+                                                        class="form-control @error('step_4') is-invalid @enderror" rows="2"
                                                         required>{{ old('step_4', $section->step_4) }}</textarea>
                                                     @error('step_4')
                                                         <div class="invalid-feedback">{{ $message }}</div>
                                                     @enderror
                                                 </div>
-                                               
+
                                             </div>
                                         </div>
                                     </div>
@@ -148,30 +144,30 @@
                                     <div class="tab-pane fade" id="step-5">
                                         <div class="row g-4">
                                             <div class="col-md-12">
-                                               
+
                                                 <!-- Main Title -->
                                                 <div class="mb-3">
                                                     <label class="form-label fw-bold">Step 5 Title <span
                                                             class="text-danger">*</span></label>
                                                     <textarea name="step_5"
-                                                        class="form-control @error('step_5') is-invalid @enderror"
-                                                        rows="2"
+                                                        class="form-control @error('step_5') is-invalid @enderror" rows="2"
                                                         required>{{ old('step_5', $section->step_5) }}</textarea>
                                                     @error('step_5')
                                                         <div class="invalid-feedback">{{ $message }}</div>
                                                     @enderror
                                                 </div>
-                                               
+
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="text-end mt-5">
-                                    <button type="submit" class="btn btn-primary btn-lg px-6">
-                                        <i class="fas fa-save me-2"></i>Update
-                                    </button>
-                                </div>
+                                @can('edit selection process')
+                                    <div class="text-end mt-5">
+                                        <button type="submit" class="btn btn-primary btn-lg px-6">
+                                            <i class="fas fa-save me-2"></i>Update
+                                        </button>
+                                    </div>
+                                @endcan
                             </form>
                         </div>
                     </div>
@@ -190,7 +186,7 @@
             Swal.fire({
                 icon: 'success',
                 title: 'Success',
-                text: '{{ session('success') }}',
+                text: '{{ session("success") }}',
                 showConfirmButton: false,
                 timer: 2000
             })

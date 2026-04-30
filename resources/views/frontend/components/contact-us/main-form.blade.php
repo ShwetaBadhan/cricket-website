@@ -65,9 +65,17 @@
     <!--Map Start-->
     <div class="col-md-6">
         <div class="google-map">
-            <iframe src="https://www.google.com/maps?q=Ranchi,Jharkhand,India&output=embed" width="100%" height="450"
-                style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+            @php
+    $websiteSetting = App\Models\WebsiteSetting::where('is_active', true)->first();
+@endphp
+           <iframe 
+    src="https://www.google.com/maps?q={{ urlencode($websiteSetting->location ?? 'Ranchi,Jharkhand,India') }}&output=embed"
+    width="100%" 
+    height="450"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy">
+</iframe>
         </div>
     </div>
     <!--Map End-->

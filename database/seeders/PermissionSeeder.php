@@ -15,14 +15,19 @@ class PermissionSeeder extends Seeder
         app()[PermissionRegistrar::class]->forgetCachedPermissions();
 
         $modules = [
-            // Main
-            'dashboard',
+
 
             // Leads
-            'leads',
+            'booking leads',
+            'contact leads',
+            'influencer leads',
+            'membership leads',
+            'nodal registration',
+            'player registration',
+            'sponsor leads',
 
             // Management
-            'blog',
+            'blogs',
             'event categories',
             'gallery',
             'match result',
@@ -53,7 +58,7 @@ class PermissionSeeder extends Seeder
 
             // Others
             'profile',
-            'settings',
+            '',
         ];
 
         $actions = ['view', 'create', 'edit', 'delete'];

@@ -16,12 +16,13 @@
                                             src="{{ asset('admin/assets/img/icons/filter-icon.svg') }}"
                                             alt="filter"></span>Filter </a>
                             </li>
-
-                            <li>
-                                <a class="btn btn-primary" href="javascript:void(0);" data-bs-toggle="modal"
-                                    data-bs-target="#add_inventory"><i class="fa fa-plus-circle me-2"
-                                        aria-hidden="true"></i>Add New</a>
-                            </li>
+                            @can('create partners')
+                                <li>
+                                    <a class="btn btn-primary" href="javascript:void(0);" data-bs-toggle="modal"
+                                        data-bs-target="#add_inventory"><i class="fa fa-plus-circle me-2"
+                                            aria-hidden="true"></i>Add New</a>
+                                </li>
+                            @endcan
                         </ul>
                     </div>
                 </div>
@@ -61,26 +62,32 @@
                                                             aria-expanded="false"><i class="fas fa-ellipsis-v"></i></a>
                                                         <div class="dropdown-menu dropdown-menu-right">
                                                             <ul>
-                                                                <li>
+                                                                @can('view partners')
+                                                                    <li>
 
-                                                                    <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                                                        data-bs-target="#view{{ $item->id }}"><i
-                                                                            class="far fa-eye me-2"></i>view</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                                                        data-bs-target="#edit{{ $item->id }}"><i
-                                                                            class="far fa-edit me-2"></i>Edit</a>
-                                                                </li>
-                                                                <li>
-                                                                    <form action="{{ route('admin-partners.destroy', $item) }}"
-                                                                        method="POST" class="d-inline">
-                                                                        @csrf @method('DELETE')
-                                                                        <button type="submit" class="dropdown-item delete-btn">
-                                                                            <i class="far fa-trash-alt me-2"></i>Delete</a>
-                                                                        </button>
-                                                                    </form>
-                                                                </li>
+                                                                        <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                                            data-bs-target="#view{{ $item->id }}"><i
+                                                                                class="far fa-eye me-2"></i>view</a>
+                                                                    </li>
+                                                                @endcan
+                                                                @can('edit partners')
+                                                                    <li>
+                                                                        <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                                            data-bs-target="#edit{{ $item->id }}"><i
+                                                                                class="far fa-edit me-2"></i>Edit</a>
+                                                                    </li>
+                                                                @endcan
+                                                                @can('delete partners')
+                                                                    <li>
+                                                                        <form action="{{ route('admin-partners.destroy', $item) }}"
+                                                                            method="POST" class="d-inline">
+                                                                            @csrf @method('DELETE')
+                                                                            <button type="submit" class="dropdown-item delete-btn">
+                                                                                <i class="far fa-trash-alt me-2"></i>Delete</a>
+                                                                            </button>
+                                                                        </form>
+                                                                    </li>
+                                                                @endcan
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -216,14 +223,14 @@
                 </div>
             </div>
         </div>
-       
+
 
 
         {{-- edit modal --}}
-       
+
         <div class="modal fade" id="edit{{ $item->id }}">
             <div class="modal-dialog custom-modal">
-              <form action="{{ route('admin-partners.update', $item) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('admin-partners.update', $item) }}" method="POST" enctype="multipart/form-data">
                     @csrf @method('PUT')
                     <div class="modal-content">
                         <div class="modal-header">
@@ -234,7 +241,7 @@
                             <div class=" mb-4">
                                 <img src="{{ asset('storage/' . $item->image) }}" class="rounded" width="100" height="100">
                                 <p class="text-muted mt-2">Current Image</p>
-                                 <small class="text-muted">Recommended: 125x125px • Max 2MB</small>
+                                <small class="text-muted">Recommended: 125x125px • Max 2MB</small>
                             </div>
                             <div class="row g-3">
                                 <div class="col-12">
@@ -267,7 +274,7 @@
     @endforeach
     <!-- /Edit Inventory -->
 
-  
+
 
 
 

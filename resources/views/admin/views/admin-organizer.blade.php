@@ -10,12 +10,13 @@
                     <div class="list-btn">
                         <ul class="filter-list">
 
-
-                            <li>
-                                <a class="btn btn-primary" href="javascript:void(0);" data-bs-toggle="modal"
-                                    data-bs-target="#add_category"><i class="fa fa-plus-circle me-2"
-                                        aria-hidden="true"></i>Add Organizer</a>
-                            </li>
+                            @can('create organizers')
+                                <li>
+                                    <a class="btn btn-primary" href="javascript:void(0);" data-bs-toggle="modal"
+                                        data-bs-target="#add_category"><i class="fa fa-plus-circle me-2"
+                                            aria-hidden="true"></i>Add Organizer</a>
+                                </li>
+                            @endcan
                         </ul>
                     </div>
                 </div>
@@ -50,27 +51,33 @@
                                                             alt="product-list"><span>{{ $organizer->name }}</span></a></td>
                                                 <td>{{ $organizer->tag }}</td>
                                                 <td class="d-flex align-items-center">
-                                                    <a class="btn-action-icon me-2" href="javascript:void(0);"
-                                                        data-bs-toggle="modal"
-                                                        data-bs-target="#view_organizer{{ $organizer->id }}">
-                                                        <i class="fe fe-eye"></i>
-                                                    </a>
-                                                    <a class="btn-action-icon me-2" href="javascript:void(0);" data-bs-toggle="modal"
-                                                        data-bs-target="#edit_organizer{{ $organizer->id }}">
-                                                        <i class="fe fe-edit"></i>
-                                                    </a>
-
-                                                    <form action="{{ route('admin-organizers.destroy', $organizer->id) }}"
-                                                        method="POST" class="d-inline delete-form">
-
-                                                        @csrf
-                                                        @method('DELETE')
-
-                                                        <a class="btn-action-icon  delete-btn">
-                                                            <i class="fe fe-trash-2"></i>
+                                                    @can('view organizers')
+                                                        <a class="btn-action-icon me-2" href="javascript:void(0);"
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target="#view_organizer{{ $organizer->id }}">
+                                                            <i class="fe fe-eye"></i>
                                                         </a>
+                                                    @endcan
+                                                    @can('edit organizers')
+                                                        <a class="btn-action-icon me-2" href="javascript:void(0);"
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target="#edit_organizer{{ $organizer->id }}">
+                                                            <i class="fe fe-edit"></i>
+                                                        </a>
+                                                    @endcan
+                                                    @can('delete organizers')
+                                                        <form action="{{ route('admin-organizers.destroy', $organizer->id) }}"
+                                                            method="POST" class="d-inline delete-form">
 
-                                                    </form>
+                                                            @csrf
+                                                            @method('DELETE')
+
+                                                            <a class="btn-action-icon  delete-btn">
+                                                                <i class="fe fe-trash-2"></i>
+                                                            </a>
+
+                                                        </form>
+                                                    @endcan
                                                 </td>
                                             </tr>
                                         @empty
@@ -416,7 +423,7 @@
             Swal.fire({
                 icon: 'success',
                 title: 'Success',
-                text: '{{ session('success') }}',
+                text: "{{ session('success') }}",
                 showConfirmButton: false,
                 timer: 2000
             })

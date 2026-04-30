@@ -26,8 +26,18 @@
         <div class="admin-login-form-area">
 
             <div class="admin-login-box">
-
-                <img class="mb-2" src="{{ asset('admin/images/logo/jss.png')}}">
+   @php
+  $websiteSetting = App\Models\WebsiteSetting::where('is_active', true)->first();
+@endphp
+      @php
+              $logo = optional($websiteSetting)->logo
+                ? asset('storage/' . $websiteSetting->logo)
+                : asset('assets/images/logo/jss.png');
+              $logoWhite = optional($websiteSetting)->logo_white
+                ? asset('storage/' . $websiteSetting->logo_white)
+                : asset('assets/images/logo/white-jss.png');
+            @endphp
+                <img class="mb-2" src="{{ $logo}}">
                 <div class="admin-login-heading">Welcome back</div>
                 <div class="admin-login-subtext">Please enter your details</div>
 

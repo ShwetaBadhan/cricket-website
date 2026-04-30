@@ -87,7 +87,7 @@ Sidebar heading:	font:28px/28px 'Roboto Condensed', serif;
 @import url("../../../css-3"); */
 /* Google Fonts End */
 
-:root {
+/* :root {
     --primary-color: #0a2540;
     --secondary-color: #f4bf41;
     --light-green-theme: #375b71;
@@ -97,7 +97,7 @@ Sidebar heading:	font:28px/28px 'Roboto Condensed', serif;
     --gradient-color3:linear-gradient(45deg, #1d5b1e, #1c5823);
     --primary-btn-bg: linear-gradient(45deg, #f4b41a 0%, #f4b41a 100%);
    
-}
+} */
 html body {
     font-family: "Roboto Condensed", sans-serif;
 }
@@ -6839,7 +6839,7 @@ ul.rep-comments {
 }
 .contact-box {
     border: 1px solid #0a2540;
-    background: #f3ecdb;
+    background: var(--light-blue-theme);
     border-radius: 40px 0 40px 0;
     padding: 20px;
     height: 150px;
@@ -6855,6 +6855,9 @@ ul.rep-comments {
     font-size: 16px;
     color: #777777;
     line-height: 26px;
+}
+.contact-box p a{
+    color:#777777;
 }
 .contact-box h5 {
     font-size: 20px;
