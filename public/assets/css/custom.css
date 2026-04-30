@@ -11824,3 +11824,69 @@ a.full-team,
                 width: 100%;
             }
         }
+
+        .auction-table-wrapper {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.auction-table-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.auction-filters {
+    display: flex;
+    gap: 10px;
+}
+
+.table-filter-btn {
+    border: none;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: #eee;
+    cursor: pointer;
+}
+
+.table-filter-btn.active {
+    background: #000;
+    color: #fff;
+}
+
+/* Table */
+.auction-custom-table th {
+    font-weight: 600;
+    background: #f8f9fa;
+}
+
+.auction-custom-table td {
+    vertical-align: middle;
+}
+
+/* Badges */
+.badge-sold {
+    background: #28a745;
+    color: #fff;
+}
+
+.badge-unsold {
+    background: #dc3545;
+    color: #fff;
+}
+
+.badge-pending {
+    background: #6c757d;
+    color: #fff;
+}
+
+.badge-active {
+    background: #007bff;
+    color: #fff;
+}
+
+.badge-hidden {
+    background: #adb5bd;
+    color: #fff;
+}

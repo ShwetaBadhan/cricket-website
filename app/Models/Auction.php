@@ -8,15 +8,25 @@ class Auction extends Model
 {
     protected $fillable = [
         'player_name',
-        'player_image',
         'base_price',
-        'current_bid',
-        'highest_bidder',
-        'status'
+        'winning_bid',
+        'category',
+        'result',
+        'is_active'
     ];
-
-    public function bids()
+    public function scopeActive($query)
     {
-        return $this->hasMany(Bid::class);
+        return $query->where('is_active', 1);
     }
+
+    public function scopeSold($query)
+    {
+        return $query->where('result', 'sold');
+    }
+
+    public function scopeUnsold($query)
+    {
+        return $query->where('result', 'unsold');
+    }
+
 }

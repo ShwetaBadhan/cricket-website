@@ -4,89 +4,69 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Auction;
-use App\Models\Bid;
+
+
 class AuctionController extends Controller
 {
     //
     public function index()
     {
-        $auctions = Auction::where('status', 'live')->get();
+        $auctions = Auction::latest()->get();
+
         return view('admin.views.admin-auction', compact('auctions'));
     }
     public function store(Request $request)
     {
         $request->validate([
             'player_name' => 'required',
-            'base_price' => 'required|integer'
+            'base_price' => 'required|numeric',
+            'category' => 'required',
         ]);
 
-        // image upload
-        $image = null;
-        if ($request->hasFile('player_image')) {
-            $image = $request->file('player_image')->store('players', 'public');
+        // if unsold → winning bid null
+        if ($request->result == 'unsold') {
+            $request->merge(['winning_bid' => null]);
         }
 
         Auction::create([
             'player_name' => $request->player_name,
-            'player_image' => $image,
             'base_price' => $request->base_price,
-            'status' => $request->status,
+            'winning_bid' => $request->winning_bid,
+            'category' => $request->category,
+            'result' => $request->result,
+            'is_active' => 1
         ]);
 
-        return back()->with('success', 'Auction created');
+        return back()->with('success', 'Player added');
     }
     public function update(Request $request, $id)
     {
         $auction = Auction::findOrFail($id);
 
-        if ($request->hasFile('player_image')) {
-            $image = $request->file('player_image')->store('players', 'public');
-            $auction->player_image = $image;
+        if ($request->result == 'unsold') {
+            $request->merge(['winning_bid' => null]);
         }
 
-        $auction->update([
-            'player_name' => $request->player_name,
-            'base_price' => $request->base_price,
-            'status' => $request->status,
-        ]);
+        $auction->update($request->all());
 
-        return back()->with('success', 'Auction updated');
+        return back()->with('success', 'Updated');
     }
     public function destroy($id)
     {
-        $auction = Auction::findOrFail($id);
-        $auction->delete();
+        Auction::findOrFail($id)->delete();
 
         return back()->with('success', 'Deleted');
     }
-    public function placeBid(Request $request, $id)
+    public function toggleStatus($id)
     {
-        $auction = Auction::findOrFail($id);
+        $player = Auction::findOrFail($id);
 
-        $request->validate([
-            'bidder_name' => 'required',
-            'bid_amount' => 'required|integer'
+        $player->is_active = !$player->is_active;
+        $player->save();
+
+        return response()->json([
+            'status' => 'success',
+            'is_active' => $player->is_active
         ]);
-
-        $current = $auction->current_bid ?? $auction->base_price;
-
-        if ($request->bid_amount <= $current) {
-            return back()->with('error', 'Bid must be higher than current bid');
-        }
-
-        // Save bid
-        Bid::create([
-            'auction_id' => $auction->id,
-            'bidder_name' => $request->bidder_name,
-            'bid_amount' => $request->bid_amount,
-        ]);
-
-        // Update auction
-        $auction->update([
-            'current_bid' => $request->bid_amount,
-            'highest_bidder' => $request->bidder_name,
-        ]);
-
-        return back()->with('success', 'Bid placed successfully!');
     }
 }

@@ -206,7 +206,7 @@ Route::get('/dashboard', function () {
     $nodalLeads = App\Models\NodalRegisteration::count();
     $playerLeads = App\Models\PlayerRegistration::count();
     $sponsorLeads = App\Models\Sponsor::count();
-    
+
 
     return view('admin.views.dashboard', [
         'totalLeads' => $totalLeads,
@@ -447,17 +447,10 @@ Route::middleware('auth')->group(function () {
         Route::delete('/{id}', [GameMatchController::class, 'destroy'])->name('destroy');
 
     });
-    // auction
     Route::get('/auction', [AuctionController::class, 'index'])->name('auction.index');
-    Route::post('/auction/{id}/bid', [AuctionController::class, 'placeBid'])->name('auction.bid');
-    Route::prefix('admin-auction')->name('admin-auction.')->group(function () {
-
-        Route::get('/', [AuctionController::class, 'index'])->name('index');
-        Route::post('/', [AuctionController::class, 'store'])->name('store');
-        Route::put('/{id}', [AuctionController::class, 'update'])->name('update');
-        Route::delete('/{id}', [AuctionController::class, 'destroy'])->name('destroy');
-
-    });
+    Route::post('/auction', [AuctionController::class, 'store'])->name('auction.store');
+    Route::put('/auction/{id}', [AuctionController::class, 'update'])->name('auction.update');
+    Route::delete('/auction/{id}', [AuctionController::class, 'destroy'])->name('auction.destroy');
 });
 
 

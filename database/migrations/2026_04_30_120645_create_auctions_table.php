@@ -14,14 +14,15 @@ return new class extends Migration {
             $table->id();
 
             $table->string('player_name');
-            $table->string('player_image')->nullable();
 
-            $table->integer('base_price');
-            $table->integer('current_bid')->nullable();
+            $table->decimal('base_price', 10, 2);
+            $table->decimal('winning_bid', 10, 2)->nullable();
 
-            $table->string('highest_bidder')->nullable();
+            $table->enum('category', ['capped', 'uncapped']);
 
-            $table->enum('status', ['upcoming', 'live', 'sold', 'unsold'])->default('upcoming');
+            $table->enum('result', ['sold', 'unsold'])->nullable(); 
+
+            $table->boolean('is_active')->default(true); 
 
             $table->timestamps();
         });
