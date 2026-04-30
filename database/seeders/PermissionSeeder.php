@@ -27,6 +27,7 @@ class PermissionSeeder extends Seeder
             'sponsor leads',
 
             // Management
+            'auction',
             'blogs',
             'event categories',
             'gallery',

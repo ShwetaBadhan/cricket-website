@@ -11,11 +11,13 @@
                         <ul class="filter-list">
 
 
+                        @can('create auction')
                             <li>
                                 <a class="btn btn-primary" href="javascript:void(0);" data-bs-toggle="modal"
                                     data-bs-target="#add_category"><i class="fa fa-plus-circle me-2"
                                         aria-hidden="true"></i>Add</a>
                             </li>
+                            @endcan
                         </ul>
                     </div>
                 </div>
@@ -84,17 +86,20 @@
                                                 <td class="d-flex align-items-center">
 
                                                     {{-- VIEW --}}
+                                                    @can('view auction')
                                                    
                                                         <a class="btn-action-icon me-2" href="javascript:void(0);"
                                                             data-bs-toggle="modal" data-bs-target="#view_auction{{ $auction->id }}">
                                                             <i class="fe fe-eye"></i>
                                                         </a>
-                                                  
+                                                        @endcan
+                                                  @can('edit auction')
                                                         <a class="btn-action-icon me-2" href="javascript:void(0);"
                                                             data-bs-toggle="modal" data-bs-target="#edit_auction{{ $auction->id }}">
                                                             <i class="fe fe-edit"></i>
                                                         </a>
-                                                  
+                                                  @endcan
+                                                  @can('delete auction')
                                                         <form action="{{ route('auction.destroy', $auction->id) }}" method="POST"
                                                             class="d-inline delete-form">
 
@@ -106,7 +111,7 @@
                                                             </a>
 
                                                         </form>
-                                                  
+                                                  @endcan
 
                                                 </td>
                                             </tr>
