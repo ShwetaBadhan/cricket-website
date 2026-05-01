@@ -14,7 +14,7 @@ return new class extends Migration {
             $table->id();
             $table->string('first_name'); //name
             $table->string('last_name'); //name
-            $table->string('tweet'); 
+            $table->text('tweet'); 
             $table->string('tweet_id'); 
             $table->string('date'); 
             $table->enum('status', ['active', 'inactive'])->default('active');

@@ -16,7 +16,7 @@ return new class extends Migration {
             $table->string('email');
             $table->string('phone');
             $table->string('plan');
-            $table->string('benefits');
+            $table->text('benefits');
             $table->string('occupation');
             $table->text('notes')->nullable();
             $table->timestamps();

@@ -12,9 +12,9 @@ return new class extends Migration {
     {
         Schema::create('about_values', function (Blueprint $table) {
             $table->id();
-            $table->string('small_card_1_description');
-            $table->string('small_card_2_description');
-            $table->string('small_card_3_description');
+            $table->text('small_card_1_description');
+            $table->text('small_card_2_description');
+            $table->text('small_card_3_description');
             $table->boolean('is_active')->default(true);
             $table->timestamps();
         });

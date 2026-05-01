@@ -17,19 +17,19 @@ return new class extends Migration {
             // Small Feature Cards (4 cards)
             $table->string('small_card_1_image')->nullable();
             $table->string('small_card_1_title');
-            $table->string('small_card_1_description');
+            $table->text('small_card_1_description');
 
             $table->string('small_card_2_image')->nullable();
             $table->string('small_card_2_title');
-            $table->string('small_card_2_description');
+            $table->text('small_card_2_description');
 
             $table->string('small_card_3_image')->nullable();
             $table->string('small_card_3_title');
-            $table->string('small_card_3_description');
+            $table->text('small_card_3_description');
 
             $table->string('small_card_4_image')->nullable();
             $table->string('small_card_4_title');
-            $table->string('small_card_4_description');
+            $table->text('small_card_4_description');
 
             $table->boolean('is_active')->default(true);
             $table->timestamps();
