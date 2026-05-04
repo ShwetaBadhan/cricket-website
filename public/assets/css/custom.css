@@ -7676,7 +7676,7 @@ ul.gallery-row li.gall-cal {
 .h3-match-counter {
     width: 100%;
     float: left;
-    background: var(--gradient-color3);
+    background: var(--gradient-color);
     padding: 30px 0 25px;
     position: relative;
 }
