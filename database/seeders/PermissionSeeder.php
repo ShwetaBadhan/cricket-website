@@ -59,7 +59,7 @@ class PermissionSeeder extends Seeder
 
             // Others
             'profile',
-            '',
+            'settings',
         ];
 
         $actions = ['view', 'create', 'edit', 'delete'];
