@@ -47,6 +47,19 @@
 
 @endsection
   @push('scripts')
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+      var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+      (function () {
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/69f85686f3f8091c381d5c61/1jnp13vk6';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+      })();
+    </script>
+    <!--End of Tawk.to Script-->
     <script>
       var url = 'https://wati-integration-service.clare.ai/ShopifyWidget/shopifyWidget.js?86687';
       var s = document.createElement('script');
@@ -83,5 +96,5 @@
       var x = document.getElementsByTagName('script')[0];
       x.parentNode.insertBefore(s, x);
     </script>
-  
+
   @endpush
