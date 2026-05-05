@@ -17,7 +17,7 @@ class SportController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
-            'slug' => 'required|string|max:255|unique:Sports',
+            'slug' => 'required|string|max:255|unique:sports,slug',
             'image' => 'required|image|mimes:png,jpg,jpeg,webp|max:5048',
             'description' => 'required|string',
             'benefits' => 'required|string',
@@ -26,13 +26,13 @@ class SportController extends Controller
         ]);
 
         $imagePath = null;
-       
+
 
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('Sport-images', 'public');
         }
 
-                                                         
+
         Sport::create([
             'title' => $request->title,
             'slug' => $request->slug,
@@ -49,7 +49,7 @@ class SportController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
-            'slug' => 'required|string|max:255|unique:Sports,slug,' . $sport->id,
+            'slug' => 'required|string|max:255|unique:sports,slug,' . $sport->id,
             'image' => 'nullable|image|mimes:png,jpg,jpeg,webp|max:5048',
             'description' => 'required|string',
             'benefits' => 'required|string',
@@ -63,15 +63,15 @@ class SportController extends Controller
             $imagePath = $request->file('image')->store('Sport-images', 'public');
         }
 
-       
+
 
         $sport->update([
             'title' => $request->title,
             'slug' => $request->slug,
             'image' => $imagePath,
             'description' => $request->description,
-            'benefits' => $request->benefits,
-            'rules' => $request->rules,
+            'Benefits' => $request->benefits,
+            'Rules' => $request->rules,
             'status' => $request->status
         ]);
 
