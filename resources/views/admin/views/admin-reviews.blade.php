@@ -354,4 +354,30 @@
             });
         });
     </script>
+
+    
+@if(session('success'))
+
+<script>
+    Swal.fire({
+        icon: 'success',
+        title: 'Success',
+        text: "{{ session(' success ') }}",
+        showConfirmButton: false,
+        timer: 2000
+    })
+</script>
+
+@endif
+@if($errors->any())
+
+<script>
+    Swal.fire({
+        icon: 'error',
+        title: 'Validation Error',
+        text: '{{ $errors->first() }}'
+    })
+</script>
+
+@endif
 @endpush

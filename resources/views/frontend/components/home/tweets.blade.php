@@ -33,7 +33,7 @@ url('{{ asset('assets/images/slider/03.jpg') }}');
 
                         <div class="tw-foot">
                             {{ $msg->tweet_id ?? '@rohit.sharma' }}<br>
-                            {{ \Carbon\Carbon::parse($tweet->date)->format('d F, Y') }} <i class="fab fa-twitter"></i>
+                            {{ \Carbon\Carbon::parse($msg->date)->format('d F, Y') }} <i class="fab fa-twitter"></i>
                         </div>
                     </div>
                 </li>
