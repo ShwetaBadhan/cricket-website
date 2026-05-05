@@ -3,11 +3,11 @@
 @section('content')
 
     <div class="inner-banner-header wf100 p80-50">
-        <h1 data-generated="Sports">Cricket</h1>
+        <h1 data-generated="Sports">{{ $sport->title ? $sport->title : 'Athletics: Build Speed & Strength' }}</h1>
         <div class="gt-breadcrumbs">
             <ul>
                 <li> <a href="{{ route('index') }}"> <i class="fas fa-home"></i> Home </a> </li>
-                <li> <a href="" class="active">Cricket </a> </li>
+                <li> <a href="" class="active">{{ $sport->title ? $sport->title : 'Athletics: Build Speed & Strength' }} </a> </li>
             </ul>
         </div>
     </div>

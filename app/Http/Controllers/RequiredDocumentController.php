@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\models\RequiredDocument;
+use App\Models\RequiredDocument;
 class RequiredDocumentController extends Controller
 {
     //

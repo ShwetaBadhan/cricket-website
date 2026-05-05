@@ -117,7 +117,14 @@
                                             </tr>
                                         @empty
                                             <tr>
-                                                <td colspan="8" class="text-center">No Data</td>
+                                              <td></td>
+                                              <td><p>No data found yet</p></td>
+                                              <td></td>
+                                              <td></td>
+                                              <td></td>
+                                              <td></td>
+                                              <td></td>
+                                              <td></td>
                                             </tr>
                                         @endforelse
                                     </tbody>

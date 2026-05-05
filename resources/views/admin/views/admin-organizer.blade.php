@@ -284,7 +284,7 @@
 
 
         <!-- edit Modal -->
-        <div class="modal custom-modal fade" id="edit_organizer{{ $organizer->id }}" role="dialog">
+        <div class="modal custom-modal fade" id="edit_organizer{{ $item->id }}" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
 
@@ -295,7 +295,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
 
-                    <form action="{{ route('admin-organizers.update', $organizer->id) }}" method="POST"
+                    <form action="{{ route('admin-organizers.update', $item->id) }}" method="POST"
                         enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
@@ -305,15 +305,15 @@
 
                                 <div class="col-lg-6 mb-3">
                                     <label>Organizer Name *</label>
-                                    <input type="text" name="name" class="form-control" value="{{ $organizer->name }}" required>
+                                    <input type="text" name="name" class="form-control" value="{{ $item->name }}" required>
                                 </div>
 
                                 <div class="col-lg-6 mb-3">
                                     <label>Tag *</label>
                                     <select name="tag" class="form-control">
-                                        <option value="Leadership" {{ $organizer->tag == 'Leadership' ? 'selected' : '' }}>
+                                        <option value="Leadership" {{ $item->tag == 'Leadership' ? 'selected' : '' }}>
                                             Leadership</option>
-                                        <option value="Management" {{ $organizer->tag == 'Management' ? 'selected' : '' }}>
+                                        <option value="Management" {{ $item->tag == 'Management' ? 'selected' : '' }}>
                                             Management</option>
                                     </select>
                                 </div>
@@ -321,7 +321,7 @@
                                 <div class="col-lg-6 mb-3">
                                     <label>Designation *</label>
                                     <input type="text" name="designation" class="form-control"
-                                        value="{{ $organizer->designation }}" required>
+                                        value="{{ $item->designation }}" required>
                                 </div>
 
                                 <div class="col-lg-6 mb-3">
@@ -329,34 +329,34 @@
                                     <input type="file" name="image" class="form-control">
 
                                     @if($organizer->image)
-                                        <img src="{{ asset('storage/' . $organizer->image) }}" width="80" class="mt-2">
+                                        <img src="{{ asset('storage/' . $item->image) }}" width="80" class="mt-2">
                                     @endif
                                 </div>
 
                                 <div class="col-lg-6 mb-3">
                                     <label>Facebook Link</label>
                                     <input type="url" name="facebook_link" class="form-control"
-                                        value="{{ $organizer->facebook_link }}">
+                                        value="{{ $item->facebook_link }}">
                                 </div>
 
                                 <div class="col-lg-6 mb-3">
                                     <label>Twitter Link</label>
                                     <input type="url" name="twitter_link" class="form-control"
-                                        value="{{ $organizer->twitter_link }}">
+                                        value="{{ $item->twitter_link }}">
                                 </div>
 
                                 <div class="col-lg-6 mb-3">
                                     <label>Instagram Link</label>
                                     <input type="url" name="instagram_link" class="form-control"
-                                        value="{{ $organizer->instagram_link }}">
+                                        value="{{ $item->instagram_link }}">
                                 </div>
 
                                 <div class="col-lg-6 mb-3">
                                     <label>Status *</label>
                                     <select name="status" class="form-control">
-                                        <option value="active" {{ $organizer->status == 'active' ? 'selected' : '' }}>Active
+                                        <option value="active" {{ $item->status == 'active' ? 'selected' : '' }}>Active
                                         </option>
-                                        <option value="inactive" {{ $organizer->status == 'inactive' ? 'selected' : '' }}>Inactive
+                                        <option value="inactive" {{ $item->status == 'inactive' ? 'selected' : '' }}>Inactive
                                         </option>
                                     </select>
                                 </div>

@@ -69,7 +69,7 @@
                 <li class="menu-title"><span>Management</span></li>
                 <li>
                     @can('view auction')
-                        <a href="{{ route('admin-event-categories') }}">
+                        <a href="{{ route('auction.index') }}">
                             <i class="fe fe-image"></i> <span>Auction</span>
                         </a>
                     @endcan
