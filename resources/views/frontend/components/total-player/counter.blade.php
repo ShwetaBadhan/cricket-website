@@ -1,7 +1,18 @@
+@php
+    use App\Models\PlayerRegistration;
+    use App\Models\NodalRegisteration;
+    use App\Models\Team;
+    use App\Models\Organizer;
+
+    $playerCount = PlayerRegistration::count();
+    $nodalCount = NodalRegisteration::count();
+    $teamCount = Team::count();
+    $organizerCount = Organizer::count();
+@endphp
 <section class="tournament-stats-section wf100" style="
           background:
 
-        url('{{ asset('assets/images/hnewbg.jpg') }}');
+        url('{{ asset("assets/images/hnewbg.jpg") }}');
                     background-size: cover;
                     background-position: center;
                     background-repeat: no-repeat;">
@@ -19,29 +30,37 @@
 
             <div class="col-lg-3 col-md-6">
                 <div class="stats-card">
-                    <h2 class="stats-number" data-target="350">0</h2>
+                    <h2 class="stats-number" data-target="{{ $playerCount }}">
+                        {{ $playerCount }}
+                    </h2>
                     <p>Total Players Registered</p>
                 </div>
             </div>
 
             <div class="col-lg-3 col-md-6">
                 <div class="stats-card">
-                    <h2 class="stats-number" data-target="24">0</h2>
+                    <h2 class="stats-number" data-target="{{ $nodalCount }}">
+                        {{ $nodalCount }}
+                    </h2>
+                    <p>Total Nodal </p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="stats-card">
+                    <h2 class="stats-number" data-target="{{ $teamCount }}">
+                        {{ $teamCount }}
+                    </h2>
                     <p>Total Teams</p>
                 </div>
             </div>
 
             <div class="col-lg-3 col-md-6">
                 <div class="stats-card">
-                    <h2 class="stats-number" data-target="60">0</h2>
-                    <p>Total Matches</p>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-                <div class="stats-card">
-                    <h2 class="stats-number" data-target="12">0</h2>
-                    <p>Cities Participating</p>
+                    <h2 class="stats-number" data-target="{{ $organizerCount }}">
+                        {{ $organizerCount }}
+                    </h2>
+                    <p>Total Organizers</p>
                 </div>
             </div>
 
