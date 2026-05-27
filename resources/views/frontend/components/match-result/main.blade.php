@@ -30,7 +30,7 @@
                                                         <strong>{{ $match->team_1_name }}</strong>
                                                     </div>
 
-                                                    <div class="mscore">
+                                                    <div class="mscore" id="left-match-score-mm">
                                                         <strong>
                                                             @if(isset($match->score_data['team1']['score']))
                                                                 {{ $match->score_data['team1']['score'] }}

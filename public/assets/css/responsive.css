@@ -834,7 +834,12 @@ li.acctount-btn, .toplinks .btn.btn-secondary {
 }
 .last-match-result-full-light .mscore {
 	margin: 0 0 0 5px;
+	
 }
+#left-match-score-mm{
+	float: right;
+}
+
 .post-bottom {
 	padding: 0 15px;
 }
